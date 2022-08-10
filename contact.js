@@ -1,5 +1,6 @@
 // $(document).ready(function(){
 router.useScript(() => {
+  console.log("contact script is running");
   var elementDelay = 75;
   for (
     let i = 0;
