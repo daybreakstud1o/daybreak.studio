@@ -97,23 +97,16 @@ router.useScript(()=>{
 	const handlePageScroll = ()=> {
 		
 		if (isInViewport(afterCarousel) === true) {
-			triggerStaggerAnim(afterCarousel.children, {
-				delay: 100, 
-				styler: (style)=>{
-					style.display = "inline-block"
-				}
-			})
-			// triggerTextAnim(afterCarousel, {delay: 100, useInlineBlock: true})
-			// var elementDelay = 100;
-			// 	setTimeout(function () {
-			// 		for (let i = 0; i < document.querySelectorAll('.after-carousel .heading-massive span').length; i++) {
-			// 			document.querySelectorAll('.after-carousel .heading-massive span').forEach((element, i) => {
-			// 				setTimeout(function () {
-			// 					element.style.display = "inline-block" ?? "";
-			// 				}, i * elementDelay);
-			// 			});
-			// 		}
-			// 	}, 200);
+			var elementDelay = 100;
+				setTimeout(function () {
+					for (let i = 0; i < document.querySelectorAll('.after-carousel .heading-massive span').length; i++) {
+						document.querySelectorAll('.after-carousel .heading-massive span').forEach((element, i) => {
+							setTimeout(function () {
+								element.style.display = "inline-block" ?? "";
+							}, i * elementDelay);
+						});
+					}
+				}, 200);
 		}
 
 
