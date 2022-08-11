@@ -18,18 +18,21 @@ router.useScript(()=>{
 		}, 200);
 	// });
 
-	// $(function() {
-			var navBar = $(".nav-logo");
-			$(window).scroll(function() {
-					var scroll = $(window).scrollTop();
-
-					if (scroll >= 100) {
-							document.querySelector('.nav-logo').style.width = '131px';
-					} else if (scroll < 100) {
-							document.querySelector('.nav-logo').style.width = '55vw';
-					}
-			});
-	// });
+	function setupLogoMinimizeOnScroll() {
+		const handleScroll =()=>{
+			const scroll = window.scrollY;
+			if (scroll >= 100) {
+					document.querySelector('.nav-logo').style.width = '131px';
+			} else if (scroll < 100) {
+					document.querySelector('.nav-logo').style.width = '55vw';
+			}
+		}
+		window.addEventListener("scroll", handleScroll);
+		return ()=>{
+			window.removeEventListener("scroll", handleScroll);
+		}
+	}
+	const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
 		
 	// TODO: create transition
 	/* 
@@ -202,5 +205,6 @@ function createPoppingTextEffect(baseElm, elmDelay=250) {
 	}
 	return ()=>{
 		// cancel
+		cleanupLogoMinimizeOnScroll();
 	}
 }
