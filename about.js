@@ -21,9 +21,11 @@ router.useScript(()=>{
 	function setupLogoMinimizeOnScroll() {
 
 		function minimizeLogo() {
+			console.log("min logo")
 			document.querySelector('.nav-logo').style.width = '131px';
 		}
 		function maximizeLogo() {
+			console.log("max logo")
 			document.querySelector('.nav-logo').style.width = '55vw';
 		}
 
