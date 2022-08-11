@@ -213,9 +213,11 @@ function breakIntoSpan(baseElm) {
 
 function startPoppingTextAnim(baseElm, elmDelay=250, useInlineBlock) {
 	const wordElms = baseElm.children;
-	wordElms.forEach((element, i) => {
+
+	for (let i = 0; i<wordElms.length; i++) {
+		const elm = wordElms[i];
 		setTimeout(()=> {
-			element.style.display = useInlineBlock ? "inline-block":"block";
-		}, i * elementDelay);
-	});
+			elm.style.display = useInlineBlock ? "inline-block":"block";
+		}, i * elmDelay);
+	}
 }
