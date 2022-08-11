@@ -1,6 +1,8 @@
 router.useScript(()=>{
 
 const number = Math.floor(Math.random()*document.querySelectorAll('.landing-main').length);
+// expose the number to the in page script
+window.number = number;
 // $(document).ready(function(){
     $(this).scrollTop(5);
     //setTimeout(function(){ 
@@ -235,7 +237,7 @@ function infinite() {
 // });
 
 var intervalId = window.setInterval(function(){
-	torontotime()
+	// torontotime()
   SFtime()
 }, 1000);
 
