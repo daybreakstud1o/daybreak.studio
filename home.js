@@ -237,7 +237,7 @@ function infinite() {
 // });
 
 var intervalId = window.setInterval(function(){
-	// torontotime()
+	torontotime()
   SFtime()
 }, 1000);
 

@@ -18,6 +18,10 @@ router.useScript(() => {
 		}
 	}
 
+	// expose the toronottime and sf time
+	window.torontotime = torontotime;
+	window.SFtime = SFtime;
+
 	console.log(document.querySelectorAll('.toronto-time').length);
 
 	weatherUpdate = (city, slang) => {
