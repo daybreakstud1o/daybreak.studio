@@ -42,6 +42,7 @@ router.useScript(()=>{
 		window.addEventListener("scroll", handleScroll);
 		return ()=>{
 			minimizeLogo();
+			console.log("remove scroll")
 			window.removeEventListener("scroll", handleScroll);
 		}
 	}
