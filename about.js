@@ -1,6 +1,6 @@
 router.useScript(()=>{
 
-	$(document).ready(function(){
+	// $(document).ready(function(){
 		document.querySelector('.nav-logo').style.width = '55vw';
 		document.querySelector('.nav-left .daybreak-info').style.opacity = '0';
 		document.querySelector('.nav-left .cities-info').style.opacity = '0';
@@ -16,9 +16,9 @@ router.useScript(()=>{
 				});
 			}
 		}, 200);
-	});
+	// });
 
-	$(function() {
+	// $(function() {
 			var navBar = $(".nav-logo");
 			$(window).scroll(function() {
 					var scroll = $(window).scrollTop();
@@ -29,7 +29,7 @@ router.useScript(()=>{
 							document.querySelector('.nav-logo').style.width = '55vw';
 					}
 			});
-	});
+	// });
 
 	$('#home-link, #contact-link').click(function(e) {
 		e.preventDefault();

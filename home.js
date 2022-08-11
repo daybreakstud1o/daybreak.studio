@@ -187,9 +187,9 @@ $('.vc-puzzle').on('mouseover',function(){for (let i = 0; i < document.querySele
 $('.workweek').on('mouseover',function(){for (let i = 0; i < document.querySelectorAll('.workweek').length; i++) {document.querySelectorAll(".workweek")[i].style.opacity = "1"}})
 
 
-window.addEventListener("load", function(){
+// window.addEventListener("load", function(){
 		infinite();
-});
+// });
 window.addEventListener("resize", function(){
 		infinite();    
 });
@@ -213,8 +213,10 @@ function infinite() {
 		}
 
 		if(window.scrollY==0) {
-		 var eOffset = $('#duplicate-' + screen).offset().top; 
-		 $(window).scrollTop(eOffset - 126);
+		 const eOffset = $('#duplicate-' + screen).offset(); 
+		 if(!eOffset) return;
+
+		 $(window).scrollTop(eOffset.top - 126);
 		 console.log("top");
 		}
 	}
