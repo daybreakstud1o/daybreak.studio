@@ -1,5 +1,7 @@
+router.useScript(()=>{
+
 const number = Math.floor(Math.random()*document.querySelectorAll('.landing-main').length);
-$(document).ready(function(){
+// $(document).ready(function(){
     $(this).scrollTop(5);
     //setTimeout(function(){ 
     //	document.getElementById('layout-' + number + '').style.pointerEvents = "all";
@@ -26,7 +28,7 @@ $(document).ready(function(){
 	    }
 
     }, shapeLoadTime);
-});
+// });
 window.onscroll = function (e) {  
 	for (let i = 0; i < document.querySelectorAll('.layout-' + number + ' .project').length; i++) {
 		document.querySelectorAll('.layout-' + number + ' .project')[i].style.display = "block";
@@ -239,3 +241,4 @@ var intervalId = window.setInterval(function(){
 
 
 
+})
