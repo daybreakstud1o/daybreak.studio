@@ -180,6 +180,9 @@ router.useScript(()=>{
 			passive: true
 	});
 
+	return ()=>{
+		cleanupLogoMinimizeOnScroll();
+	}
 })
 
 function breakIntoSpan(baseElm) {
@@ -202,9 +205,5 @@ function createPoppingTextEffect(baseElm, elmDelay=250) {
 				element.style.display = "inline-block";
 			}, i * elementDelay);
 		});
-	}
-	return ()=>{
-		// cancel
-		cleanupLogoMinimizeOnScroll();
 	}
 }
