@@ -45,7 +45,7 @@ router.useScript(()=>{
 			window.removeEventListener("scroll", handleScroll);
 		}
 	}
-	// const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
+	const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
 		
 	// TODO: create transition
 	/* 
@@ -195,7 +195,7 @@ router.useScript(()=>{
 
 	return ()=>{
 		console.log("leaving about");
-		// cleanupLogoMinimizeOnScroll();
+		cleanupLogoMinimizeOnScroll();
 	}
 })
 
