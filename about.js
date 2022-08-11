@@ -30,7 +30,6 @@ router.useScript(()=>{
 		}
 
 		const handleScroll =()=>{
-			console.log("scrolling")
 			const scroll = window.scrollY;
 			if (scroll >= 100) {
 					minimizeLogo()
@@ -180,14 +179,15 @@ router.useScript(()=>{
 
 	document.addEventListener('scroll', function () {
 		if (isInViewport(workWithUsEnter) === true) {
-			var elementDelay = 250;
-			for (let i = 0; i < document.querySelectorAll('.work-with-us .heading-massive span').length; i++) {
-				document.querySelectorAll('.work-with-us .heading-massive span').forEach((element, i) => {
-					setTimeout(function () {
-						element.style.display = "inline-block" ?? "";
-					}, i * elementDelay);
-				});
-			}
+			startPoppingTextAnim(workWithUsEnter);
+			// var elementDelay = 250;
+			// for (let i = 0; i < document.querySelectorAll('.work-with-us .heading-massive span').length; i++) {
+			// 	document.querySelectorAll('.work-with-us .heading-massive span').forEach((element, i) => {
+			// 		setTimeout(function () {
+			// 			element.style.display = "inline-block" ?? "";
+			// 		}, i * elementDelay);
+			// 	});
+			// }
 		}
 	}, {
 			passive: true
@@ -211,12 +211,12 @@ function breakIntoSpan(baseElm) {
 	return wordSpans;
 }
 
-function createPoppingTextEffect(baseElm, elmDelay=250) {
+function startPoppingTextAnim(baseElm, elmDelay=250, useInlineBlock) {
 	const wordElms = baseElm.children;
 	for (let i = 0; i < wordElms.length; i++) {
 		wordElms.forEach((element, i) => {
 			setTimeout(()=> {
-				element.style.display = "inline-block";
+				element.style.display = useInlineBlock ? "inline-block":"block";
 			}, i * elementDelay);
 		});
 	}
