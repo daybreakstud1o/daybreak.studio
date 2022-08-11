@@ -179,7 +179,7 @@ router.useScript(()=>{
 
 	document.addEventListener('scroll', function () {
 		if (isInViewport(workWithUsEnter) === true) {
-			startPoppingTextAnim(workWithUsEnter);
+			startPoppingTextAnim(workWithUsEnter, {useInlineBlock:true});
 			// var elementDelay = 250;
 			// for (let i = 0; i < document.querySelectorAll('.work-with-us .heading-massive span').length; i++) {
 			// 	document.querySelectorAll('.work-with-us .heading-massive span').forEach((element, i) => {
@@ -211,13 +211,13 @@ function breakIntoSpan(baseElm) {
 	return wordSpans;
 }
 
-function startPoppingTextAnim(baseElm, elmDelay=250, useInlineBlock) {
+function startPoppingTextAnim(baseElm, {delay=250, useInlineBlock = false}) {
 	const wordElms = baseElm.children;
 
 	for (let i = 0; i<wordElms.length; i++) {
 		const elm = wordElms[i];
 		setTimeout(()=> {
 			elm.style.display = useInlineBlock ? "inline-block":"block";
-		}, i * elmDelay);
+		}, i * delay);
 	}
 }
