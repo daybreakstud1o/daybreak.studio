@@ -186,12 +186,12 @@ router.useScript(()=>{
 		}
 	}
 
-	document.addEventListener('scroll', handlePageScroll);
+	document.addEventListener('scroll', handlePageScroll, {passive: true});
 
 	return ()=>{
 		console.log("leaving about");
 		cleanupLogoMinimizeOnScroll();
-		document.removeEventListener("scroll", handlePageScroll);
+		document.removeEventListener("scroll", handlePageScroll, {passive: true});
 	}
 })
 

@@ -120,7 +120,7 @@ router.useScript(()=>{
 
   const box = document.querySelector('#next-up-show');
 
-  document.addEventListener('scroll', function () {
+  const handlePageScroll = ()=> {
     if (isInViewport(box) === true) {
       document.querySelector('.next-up-overlay').style.opacity = "1";
       var elementDelay = 250;
@@ -149,7 +149,9 @@ router.useScript(()=>{
         document.querySelectorAll('.scroll-arrows svg path')[i].style.opacity = "0.5";
       }
     }
-  }, {
+  }
+
+  document.addEventListener('scroll', handlePageScroll, {
       passive: true
   });
 
@@ -160,4 +162,10 @@ router.useScript(()=>{
   $( ".close-casestudy" ).mouseout(function() {
     document.querySelector(".back-icon").style.display = "none";
   });
+
+  return ()=>{
+    document.removeEventListener('scroll', handlePageScroll, {
+      passive: true
+    });
+  }
 })
