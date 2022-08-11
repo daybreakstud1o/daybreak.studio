@@ -1,7 +1,32 @@
+function breakIntoSpan(baseElm) {
+	const content = baseElm.innerHTML;
+	const words = content.split(" ");
+	const wordSpans = words.map((word)=>{
+		const spanElm = document.createElement("span");
+		span.innerHTML = word;
+		return spanElm;
+	})
+	return wordSpans;
+}
+
+function triggerStaggerAnim(containerElm, {delay=250, ...CSSProps}) {
+	const wordElms = containerElm.children;
+	const presetStateStyle = CSSProps || {display:"block"}
+
+	for (let i = 0; i<wordElms.length; i++) {
+		const elm = wordElms[i];
+		setTimeout(()=> {
+			Object.keys(presetStateStyle).forEach((CSSPropKey)=>{
+				elm.style[CSSPropKey] = presetStateStyle[CSSPropKey];
+			})
+		}, i * delay);
+	}
+}
+
 router.useScript(()=>{
 	console.log("enter about");
 
-	// $(document).ready(function(){
+	function animateInHero() {
 		document.querySelector('.nav-logo').style.width = '55vw';
 		document.querySelector('.nav-left .daybreak-info').style.opacity = '0';
 		document.querySelector('.nav-left .cities-info').style.opacity = '0';
@@ -17,11 +42,10 @@ router.useScript(()=>{
 				});
 			}
 		}, 200);
-	// });
+	}
+	animateInHero();
 
 	function setupLogoMinimizeOnScroll() {
-		console.log("setup logo resize")
-
 		function minimizeLogo() {
 			document.querySelector('.nav-logo').style.width = '131px';
 		}
@@ -40,7 +64,6 @@ router.useScript(()=>{
 		window.addEventListener("scroll", handleScroll);
 		return ()=>{
 			minimizeLogo();
-			console.log("remove scroll")
 			window.removeEventListener("scroll", handleScroll);
 		}
 	}
@@ -69,38 +92,36 @@ router.useScript(()=>{
 					rect.left >= 0 &&
 					rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
 					rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-
 			);
 	}
 
 
 	const afterCarousel = document.querySelector('#after-carousel');
 
-	document.addEventListener('scroll', function () {
+	
+	const handlePageScroll = ()=> {
+		
 		if (isInViewport(afterCarousel) === true) {
-			var elementDelay = 100;
-				setTimeout(function () {
-					for (let i = 0; i < document.querySelectorAll('.after-carousel .heading-massive span').length; i++) {
-						document.querySelectorAll('.after-carousel .heading-massive span').forEach((element, i) => {
-							setTimeout(function () {
-								element.style.display = "inline-block" ?? "";
-							}, i * elementDelay);
-						});
-					}
-				}, 200);
+			triggerStaggerAnim(afterCarousel,{delay: 100, display:"inline-block"})
+			// triggerTextAnim(afterCarousel, {delay: 100, useInlineBlock: true})
+			// var elementDelay = 100;
+			// 	setTimeout(function () {
+			// 		for (let i = 0; i < document.querySelectorAll('.after-carousel .heading-massive span').length; i++) {
+			// 			document.querySelectorAll('.after-carousel .heading-massive span').forEach((element, i) => {
+			// 				setTimeout(function () {
+			// 					element.style.display = "inline-block" ?? "";
+			// 				}, i * elementDelay);
+			// 			});
+			// 		}
+			// 	}, 200);
 		}
-	}, {
-			passive: true
-	});
 
 
 
-	const softwareEnter = document.querySelector('#software-enter');
+		const softwareEnter = document.querySelector('#software-enter');
+		const brandsEnter = document.querySelector('#brands-enter');
 
-	const brandsEnter = document.querySelector('#brands-enter');
-
-	if ($(window).width() > 767) {
-		document.addEventListener('scroll', function () {
+		if ($(window).width() > 767) {
 			if (isInViewport(softwareEnter) === true) {
 				var elementDelay = 250;
 				for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
@@ -118,11 +139,7 @@ router.useScript(()=>{
 					});
 				}
 			}
-		}, {
-				passive: true
-		});
-		
-		document.addEventListener('scroll', function () {
+			
 			if (isInViewport(brandsEnter) === true) {
 				var elementDelay = 250;
 				for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
@@ -140,11 +157,7 @@ router.useScript(()=>{
 					});
 				}
 			}
-		}, {
-				passive: true
-		});
-	} else {
-		document.addEventListener('scroll', function () {
+		} else {
 			if (isInViewport(softwareEnter) === true) {
 				var elementDelay = 250;
 				for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
@@ -155,11 +168,6 @@ router.useScript(()=>{
 					});
 				}
 			}
-		}, {
-				passive: true
-		});
-		
-		document.addEventListener('scroll', function () {
 			if (isInViewport(brandsEnter) === true) {
 				var elementDelay = 250;
 				for (let i = 0; i < document.querySelectorAll('.brands-sequence').length; i++) {
@@ -170,54 +178,21 @@ router.useScript(()=>{
 					});
 				}
 			}
-		}, {
-				passive: true
-		});
-	};
+		};
 
-	const workWithUsEnter = document.querySelector('#work-with-us-enter');
-
-	document.addEventListener('scroll', function () {
+		const workWithUsEnter = document.querySelector('#work-with-us-enter');
 		if (isInViewport(workWithUsEnter) === true) {
-			startPoppingTextAnim(workWithUsEnter, {useInlineBlock:true});
-			// var elementDelay = 250;
-			// for (let i = 0; i < document.querySelectorAll('.work-with-us .heading-massive span').length; i++) {
-			// 	document.querySelectorAll('.work-with-us .heading-massive span').forEach((element, i) => {
-			// 		setTimeout(function () {
-			// 			element.style.display = "inline-block" ?? "";
-			// 		}, i * elementDelay);
-			// 	});
-			// }
+			triggerStaggerAnim(afterCarousel,{delay: 100, display:"inline-block"})
+			// triggerTextAnim(workWithUsEnter, {useInlineBlock:true});
 		}
-	}, {
-			passive: true
-	});
+	}
+
+	document.addEventListener('scroll', handlePageScroll);
 
 	return ()=>{
 		console.log("leaving about");
 		cleanupLogoMinimizeOnScroll();
+		document.removeEventListener("scroll", handlePageScroll);
 	}
 })
 
-function breakIntoSpan(baseElm) {
-	const content = baseElm.innerHTML;
-	const words = content.split(" ");
-	const wordSpans = words.map((word)=>{
-		const spanElm = document.createElement("span");
-		span.innerHTML = word;
-		return spanElm;
-	})
-
-	return wordSpans;
-}
-
-function startPoppingTextAnim(baseElm, {delay=250, useInlineBlock = false}) {
-	const wordElms = baseElm.children;
-
-	for (let i = 0; i<wordElms.length; i++) {
-		const elm = wordElms[i];
-		setTimeout(()=> {
-			elm.style.display = useInlineBlock ? "inline-block":"block";
-		}, i * delay);
-	}
-}
