@@ -1,5 +1,3 @@
-console.log("loaded about js")
-
 router.useScript(()=>{
 	console.log("enter about");
 
