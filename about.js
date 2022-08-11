@@ -9,16 +9,11 @@ function breakIntoSpan(baseElm) {
 	return wordSpans;
 }
 
-function triggerStaggerAnim(containerElm, {delay=250, ...CSSProps}) {
-	const wordElms = containerElm.children;
-	const presetStateStyle = CSSProps || {display:"block"}
-
+function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.display = "block"}}) {
 	for (let i = 0; i<wordElms.length; i++) {
 		const elm = wordElms[i];
 		setTimeout(()=> {
-			Object.keys(presetStateStyle).forEach((CSSPropKey)=>{
-				elm.style[CSSPropKey] = presetStateStyle[CSSPropKey];
-			})
+			styler(elm.style);
 		}, i * delay);
 	}
 }
@@ -102,7 +97,12 @@ router.useScript(()=>{
 	const handlePageScroll = ()=> {
 		
 		if (isInViewport(afterCarousel) === true) {
-			triggerStaggerAnim(afterCarousel,{delay: 100, display:"inline-block"})
+			triggerStaggerAnim(afterCarousel.children, {
+				delay: 100, 
+				styler: (style)=>{
+					style.display = "inline-block"
+				}
+			})
 			// triggerTextAnim(afterCarousel, {delay: 100, useInlineBlock: true})
 			// var elementDelay = 100;
 			// 	setTimeout(function () {
@@ -182,7 +182,13 @@ router.useScript(()=>{
 
 		const workWithUsEnter = document.querySelector('#work-with-us-enter');
 		if (isInViewport(workWithUsEnter) === true) {
-			triggerStaggerAnim(afterCarousel,{delay: 100, display:"inline-block"})
+			triggerStaggerAnim(workWithUsEnter.children, {
+				delay: 100, 
+				styler: (style)=>{
+					style.display = "inline-block"
+				}
+			})
+			// triggerStaggerAnim(afterCarousel,{delay: 100, display:"inline-block"})
 			// triggerTextAnim(workWithUsEnter, {useInlineBlock:true});
 		}
 	}
