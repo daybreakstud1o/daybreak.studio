@@ -1,6 +1,11 @@
 // $(document).ready(function(){
 console.log("contact file is running");
 router.useScript(() => {
+
+  document.querySelectorAll(".contact-heading span").forEach((elm)=>{
+    elm.style.display = "none";
+  })
+
   console.log("contact script is running");
   var elementDelay = 75;
   for (
