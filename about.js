@@ -19,16 +19,25 @@ router.useScript(()=>{
 	// });
 
 	function setupLogoMinimizeOnScroll() {
+
+		function minimizeLogo() {
+			document.querySelector('.nav-logo').style.width = '131px';
+		}
+		function maximizeLogo() {
+			document.querySelector('.nav-logo').style.width = '55vw';
+		}
+
 		const handleScroll =()=>{
 			const scroll = window.scrollY;
 			if (scroll >= 100) {
-					document.querySelector('.nav-logo').style.width = '131px';
+					minimizeLogo()
 			} else if (scroll < 100) {
-					document.querySelector('.nav-logo').style.width = '55vw';
+					maximizeLogo()
 			}
 		}
 		window.addEventListener("scroll", handleScroll);
 		return ()=>{
+			minimizeLogo();
 			window.removeEventListener("scroll", handleScroll);
 		}
 	}
