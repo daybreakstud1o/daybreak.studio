@@ -22,7 +22,7 @@ router.useScript(() => {
 	window.torontotime = torontotime;
 	window.SFtime = SFtime;
 
-	console.log(document.querySelectorAll('.toronto-time').length);
+	// console.log(document.querySelectorAll('.toronto-time').length);
 
 	weatherUpdate = (city, slang) => {
 		const xhr = new XMLHttpRequest();
@@ -48,7 +48,7 @@ router.useScript(() => {
 					document.querySelectorAll('.city-' + slang + ' .mist')[i].style.display = 'block';
 				}
 			}
-			console.log(data.name + ", " + `${Math.round(data.main.temp - 273.15)}°C` + ", " + data.weather[0].main + ", " + data.weather[0].description)
+			// console.log(data.name + ", " + `${Math.round(data.main.temp - 273.15)}°C` + ", " + data.weather[0].main + ", " + data.weather[0].description)
 		};
 	};
 
