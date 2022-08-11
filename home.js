@@ -45,6 +45,8 @@ function setupCaseStudyTransition(number) {
 
 
 router.useScript(()=>{
+	console.log("enter home");
+
 	// choose number
 	const number = Math.floor(Math.random()*document.querySelectorAll('.landing-main').length);
 	const cleanupPageTransitionListner = setupCaseStudyTransition(number);
@@ -298,7 +300,7 @@ router.useScript(()=>{
 
 	// cleanup function
 	return ()=>{ 
-		console.log("exiting home page");
+		console.log("leaving home");
 		cleanupInfiniteScrollListener()
 		cleanupPageTransitionListner();
 	}

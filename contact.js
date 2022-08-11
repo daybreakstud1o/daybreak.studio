@@ -1,7 +1,6 @@
 // $(document).ready(function(){
-console.log("contact file is running");
 router.useScript(() => {
-  console.log("contact script is running");
+  console.log("enter contact");
   var elementDelay = 75;
   for (
     let i = 0;
@@ -13,6 +12,9 @@ router.useScript(() => {
         element.style.display = "inline-block";
       }, i * elementDelay);
     });
+  }
+  return ()=>{
+    console.log("leaving contact")
   }
 });
 // });

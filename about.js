@@ -1,6 +1,7 @@
 console.log("loaded about js")
 
 router.useScript(()=>{
+	console.log("enter about");
 
 	// $(document).ready(function(){
 		document.querySelector('.nav-logo').style.width = '55vw';
@@ -195,6 +196,7 @@ router.useScript(()=>{
 	});
 
 	return ()=>{
+		console.log("leaving about");
 		cleanupLogoMinimizeOnScroll();
 	}
 })
