@@ -181,6 +181,7 @@ router.useScript(()=>{
 	});
 
 	return ()=>{
+		console.log("clean up about")
 		cleanupLogoMinimizeOnScroll();
 	}
 })
