@@ -19,6 +19,7 @@ router.useScript(()=>{
 	// });
 
 	function setupLogoMinimizeOnScroll() {
+		console.log("setup logo resize")
 
 		function minimizeLogo() {
 			console.log("min logo")
@@ -30,6 +31,7 @@ router.useScript(()=>{
 		}
 
 		const handleScroll =()=>{
+			console.log("scrolling")
 			const scroll = window.scrollY;
 			if (scroll >= 100) {
 					minimizeLogo()
