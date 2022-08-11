@@ -1,3 +1,5 @@
+console.log("loaded about js")
+
 router.useScript(()=>{
 
 	// $(document).ready(function(){
@@ -22,11 +24,9 @@ router.useScript(()=>{
 		console.log("setup logo resize")
 
 		function minimizeLogo() {
-			console.log("min logo")
 			document.querySelector('.nav-logo').style.width = '131px';
 		}
 		function maximizeLogo() {
-			console.log("max logo")
 			document.querySelector('.nav-logo').style.width = '55vw';
 		}
 
@@ -195,7 +195,6 @@ router.useScript(()=>{
 	});
 
 	return ()=>{
-		console.log("clean up about")
 		cleanupLogoMinimizeOnScroll();
 	}
 })
