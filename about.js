@@ -30,7 +30,9 @@ router.useScript(()=>{
 					}
 			});
 	// });
-
+		
+	// TODO: create transition
+	/* 
 	$('#home-link, #contact-link').click(function(e) {
 		e.preventDefault();
 		var linkUrl = $(this).attr('href');
@@ -43,7 +45,7 @@ router.useScript(()=>{
 		document.querySelector('.nav-left .cities-info').style.display = 'block';
 		document.querySelector('.nav-left .daybreak-info').style.opacity = '1';
 		document.querySelector('.nav-left .cities-info').style.opacity = '1';
-	});
+	});*/
 
 	function isInViewport(el) {
 			const rect = el.getBoundingClientRect();
@@ -176,3 +178,29 @@ router.useScript(()=>{
 	});
 
 })
+
+function breakIntoSpan(baseElm) {
+	const content = baseElm.innerHTML;
+	const words = content.split(" ");
+	const wordSpans = words.map((word)=>{
+		const spanElm = document.createElement("span");
+		span.innerHTML = word;
+		return spanElm;
+	})
+
+	return wordSpans;
+}
+
+function createPoppingTextEffect(baseElm, elmDelay=250) {
+	const wordElms = baseElm.children;
+	for (let i = 0; i < wordElms.length; i++) {
+		wordElms.forEach((element, i) => {
+			setTimeout(()=> {
+				element.style.display = "inline-block";
+			}, i * elementDelay);
+		});
+	}
+	return ()=>{
+		// cancel
+	}
+}
