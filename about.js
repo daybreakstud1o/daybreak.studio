@@ -25,6 +25,7 @@ router.useScript(()=>{
 		document.querySelector('.nav-logo').style.width = '55vw';
 		document.querySelector('.nav-left .daybreak-info').style.opacity = '0';
 		document.querySelector('.nav-left .cities-info').style.opacity = '0';
+		
 		setTimeout(function() {
 			document.querySelector('.nav-left .daybreak-info').style.display = 'none';
 			document.querySelector('.nav-left .cities-info').style.display = 'none';
@@ -37,8 +38,16 @@ router.useScript(()=>{
 				});
 			}
 		}, 200);
+
+		return ()=>{
+			document.querySelector('.nav-left .daybreak-info').style.display = 'block';
+			document.querySelector('.nav-left .cities-info').style.display = 'block';
+			document.querySelector('.nav-left .daybreak-info').style.opacity = '1';
+			document.querySelector('.nav-left .cities-info').style.opacity = '1';
+			document.querySelector('.nav-logo').style.width = '131px';
+		}
 	}
-	animateInHero();
+	const resetHero = animateInHero();
 
 	function setupLogoMinimizeOnScroll() {
 		function minimizeLogo() {
@@ -191,6 +200,7 @@ router.useScript(()=>{
 	return ()=>{
 		console.log("leaving about");
 		cleanupLogoMinimizeOnScroll();
+		resetHero();
 		document.removeEventListener("scroll", handlePageScroll, {passive: true});
 	}
 })
