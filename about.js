@@ -40,11 +40,12 @@ router.useScript(()=>{
 		}, 200);
 
 		return ()=>{
-			document.querySelector('.nav-left .daybreak-info').style.display = 'block';
-			document.querySelector('.nav-left .cities-info').style.display = 'block';
+			document.querySelector('.nav-left .daybreak-info').style.display = 'inline-block';
+			document.querySelector('.nav-left .cities-info').style.display = 'inline-block';
 			document.querySelector('.nav-left .daybreak-info').style.opacity = '1';
 			document.querySelector('.nav-left .cities-info').style.opacity = '1';
 			document.querySelector('.nav-logo').style.width = '131px';
+
 		}
 	}
 	const resetHero = animateInHero();
