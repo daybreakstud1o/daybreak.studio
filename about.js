@@ -45,9 +45,10 @@ router.useScript(()=>{
 
 				document.querySelector('.nav-left .daybreak-info').style.display = 'block';
 				document.querySelector('.nav-left .cities-info').style.display = 'block';
-				document.querySelector('.nav-left .daybreak-info').style.transitionDelay = '.2s';
-				document.querySelector('.nav-left .cities-info').style.transitionDelay = '.2s';
+				document.querySelector('.nav-left .daybreak-info').style.transitionDelay = '.4s';
+				document.querySelector('.nav-left .cities-info').style.transitionDelay = '.4s';
 
+				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 					document.querySelector('.nav-left .daybreak-info').style.opacity = '1';
 					document.querySelector('.nav-left .cities-info').style.opacity = '1';
