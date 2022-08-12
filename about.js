@@ -24,7 +24,9 @@ router.useScript(()=>{
 	function animateInHero() {
 		document.querySelector('.nav-logo').style.width = '55vw';
 		document.querySelector('.nav-left .daybreak-info').style.opacity = '0';
+		document.querySelector('.nav-left .daybreak-info').style.transitionDelay = "0s";
 		document.querySelector('.nav-left .cities-info').style.opacity = '0';
+		document.querySelector('.nav-left .cities-info').style.transitionDelay = "0s";
 		
 		setTimeout(function() {
 			document.querySelector('.nav-left .daybreak-info').style.display = 'none';
@@ -43,7 +45,9 @@ router.useScript(()=>{
 			document.querySelector('.nav-left .daybreak-info').style.display = 'inline-block';
 			document.querySelector('.nav-left .cities-info').style.display = 'inline-block';
 			document.querySelector('.nav-left .daybreak-info').style.opacity = '1';
+			document.querySelector('.nav-left .daybreak-info').style.transitionDelay = '.2s';
 			document.querySelector('.nav-left .cities-info').style.opacity = '1';
+			document.querySelector('.nav-left .cities-info').style.transitionDelay = '.2s';
 			document.querySelector('.nav-logo').style.width = '131px';
 
 		}
