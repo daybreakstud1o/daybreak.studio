@@ -261,7 +261,7 @@ function enableStickyPosition(element) {
 
 	const stickyObserver = createIntersectionObserver({
 		rootMargin: `${elementTop}px 0px 0px 0px`,
-		threshold: [0.0, 0.5, 1.0]
+		threshold: [0.0, 1.0]
 	});
 	
 	stickyObserver.onIntersectionChange(element, (entry)=>{
