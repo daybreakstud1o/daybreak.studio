@@ -278,6 +278,7 @@ function enableStickyPosition(element) {
 			console.log("scroll prgoress before sticking point");
 			// reset when before the sticking point
 			element.style.transform = `translateY(0px)`;
+			return;
 		} 
 		
 		element.style.transform = `translateY(${stickyOffsetValue}px)`;
