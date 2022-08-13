@@ -266,9 +266,18 @@ function enableStickyPosition(element) {
 	
 	stickyObserver.onIntersectionChange(element, (entry)=>{
 		console.log(entry)
-		if(entry.isIntersecting) {
+		const handleScroll = (scrollProgress)=>{
+			const elmYPos = scrollProgress - element.getBoundingClientRect().top;
+			element.style.transform = `translateY(${elmYPos})`;
+		}
+		
+		if(entry.intersectionRatio === 1) {
 			const parentBounds = element.parentElement.getBoundingClientRect();
 			// console.log(parentBounds);
+			
+			// "pickup" that element
+			// create observer
+			daybreakScroll.observeScroll(handleScroll);
 		}
 		// hanlde hwne intersecting
 	})
