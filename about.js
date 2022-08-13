@@ -242,6 +242,7 @@ router.useScript(()=>{
 		const stickyElm = document.querySelectorAll(".sticky");
 
 		const cleanups = stickyElm.map((elm)=>{
+			console.log("stikcy")
 			return enableStickyPosition(elm);
 		})
 		
