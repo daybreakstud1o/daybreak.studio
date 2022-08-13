@@ -277,19 +277,47 @@ function createIntersectionObserver() {
 	};
 	let observer = new IntersectionObserver(handleIntersectionChange, options);
 
+
+	let abortCallbacks = []
 	function observeElementEntry(element, callback) {
-		element.setAttribute("intersection-observer-id", observingCount);
-		observingElementsCallback[observingCount] = callback;
-		observer.observe(element);
-		observingCount++;
+		const abort = onFullyLoaded(()=> {
+			element.setAttribute("intersection-observer-id", observingCount);
+			observingElementsCallback[observingCount] = callback;
+			observer.observe(element);
+			observingCount++;
+		})
+		abortCallbacks.push(abort);
 	}
 
 	function cleanupIntersectionObserver() {
 		observer.disconnect();
+		abortCallbacks.forEach((abort)=>abort());
 	}
 
 	return {
 		observeElementEntry,
 		cleanupIntersectionObserver
 	}
+}
+
+function onFullyLoaded(callback) {
+	let aborted = false;
+	const abort = ()=> {
+		aborted = true;
+	};
+	const invoke = ()=> {
+		callback();
+	}
+	
+	if (document.readyState !== "complete") {
+		window.addEventListener("load", () => {
+			if(!aborted) 
+				invoke()
+		});
+	} else {
+		//invoke right if body is loaded
+		invoke();
+	}
+
+	return abort;
 }
