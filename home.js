@@ -134,8 +134,8 @@ router.useScript(()=>{
 			document.querySelectorAll('.layout-' + number + ' .desktop .project')[i].setAttribute("id", i);
 			document.querySelectorAll('.layout-' + number + ' .desktop .project')[i].onclick = function () {
 				setTimeout(() => {
-					location.href = combinedshuffle[i].slice(0, -2);
-					// router.navigateTo(combinedshuffle[i].slice(0, -2));
+					// location.href = combinedshuffle[i].slice(0, -2);
+					router.navigateTo(combinedshuffle[i].slice(0, -2));
 				}, "1800")
 			};	
 
