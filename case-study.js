@@ -10,13 +10,6 @@ router.useScript(()=>{
   })
   
 
-  // when turning elements on, it might affact the scroll height
-  const setStyle = (elm, style)=> {
-    Object.keys(style).forEach((styleKey)=>{
-      elm.style[styleKey] = style[styleKey];
-    })
-    daybreakScroll.recalculatePageHeight();
-  }
 
   if ($(window).width() > 992) {
       for (let i = 0; i < document.querySelectorAll('.case-top-bar-content > div').length; i++) {
@@ -30,8 +23,8 @@ router.useScript(()=>{
         for (let i = 0; i < document.querySelectorAll('.heading-1 span').length; i++) {
           document.querySelectorAll('.heading-1 span').forEach((element, i) => {
             setTimeout(function () {
-              // element.style.display = "inline-block" ?? "";
-              setStyle(element,{opacity: "inline-block"})
+              element.style.display = "inline-block" ?? "";
+              daybreakScroll.recalculatePageHeight();
             }, i * elementDelay);
           });
         }
@@ -88,8 +81,8 @@ router.useScript(()=>{
         for (let i = 0; i < document.querySelectorAll('.intro-desc-2 span').length; i++) {
           document.querySelectorAll('.intro-desc-2 span').forEach((element, i) => {
             setTimeout(function () {
-              // element.style.display = "inline-block" ?? "";
-              setStyle(element, {display:"inline-block"})
+              element.style.display = "inline-block" ?? "";
+              daybreakScroll.recalculatePageHeight();
             }, i * elementDelay);
           });
         }
