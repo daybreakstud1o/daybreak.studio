@@ -269,8 +269,8 @@ function enableStickyPosition(element) {
 		
 		const handleScroll = (scrollProgress)=>{
 			console.log("scrolling")
-			const elmYPos = element.parentElement.getBoundingClientRect().top;
-			element.style.transform = `translateY(${-elmYPos}px)`;
+			const parentOffset = element.parentElement.getBoundingClientRect().top;
+			element.style.transform = `translateY(${-parentOffset +elementTop}px)`;
 		}
 		
 		if(entry.intersectionRatio === 1) {
