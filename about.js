@@ -277,6 +277,7 @@ function enableStickyPosition(element) {
 			
 			// "pickup" that element
 			// create observer
+			console.log("observing scroll")
 			daybreakScroll.observeScroll(handleScroll);
 		}
 		// hanlde hwne intersecting
