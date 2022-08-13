@@ -192,7 +192,7 @@ router.useScript(()=>{
 
 	const {cleanupIntersectionObserver, observeElementEntry} = createIntersectionObserver();
 	observeElementEntry(afterCarousel, (entry)=>{
-		// console.log(entry);
+		console.log(entry);
 		classOfTheirOwnEnter();
 	})
 
