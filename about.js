@@ -280,6 +280,7 @@ function enableStickyPosition(element) {
 		} 
 
 		console.log("after sticking point")
+		daybreakScroll.unobserveScroll(handleScroll);
 
 		// reset when before the sticking point
 		element.style.transform = `translateY(0px)`;
