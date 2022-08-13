@@ -282,7 +282,8 @@ function enableStickyPosition(element) {
 			console.log("observing scroll")
 			daybreakScroll.observeScroll(handleScroll);
 		}
-		daybreakScroll.unobserveScroll(handleScroll);
+		// daybreakScroll.unobserveScroll(handleScroll);
+		
 		// hanlde hwne intersecting
 	})
 
