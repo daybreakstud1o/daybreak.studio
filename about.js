@@ -279,8 +279,7 @@ function enableStickyPosition(element) {
 			return;
 		} 
 
-		console.log("after sticking point")
-		daybreakScroll.unobserveScroll(handleScroll);
+		console.log("after sticking point");
 
 		// reset when before the sticking point
 		element.style.transform = `translateY(0px)`;
@@ -297,6 +296,10 @@ function enableStickyPosition(element) {
 			// create observer
 			console.log("observing scroll")
 			daybreakScroll.observeScroll(handleScroll);
+		}
+
+		if(entry.intersectionRatio === 0) {
+			daybreakScroll.unobserveScroll(handleScroll);
 		}
 		// daybreakScroll.unobserveScroll(handleScroll);
 
