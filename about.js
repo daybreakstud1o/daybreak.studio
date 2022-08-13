@@ -260,6 +260,8 @@ router.useScript(()=>{
 
 function enableStickyPosition(element) {
 
+	console.log("debug")
+
 	const computedElmStyle = element.computedStyleMap();
 
 	const stickyTop = parseInt(computedElmStyle.get("top"));
@@ -298,7 +300,6 @@ function enableStickyPosition(element) {
 
 	stickyObserver.onIntersectionChange(element, (entry)=>{
 
-		console.log("debug")
 		if(entry.intersectionRatio === 1) {
 			daybreakScroll.observeScroll(handleScroll);
 		}
