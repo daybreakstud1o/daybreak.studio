@@ -254,7 +254,7 @@ function enableStickyPosition(element) {
 
 	const computedElmStyle = element.computedStyleMap();
 
-	const elementTop = parseInt(computedElmStyle.get("top"));
+	const stickyTop = parseInt(computedElmStyle.get("top"));
 	const elementHeight = parseInt(computedElmStyle.get("height"));
 
 	console.log(elementTop);
@@ -266,9 +266,12 @@ function enableStickyPosition(element) {
 
 	// start calculating scroll when the element on screen
 	const handleScroll = (scrollProgress)=>{
-		console.log("scrolling")
 		const parentOffset = element.parentElement.getBoundingClientRect().top;
-		element.style.transform = `translateY(${-parentOffset +elementTop}px)`;
+
+		if(parentOffset - stickyTop > scrollProgress) {
+			element.style.transform = `translateY(${-parentOffset + stickyTop}px)`;
+		}
+
 	}
 
 	stickyObserver.onIntersectionChange(element, (entry)=>{
