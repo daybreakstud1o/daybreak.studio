@@ -251,8 +251,13 @@ router.useScript(()=>{
 })
 
 function enableStickyPosition(element) {
-	const elementTop = parseInt(element.style.top);
-	const elementHeight = parseInt(element.style.height);
+
+	const computedElmStyle = element.computedStyleMap();
+
+	const elementTop = parseInt(computedElmStyle.get("top"));
+	const elementHeight = parseInt(computedElmStyle.get("height"));
+
+	console.log(elementTop);
 
 	const stickyObserver = createIntersectionObserver({
 		rootMargin: `${elementTop}px 0px 0px 0px`,
