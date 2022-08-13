@@ -279,7 +279,6 @@ function enableStickyPosition(element) {
 
 		// before the sticky area
 		if(stickyOffsetValue < 0) {
-			console.log("scroll prgoress before sticking point");
 			// reset when before the sticking point
 			element.style.transform = `translateY(0px)`;
 			return;
@@ -299,12 +298,10 @@ function enableStickyPosition(element) {
 
 	stickyObserver.onIntersectionChange(element, (entry)=>{
 		if(entry.intersectionRatio === 1) {
-			console.log("observing scroll")
 			daybreakScroll.observeScroll(handleScroll);
 		}
 
 		if(entry.intersectionRatio === 0) {
-			console.log("unobserving scroll")
 			daybreakScroll.unobserveScroll(handleScroll);
 		}
 	})
