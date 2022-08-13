@@ -173,9 +173,11 @@ router.useScript(()=>{
     }
   }
 
-  document.addEventListener('scroll', handlePageScroll, {
-      passive: true
-  });
+
+  daybreakScroll.observeScroll(handlePageScroll);  
+  // document.addEventListener('scroll', handlePageScroll, {
+  //     passive: true
+  // });
 
   $( ".close-casestudy" ).mouseover(function() {
     document.querySelector(".back-icon").style.visibility = "visible";
@@ -186,8 +188,9 @@ router.useScript(()=>{
   });
 
   return ()=>{
-    document.removeEventListener('scroll', handlePageScroll, {
-      passive: true
-    });
+    daybreakScroll.unobserveScroll(handlePageScroll);
+    // document.removeEventListener('scroll', handlePageScroll, {
+    //   passive: true
+    // });
   }
 })
