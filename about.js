@@ -263,17 +263,18 @@ function enableStickyPosition(element) {
 		rootMargin: `0px 0px 0px 0px`,
 		threshold: [0.0, 1.0]
 	});
-	
+
+	// start calculating scroll when the element on screen
+	const handleScroll = (scrollProgress)=>{
+		console.log("scrolling")
+		const parentOffset = element.parentElement.getBoundingClientRect().top;
+		element.style.transform = `translateY(${-parentOffset +elementTop}px)`;
+	}
+
 	stickyObserver.onIntersectionChange(element, (entry)=>{
-		console.log(entry)
+		console.log(entry);
 		
-		const handleScroll = (scrollProgress)=>{
-			console.log("scrolling")
-			const parentOffset = element.parentElement.getBoundingClientRect().top;
-			element.style.transform = `translateY(${-parentOffset +elementTop}px)`;
-		}
-		
-		if(entry.intersectionRatio === 1) {
+		if(entry.intersectionRatio > 0) {
 			// console.log(parentBounds);
 			
 			// "pickup" that element
@@ -281,6 +282,7 @@ function enableStickyPosition(element) {
 			console.log("observing scroll")
 			daybreakScroll.observeScroll(handleScroll);
 		}
+		daybreakScroll.unobserveScroll(handleScroll);
 		// daybreakScroll.unobserveScroll(handleScroll);
 
 		// hanlde hwne intersecting
