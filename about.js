@@ -274,7 +274,7 @@ function enableStickyPosition(element) {
 	stickyObserver.onIntersectionChange(element, (entry)=>{
 		console.log(entry);
 		
-		if(entry.intersectionRatio > 0) {
+		if(entry.intersectionRatio > 1) {
 			// console.log(parentBounds);
 			
 			// "pickup" that element
