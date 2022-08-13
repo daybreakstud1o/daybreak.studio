@@ -178,11 +178,11 @@ router.useScript(()=>{
   });
 
   $( ".close-casestudy" ).mouseover(function() {
-    document.querySelector(".back-icon").style.display = "block";
+    document.querySelector(".back-icon").style.visibility = "visible";
   });
 
   $( ".close-casestudy" ).mouseout(function() {
-    document.querySelector(".back-icon").style.display = "none";
+    document.querySelector(".back-icon").style.visibility = "hidden";
   });
 
   return ()=>{
