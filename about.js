@@ -260,7 +260,7 @@ function enableStickyPosition(element) {
 	console.log(elementTop);
 
 	const stickyObserver = createIntersectionObserver({
-		rootMargin: `${elementTop}px 0px 0px 0px`,
+		rootMargin: `0px 0px 0px 0px`,
 		threshold: [0.0, 1.0]
 	});
 	
