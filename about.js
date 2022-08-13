@@ -260,8 +260,6 @@ function enableStickyPosition(element) {
 	const stickyTop = parseInt(computedElmStyle.get("top"));
 	const elementHeight = parseInt(computedElmStyle.get("height"));
 
-	console.log(stickyTop);
-
 	const stickyObserver = createIntersectionObserver({
 		rootMargin: `0px 0px 0px 0px`,
 		threshold: [0.0, 1.0]
@@ -281,11 +279,14 @@ function enableStickyPosition(element) {
 			return;
 		} 
 		
-		element.style.transform = `translateY(${stickyOffsetValue}px)`;
-
 		const stickyBottomPosition = stickyOffsetValue + elementHeight;
 
-		
+		if(stickyBottomPosition > parentOffsetBound.height) {
+			console.log("over")
+			return;
+		}
+	
+		element.style.transform = `translateY(${stickyOffsetValue}px)`;
 	}
 
 	stickyObserver.onIntersectionChange(element, (entry)=>{
