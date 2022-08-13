@@ -260,20 +260,20 @@ function enableStickyPosition(element) {
 	console.log(elementTop);
 
 	const stickyObserver = createIntersectionObserver({
-		rootMargin: `${elementTop}px 0px 0px 0px`,
+		rootMargin: `0px 0px 0px 0px`,
 		threshold: [0.0, 1.0]
 	});
 	
 	stickyObserver.onIntersectionChange(element, (entry)=>{
 		console.log(entry)
+		
 		const handleScroll = (scrollProgress)=>{
 			console.log("scrolling")
-			const elmYPos = scrollProgress - element.getBoundingClientRect().top;
-			element.style.transform = `translateY(${elmYPos}px)`;
+			const elmYPos = element.parentElement.getBoundingClientRect().top;
+			element.style.transform = `translateY(${-elmYPos}px)`;
 		}
 		
 		if(entry.intersectionRatio === 1) {
-			const parentBounds = element.parentElement.getBoundingClientRect();
 			// console.log(parentBounds);
 			
 			// "pickup" that element
@@ -281,6 +281,7 @@ function enableStickyPosition(element) {
 			console.log("observing scroll")
 			daybreakScroll.observeScroll(handleScroll);
 		}
+		daybreakScroll.unobserveScroll(handleScroll);
 		// hanlde hwne intersecting
 	})
 
