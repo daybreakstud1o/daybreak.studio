@@ -68,7 +68,6 @@ router.useScript(()=>{
 		}
 
 		const handleScroll =(scroll)=>{
-			console.log(scroll)
 			// const scroll = window.scrollY;
 			if (scroll >= 100) {
 					minimizeLogo()
@@ -261,7 +260,7 @@ function enableStickyPosition(element) {
 	console.log(elementTop);
 
 	const stickyObserver = createIntersectionObserver({
-		rootMargin: `0px 0px 0px 0px`,
+		rootMargin: `${elementTop}px 0px 0px 0px`,
 		threshold: [0.0, 1.0]
 	});
 	
@@ -283,7 +282,7 @@ function enableStickyPosition(element) {
 			daybreakScroll.observeScroll(handleScroll);
 		}
 		// daybreakScroll.unobserveScroll(handleScroll);
-		
+
 		// hanlde hwne intersecting
 	})
 
