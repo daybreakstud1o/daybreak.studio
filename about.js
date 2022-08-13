@@ -268,16 +268,18 @@ function enableStickyPosition(element) {
 	const handleScroll = (scrollProgress)=>{
 		const parentOffset = element.parentElement.getBoundingClientRect().top;
 
+		const stickyOffsetValue = -parentOffset + stickyTop;
+
 		// if over the sticking point
-		if(scrollProgress - stickyTop > parentOffset) {
-			element.style.transform = `translateY(${-parentOffset + stickyTop}px)`;
+		if(stickyOffsetValue > 0) {
+			element.style.transform = `translateY(${stickyOffset}px)`;
 			return;
 		} 
 
 		console.log("after sticking point")
 
 		// reset when before the sticking point
-		// element.style.transform = `translateY(0px)`;
+		element.style.transform = `translateY(0px)`;
 		
 
 	}
