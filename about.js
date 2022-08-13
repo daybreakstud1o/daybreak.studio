@@ -102,12 +102,12 @@ router.useScript(()=>{
 		document.querySelector('.nav-left .cities-info').style.opacity = '1';
 	});*/
 
-	function isInViewport(el) {
+	function isInViewport(el, scroll) {
 			const rect = el.getBoundingClientRect();
 			return (
-					rect.top >= 0 &&
+					rect.top - scroll >= 0 &&
 					rect.left >= 0 &&
-					rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+					rect.bottom - scroll <= (window.innerHeight || document.documentElement.clientHeight) &&
 					rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 			);
 	}
@@ -116,9 +116,9 @@ router.useScript(()=>{
 	const afterCarousel = document.querySelector('#after-carousel');
 
 	
-	const handlePageScroll = ()=> {
+	const handlePageScroll = (scroll)=> {
 		
-		if (isInViewport(afterCarousel) === true) {
+		if (isInViewport(afterCarousel, scroll) === true) {
 			var elementDelay = 100;
 				setTimeout(function () {
 					for (let i = 0; i < document.querySelectorAll('.after-carousel .heading-massive span').length; i++) {
@@ -137,7 +137,7 @@ router.useScript(()=>{
 		const brandsEnter = document.querySelector('#brands-enter');
 
 		if ($(window).width() > 767) {
-			if (isInViewport(softwareEnter) === true) {
+			if (isInViewport(softwareEnter, scroll) === true) {
 				var elementDelay = 250;
 				for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
 					document.querySelectorAll('.software-sequence').forEach((element, i) => {
@@ -155,7 +155,7 @@ router.useScript(()=>{
 				}
 			}
 			
-			if (isInViewport(brandsEnter) === true) {
+			if (isInViewport(brandsEnter, scroll) === true) {
 				var elementDelay = 250;
 				for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
 					document.querySelectorAll('.software-sequence').forEach((element, i) => {
@@ -173,7 +173,7 @@ router.useScript(()=>{
 				}
 			}
 		} else {
-			if (isInViewport(softwareEnter) === true) {
+			if (isInViewport(softwareEnter, scroll) === true) {
 				var elementDelay = 250;
 				for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
 					document.querySelectorAll('.software-sequence').forEach((element, i) => {
@@ -183,7 +183,7 @@ router.useScript(()=>{
 					});
 				}
 			}
-			if (isInViewport(brandsEnter) === true) {
+			if (isInViewport(brandsEnter, scroll) === true) {
 				var elementDelay = 250;
 				for (let i = 0; i < document.querySelectorAll('.brands-sequence').length; i++) {
 					document.querySelectorAll('.brands-sequence').forEach((element, i) => {
@@ -196,7 +196,7 @@ router.useScript(()=>{
 		};
 
 		const workWithUsEnter = document.querySelector('#work-with-us-enter');
-		if (isInViewport(workWithUsEnter) === true) {
+		if (isInViewport(workWithUsEnter, scroll) === true) {
 			triggerStaggerAnim(workWithUsEnter.children, {
 				delay: 100, 
 				styler: (style)=>{
@@ -208,13 +208,16 @@ router.useScript(()=>{
 		}
 	}
 
-	document.addEventListener('scroll', handlePageScroll, {passive: true});
+	// document.addEventListener('scroll', handlePageScroll, {passive: true});
 
+	window.daybreakScroll.observeScroll(handlePageScroll);
+	
 	return ()=>{
 		console.log("leaving about");
 		cleanupLogoMinimizeOnScroll();
 		resetHero();
-		document.removeEventListener("scroll", handlePageScroll, {passive: true});
+		// document.removeEventListener("scroll", handlePageScroll, {passive: true});
+		window.daybreakScroll.unobserveScroll(handlePageScroll);
 	}
 })
 
