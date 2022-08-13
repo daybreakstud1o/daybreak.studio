@@ -219,8 +219,8 @@ router.useScript(()=>{
 				delay: 100, 
 				styler: (style)=>{
 					// style.display = "inline-block"
-					element.style.visibility = "visible";
-					element.style.width = "auto";
+					style.visibility = "visible";
+					style.width = "auto";
 				}
 			})
 	})
