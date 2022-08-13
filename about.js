@@ -265,13 +265,11 @@ function enableStickyPosition(element) {
 	});
 	
 	stickyObserver.onIntersectionChange(element, (entry)=>{
+		console.log(entry)
 		if(entry.isIntersecting) {
-			console.log("element enter")
-			console.log(entry)
 			const parentBounds = element.parentElement.getBoundingClientRect();
-			console.log(parentBounds);
+			// console.log(parentBounds);
 		}
-		console.log("element exit")
 		// hanlde hwne intersecting
 	})
 
