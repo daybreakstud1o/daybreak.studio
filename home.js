@@ -1,3 +1,20 @@
+function createTimeoutList() {
+	const allTimeout = [];
+	const addTimeout = (callback, time)=>{
+		allTimeout.push(setTimeout(callback, time));
+	}
+
+	const clearAllTimeout = ()=> {
+		allTimeout.forEach((t)=>{
+			clearTimeout(t)
+		})
+	}
+
+	return {
+		addTimeout, clearAllTimeout
+	}
+}
+
 function setupCaseStudyTransition(number) {
 
 	const handleProjectLinkClick = ()=> {
@@ -6,6 +23,8 @@ function setupCaseStudyTransition(number) {
     var thumbno = parseFloat(asdfhasdfhjkasfd) + 1;
     tocasestudy(thumbno)
 	}
+
+	const {addTimeout,clearAllTimeout} = createTimeoutList();
 
 	const transitionLinkElms = document.querySelectorAll('.layout-' + number + ' .desktop .project')
 	transitionLinkElms.forEach((item) => {
@@ -19,19 +38,19 @@ function setupCaseStudyTransition(number) {
   function tocasestudy(no) {
     const fixedno = no;
     for (let i = no; i < document.querySelectorAll('.layout-' + number + ' .project').length; i++) {
-      setTimeout(function () {
+      addTimeout(function () {
         document.querySelectorAll('.layout-' + number + ' .project')[i].style.visibility = "hidden" ?? "";
       }, (i - fixedno) * 75); 
     }
     for (let j = no; j >= 0; j--) {
-      setTimeout(function () {
+      addTimeout(function () {
         document.querySelectorAll('.layout-' + number + ' .project')[j].style.visibility = "hidden" ?? "";
       }, (75 * fixedno) - (75 * j)); 
       console.log(no + ': ' + ((75 * fixedno) - (75 * j)))
     }
       for (let i = 0; i < document.querySelectorAll('.navbar .tocasestudy').length; i++) {
 				document.querySelectorAll('.navbar .tocasestudy').forEach((element, i) => {
-					setTimeout(function () {
+					addTimeout(function () {
 						element.style.opacity = "0" ?? "";
 					}, i * 75);
 				});
@@ -80,7 +99,10 @@ router.useScript(()=>{
 
 			}, shapeLoadTime);
 	// });
-	window.onscroll = function (e) {  
+
+	window.addEventListener("scroll", handleWindowScroll);
+	
+	function handleWindowScroll(e) {  
 		for (let i = 0; i < document.querySelectorAll('.layout-' + number + ' .project').length; i++) {
 			document.querySelectorAll('.layout-' + number + ' .project')[i].style.display = "block";
 		}
@@ -304,5 +326,8 @@ router.useScript(()=>{
 		console.log("leaving home");
 		cleanupInfiniteScrollListener()
 		cleanupPageTransitionListner();
+		clearAllTimeout();
+		window.removeEventListener("scroll", handleWindowScroll);
+
 	}
 })
