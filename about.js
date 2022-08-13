@@ -115,83 +115,109 @@ router.useScript(()=>{
 
 	const afterCarousel = document.querySelector('#after-carousel');
 
+
+	
+
+	function classOfTheirOwnEnter() {
+		var elementDelay = 100;
+		setTimeout(function () {
+			for (let i = 0; i < document.querySelectorAll('.after-carousel .heading-massive span').length; i++) {
+				document.querySelectorAll('.after-carousel .heading-massive span').forEach((element, i) => {
+					setTimeout(function () {
+						element.style.display = "inline-block" ?? "";
+					}, i * elementDelay);
+				});
+			}
+		}, 200);
+	}
+
+	function softwareEnterDesktop() {
+		var elementDelay = 250;
+		for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
+			document.querySelectorAll('.software-sequence').forEach((element, i) => {
+				setTimeout(function () {
+					element.style.display = "block";
+				}, i * elementDelay);
+			});
+		}
+		for (let i = 0; i < document.querySelectorAll('.brands-sequence').length; i++) {
+			document.querySelectorAll('.brands-sequence').forEach((element, i) => {
+				setTimeout(function () {
+					element.style.display = "none";
+				}, i * elementDelay);
+			});
+		}	
+	}
+
+	function brandsEnterDesktop() {
+		var elementDelay = 250;
+		for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
+			document.querySelectorAll('.software-sequence').forEach((element, i) => {
+				setTimeout(function () {
+					element.style.display = "none";
+				}, i * elementDelay);
+			});
+		}
+		for (let i = 0; i < document.querySelectorAll('.brands-sequence').length; i++) {
+			document.querySelectorAll('.brands-sequence').forEach((element, i) => {
+				setTimeout(function () {
+					element.style.display = "block";
+				}, i * elementDelay);
+			});
+		}
+	}
+
+	function softwareEnterMobile() {
+		var elementDelay = 250;
+		for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
+			document.querySelectorAll('.software-sequence').forEach((element, i) => {
+				setTimeout(function () {
+					element.style.display = "block";
+				}, i * elementDelay);
+			});
+		}
+	}
+
+	function brandsEnterMobile() {
+		var elementDelay = 250;
+		for (let i = 0; i < document.querySelectorAll('.brands-sequence').length; i++) {
+			document.querySelectorAll('.brands-sequence').forEach((element, i) => {
+				setTimeout(function () {
+					element.style.display = "block";
+				}, i * elementDelay);
+			});
+		}
+	}
+
+
+	const {cleanupIntersectionObserver, observeElementEntry} = createIntersectionObserver();
+	observeElementEntry(afterCarousel, (entry)=>{
+		console.log(entry)
+	})
+
 	
 	const handlePageScroll = (scroll)=> {
 		
 		if (isInViewport(afterCarousel, scroll) === true) {
-			var elementDelay = 100;
-				setTimeout(function () {
-					for (let i = 0; i < document.querySelectorAll('.after-carousel .heading-massive span').length; i++) {
-						document.querySelectorAll('.after-carousel .heading-massive span').forEach((element, i) => {
-							setTimeout(function () {
-								element.style.display = "inline-block" ?? "";
-							}, i * elementDelay);
-						});
-					}
-				}, 200);
+			// classOfTheirOwnEnter();
 		}
-
-
 
 		const softwareEnter = document.querySelector('#software-enter');
 		const brandsEnter = document.querySelector('#brands-enter');
 
 		if ($(window).width() > 767) {
-			if (isInViewport(softwareEnter, scroll) === true) {
-				var elementDelay = 250;
-				for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
-					document.querySelectorAll('.software-sequence').forEach((element, i) => {
-						setTimeout(function () {
-							element.style.display = "block";
-						}, i * elementDelay);
-					});
-				}
-				for (let i = 0; i < document.querySelectorAll('.brands-sequence').length; i++) {
-					document.querySelectorAll('.brands-sequence').forEach((element, i) => {
-						setTimeout(function () {
-							element.style.display = "none";
-						}, i * elementDelay);
-					});
-				}
-			}
-			
 			if (isInViewport(brandsEnter, scroll) === true) {
-				var elementDelay = 250;
-				for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
-					document.querySelectorAll('.software-sequence').forEach((element, i) => {
-						setTimeout(function () {
-							element.style.display = "none";
-						}, i * elementDelay);
-					});
-				}
-				for (let i = 0; i < document.querySelectorAll('.brands-sequence').length; i++) {
-					document.querySelectorAll('.brands-sequence').forEach((element, i) => {
-						setTimeout(function () {
-							element.style.display = "block";
-						}, i * elementDelay);
-					});
-				}
+				brandsEnterDesktop();
+			}
+			if (isInViewport(softwareEnter, scroll) === true) {
+				softwareEnterDesktop();
 			}
 		} else {
 			if (isInViewport(softwareEnter, scroll) === true) {
-				var elementDelay = 250;
-				for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
-					document.querySelectorAll('.software-sequence').forEach((element, i) => {
-						setTimeout(function () {
-							element.style.display = "block";
-						}, i * elementDelay);
-					});
-				}
+				softwareEnterMobile();
 			}
 			if (isInViewport(brandsEnter, scroll) === true) {
-				var elementDelay = 250;
-				for (let i = 0; i < document.querySelectorAll('.brands-sequence').length; i++) {
-					document.querySelectorAll('.brands-sequence').forEach((element, i) => {
-						setTimeout(function () {
-							element.style.display = "block";
-						}, i * elementDelay);
-					});
-				}
+				brandsEnterMobile();
 			}
 		};
 
@@ -218,6 +244,51 @@ router.useScript(()=>{
 		resetHero();
 		// document.removeEventListener("scroll", handlePageScroll, {passive: true});
 		window.daybreakScroll.unobserveScroll(handlePageScroll);
+		cleanupIntersectionObserver();
 	}
 })
 
+
+function createIntersectionObserver() {
+	let options = {
+		root: document.querySelector('.scroll-container'),
+		rootMargin: '0px',
+		threshold: 1.0
+	}
+	let observingCount = 0;
+	const observingElementsCallback = {};
+	const handleIntersectionChange = (entries, observer) => {
+		entries.forEach((entry) => {
+			// Each entry describes an intersection change for one observed
+			// target element:
+			//   entry.boundingClientRect
+			//   entry.intersectionRatio
+			//   entry.intersectionRect
+			//   entry.isIntersecting
+			//   entry.rootBounds
+			//   entry.target
+			//   entry.time
+			if(entry.isIntersecting) {
+				const intersectionId = entry.target.getAttribute("intersection-observer-id");
+				observingElementsCallback[intersectionId](entry);
+			}
+		});
+	};
+	let observer = new IntersectionObserver(handleIntersectionChange, options);
+
+	function observeElementEntry(element, callback) {
+		element.setAttribute("intersection-observer-id", observingCount);
+		observingElementsCallback[observingCount] = callback;
+		observer.observe(element);
+		observingCount++;
+	}
+
+	function cleanupIntersectionObserver() {
+		observer.disconnect();
+	}
+
+	return {
+		observeElementEntry,
+		cleanupIntersectionObserver
+	}
+}
