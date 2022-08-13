@@ -186,10 +186,18 @@ router.useScript(()=>{
 	}
 
 
-	const {cleanupIntersectionObserver, observeElementEntry} = createIntersectionObserver();
+	const {cleanupIntersectionObserver, onIntersectionChange} = createIntersectionObserver();
 
+	const onElementEnter = (elm, callback) => {
+		onIntersectionChange(elm,(entry)=> {
+			entry.isIntersecting && callback()
+		})
+	}
+
+
+	// enter carosell
 	const afterCarousel = document.querySelector('#after-carousel');
-	observeElementEntry(afterCarousel, (entry)=>{
+	onElementEnter(afterCarousel, (entry)=>{
 		classOfTheirOwnEnter();
 	})
 
@@ -197,7 +205,9 @@ router.useScript(()=>{
 	const brandsEnter = document.querySelector('#brands-enter');
 
 	const mobileBreakpoint = 767;
-	observeElementEntry(softwareEnter, ()=>{
+
+	// enter software
+	onElementEnter(softwareEnter, (entry)=>{
 		if(window.innerWidth > mobileBreakpoint) {
 			brandsEnterDesktop();
 		} else {
@@ -205,7 +215,8 @@ router.useScript(()=>{
 		}
 	})
 
-	observeElementEntry(brandsEnter, ()=>{
+	// enter brands
+	onElementEnter(brandsEnter, (entry)=>{
 		if(window.innerWidth > mobileBreakpoint) {
 			softwareEnterDesktop();
 		} else {
@@ -213,8 +224,9 @@ router.useScript(()=>{
 		}
 	})
 
+	// enter work with us
 	const workWithUsEnter = document.querySelector('#work-with-us-enter');
-	observeElementEntry(workWithUsEnter, ()=>{
+	onElementEnter(workWithUsEnter, (entry)=>{
 		triggerStaggerAnim(workWithUsEnter.children, {
 				delay: 100, 
 				styler: (style)=>{
@@ -224,24 +236,54 @@ router.useScript(()=>{
 				}
 			})
 	})
+
+	const stickyElm = document.querySelector(".sticky");
+	const cleanupSticky = enableStickyPosition(stickyElm);
+	
 	
 	return ()=>{
 		console.log("leaving about");
 		cleanupLogoMinimizeOnScroll();
 		resetHero();
 		cleanupIntersectionObserver();
+		cleanupSticky();
 	}
 })
 
+function enableStickyPosition(element) {
+	const elementTop = parseInt(element.style.top);
+	const elementHeight = parseInt(element.style.height);
 
-function createIntersectionObserver() {
+	const stickyObserver = createIntersectionObserver({
+		rootMargin: `${elementTop}px 0px 0px 0px`,
+		threshold: 1.0
+	});
+	
+	stickyObserver.onIntersectionChange(element, (entry)=>{
+		if(entry.isIntersecting) {
+			console.log("element enter")
+			console.log(entry)
+			const parentBounds = element.parentElement.getBoundingClientRect();
+			console.log(parentBounds);
+		}
+		console.log("element exit")
+		// hanlde hwne intersecting
+	})
+
+	return ()=>{
+		stickyObserver.cleanupIntersectionObserver()
+	}
+}
+
+
+function createIntersectionObserver({rootMargin = '0px', threshold = 1.0}) {
 	let options = {
 		root: document.querySelector('.scroll-container'),
-		rootMargin: '0px',
-		threshold: 1.0
+		rootMargin: rootMargin,
+		threshold: threshold
 	}
-	let observingCount = 0;
-	const observingElementsCallback = {};
+	let entryCallbackCount = 0;
+	const elementEntryCallback = {};
 	const handleIntersectionChange = (entries, observer) => {
 		entries.forEach((entry) => {
 			// Each entry describes an intersection change for one observed
@@ -253,22 +295,19 @@ function createIntersectionObserver() {
 			//   entry.rootBounds
 			//   entry.target
 			//   entry.time
-			if(entry.isIntersecting) {
-				const intersectionId = entry.target.getAttribute("intersection-observer-id");
-				observingElementsCallback[intersectionId](entry);
-			}
+			const intersectionId = entry.target.getAttribute("intersection-observer-id");
+			elementEntryCallback[intersectionId](entry);
 		});
 	};
 	let observer = new IntersectionObserver(handleIntersectionChange, options);
-
-
+	
 	let abortCallbacks = []
-	function observeElementEntry(element, callback) {
+	function onIntersectionChange(element, callback) {
 		const abort = onFullyLoaded(()=> {
-			element.setAttribute("intersection-observer-id", observingCount);
-			observingElementsCallback[observingCount] = callback;
+			element.setAttribute("intersection-observer-id", entryCallbackCount);
+			elementEntryCallback[entryCallbackCount] = callback;
 			observer.observe(element);
-			observingCount++;
+			entryCallbackCount++;
 		})
 		abortCallbacks.push(abort);
 	}
@@ -279,7 +318,7 @@ function createIntersectionObserver() {
 	}
 
 	return {
-		observeElementEntry,
+		onIntersectionChange,
 		cleanupIntersectionObserver
 	}
 }
