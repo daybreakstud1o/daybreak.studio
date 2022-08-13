@@ -267,6 +267,7 @@ function enableStickyPosition(element) {
 	stickyObserver.onIntersectionChange(element, (entry)=>{
 		console.log(entry)
 		const handleScroll = (scrollProgress)=>{
+			console.log("scrolling")
 			const elmYPos = scrollProgress - element.getBoundingClientRect().top;
 			element.style.transform = `translateY(${elmYPos})`;
 		}
@@ -279,6 +280,7 @@ function enableStickyPosition(element) {
 			// create observer
 			console.log("observing scroll")
 			daybreakScroll.observeScroll(handleScroll);
+			element.style.position = "fixed";
 		}
 		// hanlde hwne intersecting
 	})
