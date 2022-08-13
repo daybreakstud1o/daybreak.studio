@@ -272,7 +272,7 @@ function enableStickyPosition(element) {
 
 		// if over the sticking point
 		if(stickyOffsetValue > 0) {
-			element.style.transform = `translateY(${stickyOffset}px)`;
+			element.style.transform = `translateY(${stickyOffsetValue}px)`;
 			return;
 		} 
 
