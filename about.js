@@ -67,18 +67,21 @@ router.useScript(()=>{
 			document.querySelector('.nav-logo').style.width = '55vw';
 		}
 
-		const handleScroll =()=>{
-			const scroll = window.scrollY;
+		const handleScroll =(scroll)=>{
+			// const scroll = window.scrollY;
 			if (scroll >= 100) {
 					minimizeLogo()
 			} else if (scroll < 100) {
 					maximizeLogo()
 			}
 		}
-		window.addEventListener("scroll", handleScroll);
+		// window.addEventListener("scroll", handleScroll);
+		window.daybreakScroll.observeScroll(handleScroll)
+
 		return ()=>{
 			minimizeLogo();
-			window.removeEventListener("scroll", handleScroll);
+			window.daybreakScroll.unobserveScroll(handleScroll)
+			// window.removeEventListener("scroll", handleScroll);
 		}
 	}
 	const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
