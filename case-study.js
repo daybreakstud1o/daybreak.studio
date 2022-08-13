@@ -121,7 +121,7 @@ router.useScript(()=>{
 
   const box = document.querySelector('#next-up-show');
 
-  const handlePageScroll = ()=> {
+  const handlePageScroll = (scrollPosition)=> {
 
     // var navbar = document.getElementById("fsdfsdfsdf");
     // var sticky = navbar.offsetTop;
@@ -133,7 +133,7 @@ router.useScript(()=>{
     // }
 
 
-    scrollPosition = $(this).scrollTop();
+    // scrollPosition = $(this).scrollTop();
     if (scrollPosition > 5) {
       document.querySelector("#case-top-bar-title").style.opacity = "0";
       document.querySelector("#project-expertise").classList.add("mobile-disappear");
