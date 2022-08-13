@@ -269,20 +269,21 @@ function enableStickyPosition(element) {
 
 	// start calculating scroll when the element on screen
 	const handleScroll = (scrollProgress)=>{
-		const parentOffset = element.parentElement.getBoundingClientRect().top;
+		const parentOffsetBound = element.parentElement.getBoundingClientRect();
 
-		const stickyOffsetValue = -parentOffset + stickyTop;
+		const stickyOffsetValue = -parentOffsetBound.top + stickyTop;
 
-		// if over the sticking point
+		// if before the sticking point
 		if(stickyOffsetValue > 0) {
-			element.style.transform = `translateY(${stickyOffsetValue}px)`;
-			return;
+			console.log("scroll prgoress before sticking point");
+			// reset when before the sticking point
+			element.style.transform = `translateY(0px)`;
 		} 
+		
+		element.style.transform = `translateY(${stickyOffsetValue}px)`;
 
-		console.log("scroll prgoress before sticking point");
+		const stickyBottomPosition = stickyOffsetValue + elementHeight;
 
-		// reset when before the sticking point
-		element.style.transform = `translateY(0px)`;
 		
 	}
 
