@@ -270,22 +270,25 @@ function enableStickyPosition(element) {
 		const parentOffsetBound = element.parentElement.getBoundingClientRect();
 
 		const stickyOffsetValue = -parentOffsetBound.top + stickyTop;
+		const stickyBottomPosition = stickyOffsetValue + elementHeight;
 
-		// if before the sticking point
+		// before the sticky area
 		if(stickyOffsetValue < 0) {
 			console.log("scroll prgoress before sticking point");
 			// reset when before the sticking point
 			element.style.transform = `translateY(0px)`;
 			return;
 		} 
-		
-		const stickyBottomPosition = stickyOffsetValue + elementHeight;
 
+		// over the sticky area
 		if(stickyBottomPosition > parentOffsetBound.height) {
-			console.log("over")
+			// allow the element to scroll like other element,
+			// aka not doing any compensation
 			return;
 		}
-	
+		
+		// withing the sticky area
+		// compensate the y position to make it always in one position
 		element.style.transform = `translateY(${stickyOffsetValue}px)`;
 	}
 
