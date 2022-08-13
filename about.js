@@ -110,6 +110,7 @@ router.useScript(()=>{
 					setTimeout(function () {
 						// element.style.display = "inline-block" ?? "";
 						element.style.visibility = "visible";
+						element.style.width = "auto";
 					}, i * elementDelay);
 				});
 			}
@@ -123,6 +124,7 @@ router.useScript(()=>{
 				setTimeout(function () {
 					// element.style.display = "block";
 					element.style.visibility = "visible";
+					element.style.width = "auto";
 				}, i * elementDelay);
 			});
 		}
@@ -151,6 +153,7 @@ router.useScript(()=>{
 				setTimeout(function () {
 					// element.style.display = "block";
 					element.style.visibility = "visible";
+					element.style.width = "auto";
 				}, i * elementDelay);
 			});
 		}
@@ -163,6 +166,7 @@ router.useScript(()=>{
 				setTimeout(function () {
 					// element.style.display = "block";
 					element.style.visibility = "visible";
+					element.style.width = "auto";
 				}, i * elementDelay);
 			});
 		}
@@ -175,6 +179,7 @@ router.useScript(()=>{
 				setTimeout(function () {
 					// element.style.display = "block";
 					element.style.visibility = "visible";
+					element.style.width = "auto";
 				}, i * elementDelay);
 			});
 		}
@@ -213,7 +218,9 @@ router.useScript(()=>{
 		triggerStaggerAnim(workWithUsEnter.children, {
 				delay: 100, 
 				styler: (style)=>{
-					style.display = "inline-block"
+					// style.display = "inline-block"
+					element.style.visibility = "visible";
+					element.style.width = "auto";
 				}
 			})
 	})
