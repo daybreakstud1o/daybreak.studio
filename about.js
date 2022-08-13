@@ -237,8 +237,10 @@ router.useScript(()=>{
 			})
 	})
 
-	const stickyElm = document.querySelector(".sticky");
-	const cleanupSticky = enableStickyPosition(stickyElm);
+	const stickyElm = document.querySelectorAll(".sticky");
+	
+	const cleanupSticky = enableStickyPosition(stickyElm[0]);
+	const cleanupSticky2 = enableStickyPosition(stickyElm[1]);
 	
 	
 	return ()=>{
@@ -247,6 +249,7 @@ router.useScript(()=>{
 		resetHero();
 		cleanupIntersectionObserver();
 		cleanupSticky();
+		cleanupSticky2();
 	}
 })
 
@@ -281,7 +284,6 @@ function enableStickyPosition(element) {
 		// reset when before the sticking point
 		element.style.transform = `translateY(0px)`;
 		
-
 	}
 
 	stickyObserver.onIntersectionChange(element, (entry)=>{
