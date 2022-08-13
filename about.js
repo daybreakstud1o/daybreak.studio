@@ -237,10 +237,18 @@ router.useScript(()=>{
 			})
 	})
 
-	const stickyElm = document.querySelectorAll(".sticky");
+	const cleanupDocumentSticky = enableDocumentSticky();
+
 	
-	const cleanupSticky = enableStickyPosition(stickyElm[0]);
-	const cleanupSticky2 = enableStickyPosition(stickyElm[1]);
+	function enableDocumentSticky() {
+		const stickyElm = document.querySelectorAll(".sticky");
+
+		const cleanups = stickyElm.map((elm)=>{
+			return enableDocumentSticky(elm);
+		})
+		
+		return ()=> cleanups.forEach((cleanup)=>cleanup());
+	}
 	
 	
 	return ()=>{
@@ -248,8 +256,7 @@ router.useScript(()=>{
 		cleanupLogoMinimizeOnScroll();
 		resetHero();
 		cleanupIntersectionObserver();
-		cleanupSticky();
-		cleanupSticky2();
+		cleanupDocumentSticky();
 	}
 })
 
