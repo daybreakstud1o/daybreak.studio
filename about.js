@@ -274,7 +274,7 @@ function enableStickyPosition(element) {
 		const stickyOffsetValue = -parentOffsetBound.top + stickyTop;
 
 		// if before the sticking point
-		if(stickyOffsetValue > 0) {
+		if(stickyOffsetValue < 0) {
 			console.log("scroll prgoress before sticking point");
 			// reset when before the sticking point
 			element.style.transform = `translateY(0px)`;
