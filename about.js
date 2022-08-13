@@ -102,29 +102,14 @@ router.useScript(()=>{
 		document.querySelector('.nav-left .cities-info').style.opacity = '1';
 	});*/
 
-	function isInViewport(el, scroll) {
-			const rect = el.getBoundingClientRect();
-			return (
-					rect.top - scroll >= 0 &&
-					rect.left >= 0 &&
-					rect.bottom - scroll <= (window.innerHeight || document.documentElement.clientHeight) &&
-					rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-			);
-	}
-
-
-	const afterCarousel = document.querySelector('#after-carousel');
-
-
-	
-
 	function classOfTheirOwnEnter() {
 		var elementDelay = 100;
 		setTimeout(function () {
 			for (let i = 0; i < document.querySelectorAll('.after-carousel .heading-massive span').length; i++) {
 				document.querySelectorAll('.after-carousel .heading-massive span').forEach((element, i) => {
 					setTimeout(function () {
-						element.style.display = "inline-block" ?? "";
+						// element.style.display = "inline-block" ?? "";
+						element.style.visibility = "visible";
 					}, i * elementDelay);
 				});
 			}
@@ -136,14 +121,16 @@ router.useScript(()=>{
 		for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
 			document.querySelectorAll('.software-sequence').forEach((element, i) => {
 				setTimeout(function () {
-					element.style.display = "block";
+					// element.style.display = "block";
+					element.style.visibility = "visible";
 				}, i * elementDelay);
 			});
 		}
 		for (let i = 0; i < document.querySelectorAll('.brands-sequence').length; i++) {
 			document.querySelectorAll('.brands-sequence').forEach((element, i) => {
 				setTimeout(function () {
-					element.style.display = "none";
+					// element.style.display = "none";
+					element.style.visibility = "hidden";
 				}, i * elementDelay);
 			});
 		}	
@@ -154,14 +141,16 @@ router.useScript(()=>{
 		for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
 			document.querySelectorAll('.software-sequence').forEach((element, i) => {
 				setTimeout(function () {
-					element.style.display = "none";
+					// element.style.display = "none";
+					element.style.visibility = "hidden";
 				}, i * elementDelay);
 			});
 		}
 		for (let i = 0; i < document.querySelectorAll('.brands-sequence').length; i++) {
 			document.querySelectorAll('.brands-sequence').forEach((element, i) => {
 				setTimeout(function () {
-					element.style.display = "block";
+					// element.style.display = "block";
+					element.style.visibility = "visible";
 				}, i * elementDelay);
 			});
 		}
@@ -172,7 +161,8 @@ router.useScript(()=>{
 		for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
 			document.querySelectorAll('.software-sequence').forEach((element, i) => {
 				setTimeout(function () {
-					element.style.display = "block";
+					// element.style.display = "block";
+					element.style.visibility = "visible";
 				}, i * elementDelay);
 			});
 		}
@@ -183,7 +173,8 @@ router.useScript(()=>{
 		for (let i = 0; i < document.querySelectorAll('.brands-sequence').length; i++) {
 			document.querySelectorAll('.brands-sequence').forEach((element, i) => {
 				setTimeout(function () {
-					element.style.display = "block";
+					// element.style.display = "block";
+					element.style.visibility = "visible";
 				}, i * elementDelay);
 			});
 		}
@@ -191,6 +182,8 @@ router.useScript(()=>{
 
 
 	const {cleanupIntersectionObserver, observeElementEntry} = createIntersectionObserver();
+
+	const afterCarousel = document.querySelector('#after-carousel');
 	observeElementEntry(afterCarousel, (entry)=>{
 		classOfTheirOwnEnter();
 	})
