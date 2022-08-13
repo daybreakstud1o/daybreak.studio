@@ -2,14 +2,6 @@ router.useScript(()=>{
 
   var elementDelay = 100;
 
-  // when new image loaded, it might affact the scroll height
-  document.querySelectorAll("img").forEach((img)=> {
-    img.addEventListener("load", ()=>{
-      daybreakScroll.recalculatePageHeight();
-    })
-  })
-  
-
 
   if ($(window).width() > 992) {
       for (let i = 0; i < document.querySelectorAll('.case-top-bar-content > div').length; i++) {
