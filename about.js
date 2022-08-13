@@ -269,7 +269,7 @@ function enableStickyPosition(element) {
 		const handleScroll = (scrollProgress)=>{
 			console.log("scrolling")
 			const elmYPos = scrollProgress - element.getBoundingClientRect().top;
-			element.style.transform = `translateY(${elmYPos})`;
+			element.style.transform = `translateY(${elmYPos}px)`;
 		}
 		
 		if(entry.intersectionRatio === 1) {
@@ -280,7 +280,6 @@ function enableStickyPosition(element) {
 			// create observer
 			console.log("observing scroll")
 			daybreakScroll.observeScroll(handleScroll);
-			element.style.position = "fixed";
 		}
 		// hanlde hwne intersecting
 	})
