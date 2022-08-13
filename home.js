@@ -59,6 +59,7 @@ function setupCaseStudyTransition(number) {
 
 	return ()=>{
 		cleanupClickListeners()
+		clearAllTimeout();
 	}
 }
 
@@ -326,7 +327,6 @@ router.useScript(()=>{
 		console.log("leaving home");
 		cleanupInfiniteScrollListener()
 		cleanupPageTransitionListner();
-		clearAllTimeout();
 		window.removeEventListener("scroll", handleWindowScroll);
 
 	}
