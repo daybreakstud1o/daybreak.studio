@@ -277,6 +277,8 @@ function enableStickyPosition(element) {
 		const stickyOffsetValue = -parentOffsetBound.top + stickyTop;
 		const stickyBottomPosition = stickyOffsetValue + elementHeight;
 
+		console.log("debug")
+
 		// before the sticky area
 		if(stickyOffsetValue < 0) {
 			// reset when before the sticking point
