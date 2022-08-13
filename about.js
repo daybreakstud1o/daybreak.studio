@@ -287,23 +287,15 @@ function enableStickyPosition(element) {
 	}
 
 	stickyObserver.onIntersectionChange(element, (entry)=>{
-		console.log(entry);
-		
 		if(entry.intersectionRatio === 1) {
-			// console.log(parentBounds);
-			
-			// "pickup" that element
-			// create observer
 			console.log("observing scroll")
 			daybreakScroll.observeScroll(handleScroll);
 		}
 
 		if(entry.intersectionRatio === 0) {
+			console.log("unobserving scroll")
 			daybreakScroll.unobserveScroll(handleScroll);
 		}
-		// daybreakScroll.unobserveScroll(handleScroll);
-
-		// hanlde hwne intersecting
 	})
 
 	return ()=>{
