@@ -241,8 +241,6 @@ router.useScript(()=>{
 	function enableAllStickyPosition() {
 		const stickyElm = document.querySelectorAll(".sticky");
 
-		console.log("debug")
-
 		const cleanups = Array.from(stickyElm).map((elm)=>{
 			return enableStickyPosition(elm);
 		})
