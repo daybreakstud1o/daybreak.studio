@@ -123,14 +123,14 @@ router.useScript(()=>{
 
   const handlePageScroll = ()=> {
 
-    var navbar = document.getElementById("fsdfsdfsdf");
-    var sticky = navbar.offsetTop;
+    // var navbar = document.getElementById("fsdfsdfsdf");
+    // var sticky = navbar.offsetTop;
 
-    if (window.pageYOffset > sticky) {
-      navbar.classList.add("sticky")
-    } else {
-      navbar.classList.remove("sticky");
-    }
+    // if (window.pageYOffset > sticky) {
+    //   navbar.classList.add("sticky")
+    // } else {
+    //   navbar.classList.remove("sticky");
+    // }
 
 
     scrollPosition = $(this).scrollTop();
