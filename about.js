@@ -237,14 +237,12 @@ router.useScript(()=>{
 			})
 	})
 
-	const cleanupDocumentSticky = enableDocumentSticky();
-
-	
-	function enableDocumentSticky() {
+	const cleanupDocumentSticky = enableAllStickyPosition();	
+	function enableAllStickyPosition() {
 		const stickyElm = document.querySelectorAll(".sticky");
 
 		const cleanups = stickyElm.map((elm)=>{
-			return enableDocumentSticky(elm);
+			return enableStickyPosition(elm);
 		})
 		
 		return ()=> cleanups.forEach((cleanup)=>cleanup());
