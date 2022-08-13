@@ -268,8 +268,11 @@ function enableStickyPosition(element) {
 	const handleScroll = (scrollProgress)=>{
 		const parentOffset = element.parentElement.getBoundingClientRect().top;
 
+		console.log(scrollProgress);
+		console.log(parentOffset);
+
 		// if over the switching point
-		if(scrollProgress > parentOffset + stickyTop) {
+		if(scrollProgress - parentOffset >  stickyTop) {
 			element.style.transform = `translateY(${-parentOffset + stickyTop}px)`;
 		}
 
