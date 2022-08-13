@@ -111,6 +111,7 @@ router.useScript(()=>{
 						// element.style.display = "inline-block" ?? "";
 						element.style.visibility = "visible";
 						element.style.width = "auto";
+						daybreakScroll.recalculatePageHeight();
 					}, i * elementDelay);
 				});
 			}
@@ -125,6 +126,7 @@ router.useScript(()=>{
 					// element.style.display = "block";
 					element.style.visibility = "visible";
 					element.style.width = "auto";
+					daybreakScroll.recalculatePageHeight();
 				}, i * elementDelay);
 			});
 		}
@@ -154,6 +156,7 @@ router.useScript(()=>{
 					// element.style.display = "block";
 					element.style.visibility = "visible";
 					element.style.width = "auto";
+					daybreakScroll.recalculatePageHeight();
 				}, i * elementDelay);
 			});
 		}
@@ -167,6 +170,7 @@ router.useScript(()=>{
 					// element.style.display = "block";
 					element.style.visibility = "visible";
 					element.style.width = "auto";
+					daybreakScroll.recalculatePageHeight();
 				}, i * elementDelay);
 			});
 		}
@@ -180,6 +184,7 @@ router.useScript(()=>{
 					// element.style.display = "block";
 					element.style.visibility = "visible";
 					element.style.width = "auto";
+					daybreakScroll.recalculatePageHeight();
 				}, i * elementDelay);
 			});
 		}
