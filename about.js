@@ -192,59 +192,43 @@ router.useScript(()=>{
 
 	const {cleanupIntersectionObserver, observeElementEntry} = createIntersectionObserver();
 	observeElementEntry(afterCarousel, (entry)=>{
-		console.log(entry);
 		classOfTheirOwnEnter();
 	})
 
-	
-	const handlePageScroll = (scroll)=> {
-		
-		if (isInViewport(afterCarousel, scroll) === true) {
-			// classOfTheirOwnEnter();
-		}
+	const softwareEnter = document.querySelector('#software-enter');
+	const brandsEnter = document.querySelector('#brands-enter');
 
-		const softwareEnter = document.querySelector('#software-enter');
-		const brandsEnter = document.querySelector('#brands-enter');
-
-		if ($(window).width() > 767) {
-			if (isInViewport(brandsEnter, scroll) === true) {
-				brandsEnterDesktop();
-			}
-			if (isInViewport(softwareEnter, scroll) === true) {
-				softwareEnterDesktop();
-			}
+	const mobileBreakpoint = 767;
+	observeElementEntry(softwareEnter, ()=>{
+		if(window.innerWidth > mobileBreakpoint) {
+			brandsEnterDesktop();
 		} else {
-			if (isInViewport(softwareEnter, scroll) === true) {
-				softwareEnterMobile();
-			}
-			if (isInViewport(brandsEnter, scroll) === true) {
-				brandsEnterMobile();
-			}
-		};
+			brandsEnterMobile();
+		}
+	})
 
-		const workWithUsEnter = document.querySelector('#work-with-us-enter');
-		if (isInViewport(workWithUsEnter, scroll) === true) {
-			triggerStaggerAnim(workWithUsEnter.children, {
+	observeElementEntry(brandsEnter, ()=>{
+		if(window.innerWidth > mobileBreakpoint) {
+			softwareEnterDesktop();
+		} else {
+			softwareEnterMobile();
+		}
+	})
+
+	const workWithUsEnter = document.querySelector('#work-with-us-enter');
+	observeElementEntry(workWithUsEnter, ()=>{
+		triggerStaggerAnim(workWithUsEnter.children, {
 				delay: 100, 
 				styler: (style)=>{
 					style.display = "inline-block"
 				}
 			})
-			// triggerStaggerAnim(afterCarousel,{delay: 100, display:"inline-block"})
-			// triggerTextAnim(workWithUsEnter, {useInlineBlock:true});
-		}
-	}
-
-	// document.addEventListener('scroll', handlePageScroll, {passive: true});
-
-	window.daybreakScroll.observeScroll(handlePageScroll);
+	})
 	
 	return ()=>{
 		console.log("leaving about");
 		cleanupLogoMinimizeOnScroll();
 		resetHero();
-		// document.removeEventListener("scroll", handlePageScroll, {passive: true});
-		window.daybreakScroll.unobserveScroll(handlePageScroll);
 		cleanupIntersectionObserver();
 	}
 })
