@@ -68,6 +68,7 @@ router.useScript(()=>{
 		}
 
 		const handleScroll =(scroll)=>{
+			console.log(scroll)
 			// const scroll = window.scrollY;
 			if (scroll >= 100) {
 					minimizeLogo()
