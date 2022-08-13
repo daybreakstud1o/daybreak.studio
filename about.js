@@ -276,11 +276,12 @@ function enableStickyPosition(element) {
 }
 
 
-function createIntersectionObserver({rootMargin = '0px', threshold = 1.0}) {
+function createIntersectionObserver(options = {rootMargin: '0px', threshold: 1.0}) {
+	
 	let options = {
 		root: document.querySelector('.scroll-container'),
-		rootMargin: rootMargin,
-		threshold: threshold
+		rootMargin: (options && options.rootMargin) || "0px",
+		threshold: (options && options.threshold) || 1.0
 	}
 	let entryCallbackCount = 0;
 	const elementEntryCallback = {};
