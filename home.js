@@ -64,7 +64,7 @@ function setupCaseStudyTransition(number) {
 }
 
 
-router.useScript(()=>{
+daybreak.router.useScript(()=>{
 	console.log("enter home");
 
 	// choose number
@@ -158,7 +158,7 @@ router.useScript(()=>{
 			document.querySelectorAll('.layout-' + number + ' .desktop .project')[i].onclick = function () {
 				setTimeout(() => {
 					// location.href = combinedshuffle[i].slice(0, -2);
-					router.navigateTo(combinedshuffle[i].slice(0, -2));
+					daybreak.router.navigateTo(combinedshuffle[i].slice(0, -2));
 				}, "1800")
 			};	
 

@@ -1,4 +1,4 @@
-router.useScript(() => {
+daybreak.router.useScript(() => {
 	async function torontotime() {
 		const api_url = 'https://worldtimeapi.org/api/timezone/America/Toronto';
 		const response = await fetch(api_url);

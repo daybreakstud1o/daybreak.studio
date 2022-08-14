@@ -1,5 +1,5 @@
 // $(document).ready(function(){
-router.useScript(() => {
+daybreak.router.useScript(() => {
   console.log("enter contact");
   var elementDelay = 75;
   for (

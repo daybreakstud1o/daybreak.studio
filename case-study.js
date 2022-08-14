@@ -1,4 +1,4 @@
-router.useScript(()=>{
+daybreak.router.useScript(()=>{
 
   var elementDelay = 100;
 
@@ -16,7 +16,7 @@ router.useScript(()=>{
           document.querySelectorAll('.heading-1 span').forEach((element, i) => {
             setTimeout(function () {
               element.style.display = "inline-block" ?? "";
-              daybreakScroll.recalculatePageHeight();
+              daybreak.scroll.recalculatePageHeight();
             }, i * elementDelay);
           });
         }
@@ -74,7 +74,7 @@ router.useScript(()=>{
           document.querySelectorAll('.intro-desc-2 span').forEach((element, i) => {
             setTimeout(function () {
               element.style.display = "inline-block" ?? "";
-              daybreakScroll.recalculatePageHeight();
+              daybreak.scroll.recalculatePageHeight();
             }, i * elementDelay);
           });
         }
@@ -177,7 +177,7 @@ router.useScript(()=>{
   }
 
 
-  daybreakScroll.observeScroll(handlePageScroll);  
+  daybreak.scroll.observeScroll(handlePageScroll);  
   // document.addEventListener('scroll', handlePageScroll, {
   //     passive: true
   // });
@@ -191,7 +191,7 @@ router.useScript(()=>{
   });
 
   return ()=>{
-    daybreakScroll.unobserveScroll(handlePageScroll);
+    daybreak.scroll.unobserveScroll(handlePageScroll);
     // document.removeEventListener('scroll', handlePageScroll, {
     //   passive: true
     // });

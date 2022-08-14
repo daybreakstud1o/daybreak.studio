@@ -18,7 +18,7 @@ function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.displ
 	}
 }
 
-router.useScript(()=>{
+daybreak.router.useScript(()=>{
 	console.log("enter about");
 
 	function animateInHero() {
@@ -76,11 +76,11 @@ router.useScript(()=>{
 			}
 		}
 		// window.addEventListener("scroll", handleScroll);
-		window.daybreakScroll.observeScroll(handleScroll)
+		daybreak.scroll.observeScroll(handleScroll)
 
 		return ()=>{
 			minimizeLogo();
-			window.daybreakScroll.unobserveScroll(handleScroll)
+			daybreak.scroll.unobserveScroll(handleScroll)
 			// window.removeEventListener("scroll", handleScroll);
 		}
 	}
@@ -111,7 +111,7 @@ router.useScript(()=>{
 						// element.style.display = "inline-block" ?? "";
 						element.style.visibility = "visible";
 						element.style.width = "auto";
-						daybreakScroll.recalculatePageHeight();
+						daybreak.scroll.recalculatePageHeight();
 					}, i * elementDelay);
 				});
 			}
@@ -126,7 +126,7 @@ router.useScript(()=>{
 					// element.style.display = "block";
 					element.style.visibility = "visible";
 					element.style.width = "auto";
-					daybreakScroll.recalculatePageHeight();
+					daybreak.scroll.recalculatePageHeight();
 				}, i * elementDelay);
 			});
 		}
@@ -156,7 +156,7 @@ router.useScript(()=>{
 					// element.style.display = "block";
 					element.style.visibility = "visible";
 					element.style.width = "auto";
-					daybreakScroll.recalculatePageHeight();
+					daybreak.scroll.recalculatePageHeight();
 				}, i * elementDelay);
 			});
 		}
@@ -170,7 +170,7 @@ router.useScript(()=>{
 					// element.style.display = "block";
 					element.style.visibility = "visible";
 					element.style.width = "auto";
-					daybreakScroll.recalculatePageHeight();
+					daybreak.scroll.recalculatePageHeight();
 				}, i * elementDelay);
 			});
 		}
@@ -184,7 +184,7 @@ router.useScript(()=>{
 					// element.style.display = "block";
 					element.style.visibility = "visible";
 					element.style.width = "auto";
-					daybreakScroll.recalculatePageHeight();
+					daybreak.scroll.recalculatePageHeight();
 				}, i * elementDelay);
 			});
 		}
@@ -304,11 +304,11 @@ function enableStickyPosition(element) {
 	stickyObserver.onIntersectionChange(element, (entry)=>{
 
 		if(entry.intersectionRatio === 1) {
-			daybreakScroll.observeScroll(handleScroll);
+			daybreak.scroll.observeScroll(handleScroll);
 		}
 
 		if(entry.intersectionRatio === 0) {
-			daybreakScroll.unobserveScroll(handleScroll);
+			daybreak.scroll.unobserveScroll(handleScroll);
 		}
 	})
 
