@@ -1,26 +1,89 @@
 daybreak.router.useScript(() => {
-	async function torontotime() {
-		const api_url = 'https://worldtimeapi.org/api/timezone/America/Toronto';
-		const response = await fetch(api_url);
-		const data = await response.json();
-		const { datetime } = data;
-		for (let i = 0; i < document.querySelectorAll('.toronto-time').length; i++) {
-			document.querySelectorAll(".toronto-time")[i].innerHTML = datetime.substring(11,19);
-		}
-	}
-	async function SFtime() {
-		const api_url = 'https://worldtimeapi.org/api/timezone/America/Los_Angeles';
-		const response = await fetch(api_url);
-		const data = await response.json();
-		const { datetime } = data;
-		for (let i = 0; i < document.querySelectorAll('.sf-time').length; i++) {
-			document.querySelectorAll(".sf-time")[i].innerHTML = datetime.substring(11,19);
-		}
+
+	function dateFromLocale(localeStr) {
+		var dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2})/;
+		var match = localeStr.match(dateParser);
+		var date = new Date(
+				match[3],  // year
+				match[2]-1,  // monthIndex
+				match[1],  // day
+				match[4],  // hours
+				match[5],  // minutes
+				match[6]  //seconds
+		);
+
+		return date;
 	}
 
-	// expose the toronottime and sf time
-	window.torontotime = torontotime;
-	window.SFtime = SFtime;
+	function pad(num, size) {
+		var s = "000000000" + num;
+		return s.substr(s.length-size);
+	}
+
+	function getTimeString(date) {
+		const hr = date.getHours();
+		const min = pad(date.getMinutes(), 2);
+		const sec = pad(date.getSeconds(), 2);
+
+		return `${hr}:${min}:${sec}`
+	}
+
+	function getTorontoTime() {
+		const date = new Date();
+
+		// pacific time
+		const eastCoastTimeStr = date.toLocaleString("en-US", {
+			timeZone: "America/New_York",
+			hour12: false
+		})
+		const eastCoastTime = dateFromLocale(eastCoastTimeStr);
+		return getTimeString(eastCoastTime);
+	}
+
+	function getSFtime() {
+		const date = new Date();
+
+		// pacific time
+		const pacificTimeStr = date.toLocaleString("en-US", {
+			timeZone: "America/Los_Angeles",
+			hour12: false
+		})
+
+		const pacificTime = dateFromLocale(pacificTimeStr);
+		return getTimeString(pacificTime);
+	}
+
+	setInterval(()=>{
+		// periodically update the time elements
+		const allSfTimeElm = document.querySelectorAll('.sf-time');
+		const allTorontoTimeElm = document.querySelectorAll('.toronto-time');
+
+		const sfTime = getSFtime();
+		const torontoTime = getTorontoTime();
+
+		allSfTimeElm.forEach((elm) => elm.innerHTML = sfTime);
+		allTorontoTimeElm.forEach((elm) => elm.innerHTML = torontoTime);
+	},1000);
+
+	// async function torontotime() {
+	// 	const api_url = 'https://worldtimeapi.org/api/timezone/America/Toronto';
+	// 	const response = await fetch(api_url);
+	// 	const data = await response.json();
+	// 	const { datetime } = data;
+	// 	for (let i = 0; i < document.querySelectorAll('.toronto-time').length; i++) {
+	// 		document.querySelectorAll(".toronto-time")[i].innerHTML = datetime.substring(11,19);
+	// 	}
+	// }
+	// async function SFtime() {
+	// 	const api_url = 'https://worldtimeapi.org/api/timezone/America/Los_Angeles';
+	// 	const response = await fetch(api_url);
+	// 	const data = await response.json();
+	// 	const { datetime } = data;
+	// 	for (let i = 0; i < document.querySelectorAll('.sf-time').length; i++) {
+	// 		document.querySelectorAll(".sf-time")[i].innerHTML = datetime.substring(11,19);
+	// 	}
+	// }
+
 
 	// console.log(document.querySelectorAll('.toronto-time').length);
 
