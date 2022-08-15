@@ -1,33 +1,5 @@
 daybreak.router.useScript(() => {
 
-	function dateFromLocale(localeStr) {
-		var dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2})/;
-		var match = localeStr.match(dateParser);
-		var date = new Date(
-				match[3],  // year
-				match[2]-1,  // monthIndex
-				match[1],  // day
-				match[4],  // hours
-				match[5],  // minutes
-				match[6]  //seconds
-		);
-
-		return date;
-	}
-
-	function pad(num, size) {
-		var s = "000000000" + num;
-		return s.substr(s.length-size);
-	}
-
-	function getTimeString(date) {
-		const hr = date.getHours();
-		const min = pad(date.getMinutes(), 2);
-		const sec = pad(date.getSeconds(), 2);
-
-		return `${hr}:${min}:${sec}`
-	}
-
 	function getTorontoTime() {
 		const date = new Date();
 
@@ -36,8 +8,7 @@ daybreak.router.useScript(() => {
 			timeZone: "America/New_York",
 			hour12: false
 		})
-		const eastCoastTime = dateFromLocale(eastCoastTimeStr);
-		return getTimeString(eastCoastTime);
+		return eastCoastTimeStr.split(" ")[1];
 	}
 
 	function getSFtime() {
@@ -48,9 +19,7 @@ daybreak.router.useScript(() => {
 			timeZone: "America/Los_Angeles",
 			hour12: false
 		})
-
-		const pacificTime = dateFromLocale(pacificTimeStr);
-		return getTimeString(pacificTime);
+		return pacificTimeStr.split(" ")[1];
 	}
 
 	setInterval(()=>{
