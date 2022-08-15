@@ -280,8 +280,8 @@ daybreak.router.useScript(()=>{
 
 		const {onAbort, finish} = beginTransition();
 
-		const isAbout = nextPath.includes("about");
-		const isContact = nextPath.includes("contact");
+		const isAbout = nextPath.includes("/about");
+		const isContact = nextPath.includes("/contact");
 
 		if(isAbout || isContact) {
 			selectedProject = null;
@@ -292,7 +292,7 @@ daybreak.router.useScript(()=>{
 
 		const TRANSITION_DURATION = 1000;
 
-		const otherProjectLinks = Array.from(getOtherProjectLinks(selectedProject));
+		const otherProjectLinks = Array.from(document.querySelectorAll(`a:not([href="${nextPath}"])`));
 		const selectedProjectLinks = Array.from(document.querySelectorAll(`a[href="${nextPath}"]`));
 		const linksInView = otherProjectLinks.filter((link)=> {
 			return isInViewport(link)
