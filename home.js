@@ -166,6 +166,9 @@ daybreak.router.useScript(()=>{
 	const getOtherProjectLinks = (projectName) => {
 		return document.querySelectorAll(`a[for-project]:not([for-project="${projectName}"])`);
 	}
+	const getProjectLinks = (projectName) => {
+		return document.querySelectorAll(`a[for-project="${projectName}"]`);
+	}
 
 	const {
 		cleanupInfiniteGrid, 
@@ -283,19 +286,52 @@ daybreak.router.useScript(()=>{
 		const TRANSITION_DURATION = 1000;
 
 		const otherProjectLinks = Array.from(getOtherProjectLinks(selectedProject));
-		const linksInView = otherProjectLinks.filter((img)=> {
-			return isInViewport(img)
+		const selectedProjectLinks = Array.from(getProjectLinks(selectedProject));
+		const linksInView = otherProjectLinks.filter((link)=> {
+			return isInViewport(link)
 		});
+		const selectedProjectInView = selectedProjectLinks.filter((link)=> {
+			return isInViewport(link)
+		})
 
+		const {addTimeout, clearAllTimeout} = createTimeoutList();
 		const fadeOutOtherLinks = (linksInView) => {
 			linksInView.forEach((elm)=> {
 				// fade out all the in view images
-				setTimeout(()=>{
+				addTimeout(()=>{
 					elm.style.opacity = "0";
 				}, Math.random() * TRANSITION_DURATION * .6);
 			});
 		}
+		const fadeInOtherLinks = (linksInView)=>{
+			linksInView.forEach((elm) => {
+				// fade out all the in view images
+				addTimeout(()=>{
+					elm.style.opacity = "1";
+				}, Math.random() * .3);
+			});
+		}
+
+		const fadeOutSelectedLinks = (selectedLinks) =>{
+			const delay = TRANSITION_DURATION * .9;
+			selectedLinks.forEach((elm,index)=> {
+				// fade out all the in view images
+				addTimeout(()=>{
+					elm.style.opacity = "0";
+				}, index * TRANSITION_DURATION * .1 + delay  );
+			});
+		}
+
+		const fadeInSelectedLinks = (selectedLinks) =>{
+			selectedLinks.forEach((elm)=> {
+				// fade out all the in view images
+				addTimeout(()=>{
+					elm.style.opacity = "1";
+				}, Math.random() * .3);
+			});
+		}
 		fadeOutOtherLinks(linksInView);
+		fadeOutSelectedLinks(selectedProjectInView)
 		
 		const timeout = setTimeout(()=>{
 			finish();
@@ -304,6 +340,9 @@ daybreak.router.useScript(()=>{
 
 		disableScroll();
 		onAbort(()=> {
+			clearAllTimeout();
+			fadeInOtherLinks();
+			fadeInSelectedLinks();
 			enableScroll();
 			selectedProject = null;
 			clearTimeout(timeout)
@@ -344,4 +383,21 @@ function readProjectDataFromHTML() {
   })
 
   return projectData;
+}
+
+function createTimeoutList() {
+	const allTimeout = [];
+	const addTimeout = (callback, time)=>{
+		allTimeout.push(setTimeout(callback, time));
+	}
+
+	const clearAllTimeout = ()=> {
+		allTimeout.forEach((t)=>{
+			clearTimeout(t)
+		})
+	}
+
+	return {
+		addTimeout, clearAllTimeout
+	}
 }
