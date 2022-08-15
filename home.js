@@ -270,14 +270,6 @@ daybreak.router.useScript(()=>{
 
 	observePageCreation(handlePageCreate)
 
-	// t = Time
-	// b = Beginning value
-	// c = Change in value
-	// d = Duration
-	function easeOutExpo (t, b, c, d) {
-			return c * (t /= d) * t + b;
-	}
-
 	// cleanup function
 	return ({beginTransition, nextRoute})=>{
 
@@ -322,17 +314,11 @@ daybreak.router.useScript(()=>{
 		})
 
 		const fadeOutOtherLinks = (linksInView) => {
-
-			// easeOutExpo(linksInView.length, 0, 1/linksInView.length, TRANSITION_DURATION * .5);
-
 			linksInView.forEach((elm, index)=> {
 				// fade out all the in view images
 				addTimeout(()=>{
 					elm.style.opacity = "0";
-				}, TRANSITION_DURATION * .5 * easeOutExpo(index, 0, 1/linksInView.length, linksInView.length));
-				// addTimeout(()=>{
-				// 	elm.style.opacity = "0";
-				// }, (index/linksInView.length) * TRANSITION_DURATION * .5);
+				}, (index/linksInView.length) * TRANSITION_DURATION * .5);
 			});
 		}
 		const fadeInOtherLinks = (linksInView)=>{
