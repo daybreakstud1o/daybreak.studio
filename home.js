@@ -209,11 +209,11 @@ daybreak.router.useScript(()=>{
 
 			// thumbnail over state
 			const handleMouseEnter = ()=>{
-				projectInfoContainer.style.display = "flex";
+				projectInfoContainer.style.display = "block";
 				fadeOtherProjectsImage(cellData.name);
 			}
 			const handleMouseLeave = ()=>{
-				projectInfoContainer.style.opacity = "none";
+				projectInfoContainer.style.display = "none";
 				showOtherProjectsImage(cellData.name);
 			}
 
