@@ -73,10 +73,14 @@ daybreak.router.useScript(()=>{
 			const projectLink = document.createElement("a");
 			projectLink.href = cellData.href;
 			projectLink.style.display = "block";
+			projectLink.classList.add("hover-target-big");
 
 			const projectImage = document.createElement("img");
 			projectImage.style.pointerEvents = "none"; // disable for microsoft edge
+			projectImage.style.backgroundColor = "#D9D9D9";
 			projectImage.src = cellData.cover;
+			projectImage.width = 567;
+			projectImage.height = 756;
 
 			projectLink.appendChild(projectImage);
 			cellInfo.elm.appendChild(projectLink);
