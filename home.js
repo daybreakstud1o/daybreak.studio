@@ -330,7 +330,7 @@ daybreak.router.useScript(()=>{
 				// fade out all the in view images
 				addTimeout(()=>{
 					elm.style.opacity = "1";
-				}, Math.random() * .3);
+				}, Math.random() * .5);
 			});
 		}
 
@@ -350,7 +350,7 @@ daybreak.router.useScript(()=>{
 				// fade out all the in view images
 				addTimeout(()=>{
 					elm.style.opacity = "1";
-				}, Math.random() * .6);
+				}, Math.random() * .3);
 			});
 		}
 		fadeOutOtherLinks(linksInView);
