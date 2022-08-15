@@ -72,8 +72,12 @@ daybreak.router.useScript(()=>{
 	// 
 	// ======================================================================
 
-	const createProjectImage = (src)=>{
+	const createProjectImage = (projectName,src)=>{
 		const projectImage = document.createElement("img");
+		projectImage.alt = projectName;
+
+		projectImage.setAttribute("for-project", projectName);
+
 		projectImage.style.pointerEvents = "none"; // disable for microsoft edge
 		projectImage.style.display = "block";
 		projectImage.style.width = "100%";
@@ -158,7 +162,7 @@ daybreak.router.useScript(()=>{
 			projectLink.style.backgroundColor = "#D9D9D9";
 			projectLink.classList.add("hover-target-big");
 
-			const projectImage = createProjectImage(cellData.cover);
+			const projectImage = createProjectImage(cellData.name,cellData.cover);
 			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer(cellInfo);
 			const {year, name, description, expertise, projectInfoContent} = createProjectInfoContent(cellData);
 
@@ -172,13 +176,30 @@ daybreak.router.useScript(()=>{
 			projectLink.appendChild(projectImage);
 			cellInfo.elm.appendChild(projectLink);
 
+			const FADE_OPACITY = .1;
+			const fadeOtherProjectsImage = (projectName)=> {
+				const otherProjectImages = document.querySelectorAll(`img[for-project]:not([for-project="${projectName}"])`);
+				otherProjectImages.forEach((img)=>{
+					//@ts-ignore
+					img.style.opacity = `${FADE_OPACITY}`;
+				})
+			}
+			const showOtherProjectsImage = (projectName)=> {
+				const otherProjectImages = document.querySelectorAll(`img[for-project]:not([for-project="${projectName}"])`);
+				otherProjectImages.forEach((img)=>{
+					//@ts-ignore
+					img.style.opacity = `1`;
+				})
+			}
 
 			// thumbnail over state
 			const handleMouseEnter = ()=>{
 				projectInfoContent.style.opacity = "1";
+				fadeOtherProjectsImage(cellData.name);
 			}
 			const handleMouseLeave = ()=>{
 				projectInfoContent.style.opacity = "0";
+				showOtherProjectsImage(cellData.name);
 			}
 
 			projectLink.addEventListener("mouseenter", handleMouseEnter);
