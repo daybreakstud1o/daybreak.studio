@@ -72,25 +72,18 @@ daybreak.router.useScript(()=>{
 		templates: gridTemplates,
 		baseElm: gridContainer,
 		renderCell: (cellInfo) => {
-
-			cellInfo.elm.style.height = "100px";
-
-			// for empty cells
 			if (cellInfo.type === CELL_EMPTY) {
-				cellInfo.elm.innerHTML = "empty";
-				cellInfo.elm.style.opacity = ".2";
 				return;
 			}
-
-			const celldata = cellDataShuffled.next();
-			cellInfo.elm.innerHTML = celldata.name;
-			cellInfo.onUpdate(() => {
-				console.log("update")
-			})
+			
+			const cellData = cellDataShuffled.next();
+			const projectImage = document.createElement("img");
+			projectImage.src = cellData.cover;
+			cellInfo.elm.appendChild(projectImage);
 
 			// cleanup cell
 			return () => {
-
+				cellInfo.elm.removeChild(projectImage);
 			}
 		}
 	});
