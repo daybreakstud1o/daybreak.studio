@@ -302,11 +302,20 @@ daybreak.router.useScript(()=>{
 		// fade out nav
 		const navBar = document.querySelector(".navbar");
 		//@ts-ignore
-		navBar.style.transitionProperty = "opacity";
-		//@ts-ignore
-		navBar.style.transitionDuration = ".2s";
-		//@ts-ignore
-		navBar.style.opacity = "0";
+		navBar.style.transform = "translateY(0%)";
+		
+		requestAnimationFrame(()=>{
+			//@ts-ignore
+			navBar.style.transitionProperty = "opacity, transform";
+			//@ts-ignore
+			navBar.style.transitionTimingFunction = "cubic-bezier(0.5, 0, 0.75, 0)";
+			//@ts-ignore
+			navBar.style.transitionDuration = ".3s";
+			//@ts-ignore
+			navBar.style.opacity = "0";
+			//@ts-ignore
+			navBar.style.transform = "translateY(-50%)";
+		})
 
 		const fadeOutOtherLinks = (linksInView) => {
 			linksInView.forEach((elm, index)=> {
