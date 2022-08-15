@@ -280,8 +280,6 @@ daybreak.router.useScript(()=>{
 
 		const {onAbort, finish} = beginTransition();
 
-		console.log(nextPath)
-
 		const isAbout = nextPath.includes("about");
 		const isContact = nextPath.includes("contact");
 
@@ -338,6 +336,7 @@ daybreak.router.useScript(()=>{
 
 		const fadeOutSelectedLinks = (selectedLinks) =>{
 			const delay = TRANSITION_DURATION * .9;
+			console.log(selectedLinks);
 			selectedLinks.forEach((elm,index)=> {
 				// fade out all the in view images
 				addTimeout(()=>{
