@@ -341,8 +341,8 @@ daybreak.router.useScript(()=>{
 		disableScroll();
 		onAbort(()=> {
 			clearAllTimeout();
-			fadeInOtherLinks();
-			fadeInSelectedLinks();
+			fadeInOtherLinks(linksInView);
+			fadeInSelectedLinks(selectedProjectInView);
 			enableScroll();
 			selectedProject = null;
 			clearTimeout(timeout)
