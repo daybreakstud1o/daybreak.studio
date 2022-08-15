@@ -104,6 +104,7 @@ daybreak.router.useScript(()=>{
 
 	const handlePageCreate = ()=>{
 		daybreak.cursor.refershCursorTargets();
+		daybreak.router.refershHrefTargets();
 	}
 
 	observePageCreation(handlePageCreate)
