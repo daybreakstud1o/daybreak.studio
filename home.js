@@ -71,7 +71,7 @@ daybreak.router.useScript(()=>{
 			}
 			const cellData = cellDataShuffled.next();
 			const projectLink = document.createElement("a");
-			projectLink.href = cellData.link;
+			projectLink.href = cellData.href;
 
 			const projectImage = document.createElement("img");
 			projectImage.style.pointerEvents = "none"; // disable for microsoft edge
