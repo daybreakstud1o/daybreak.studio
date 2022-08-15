@@ -117,6 +117,8 @@ daybreak.router.useScript(()=>{
 		projectInfoContent.style.position = "absolute";
 		projectInfoContent.style.left = "0px";
 		projectInfoContent.style.right = "0px";
+		// hidden by default
+		projectInfoContent.style.opacity = "0";
 
 		const year = document.createElement("div");
 		year.innerHTML = cellData.year;
