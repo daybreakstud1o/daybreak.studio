@@ -292,7 +292,7 @@ daybreak.router.useScript(()=>{
 
 		const TRANSITION_DURATION = 1000;
 
-		const otherProjectLinks = Array.from(document.querySelectorAll(`a:not([href="${nextPath}"])`));
+		const otherProjectLinks = Array.from(document.querySelectorAll(`a[for-project]:not([href="${nextPath}"])`));
 		const selectedProjectLinks = Array.from(document.querySelectorAll(`a[href="${nextPath}"]`));
 		const linksInView = otherProjectLinks.filter((link)=> {
 			return isInViewport(link)
