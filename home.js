@@ -99,6 +99,7 @@ daybreak.router.useScript(()=>{
 		// project info hovers
 		const projectInfoContainer = document.createElement("div");
 		projectInfoContainer.style.position = "relative";
+		projectInfoContainer.style.height = "100%";
 
 		const getProjectInfoPlacement = (projectInfoContainer)=> {
 			const cellLeft = cellInfo.getNearbyCell(-1,0);
@@ -118,23 +119,31 @@ daybreak.router.useScript(()=>{
 	const createProjectInfoContent = (cellData)=>{
 		const projectInfoContent = document.createElement("div");
 		projectInfoContent.style.pointerEvents = "none";
+		projectInfoContent.style.display = "flex";
+		projectInfoContent.style.flexDirection = "col";
 		projectInfoContent.style.position = "absolute";
 		projectInfoContent.style.left = "0px";
 		projectInfoContent.style.right = "0px";
+		projectInfoContent.style.height = "100%";
 		// hidden by default
 		projectInfoContent.style.opacity = "0";
 
 		const year = document.createElement("div");
 		year.innerHTML = cellData.year;
+		year.classList.add("body-founders-small");
 		
 		const name = document.createElement("div");
 		name.innerHTML = cellData.name;
-
+		name.classList.add("label");
+		name.style.marginBottom = "auto";
+		
 		const description = document.createElement("div");
 		description.innerHTML = cellData.description;
-
+		description.classList.add("body-founders-small");
+		
 		const expertise = document.createElement("div");
 		expertise.innerHTML = cellData.expertise.reduce((expertise,curr) => expertise + `<div>${curr}</div>`,"");
+		expertise.classList.add("body-founders-small");
 
 		return {projectInfoContent,year,name,description,expertise}
 	}
