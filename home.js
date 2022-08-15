@@ -272,21 +272,20 @@ daybreak.router.useScript(()=>{
 
 		const TRANSITION_DURATION = 2000;
 
-		const otherProjectImages = Array.from(getOtherProjectLinks(selectedProject));
-		const imagesInView = otherProjectImages.filter((img)=> {
+		const otherProjectLinks = Array.from(getOtherProjectLinks(selectedProject));
+		const linksInView = otherProjectLinks.filter((img)=> {
 			return isInViewport(img)
 		});
 
-		const fadeOutOtherLinks = (imagesInView) => {
-			imagesInView.forEach((img)=> {
-				if(!(img instanceof HTMLImageElement)) return;
+		const fadeOutOtherLinks = (linksInView) => {
+			linksInView.forEach((elm)=> {
 				// fade out all the in view images
 				setTimeout(()=>{
-					img.style.opacity = "0";
+					elm.style.opacity = "0";
 				}, Math.random() * TRANSITION_DURATION);
 			});
 		}
-		fadeOutOtherLinks(imagesInView);
+		fadeOutOtherLinks(linksInView);
 		
 		const timeout = setTimeout(finish, TRANSITION_DURATION);
 		onAbort(()=> {
