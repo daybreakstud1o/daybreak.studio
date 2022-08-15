@@ -163,8 +163,8 @@ daybreak.router.useScript(()=>{
 	const getOtherProjectImages = (projectName)=> {
 		return document.querySelectorAll(`img[for-project]:not([for-project="${projectName}"])`);
 	}
-	const getAllProjectImages = (projectName) => {
-		return document.querySelectorAll(`img[for-project="${projectName}"]`);
+	const getOtherProjectLinks = (projectName) => {
+		return document.querySelectorAll(`a[for-project]:not([for-project="${projectName}"])`);
 	}
 
 	const {cleanupInfiniteGrid, observePageCreation, unobservePageCreation, isInViewport} = createInfiniteGrid({
@@ -181,6 +181,7 @@ daybreak.router.useScript(()=>{
 			projectLink.style.display = "block";
 			projectLink.style.backgroundColor = "#D9D9D9";
 			projectLink.classList.add("hover-target-big");
+			projectLink.setAttribute("for-project", cellData.name)
 
 			const handleLinkClick =  ()=> {
 				selectedProject = cellData.name;
@@ -271,12 +272,12 @@ daybreak.router.useScript(()=>{
 
 		const TRANSITION_DURATION = 2000;
 
-		const otherProjectImages = Array.from(getOtherProjectImages());
+		const otherProjectImages = Array.from(getOtherProjectLinks(selectedProject));
 		const imagesInView = otherProjectImages.filter((img)=> {
 			return isInViewport(img)
 		});
 
-		const fadeOutOtherImages = (imagesInView) => {
+		const fadeOutOtherLinks = (imagesInView) => {
 			imagesInView.forEach((img)=> {
 				if(!(img instanceof HTMLImageElement)) return;
 				// fade out all the in view images
@@ -285,7 +286,7 @@ daybreak.router.useScript(()=>{
 				}, Math.random() * TRANSITION_DURATION);
 			});
 		}
-		fadeOutOtherImages(imagesInView);
+		fadeOutOtherLinks(imagesInView);
 		
 		const timeout = setTimeout(finish, TRANSITION_DURATION);
 		onAbort(()=> {
