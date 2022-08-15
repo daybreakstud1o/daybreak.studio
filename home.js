@@ -39,7 +39,10 @@ daybreak.router.useScript(()=>{
 		]),
 	]
 
-	const gridContainer = document.querySelector(".project-grid-container");
+	const gridContainer = document.createElement("div");
+	gridContainer.classList.add("project-grid-container")
+	document.body.appendChild(gridContainer);
+
 	const projectDataFromHTML = readProjectDataFromHTML();
 
   // data with multiple images
