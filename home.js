@@ -62,6 +62,85 @@ daybreak.router.useScript(()=>{
     return arr
   }, []));
 
+
+
+
+
+	// ======================================================================
+	// 
+	// Grid Element Factories
+	// 
+	// ======================================================================
+
+	const createProjectImage = (src)=>{
+		const projectImage = document.createElement("img");
+		projectImage.style.pointerEvents = "none"; // disable for microsoft edge
+		projectImage.style.display = "block";
+		projectImage.style.width = "100%";
+		projectImage.style.height = "auto";
+		projectImage.src = src;
+		projectImage.width = 567;
+		projectImage.height = 756;
+		
+		// onload animation
+		projectImage.style.opacity = "0";
+		projectImage.style.transitionProperty = "opacity";
+		projectImage.style.transitionDuration = ".3s";
+		projectImage.onload = () => projectImage.style.opacity = "1";
+
+		return projectImage;
+	}
+
+	const createProjectInfoContainer = (cellInfo)=>{
+		// project info hovers
+		const projectInfoContainer = document.createElement("div");
+		projectInfoContainer.style.position = "relative";
+
+		const getProjectInfoPlacement = (projectInfoContainer)=> {
+			const cellLeft = cellInfo.getNearbyCell(-1,0);
+			const cellRight = cellInfo.getNearbyCell(1,0);			
+			const isCellRightEmpty = cellRight.type === CELL_EMPTY;
+
+			if(isCellRightEmpty) {
+				return cellRight.elm;
+			}
+			return cellLeft.elm;
+		}
+		const projectInfoContainerParent = getProjectInfoPlacement(projectInfoContainer); 
+
+		return {projectInfoContainer, projectInfoContainerParent};
+	}
+
+	const createProjectInfoContent = (cellData)=>{
+		const projectInfoContent = document.createElement("div");
+		projectInfoContent.style.pointerEvents = "none";
+		projectInfoContent.style.position = "absolute";
+		projectInfoContent.style.left = "0px";
+		projectInfoContent.style.right = "0px";
+
+		const year = document.createElement("div");
+		year.innerHTML = cellData.year;
+		
+		const name = document.createElement("div");
+		name.innerHTML = cellData.name;
+
+		const description = document.createElement("div");
+		description.innerHTML = cellData.description;
+
+		const expertise = document.createElement("div");
+		expertise.innerHTML = cellData.expertise.reduce((expertise,curr) => expertise + `<div>${curr}</div>`,"");
+
+		return {projectInfoContent,year,name,description,expertise}
+	}
+
+	
+
+	// ======================================================================
+	// 
+	// Setup infinite grid interaction
+	// 
+	// ======================================================================
+
 	const {cleanupInfiniteGrid, observePageCreation, unobservePageCreation} = createInfiniteGrid({
 		cols: 8,
 		templates: gridTemplates,
@@ -77,28 +156,40 @@ daybreak.router.useScript(()=>{
 			projectLink.style.backgroundColor = "#D9D9D9";
 			projectLink.classList.add("hover-target-big");
 
-			const projectImage = document.createElement("img");
-			projectImage.style.pointerEvents = "none"; // disable for microsoft edge
-			projectImage.style.display = "block";
-			projectImage.style.width = "100%";
-			projectImage.style.height = "auto";
-			projectImage.src = cellData.cover;
-			projectImage.width = 567;
-			projectImage.height = 756;
-			
-			// onload animation
-			projectImage.style.opacity = "0";
-			projectImage.style.transitionProperty = "opacity";
-			projectImage.style.transitionDuration = ".3s";
-			projectImage.onload = ()=> projectImage.style.opacity = "1";
+			const projectImage = createProjectImage(cellData.cover);
+			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer();
+			const {year, name, description, expertise, projectInfoContent} = createProjectInfoContent(cellData);
 
+			projectInfoContent.appendChild(year);
+			projectInfoContent.appendChild(name);
+			projectInfoContent.appendChild(description);
+			projectInfoContent.appendChild(expertise);
+			
+			projectInfoContainerParent.appendChild(projectInfoContainer);
+			projectInfoContainer.appendChild(projectInfoContent)
 			projectLink.appendChild(projectImage);
 			cellInfo.elm.appendChild(projectLink);
 
+
+			// thumbnail over state
+			const handleMouseEnter = ()=>{
+				projectInfoContent.style.opacity = "1";
+			}
+			const handleMouseLeave = ()=>{
+				projectInfoContent.style.opacity = "0";
+			}
+
+			projectLink.addEventListener("mouseenter", handleMouseEnter);
+			projectLink.addEventListener("mouseleave", handleMouseLeave);
+
 			// cleanup cell
 			return () => {
+				projectLink.removeEventListener("mouseenter", handleMouseEnter);
+				projectLink.removeEventListener("mouseleave", handleMouseLeave);
+
 				projectLink.removeChild(projectImage);
 				cellInfo.elm.removeChild(projectImage);
+				projectInfoContainerParent.removeChild(projectInfoContainer);
 			}
 		}
 	});
