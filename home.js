@@ -270,7 +270,7 @@ daybreak.router.useScript(()=>{
 			return;
 		}
 
-		const TRANSITION_DURATION = 2000;
+		const TRANSITION_DURATION = 1200;
 
 		const otherProjectLinks = Array.from(getOtherProjectLinks(selectedProject));
 		const linksInView = otherProjectLinks.filter((img)=> {
@@ -282,7 +282,7 @@ daybreak.router.useScript(()=>{
 				// fade out all the in view images
 				setTimeout(()=>{
 					elm.style.opacity = "0";
-				}, Math.random() * TRANSITION_DURATION);
+				}, Math.random() * TRANSITION_DURATION*.6);
 			});
 		}
 		fadeOutOtherLinks(linksInView);
