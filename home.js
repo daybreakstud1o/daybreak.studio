@@ -240,7 +240,12 @@ daybreak.router.useScript(()=>{
 	observePageCreation(handlePageCreate)
 
 	// cleanup function
-	return ()=>{
+	return ({beginTransition})=>{
+		const {onAbort, finish} = beginTransition();
+		
+		const timeout = setTimeout(()=> finish(), 1000);
+		onAbort(()=> clearTimeout(timeout));
+
 		cleanupInfiniteGrid();
 		unobservePageCreation(handlePageCreate);
 	}
