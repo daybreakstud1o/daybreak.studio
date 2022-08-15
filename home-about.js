@@ -1,5 +1,15 @@
 daybreak.router.useScript(() => {
 
+	// javascript some how has 24 in their hour
+	function fix24HrString(str) {
+		const strSplitted = str.split(":");
+		const hr = strSplitted[0] === "24"? "0":strSplitted[0];
+		const min = strSplitted[1];
+		const sec = strSplitted[2];
+
+		return `${hr}:${min}:${sec}`
+	}
+
 	function getTorontoTime() {
 		const date = new Date();
 
@@ -8,7 +18,7 @@ daybreak.router.useScript(() => {
 			timeZone: "America/New_York",
 			hour12: false
 		})
-		return eastCoastTimeStr.split(" ")[1];
+		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
 	}
 
 	function getSFtime() {
@@ -19,7 +29,9 @@ daybreak.router.useScript(() => {
 			timeZone: "America/Los_Angeles",
 			hour12: false
 		})
-		return pacificTimeStr.split(" ")[1];
+
+
+		return fix24HrString(pacificTimeStr.split(" ")[1]);
 	}
 
 	setInterval(()=>{
