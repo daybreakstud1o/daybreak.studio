@@ -3,7 +3,7 @@ daybreak.router.useScript(() => {
 	// javascript some how has 24 in their hour
 	function fix24HrString(str) {
 		const strSplitted = str.split(":");
-		const hr = strSplitted[0] === "24"? "0":strSplitted[0];
+		const hr = strSplitted[0] === "24"? "00":strSplitted[0];
 		const min = strSplitted[1];
 		const sec = strSplitted[2];
 
