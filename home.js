@@ -1,11 +1,10 @@
 //@ts-check
-
 //@ts-ignore
-const daybreak = window.daybreak;
-
 daybreak.router.useScript(()=>{
 	console.log("enter home");
 
+	//@ts-ignore
+	const daybreak = window.daybreak;
 	const {createGridTemplate, createInfiniteGrid, shuffleGridData} = daybreak.grid;
 
 	const CELL_EMPTY = "empty";
