@@ -242,18 +242,18 @@ daybreak.router.useScript(()=>{
 	// enter software
 	onElementEnter(softwareEnter, (entry)=>{
 		if(window.innerWidth > mobileBreakpoint) {
-			brandsEnterDesktop();
+			softwareEnterDesktop();
 		} else {
-			brandsEnterMobile();
+			softwareEnterMobile();
 		}
 	})
 
 	// enter brands
 	onElementEnter(brandsEnter, (entry)=>{
 		if(window.innerWidth > mobileBreakpoint) {
-			softwareEnterDesktop();
+			brandsEnterDesktop();
 		} else {
-			softwareEnterMobile();
+			brandsEnterMobile();
 		}
 	})
 
