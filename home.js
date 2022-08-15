@@ -42,12 +42,6 @@ daybreak.router.useScript(()=>{
 	const gridContainer = document.createElement("div");
 	document.body.appendChild(gridContainer);
 
-
-	onFullyLoaded(()=>{
-
-		
-	})
-
 	const projectDataFromHTML = readProjectDataFromHTML();
 
   // data with multiple images
@@ -75,14 +69,20 @@ daybreak.router.useScript(()=>{
 			if (cellInfo.type === CELL_EMPTY) {
 				return;
 			}
-			
 			const cellData = cellDataShuffled.next();
+			const projectLink = document.createElement("a");
+			projectLink.href = cellData.link;
+
 			const projectImage = document.createElement("img");
+			projectImage.style.pointerEvents = "none"; // disable for microsoft edge
 			projectImage.src = cellData.cover;
-			cellInfo.elm.appendChild(projectImage);
+
+			projectLink.appendChild(projectImage);
+			cellInfo.elm.appendChild(projectLink);
 
 			// cleanup cell
 			return () => {
+				projectLink.removeChild(projectImage);
 				cellInfo.elm.removeChild(projectImage);
 			}
 		}
@@ -100,6 +100,8 @@ function readProjectDataFromHTML() {
   const allProjects = baseElm?.querySelectorAll(".daybreak-project");
 	//@ts-ignore
   const projectData = Array.from(allProjects).map((projectElm) => {
+		//@ts-ignore
+    const href = projectElm.href;
     const importanceElm = projectElm.querySelector(".daybreak-project-importance");
     const nameElm = projectElm.querySelector(".daybreak-project-name");
     const descriptionElm = projectElm.querySelector(".daybreak-project-description");
@@ -120,7 +122,7 @@ function readProjectDataFromHTML() {
     const cover = Array.from(coverElm.children).map((elm) => (elm).src);
 
     return {
-      importance, name, description, year, expertise, cover,
+      importance, name, description, year, expertise, cover,href
     }
   })
 
