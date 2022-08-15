@@ -229,6 +229,9 @@ daybreak.router.useScript(()=>{
 
 			// thumbnail over state
 			const handleMouseEnter = ()=>{
+				// transitioning out, disable the animation
+				if(selectedProject) return;
+
 				projectInfoContainer.style.display = "block";
 				fadeOtherProjectsImage(cellData.name);
 			}
