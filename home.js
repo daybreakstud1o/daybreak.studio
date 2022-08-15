@@ -280,8 +280,10 @@ daybreak.router.useScript(()=>{
 
 		const {onAbort, finish} = beginTransition();
 
-		const isAbout = nextPath.include("about");
-		const isContact = nextPath.include("contact");
+		console.log(nextPath)
+
+		const isAbout = nextPath.includes("about");
+		const isContact = nextPath.includes("contact");
 
 		if(isAbout || isContact) {
 			selectedProject = null;
