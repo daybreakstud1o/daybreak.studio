@@ -167,7 +167,14 @@ daybreak.router.useScript(()=>{
 		return document.querySelectorAll(`a[for-project]:not([for-project="${projectName}"])`);
 	}
 
-	const {cleanupInfiniteGrid, observePageCreation, unobservePageCreation, isInViewport} = createInfiniteGrid({
+	const {
+		cleanupInfiniteGrid, 
+		observePageCreation, 
+		unobservePageCreation, 
+		isInViewport,
+		enableScroll,
+		disableScroll
+	} = createInfiniteGrid({
 		cols: 8,
 		templates: gridTemplates,
 		baseElm: gridContainer,
@@ -291,7 +298,10 @@ daybreak.router.useScript(()=>{
 			finish();
 			finishCleanup();
 		}, TRANSITION_DURATION);
+
+		disableScroll();
 		onAbort(()=> {
+			enableScroll();
 			selectedProject = null;
 			clearTimeout(timeout)
 		});
