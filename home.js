@@ -99,6 +99,9 @@ daybreak.router.useScript(()=>{
 		// project info hovers
 		const projectInfoContainer = document.createElement("div");
 		projectInfoContainer.style.position = "relative";
+		projectInfoContainer.style.height = "100%";
+		projectInfoContainer.style.pointerEvents = "none";
+		projectInfoContainer.style.display = "none";
 
 		const getProjectInfoPlacement = (projectInfoContainer)=> {
 			const cellLeft = cellInfo.getNearbyCell(-1,0);
@@ -124,8 +127,6 @@ daybreak.router.useScript(()=>{
 		projectInfoContent.style.left = "0px";
 		projectInfoContent.style.right = "0px";
 		projectInfoContent.style.height = "100%";
-		// hidden by default
-		projectInfoContent.style.opacity = "0";
 
 		const year = document.createElement("div");
 		year.innerHTML = cellData.year;
@@ -208,11 +209,11 @@ daybreak.router.useScript(()=>{
 
 			// thumbnail over state
 			const handleMouseEnter = ()=>{
-				projectInfoContent.style.opacity = "1";
+				projectInfoContainer.style.display = "flex";
 				fadeOtherProjectsImage(cellData.name);
 			}
 			const handleMouseLeave = ()=>{
-				projectInfoContent.style.opacity = "0";
+				projectInfoContainer.style.opacity = "none";
 				showOtherProjectsImage(cellData.name);
 			}
 
