@@ -296,11 +296,11 @@ daybreak.router.useScript(()=>{
 
 		const {addTimeout, clearAllTimeout} = createTimeoutList();
 		const fadeOutOtherLinks = (linksInView) => {
-			linksInView.forEach((elm)=> {
+			linksInView.forEach((elm, index)=> {
 				// fade out all the in view images
 				addTimeout(()=>{
 					elm.style.opacity = "0";
-				}, Math.random() * TRANSITION_DURATION * .6);
+				}, index * TRANSITION_DURATION * .6);
 			});
 		}
 		const fadeInOtherLinks = (linksInView)=>{
