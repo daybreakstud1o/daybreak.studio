@@ -291,7 +291,7 @@ daybreak.router.useScript(()=>{
 		}
 
 		const TRANSITION_DURATION = 1000;
-
+ 
 		const otherProjectLinks = Array.from(document.querySelectorAll(`a[for-project]:not([href="${nextPath}"])`));
 		const selectedProjectLinks = Array.from(document.querySelectorAll(`a[href="${nextPath}"]`));
 		const linksInView = otherProjectLinks.filter((link)=> {
@@ -350,7 +350,7 @@ daybreak.router.useScript(()=>{
 				// fade out all the in view images
 				addTimeout(()=>{
 					elm.style.opacity = "1";
-				}, Math.random() * .3);
+				}, Math.random() * .6);
 			});
 		}
 		fadeOutOtherLinks(linksInView);
