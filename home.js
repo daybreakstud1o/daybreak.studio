@@ -181,12 +181,16 @@ daybreak.router.useScript(()=>{
 				const otherProjectImages = document.querySelectorAll(`img[for-project]:not([for-project="${projectName}"])`);
 				otherProjectImages.forEach((img)=>{
 					//@ts-ignore
+					if(!img.complete) return;
+					//@ts-ignore
 					img.style.opacity = `${FADE_OPACITY}`;
 				})
 			}
 			const showOtherProjectsImage = (projectName)=> {
 				const otherProjectImages = document.querySelectorAll(`img[for-project]:not([for-project="${projectName}"])`);
 				otherProjectImages.forEach((img)=>{
+					//@ts-ignore
+					if(!img.complete) return;
 					//@ts-ignore
 					img.style.opacity = `1`;
 				})
