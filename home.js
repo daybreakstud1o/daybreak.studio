@@ -61,7 +61,7 @@ daybreak.router.useScript(()=>{
     return arr
   }, []));
 
-	const cleanupInfiniteGrid = createInfiniteGrid({
+	const {cleanupInfiniteGrid, observePageCreation, unobservePageCreation} = createInfiniteGrid({
 		cols: 8,
 		templates: gridTemplates,
 		baseElm: gridContainer,
@@ -89,9 +89,16 @@ daybreak.router.useScript(()=>{
 		}
 	});
 
+	const handlePageCreate = ()=>{
+		daybreak.cursor.refershCursorTargets();
+	}
+
+	observePageCreation(handlePageCreate)
+
 	// cleanup function
 	return ()=>{
 		cleanupInfiniteGrid();
+		unobservePageCreation(handlePageCreate);
 	}
 })
 
