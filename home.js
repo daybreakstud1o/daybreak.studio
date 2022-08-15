@@ -306,15 +306,11 @@ daybreak.router.useScript(()=>{
 		
 		requestAnimationFrame(()=>{
 			//@ts-ignore
-			navBar.style.transitionProperty = "opacity, transform";
-			//@ts-ignore
-			navBar.style.transitionTimingFunction = "cubic-bezier(0.5, 0, 0.75, 0)";
+			navBar.style.transitionProperty = "opacity";
 			//@ts-ignore
 			navBar.style.transitionDuration = ".2s";
 			//@ts-ignore
 			navBar.style.opacity = "0";
-			//@ts-ignore
-			navBar.style.transform = "translateY(-20%)";
 		})
 
 		const fadeOutOtherLinks = (linksInView) => {
