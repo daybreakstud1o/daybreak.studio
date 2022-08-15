@@ -275,7 +275,7 @@ daybreak.router.useScript(()=>{
 	// c = Change in value
 	// d = Duration
 	function easeOutExpo (t, b, c, d) {
-			return (t == d) ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b;
+			return c * (t /= d) * t + b;
 	}
 
 	// cleanup function
