@@ -120,7 +120,7 @@ daybreak.router.useScript(()=>{
 		const projectInfoContent = document.createElement("div");
 		projectInfoContent.style.pointerEvents = "none";
 		projectInfoContent.style.display = "flex";
-		projectInfoContent.style.flexDirection = "col";
+		projectInfoContent.style.flexDirection = "column";
 		projectInfoContent.style.position = "absolute";
 		projectInfoContent.style.left = "0px";
 		projectInfoContent.style.right = "0px";
@@ -131,15 +131,17 @@ daybreak.router.useScript(()=>{
 		const year = document.createElement("div");
 		year.innerHTML = cellData.year;
 		year.classList.add("body-founders-small");
+		year.style.fontSize = "12px";
+		year.style.marginBottom = "16px";
 		
 		const name = document.createElement("div");
 		name.innerHTML = cellData.name;
 		name.classList.add("label");
-		name.style.marginBottom = "auto";
 		
 		const description = document.createElement("div");
 		description.innerHTML = cellData.description;
 		description.classList.add("body-founders-small");
+		description.style.marginBottom = "auto";
 		
 		const expertise = document.createElement("div");
 		expertise.innerHTML = cellData.expertise.reduce((expertise,curr) => expertise + `<div>${curr}</div>`,"");
