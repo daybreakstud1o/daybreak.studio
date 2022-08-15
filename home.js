@@ -271,7 +271,7 @@ daybreak.router.useScript(()=>{
 	observePageCreation(handlePageCreate)
 
 	// cleanup function
-	return ({beginTransition, nextRoute})=>{
+	return ({beginTransition, nextPath})=>{
 
 		const finishCleanup = () => {
 			cleanupInfiniteGrid();
@@ -280,8 +280,8 @@ daybreak.router.useScript(()=>{
 
 		const {onAbort, finish} = beginTransition();
 
-		const isAbout = nextRoute.include("about");
-		const isContact = nextRoute.include("contact");
+		const isAbout = nextPath.include("about");
+		const isContact = nextPath.include("contact");
 
 		if(isAbout || isContact) {
 			selectedProject = null;
@@ -293,7 +293,7 @@ daybreak.router.useScript(()=>{
 		const TRANSITION_DURATION = 1000;
 
 		const otherProjectLinks = Array.from(getOtherProjectLinks(selectedProject));
-		const selectedProjectLinks = Array.from(document.querySelectorAll(`a[href="${nextRoute}"]`));
+		const selectedProjectLinks = Array.from(document.querySelectorAll(`a[href="${nextPath}"]`));
 		const linksInView = otherProjectLinks.filter((link)=> {
 			return isInViewport(link)
 		});
