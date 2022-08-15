@@ -269,7 +269,7 @@ daybreak.router.useScript(()=>{
 			return;
 		}
 
-		const TRANSITION_DURATION = 1000;
+		const TRANSITION_DURATION = 2000;
 
 		const otherProjectImages = Array.from(getOtherProjectImages());
 		const imagesInView = otherProjectImages.filter((img)=> {
