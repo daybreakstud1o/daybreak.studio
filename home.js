@@ -72,6 +72,7 @@ daybreak.router.useScript(()=>{
 			const cellData = cellDataShuffled.next();
 			const projectLink = document.createElement("a");
 			projectLink.href = cellData.href;
+			projectLink.style.display = "block";
 
 			const projectImage = document.createElement("img");
 			projectImage.style.pointerEvents = "none"; // disable for microsoft edge
@@ -127,26 +128,4 @@ function readProjectDataFromHTML() {
   })
 
   return projectData;
-}
-
-function onFullyLoaded(callback) {
-	let aborted = false;
-	const abort = ()=> {
-		aborted = true;
-	};
-	const invoke = ()=> {
-		callback();
-	}
-	
-	if (document.readyState !== "complete") {
-		window.addEventListener("load", () => {
-			if(!aborted) 
-				invoke()
-		});
-	} else {
-		//invoke right if body is loaded
-		invoke();
-	}
-
-	return abort;
 }
