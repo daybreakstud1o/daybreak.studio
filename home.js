@@ -99,7 +99,6 @@ daybreak.router.useScript(()=>{
 		// project info hovers
 		const projectInfoContainer = document.createElement("div");
 		projectInfoContainer.style.position = "relative";
-		projectInfoContainer.style.height = "100%";
 
 		const getProjectInfoPlacement = (projectInfoContainer)=> {
 			const cellLeft = cellInfo.getNearbyCell(-1,0);
