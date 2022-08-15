@@ -279,7 +279,11 @@ daybreak.router.useScript(()=>{
 		}
 
 		const {onAbort, finish} = beginTransition();
-		if(!selectedProject) {
+
+		const isAbout = nextRoute.include("about");
+		const isContact = nextRoute.include("contact");
+
+		if(isAbout || isContact) {
 			selectedProject = null;
 			finishCleanup();
 			finish();
@@ -336,7 +340,7 @@ daybreak.router.useScript(()=>{
 				// fade out all the in view images
 				addTimeout(()=>{
 					elm.style.opacity = "0";
-				}, index * TRANSITION_DURATION * .1 + delay  );
+				}, index * TRANSITION_DURATION * .1 + delay);
 			});
 		}
 
