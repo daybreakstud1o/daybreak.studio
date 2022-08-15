@@ -300,7 +300,7 @@ daybreak.router.useScript(()=>{
 				// fade out all the in view images
 				addTimeout(()=>{
 					elm.style.opacity = "0";
-				}, index * TRANSITION_DURATION * .6);
+				}, (index/linksInView.length) * TRANSITION_DURATION * .6);
 			});
 		}
 		const fadeInOtherLinks = (linksInView)=>{
