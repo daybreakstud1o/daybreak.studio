@@ -239,6 +239,9 @@ daybreak.router.useScript(()=>{
 				fadeOtherProjectsImage(cellData.name);
 			}
 			const handleMouseLeave = ()=>{
+				// transitioning out, disable the animation to remove distraction
+				if(selectedProject) return;
+
 				projectInfoContainer.style.display = "none";
 				showOtherProjectsImage(cellData.name);
 			}
@@ -301,7 +304,7 @@ daybreak.router.useScript(()=>{
 		//@ts-ignore
 		navBar.style.transitionProperty = "opacity";
 		//@ts-ignore
-		navBar.style.transitionDuration = ".5s";
+		navBar.style.transitionDuration = ".2s";
 		//@ts-ignore
 		navBar.style.opacity = "0";
 
@@ -350,6 +353,8 @@ daybreak.router.useScript(()=>{
 
 		disableScroll();
 		onAbort(()=> {
+			//@ts-ignore
+			navBar.style.opacity = "1";
 			clearAllTimeout();
 			fadeInOtherLinks(linksInView);
 			fadeInSelectedLinks(selectedProjectInView);
