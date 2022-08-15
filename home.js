@@ -157,7 +157,7 @@ daybreak.router.useScript(()=>{
 			projectLink.classList.add("hover-target-big");
 
 			const projectImage = createProjectImage(cellData.cover);
-			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer();
+			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer(cellInfo);
 			const {year, name, description, expertise, projectInfoContent} = createProjectInfoContent(cellData);
 
 			projectInfoContent.appendChild(year);
