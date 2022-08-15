@@ -295,12 +295,22 @@ daybreak.router.useScript(()=>{
 		})
 
 		const {addTimeout, clearAllTimeout} = createTimeoutList();
+
+		// fade out nav
+		const navBar = document.querySelector(".navbar");
+		//@ts-ignore
+		navBar.style.transitionProperty = "opacity";
+		//@ts-ignore
+		navBar.style.transitionDuration = ".5s";
+		//@ts-ignore
+		navBar.style.opacity = "0";
+
 		const fadeOutOtherLinks = (linksInView) => {
 			linksInView.forEach((elm, index)=> {
 				// fade out all the in view images
 				addTimeout(()=>{
 					elm.style.opacity = "0";
-				}, (index/linksInView.length) * TRANSITION_DURATION * .6);
+				}, (index/linksInView.length) * TRANSITION_DURATION * .7);
 			});
 		}
 		const fadeInOtherLinks = (linksInView)=>{
