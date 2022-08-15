@@ -270,8 +270,16 @@ daybreak.router.useScript(()=>{
 
 	observePageCreation(handlePageCreate)
 
+	// t = Time
+	// b = Beginning value
+	// c = Change in value
+	// d = Duration
+	function easeOutExpo (t, b, c, d) {
+			return (t == d) ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b;
+	}
+
 	// cleanup function
-	return ({beginTransition})=>{
+	return ({beginTransition, nextRoute})=>{
 
 		const finishCleanup = () => {
 			cleanupInfiniteGrid();
@@ -289,7 +297,7 @@ daybreak.router.useScript(()=>{
 		const TRANSITION_DURATION = 1000;
 
 		const otherProjectLinks = Array.from(getOtherProjectLinks(selectedProject));
-		const selectedProjectLinks = Array.from(getProjectLinks(selectedProject));
+		const selectedProjectLinks = Array.from(document.querySelectorAll(`a[href="${nextRoute}"]`));
 		const linksInView = otherProjectLinks.filter((link)=> {
 			return isInViewport(link)
 		});
@@ -314,11 +322,17 @@ daybreak.router.useScript(()=>{
 		})
 
 		const fadeOutOtherLinks = (linksInView) => {
+
+			// easeOutExpo(linksInView.length, 0, 1/linksInView.length, TRANSITION_DURATION * .5);
+
 			linksInView.forEach((elm, index)=> {
 				// fade out all the in view images
 				addTimeout(()=>{
 					elm.style.opacity = "0";
-				}, (index/linksInView.length) * TRANSITION_DURATION * .5);
+				}, TRANSITION_DURATION * .5 * easeOutExpo(index, 0, 1/linksInView.length, linksInView.length));
+				// addTimeout(()=>{
+				// 	elm.style.opacity = "0";
+				// }, (index/linksInView.length) * TRANSITION_DURATION * .5);
 			});
 		}
 		const fadeInOtherLinks = (linksInView)=>{
