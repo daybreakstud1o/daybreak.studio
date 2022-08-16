@@ -137,7 +137,7 @@ daybreak.router.useScript(()=>{
     }
 
 
-    scrollPosition = $(this).scrollTop();
+    //scrollPosition = $(this).scrollTop();
       //DONT COMMENT OUT THE PREVIOUS CODE
     if (scrollPosition > 5) {
       document.querySelector("#case-top-bar-title").style.opacity = "0";
