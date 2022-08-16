@@ -206,6 +206,7 @@ daybreak.router.useScript(()=>{
   
 
   function myFunction() {
+    console.log("fml")
     if (window.pageYOffset > sticky) {
       navbar.classList.add("sticky")
     } else {
