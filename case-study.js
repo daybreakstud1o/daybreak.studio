@@ -126,7 +126,7 @@ daybreak.router.useScript(()=>{
 
   const handlePageScroll = (scrollPosition)=> {
 
-      //DONT COMMENT OUT THE FOLLOWING:
+    //DONT COMMENT OUT THE FOLLOWING:
     var navbar = document.getElementById("fsdfsdfsdf");
     var sticky = navbar.offsetTop;
 
@@ -135,10 +135,9 @@ daybreak.router.useScript(()=>{
     } else {
       navbar.classList.remove("sticky");
     }
-
+    //DONT COMMENT OUT THE PREVIOUS CODE
 
     //scrollPosition = $(this).scrollTop();
-      //DONT COMMENT OUT THE PREVIOUS CODE
     if (scrollPosition > 5) {
       document.querySelector("#case-top-bar-title").style.opacity = "0";
       document.querySelector("#project-expertise").classList.add("mobile-disappear");
