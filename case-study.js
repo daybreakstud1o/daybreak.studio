@@ -85,32 +85,30 @@ daybreak.router.useScript(()=>{
   };
       
   
-  //DONT COMMENT OUT THE FOLLOWING:
-  window.onscroll = function() {myFunction()};
+//   window.onscroll = function() {myFunction()};
 
-  var navbar = document.getElementById("fsdfsdfsdf");
-  var sticky = navbar.offsetTop;
+//   var navbar = document.getElementById("fsdfsdfsdf");
+//   var sticky = navbar.offsetTop;
   
 
-  function myFunction() {
-    if (window.pageYOffset > sticky) {
-      navbar.classList.add("sticky")
-    } else {
-      navbar.classList.remove("sticky");
-    }
-  }
+//   function myFunction() {
+//     if (window.pageYOffset > sticky) {
+//       navbar.classList.add("sticky")
+//     } else {
+//       navbar.classList.remove("sticky");
+//     }
+//   }
 
-  $(window).on('scroll', function() {
-      scrollPosition = $(this).scrollTop();
-      if (scrollPosition > 5) {
-        document.querySelector("#case-top-bar-title").style.opacity = "0";
-        document.querySelector("#project-expertise").classList.add("mobile-disappear");
-      } else {
-        document.querySelector("#case-top-bar-title").style.opacity = "1";
-        document.querySelector("#project-expertise").classList.remove("mobile-disappear");
-      }
-  });
-  //DONT COMMENT OUT THE PREVIOUS CODE
+//   $(window).on('scroll', function() {
+//       scrollPosition = $(this).scrollTop();
+//       if (scrollPosition > 5) {
+//         document.querySelector("#case-top-bar-title").style.opacity = "0";
+//         document.querySelector("#project-expertise").classList.add("mobile-disappear");
+//       } else {
+//         document.querySelector("#case-top-bar-title").style.opacity = "1";
+//         document.querySelector("#project-expertise").classList.remove("mobile-disappear");
+//       }
+//   });
 
 
   function isInViewport(el) {
@@ -128,17 +126,19 @@ daybreak.router.useScript(()=>{
 
   const handlePageScroll = (scrollPosition)=> {
 
-    // var navbar = document.getElementById("fsdfsdfsdf");
-    // var sticky = navbar.offsetTop;
+      //DONT COMMENT OUT THE FOLLOWING:
+    var navbar = document.getElementById("fsdfsdfsdf");
+    var sticky = navbar.offsetTop;
 
-    // if (window.pageYOffset > sticky) {
-    //   navbar.classList.add("sticky")
-    // } else {
-    //   navbar.classList.remove("sticky");
-    // }
+    if (window.pageYOffset > sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
 
 
-    // scrollPosition = $(this).scrollTop();
+    scrollPosition = $(this).scrollTop();
+      //DONT COMMENT OUT THE PREVIOUS CODE
     if (scrollPosition > 5) {
       document.querySelector("#case-top-bar-title").style.opacity = "0";
       document.querySelector("#project-expertise").classList.add("mobile-disappear");
