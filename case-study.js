@@ -126,16 +126,16 @@ daybreak.router.useScript(()=>{
 
   const handlePageScroll = (scrollPosition)=> {
 
-    //DONT COMMENT OUT THE FOLLOWING:
-    var navbar = document.getElementById("fsdfsdfsdf");
-    var sticky = navbar.offsetTop;
 
-    if (window.pageYOffset > sticky) {
-      navbar.classList.add("sticky")
-    } else {
-      navbar.classList.remove("sticky");
-    }
-    //DONT COMMENT OUT THE PREVIOUS CODE
+//     var navbar = document.getElementById("fsdfsdfsdf");
+//     var sticky = navbar.offsetTop;
+
+//     if (window.pageYOffset > sticky) {
+//       navbar.classList.add("sticky")
+//     } else {
+//       navbar.classList.remove("sticky");
+//     }
+
 
     //scrollPosition = $(this).scrollTop();
     if (scrollPosition > 5) {
@@ -198,3 +198,17 @@ daybreak.router.useScript(()=>{
     // });
   }
 })
+
+  window.onscroll = function() {myFunction()};
+
+  var navbar = document.getElementById("fsdfsdfsdf");
+  var sticky = navbar.offsetTop;
+  
+
+  function myFunction() {
+    if (window.pageYOffset > sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
