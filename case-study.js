@@ -199,17 +199,17 @@ daybreak.router.useScript(()=>{
   }
 })
 
-  window.onscroll = function() {myFunction()};
+var distance = $('div').offset().top,
+    $window = $(window);
 
-  var navbar = document.getElementById("fsdfsdfsdf");
-  var sticky = navbar.offsetTop;
-  
-
-  function myFunction() {
-    console.log("fml")
-    if (window.pageYOffset > sticky) {
-      navbar.classList.add("sticky")
+$window.scroll(function() {
+    var navbar = document.getElementById("fsdfsdfsdf");
+    if ( $window.scrollTop() >= distance ) {
+        navbar.classList.add("sticky")
     } else {
-      navbar.classList.remove("sticky");
+        navbar.classList.remove("sticky");
     }
-  }
+});
+
+
+
