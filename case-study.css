@@ -40,7 +40,7 @@
 .fml {
 	opacity: 1;
 }
-.project-image-intro > div, .main-wrapper .main-container:nth-child(2) {
+.project-image-intro > div {
 	visibility: hidden;
 }
 
