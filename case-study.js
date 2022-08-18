@@ -204,17 +204,25 @@ daybreak.router.useScript(()=>{
 
     newElm.style.position = "fixed";
     newElm.style.opacity = "1";
+    
+    let originalBounds = originalElm.getBoundingClientRect();
 
     const matchOriginalElmPosition = ()=>{
-      const originalBounds = originalElm.getBoundingClientRect();
+      originalBounds = originalElm.getBoundingClientRect();
       newElm.style.left = originalBounds.left + "px";
       newElm.style.top = originalBounds.top + "px";
     }
     matchOriginalElmPosition();
 
     const matchOriginalElmScroll = (scroll)=> {
-      // handle body scroll
-      newElm.style.transform = `translateY(${-scroll}px)`;
+      const originalElmTop = parseFloat(originalBounds.top);
+      if(scroll > originalElmTop) {
+        const scrollOffset = -originalElmTop;
+        newElm.style.transform = `translateY(${scrollOffset}px)`;
+      } else {
+        const scrollOffset = -scroll;
+        newElm.style.transform = `translateY(${scrollOffset}px)`;
+      }
     }
     
     daybreak.scroll.observeScroll(matchOriginalElmScroll);
