@@ -25,6 +25,18 @@ daybreak.router.useScript(()=>{
     newElm.style.opacity = "1";
     newElm.style.visibility = "visible";
     
+    const observer = new MutationObserver((mutationList, observer) => {
+      for (const mutation of mutationList) {
+        console.log(mutation)
+
+        if (mutation.type === 'attributes' && mutation.attributeName === "style") {
+          newElm.style.position = "fixed";
+          newElm.style.visibility = "visible";
+        }
+      }
+    });
+    observer.observe(originalElm, { attributes: true, attributeFilter: ["style"], childList: true });
+
     let originalBounds = originalElm.getBoundingClientRect();
 
     const matchOriginalElmPosition = ()=>{
