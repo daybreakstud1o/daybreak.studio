@@ -68,7 +68,7 @@ daybreak.router.useScript(()=>{
   const cleanupNavStickyElm = enableNavStickyElm(stickyNavElm);
 
 
-  if ($(window).width() > 992) {
+  // if ($(window).width() > 992) {
     // enter top bar
     const allMainContainers = Array.from(document.querySelectorAll(".main-container"));
     const mainContainerInView = allMainContainers.filter((elm)=> {
@@ -76,10 +76,8 @@ daybreak.router.useScript(()=>{
     })
 
     const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
-      const elmsToEnter = Array.from(container.querySelectorAll("div:only-child, span, .body-founders"));
-      console.log(elmsToEnter);
+      const elmsToEnter = Array.from(container.querySelectorAll("div:only-child, img, span, .body-founders"));
       return elmsToEnter.map((elm)=> ()=>{
-
         // use different entry method base on their
         // element tag name 
         if(elm.tagName === "SPAN") {
@@ -92,6 +90,13 @@ daybreak.router.useScript(()=>{
     elmsEnterAnimation.forEach((animation,i)=>{
       setTimeout(animation, i * elementDelay);
     });
+
+    const animationDoneTime = elementDelay * elmsEnterAnimation.length;
+    setTimeout(()=>{
+      allMainContainers.forEach((elm)=>{
+        elm.style.visibility = "visible";
+      });
+    },animationDoneTime);
     
     // const topBarElms = document.querySelectorAll('.case-top-bar-content > div');
     // const headlineWords = document.querySelectorAll('.heading-1 span');
@@ -141,46 +146,46 @@ daybreak.router.useScript(()=>{
     //   document.getElementsByClassName('main-container')[2].style.visibility = "visible";
     // }, (document.querySelectorAll('.heading-1 span').length + document.querySelectorAll('.project-info-wrapper .project-info > div').length + document.querySelectorAll('.project-image-intro > div').length) * elementDelay);
 
-  } else if ($(window).width() < 992) {
-      for (let i = 0; i < document.querySelectorAll('.case-top-bar-content > div').length; i++) {
-        document.querySelectorAll('.case-top-bar-content > div').forEach((element, i) => {
-          setTimeout(function () {
-            element.style.opacity = "1" ?? "";
-          }, i * elementDelay);
-        });
-      }
-      setTimeout(function () {
-        for (let i = 0; i < document.querySelectorAll('.project-info-wrapper > div').length; i++) {
-          document.querySelectorAll('.project-info-wrapper > div').forEach((element, i) => {
-            setTimeout(function () {
-              element.style.opacity = "1" ?? "";
-            }, i * elementDelay);
-          });
-        }
-      }, document.querySelectorAll('.case-top-bar-content > div').length * elementDelay);
-      setTimeout(function () {
-        for (let i = 0; i < document.querySelectorAll('.project-image-intro > div').length; i++) {
-          document.querySelectorAll('.project-image-intro > div').forEach((element, i) => {
-            setTimeout(function () {
-              element.style.visibility = "visible" ?? "";
-            }, i * elementDelay);
-          });
-        }
-      }, (document.querySelectorAll('.project-info-wrapper > div').length + document.querySelectorAll('.case-top-bar-content > div').length) * elementDelay);
-      setTimeout(function () {
-        for (let i = 0; i < document.querySelectorAll('.intro-desc-2 span').length; i++) {
-          document.querySelectorAll('.intro-desc-2 span').forEach((element, i) => {
-            setTimeout(function () {
-              element.style.display = "inline-block" ?? "";
-              daybreak.scroll.recalculatePageHeight();
-            }, i * elementDelay);
-          });
-        }
-      }, (document.querySelectorAll('.case-top-bar-content > div').length + document.querySelectorAll('.project-info-wrapper > div').length + document.querySelectorAll('.project-image-intro > div').length) * elementDelay);
-      setTimeout(function () {
-        document.getElementsByClassName('main-container')[2].style.visibility = "visible";
-      }, (document.querySelectorAll('.case-top-bar-content > div').length + document.querySelectorAll('.project-info-wrapper > div').length + document.querySelectorAll('.project-image-intro > div').length + document.querySelectorAll('.intro-desc-2 span').length) * elementDelay);
-  };
+  // } else if ($(window).width() < 992) {
+  //     for (let i = 0; i < document.querySelectorAll('.case-top-bar-content > div').length; i++) {
+  //       document.querySelectorAll('.case-top-bar-content > div').forEach((element, i) => {
+  //         setTimeout(function () {
+  //           element.style.opacity = "1" ?? "";
+  //         }, i * elementDelay);
+  //       });
+  //     }
+  //     setTimeout(function () {
+  //       for (let i = 0; i < document.querySelectorAll('.project-info-wrapper > div').length; i++) {
+  //         document.querySelectorAll('.project-info-wrapper > div').forEach((element, i) => {
+  //           setTimeout(function () {
+  //             element.style.opacity = "1" ?? "";
+  //           }, i * elementDelay);
+  //         });
+  //       }
+  //     }, document.querySelectorAll('.case-top-bar-content > div').length * elementDelay);
+  //     setTimeout(function () {
+  //       for (let i = 0; i < document.querySelectorAll('.project-image-intro > div').length; i++) {
+  //         document.querySelectorAll('.project-image-intro > div').forEach((element, i) => {
+  //           setTimeout(function () {
+  //             element.style.visibility = "visible" ?? "";
+  //           }, i * elementDelay);
+  //         });
+  //       }
+  //     }, (document.querySelectorAll('.project-info-wrapper > div').length + document.querySelectorAll('.case-top-bar-content > div').length) * elementDelay);
+  //     setTimeout(function () {
+  //       for (let i = 0; i < document.querySelectorAll('.intro-desc-2 span').length; i++) {
+  //         document.querySelectorAll('.intro-desc-2 span').forEach((element, i) => {
+  //           setTimeout(function () {
+  //             element.style.display = "inline-block" ?? "";
+  //             daybreak.scroll.recalculatePageHeight();
+  //           }, i * elementDelay);
+  //         });
+  //       }
+  //     }, (document.querySelectorAll('.case-top-bar-content > div').length + document.querySelectorAll('.project-info-wrapper > div').length + document.querySelectorAll('.project-image-intro > div').length) * elementDelay);
+  //     setTimeout(function () {
+  //       document.getElementsByClassName('main-container')[2].style.visibility = "visible";
+  //     }, (document.querySelectorAll('.case-top-bar-content > div').length + document.querySelectorAll('.project-info-wrapper > div').length + document.querySelectorAll('.project-image-intro > div').length + document.querySelectorAll('.intro-desc-2 span').length) * elementDelay);
+  // };
       
   
 //   window.onscroll = function() {myFunction()};
