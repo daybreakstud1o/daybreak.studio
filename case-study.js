@@ -60,7 +60,7 @@ daybreak.router.useScript(()=>{
     const allMainContainers = Array.from(document.querySelectorAll(".main-container"));
     const mainContainerInView = allMainContainers.filter((elm)=> {
       const isInViewport = daybreak.scroll.isInViewport(elm)
-      console.log(elm)
+      console.log(elm.getBoundingClientRect().top)
       console.log(isInViewport)
       return isInViewport;
     })
