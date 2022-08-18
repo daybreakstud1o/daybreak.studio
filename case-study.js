@@ -184,7 +184,7 @@ daybreak.router.useScript(()=>{
   // });
 
   // clone fixed nodes out of the current 
-  function enableFixedElement(elms) {
+  function enableFixedElm(elms) {
     elms.forEach((elm)=>{
       const newElm = elm.cloneNode(true);
       newElm.remove();
@@ -192,7 +192,29 @@ daybreak.router.useScript(()=>{
     });
   }
   const scrollFixedElm = document.querySelectorAll(".fixed, .next-up-image");
-  enableFixedElement(scrollFixedElm);
+  enableFixedElm(scrollFixedElm);
+
+
+  const stickyNavElm = document.querySelector("#fsdfsdfsdf");
+  function enableNavStickyElm(elm) {
+    const newElm = elm.cloneNode(true);
+    newElm.remove();
+    document.body.appendChild(newElm);
+    newElm.style.position = "fixed";
+    newElm.style.top = "0px";
+
+    const handleBodyScroll = (scroll)=> {
+      // handle body scroll
+      newElm.style.transform = `transitionY(${scroll}px)`;
+    }
+    daybreak.scroll.observeScroll(handleBodyScroll);
+    
+    return ()=> {
+      daybreak.scroll.unobserveScroll(handleBodyScroll);
+    }
+  }
+  const cleanupNavStickyElm = enableNavStickyElm(stickyNavElm);
+
 
 
   $( ".close-casestudy" ).mouseover(function() {
@@ -205,6 +227,7 @@ daybreak.router.useScript(()=>{
 
   return ({beginTransition, onAbort})=>{
     daybreak.scroll.unobserveScroll(handlePageScroll);
+    cleanupNavStickyElm();
     // document.removeEventListener('scroll', handlePageScroll, {
     //   passive: true
     // });
