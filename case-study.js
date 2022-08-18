@@ -29,6 +29,8 @@ daybreak.router.useScript(()=>{
       for (const mutation of mutationList) {
         if (mutation.attributeName !== "style") return; 
         if (mutation.target.visibility === "visible") {
+          console.log(mutation.target.innerHTML)
+
           // sync the style of it's sub element
           newElm.innerHTML = mutation.target.innerHTML;
         }
