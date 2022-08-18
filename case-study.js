@@ -187,8 +187,8 @@ daybreak.router.useScript(()=>{
   function enableFixedElement(elms) {
     elms.forEach((elm)=>{
       const newElm = elm.cloneNode(true);
-      document.body.appendChild(newElm);
       newElm.remove();
+      document.body.appendChild(newElm);
     });
   }
   const scrollFixedElm = document.querySelectorAll(".fixed, .next-up-image");
