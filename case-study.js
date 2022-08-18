@@ -198,16 +198,19 @@ daybreak.router.useScript(()=>{
   const stickyNavElm = document.querySelector("#fsdfsdfsdf");
   function enableNavStickyElm(originalElm) {
     originalElm.style.visibility = "hidden";
-
+    
     const newElm = originalElm.cloneNode(true);
     document.body.appendChild(newElm);
+
     newElm.style.position = "fixed";
+    newElm.style.visibility = "visible";
 
     const matchOriginalElmPosition = ()=>{
       const originalBounds = originalElm.getBoundingClientRect();
       newElm.left = originalBounds.left;
       newElm.top = originalBounds.top;
     }
+    matchOriginalElmPosition();
 
     const matchOriginalElmScroll = (scroll)=> {
       // handle body scroll
