@@ -191,7 +191,7 @@ daybreak.router.useScript(()=>{
       newElm.remove();
     });
   }
-  const scrollFixedElm = document.querySelectorAll(".fixed");
+  const scrollFixedElm = document.querySelectorAll(".fixed, .next-up-image");
   enableFixedElement(scrollFixedElm);
 
 
