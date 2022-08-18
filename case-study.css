@@ -7,11 +7,15 @@
 } */
 
 .main-container *:only-child {
-  opacity: 0;
+  visibility: hidden;
 }
 
 .main-container span {
   display: none;
+}
+
+.body-founders {
+  visibility: hidden;
 }
 
 

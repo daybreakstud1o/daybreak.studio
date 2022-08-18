@@ -63,7 +63,7 @@ daybreak.router.useScript(()=>{
     })
 
     const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
-      const elmsToEnter = Array.from(container.querySelectorAll(":only-child, span"));
+      const elmsToEnter = Array.from(container.querySelectorAll(":only-child, span, .body-founders"));
       console.log(elmsToEnter);
       return elmsToEnter.map((elm)=> ()=>{
 
@@ -73,7 +73,6 @@ daybreak.router.useScript(()=>{
           elm.style.display = "inline-block";
           return;
         }
-        elm.style.opacity = "1";
         elm.style.visibility = "visible";
       })
     })
