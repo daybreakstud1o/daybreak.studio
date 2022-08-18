@@ -94,14 +94,13 @@ daybreak.router.useScript(()=>{
     });
 
     const animationDoneTime = elementDelay * elmsEnterAnimation.length;
-    setTimeout(()=>{
-      const allElms = document.querySelectorAll(".main-container *:only-child, .body-founders");
-      requestAnimationFrame(()=>{
-        allElms.forEach((elm)=>{
-          elm.style.visibility = "visible";
-        });
-      })
-    },animationDoneTime);
+    // setTimeout(()=>{
+    //   requestAnimationFrame(()=>{
+    //     document.querySelectorAll(".main-container *:only-child, .body-founders").forEach((elm)=>{
+    //       elm.style.visibility = "visible";
+    //     });
+    //   })
+    // },animationDoneTime);
     
     // const topBarElms = document.querySelectorAll('.case-top-bar-content > div');
     // const headlineWords = document.querySelectorAll('.heading-1 span');
@@ -246,43 +245,43 @@ daybreak.router.useScript(()=>{
 
 
     //scrollPosition = $(this).scrollTop();
-    // if (scrollPosition > 5) {
-    //   document.querySelector("#case-top-bar-title").style.opacity = "0";
-    //   document.querySelector("#project-expertise").classList.add("mobile-disappear");
-    // } else {
-    //   document.querySelector("#case-top-bar-title").style.opacity = "1";
-    //   document.querySelector("#project-expertise").classList.remove("mobile-disappear");
-    // }
+    if (scrollPosition > 5) {
+      document.querySelector("#case-top-bar-title").style.opacity = "0";
+      document.querySelector("#project-expertise").classList.add("mobile-disappear");
+    } else {
+      document.querySelector("#case-top-bar-title").style.opacity = "1";
+      document.querySelector("#project-expertise").classList.remove("mobile-disappear");
+    }
 
 
-    // if (isInViewport(box) === true) {
-    //   document.querySelector('.next-up-overlay').style.opacity = "1";
-    //   var elementDelay = 250;
-    //   for (let i = 0; i < document.querySelectorAll('.next-up-info > div').length; i++) {
-    //     document.querySelectorAll('.next-up-info > div').forEach((element, i) => {
-    //       setTimeout(function () {
-    //         element.style.opacity = "1" ?? "";
-    //       }, i * elementDelay);
-    //     });
-    //   }
-    //   setTimeout(function () {
-    //     for (let i = 0; i < document.querySelectorAll('.scroll-arrows svg path').length; i++) {
-    //       document.querySelectorAll('.scroll-arrows svg path').forEach((element, i) => {
-    //         setTimeout(function () {
-    //           element.style.opacity = "1";
-    //         }, i * elementDelay);
-    //       });
-    //     }
-    //   }, document.querySelectorAll('.next-up-info > div').length * elementDelay);
-    // } else if (isInViewport(box) === false) {
-    //   document.querySelector('.next-up-overlay').style.opacity = "0";
-    //   for (let i = 0; i < document.querySelectorAll('.next-up-info > div').length; i++) {
-    //     document.querySelectorAll('.next-up-info > div')[i].style.opacity = "0";
-    //   }
-    //   for (let i = 0; i < document.querySelectorAll('.scroll-arrows svg path').length; i++) {
-    //     document.querySelectorAll('.scroll-arrows svg path')[i].style.opacity = "0.5";
-    //   }
-    // }
+    if (isInViewport(box) === true) {
+      document.querySelector('.next-up-overlay').style.opacity = "1";
+      var elementDelay = 250;
+      for (let i = 0; i < document.querySelectorAll('.next-up-info > div').length; i++) {
+        document.querySelectorAll('.next-up-info > div').forEach((element, i) => {
+          setTimeout(function () {
+            element.style.opacity = "1" ?? "";
+          }, i * elementDelay);
+        });
+      }
+      setTimeout(function () {
+        for (let i = 0; i < document.querySelectorAll('.scroll-arrows svg path').length; i++) {
+          document.querySelectorAll('.scroll-arrows svg path').forEach((element, i) => {
+            setTimeout(function () {
+              element.style.opacity = "1";
+            }, i * elementDelay);
+          });
+        }
+      }, document.querySelectorAll('.next-up-info > div').length * elementDelay);
+    } else if (isInViewport(box) === false) {
+      document.querySelector('.next-up-overlay').style.opacity = "0";
+      for (let i = 0; i < document.querySelectorAll('.next-up-info > div').length; i++) {
+        document.querySelectorAll('.next-up-info > div')[i].style.opacity = "0";
+      }
+      for (let i = 0; i < document.querySelectorAll('.scroll-arrows svg path').length; i++) {
+        document.querySelectorAll('.scroll-arrows svg path')[i].style.opacity = "0.5";
+      }
+    }
   }
 
 
