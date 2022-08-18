@@ -30,8 +30,10 @@ daybreak.router.useScript(()=>{
       for (const mutation of mutationList) {
         if (mutation.attributeName !== "style") return; 
         if (mutation.target.style.visibility === "visible") {
-          const index = getChildIndex(mutation.target);
-          newElm.children[index].style.cssText = mutation.target.style.cssText;
+          requestAnimationFrame(()=>{
+            const index = getChildIndex(mutation.target);
+            newElm.children[index].style.cssText = mutation.target.style.cssText;
+          })
         }
       }
     });
@@ -93,9 +95,12 @@ daybreak.router.useScript(()=>{
 
     const animationDoneTime = elementDelay * elmsEnterAnimation.length;
     setTimeout(()=>{
-      document.querySelectorAll(".main-container *:only-child, .body-founders").forEach((elm)=>{
-        elm.style.visibility = "visible";
-      });
+      const allElms = document.querySelectorAll(".main-container *:only-child, .body-founders");
+      requestAnimationFrame(()=>{
+        allElms.forEach((elm)=>{
+          elm.style.visibility = "visible";
+        });
+      })
     },animationDoneTime);
     
     // const topBarElms = document.querySelectorAll('.case-top-bar-content > div');
