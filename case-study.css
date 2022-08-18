@@ -5,7 +5,19 @@
 .sticky .body-founders {
 	transition: 0.6s ease;
 } */
-@media screen and (max-width: 767px) {
+
+.main-container *:only-child {
+  opacity: 0;
+}
+
+.main-container span {
+  display: none;
+}
+
+
+
+
+/* @media screen and (max-width: 767px) {
   .mobile-disappear {
     transition: 0.6s ease-out;
   	opacity: 0;
@@ -54,4 +66,4 @@
 	.project-info-wrapper > div {
 		opacity: 0;
 	}
-}
+} */
