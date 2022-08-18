@@ -59,10 +59,11 @@ daybreak.router.useScript(()=>{
     // enter top bar
     const allMainContainers = Array.from(document.querySelectorAll(".main-container"));
     const mainContainerInView = allMainContainers.filter((elm)=> {
-      return daybreak.scroll.isInViewport(elm);
+      const isInViewport = daybreak.scroll.isInViewport(elm)
+      console.log(elm)
+      console.log(isInViewport)
+      return isInViewport;
     })
-    console.log(allMainContainers);
-    console.log(mainContainerInView);
 
     const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
       const elmsToEnter = Array.from(container.querySelectorAll("div:only-child, span"));
