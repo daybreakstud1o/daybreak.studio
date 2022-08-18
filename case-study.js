@@ -183,6 +183,18 @@ daybreak.router.useScript(()=>{
   //     passive: true
   // });
 
+  // clone fixed nodes out of the current 
+  function enableFixedElement(elms) {
+    elms.forEach((elm)=>{
+      const newElm = elm.cloneNode(true);
+      document.body.appendChild(newElm);
+      newElm.remove();
+    });
+  }
+  const scrollFixedElm = document.querySelectorAll(".fixed");
+  enableFixedElement(scrollFixedElm);
+
+
   $( ".close-casestudy" ).mouseover(function() {
     document.querySelector(".back-icon").style.visibility = "visible";
   });
@@ -199,17 +211,17 @@ daybreak.router.useScript(()=>{
   }
 })
 
-var distance = $('div').offset().top,
-    $window = $(window);
+// var distance = $('div').offset().top,
+//     $window = $(window);
 
-$window.scroll(function() {
-    var navbar = document.getElementById("fsdfsdfsdf");
-    if ( $window.scrollTop() >= distance ) {
-        navbar.classList.add("sticky")
-    } else {
-        navbar.classList.remove("sticky");
-    }
-});
+// $window.scroll(function() {
+//     var navbar = document.getElementById("fsdfsdfsdf");
+//     if ( $window.scrollTop() >= distance ) {
+//         navbar.classList.add("sticky")
+//     } else {
+//         navbar.classList.remove("sticky");
+//     }
+// });
 
 
 
