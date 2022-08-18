@@ -22,7 +22,8 @@ daybreak.router.useScript(()=>{
     document.body.appendChild(newElm);
 
     newElm.style.position = "fixed";
-    // newElm.style.opacity = "1";
+    newElm.style.opacity = "1";
+    newElm.style.visibility = "visible";
     
     let originalBounds = originalElm.getBoundingClientRect();
 
