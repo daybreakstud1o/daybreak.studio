@@ -61,9 +61,11 @@ daybreak.router.useScript(()=>{
     const mainContainerInView = allMainContainers.filter((elm)=> {
       return daybreak.scroll.isInViewport(elm);
     })
+    console.log(mainContainerInView);
+
     const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
       const elmsToEnter = Array.from(container.querySelectorAll("div:only-child, span"));
-      console.log(elmsToEnter);
+      // console.log(elmsToEnter);
       return elmsToEnter.map((elm)=> ()=>{
 
         // use different entry method base on their
