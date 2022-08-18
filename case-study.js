@@ -196,21 +196,30 @@ daybreak.router.useScript(()=>{
 
 
   const stickyNavElm = document.querySelector("#fsdfsdfsdf");
-  function enableNavStickyElm(elm) {
-    const newElm = elm.cloneNode(true);
-    newElm.remove();
+  function enableNavStickyElm(originalElm) {
+    originalElm.style.visibility = "hidden";
+
+    const newElm = originalElm.cloneNode(true);
     document.body.appendChild(newElm);
     newElm.style.position = "fixed";
-    newElm.style.top = "0px";
 
-    const handleBodyScroll = (scroll)=> {
-      // handle body scroll
-      newElm.style.transform = `transitionY(${scroll}px)`;
+    const matchOriginalElmPosition = ()=>{
+      const originalBounds = originalElm.getBoundingClientRect();
+      newElm.left = originalBounds.left;
+      newElm.top = originalBounds.top;
     }
-    daybreak.scroll.observeScroll(handleBodyScroll);
+
+    const matchOriginalElmScroll = (scroll)=> {
+      // handle body scroll
+      newElm.style.transform = `transitionY(${-scroll}px)`;
+    }
+    
+    daybreak.scroll.observeScroll(matchOriginalElmScroll);
+    window.addEventListener("resize", matchOriginalElmPosition);
     
     return ()=> {
-      daybreak.scroll.unobserveScroll(handleBodyScroll);
+      daybreak.scroll.unobserveScroll(matchOriginalElmScroll);
+      window.removeEventListener("resize", matchOriginalElmPosition);
     }
   }
   const cleanupNavStickyElm = enableNavStickyElm(stickyNavElm);
