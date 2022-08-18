@@ -27,7 +27,7 @@ daybreak.router.useScript(()=>{
     
     const observer = new MutationObserver((mutationList, observer) => {
       for (const mutation of mutationList) {
-        console.log(mutation)
+        console.log(mutation.target.style.cssText)
 
         if (mutation.type === 'attributes' && mutation.attributeName === "style") {
           newElm.style.position = "fixed";
