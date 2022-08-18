@@ -207,8 +207,8 @@ daybreak.router.useScript(()=>{
 
     const matchOriginalElmPosition = ()=>{
       const originalBounds = originalElm.getBoundingClientRect();
-      newElm.style.left = originalBounds.left;
-      newElm.style.top = originalBounds.top;
+      newElm.style.left = originalBounds.left + "px";
+      newElm.style.top = originalBounds.top + "px";
     }
     matchOriginalElmPosition();
 
