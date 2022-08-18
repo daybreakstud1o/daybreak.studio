@@ -25,14 +25,13 @@ daybreak.router.useScript(()=>{
     newElm.style.opacity = "1";
     newElm.style.visibility = "visible";
 
+    const getChildIndex = (element)=>Array.from(element.parentNode.children).indexOf(element);
     const observer = new MutationObserver((mutationList, observer) => {
       for (const mutation of mutationList) {
         if (mutation.attributeName !== "style") return; 
-        if (mutation.target.visibility === "visible") {
-          console.log(mutation.target.innerHTML)
-
-          // sync the style of it's sub element
-          newElm.innerHTML = mutation.target.innerHTML;
+        if (mutation.target.style.visibility === "visible") {
+          const index = getChildIndex(mutation.target);
+          newElm.children[index].style.cssText = mutation.target.style.cssText;
         }
       }
     });
