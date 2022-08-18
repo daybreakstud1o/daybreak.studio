@@ -61,6 +61,7 @@ daybreak.router.useScript(()=>{
     const mainContainerInView = allMainContainers.filter((elm)=> {
       return daybreak.scroll.isInViewport(elm);
     })
+    console.log(allMainContainers);
     console.log(mainContainerInView);
 
     const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
