@@ -197,18 +197,18 @@ daybreak.router.useScript(()=>{
 
   const stickyNavElm = document.querySelector("#fsdfsdfsdf");
   function enableNavStickyElm(originalElm) {
-    originalElm.style.visibility = "hidden";
+    originalElm.style.opacity = "0";
     
     const newElm = originalElm.cloneNode(true);
     document.body.appendChild(newElm);
 
     newElm.style.position = "fixed";
-    newElm.style.visibility = "visible";
+    newElm.style.opacity = "1";
 
     const matchOriginalElmPosition = ()=>{
       const originalBounds = originalElm.getBoundingClientRect();
-      newElm.left = originalBounds.left;
-      newElm.top = originalBounds.top;
+      newElm.style.left = originalBounds.left;
+      newElm.style.top = originalBounds.top;
     }
     matchOriginalElmPosition();
 
