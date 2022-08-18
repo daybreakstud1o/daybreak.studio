@@ -203,11 +203,17 @@ daybreak.router.useScript(()=>{
     document.querySelector(".back-icon").style.visibility = "hidden";
   });
 
-  return ()=>{
+  return ({beginTransition, onAbort})=>{
     daybreak.scroll.unobserveScroll(handlePageScroll);
     // document.removeEventListener('scroll', handlePageScroll, {
     //   passive: true
     // });
+
+    // const allImages = document.querySelectorAll("img");
+    // const imagesInView = otherProjectLinks.filter((link)=> {
+		// 	return isInViewport(link)
+		// });
+    
   }
 })
 
