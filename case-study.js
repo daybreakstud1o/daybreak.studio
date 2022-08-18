@@ -35,7 +35,7 @@ daybreak.router.useScript(()=>{
         }
       }
     });
-    observer.observe(originalElm, { attributes: true, attributeFilter: ["style"], childList: true });
+    observer.observe(originalElm, { attributes: true, attributeFilter: ["style"], childList: true, subtree:true });
 
     let originalBounds = originalElm.getBoundingClientRect();
 
