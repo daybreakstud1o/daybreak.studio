@@ -64,7 +64,7 @@ daybreak.router.useScript(()=>{
     })
 
     const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
-      const elmsToEnter = Array.from(container.querySelectorAll(":only-child, span, .body-founders"));
+      const elmsToEnter = Array.from(container.querySelectorAll("div:only-child, span, .body-founders"));
       console.log(elmsToEnter);
       return elmsToEnter.map((elm)=> ()=>{
 
