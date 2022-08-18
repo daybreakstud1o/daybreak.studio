@@ -13,7 +13,7 @@ daybreak.router.useScript(()=>{
   const scrollFixedElm = document.querySelectorAll(".fixed, .next-up-image");
   enableFixedElm(scrollFixedElm);
 
-
+  // Fix nav sticky position
   const stickyNavElm = document.querySelector("#fsdfsdfsdf");
   function enableNavStickyElm(originalElm) {
     originalElm.style.opacity = "0";
@@ -22,7 +22,7 @@ daybreak.router.useScript(()=>{
     document.body.appendChild(newElm);
 
     newElm.style.position = "fixed";
-    newElm.style.opacity = "1";
+    // newElm.style.opacity = "1";
     
     let originalBounds = originalElm.getBoundingClientRect();
 
@@ -56,44 +56,75 @@ daybreak.router.useScript(()=>{
 
 
   if ($(window).width() > 992) {
-      for (let i = 0; i < document.querySelectorAll('.case-top-bar-content > div').length; i++) {
-        document.querySelectorAll('.case-top-bar-content > div').forEach((element, i) => {
-          setTimeout(function () {
-            element.style.opacity = "1" ?? "";
-          }, i * elementDelay);
-        });
-      }
-      setTimeout(function () {
-        for (let i = 0; i < document.querySelectorAll('.heading-1 span').length; i++) {
-          document.querySelectorAll('.heading-1 span').forEach((element, i) => {
-            setTimeout(function () {
-              element.style.display = "inline-block" ?? "";
-              daybreak.scroll.recalculatePageHeight();
-            }, i * elementDelay);
-          });
+    // enter top bar
+    const allMainContainers = Array.from(document.querySelectorAll(".main-container"));
+    const mainContainerInView = allMainContainers.filter((elm)=> {
+      return daybreak.scroll.isInViewport(elm);
+    })
+    const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
+      const elmsToEnter = container.querySelectorAll("*:only-child");
+      return elmsToEnter.map((elm)=> ()=>{
+        // use different entry method base on their
+        // element tag name 
+        if(elm.tagName === "SPAN") {
+          elm.style.display = "inline-block";
+          return;
         }
-      }, document.querySelectorAll('.case-top-bar-content > div').length * elementDelay);
-      setTimeout(function () {
-        for (let i = 0; i < document.querySelectorAll('.project-info-wrapper .project-info > div').length; i++) {
-          document.querySelectorAll('.project-info-wrapper .project-info > div').forEach((element, i) => {
-            setTimeout(function () {
-              element.style.visibility = "visible" ?? "";
-            }, i * elementDelay);
-          });
-        }
-      }, document.querySelectorAll('.heading-1 span').length * elementDelay);
-      setTimeout(function () {
-        for (let i = 0; i < document.querySelectorAll('.project-image-intro > div').length; i++) {
-          document.querySelectorAll('.project-image-intro > div').forEach((element, i) => {
-            setTimeout(function () {
-              element.style.visibility = "visible" ?? "";
-            }, i * 250);
-          });
-        }
-      }, (document.querySelectorAll('.heading-1 span').length + document.querySelectorAll('.project-info-wrapper .project-info > div').length) * elementDelay);
-      setTimeout(function () {
-        document.getElementsByClassName('main-container')[2].style.visibility = "visible";
-      }, (document.querySelectorAll('.heading-1 span').length + document.querySelectorAll('.project-info-wrapper .project-info > div').length + document.querySelectorAll('.project-image-intro > div').length) * elementDelay);
+        elm.style.opacity = "1";
+        elm.style.visibility = "visible";
+      })
+    })
+    elmsEnterAnimation.forEach((animation,i)=>{
+      setTimeout(animation, i * elementDelay);
+    });
+    
+    // const topBarElms = document.querySelectorAll('.case-top-bar-content > div');
+    // const headlineWords = document.querySelectorAll('.heading-1 span');
+    // const heroInfo = document.querySelectorAll('.project-info-wrapper .project-info > div');
+    // const cover = document.querySelector('.project-image-intro > div');
+
+    // for (let i = 0; i < document.querySelectorAll('.case-top-bar-content > div').length; i++) {
+    //   document.querySelectorAll('.case-top-bar-content > div').forEach((element, i) => {
+    //     setTimeout(function () {
+    //       element.style.opacity = "1" ?? "";
+    //     }, i * elementDelay);
+    //   });
+    // }
+    // // case study title
+    // setTimeout(function () {
+    //   for (let i = 0; i < document.querySelectorAll('.heading-1 span').length; i++) {
+    //     document.querySelectorAll('.heading-1 span').forEach((element, i) => {
+    //       setTimeout(function () {
+    //         element.style.display = "inline-block" ?? "";
+    //         daybreak.scroll.recalculatePageHeight();
+    //       }, i * elementDelay);
+    //     });
+    //   }
+    // }, document.querySelectorAll('.case-top-bar-content > div').length * elementDelay);
+    // // hero info
+    // setTimeout(function () {
+    //   for (let i = 0; i < document.querySelectorAll('.project-info-wrapper .project-info > div').length; i++) {
+    //     document.querySelectorAll('.project-info-wrapper .project-info > div').forEach((element, i) => {
+    //       setTimeout(function () {
+    //         element.style.visibility = "visible" ?? "";
+    //       }, i * elementDelay);
+    //     });
+    //   }
+    // }, document.querySelectorAll('.heading-1 span').length * elementDelay);
+    // // enter cover image
+    // setTimeout(function () {
+    //   for (let i = 0; i < document.querySelectorAll('.project-image-intro > div').length; i++) {
+    //     document.querySelectorAll('.project-image-intro > div').forEach((element, i) => {
+    //       setTimeout(function () {
+    //         element.style.visibility = "visible" ?? "";
+    //       }, i * 250);
+    //     });
+    //   }
+    // }, (document.querySelectorAll('.heading-1 span').length + document.querySelectorAll('.project-info-wrapper .project-info > div').length) * elementDelay);
+    // // enter other elements
+    // setTimeout(function () {
+    //   document.getElementsByClassName('main-container')[2].style.visibility = "visible";
+    // }, (document.querySelectorAll('.heading-1 span').length + document.querySelectorAll('.project-info-wrapper .project-info > div').length + document.querySelectorAll('.project-image-intro > div').length) * elementDelay);
 
   } else if ($(window).width() < 992) {
       for (let i = 0; i < document.querySelectorAll('.case-top-bar-content > div').length; i++) {
@@ -261,18 +292,3 @@ daybreak.router.useScript(()=>{
     
   }
 })
-
-// var distance = $('div').offset().top,
-//     $window = $(window);
-
-// $window.scroll(function() {
-//     var navbar = document.getElementById("fsdfsdfsdf");
-//     if ( $window.scrollTop() >= distance ) {
-//         navbar.classList.add("sticky")
-//     } else {
-//         navbar.classList.remove("sticky");
-//     }
-// });
-
-
-
