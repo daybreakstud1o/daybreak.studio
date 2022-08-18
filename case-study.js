@@ -27,11 +27,9 @@ daybreak.router.useScript(()=>{
     
     const observer = new MutationObserver((mutationList, observer) => {
       for (const mutation of mutationList) {
-        console.log(mutation.target.style.cssText)
-
         if (mutation.type === 'attributes' && mutation.attributeName === "style") {
-          newElm.style.position = "fixed";
-          newElm.style.visibility = "visible";
+          // sync the style
+          newElm.style.cssText = mutation.target.style.cssText;
         }
       }
     });
