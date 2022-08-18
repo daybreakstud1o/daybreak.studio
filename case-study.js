@@ -93,7 +93,7 @@ daybreak.router.useScript(()=>{
 
     const animationDoneTime = elementDelay * elmsEnterAnimation.length;
     setTimeout(()=>{
-      allMainContainers.forEach((elm)=>{
+      document.querySelectorAll(".main-container *:only-child, .body-founders").forEach((elm)=>{
         elm.style.visibility = "visible";
       });
     },animationDoneTime);
