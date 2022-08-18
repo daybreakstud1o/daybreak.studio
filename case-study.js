@@ -32,7 +32,7 @@ daybreak.router.useScript(()=>{
         if (mutation.target.visibility === "visible") {
           // sync the style of it's sub element
           const index = getChildIndex(mutation.target);
-          newElm.children[index].style.cssText = mutation.target.style.cssText;
+          newElm.children[index].style.visibility = "visible";
         }
       }
     });
