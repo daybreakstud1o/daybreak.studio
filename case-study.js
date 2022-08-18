@@ -214,7 +214,7 @@ daybreak.router.useScript(()=>{
 
     const matchOriginalElmScroll = (scroll)=> {
       // handle body scroll
-      newElm.style.transform = `transitionY(${-scroll}px)`;
+      newElm.style.transform = `translateY(${-scroll}px)`;
     }
     
     daybreak.scroll.observeScroll(matchOriginalElmScroll);
