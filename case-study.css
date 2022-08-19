@@ -23,7 +23,8 @@
 
 .mobile-disappear {
   opacity: .7;
-  transition: 0.2s ease;
+  transition-duration: 0.2;
+  transition-timing-function: linear;
 }
 @media screen and (max-width: 992px) {
   .mobile-disappear {
