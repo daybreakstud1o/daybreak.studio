@@ -78,7 +78,7 @@ daybreak.router.useScript(()=>{
     })
 
     const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
-      const elmsToEnter = Array.from(container.querySelectorAll("div:only-child, img, span, .body-founders"));
+      const elmsToEnter = Array.from(container.querySelectorAll("div:only-child, img, span, .body-founders, .heading-1"));
       console.log(elmsToEnter);
       return elmsToEnter.map((elm)=> ()=>{
         // use different entry method base on their
