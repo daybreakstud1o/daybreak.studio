@@ -48,8 +48,6 @@ daybreak.router.useScript(()=>{
     return splitIntoSpans(headerElm);
   })
 
-  
-
    // clone fixed nodes out of the current 
   function enableFixedElm(elms) {
     elms.forEach((elm)=>{
@@ -141,7 +139,6 @@ daybreak.router.useScript(()=>{
     });
     const elmsToEnter = Array.from(container.querySelectorAll(selector));
     return elmsToEnter.map((elm)=> ()=>{
-      console.log(elm)
 
       // use different entry method base on their
       // element tag name 
