@@ -94,14 +94,14 @@ daybreak.router.useScript(()=>{
       setTimeout(animation, i * elementDelay);
     });
 
-    // const animationDoneTime = elementDelay * elmsEnterAnimation.length;
-    // setTimeout(()=>{
-    //   requestAnimationFrame(()=>{
-    //     document.querySelectorAll(".main-container *:only-child, .body-founders").forEach((elm)=>{
-    //       elm.style.visibility = "visible";
-    //     });
-    //   })
-    // },animationDoneTime);
+    const animationDoneTime = elementDelay * elmsEnterAnimation.length;
+    setTimeout(()=>{
+      requestAnimationFrame(()=>{
+        document.querySelectorAll(".main-container *:only-child, .body-founders").forEach((elm)=>{
+          elm.style.visibility = "visible";
+        });
+      })
+    },animationDoneTime);
     
     // const topBarElms = document.querySelectorAll('.case-top-bar-content > div');
     // const headlineWords = document.querySelectorAll('.heading-1 span');
