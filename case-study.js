@@ -169,132 +169,6 @@ daybreak.router.useScript(()=>{
       showSpanFunctions.forEach((showSpanCallbacks)=>showSpanCallbacks());
     })
   },animationDoneTime);
-    
-    // const topBarElms = document.querySelectorAll('.case-top-bar-content > div');
-    // const headlineWords = document.querySelectorAll('.heading-1 span');
-    // const heroInfo = document.querySelectorAll('.project-info-wrapper .project-info > div');
-    // const cover = document.querySelector('.project-image-intro > div');
-
-    // for (let i = 0; i < document.querySelectorAll('.case-top-bar-content > div').length; i++) {
-    //   document.querySelectorAll('.case-top-bar-content > div').forEach((element, i) => {
-    //     setTimeout(function () {
-    //       element.style.opacity = "1" ?? "";
-    //     }, i * elementDelay);
-    //   });
-    // }
-    // // case study title
-    // setTimeout(function () {
-    //   for (let i = 0; i < document.querySelectorAll('.heading-1 span').length; i++) {
-    //     document.querySelectorAll('.heading-1 span').forEach((element, i) => {
-    //       setTimeout(function () {
-    //         element.style.display = "inline-block" ?? "";
-    //         daybreak.scroll.recalculatePageHeight();
-    //       }, i * elementDelay);
-    //     });
-    //   }
-    // }, document.querySelectorAll('.case-top-bar-content > div').length * elementDelay);
-    // // hero info
-    // setTimeout(function () {
-    //   for (let i = 0; i < document.querySelectorAll('.project-info-wrapper .project-info > div').length; i++) {
-    //     document.querySelectorAll('.project-info-wrapper .project-info > div').forEach((element, i) => {
-    //       setTimeout(function () {
-    //         element.style.visibility = "visible" ?? "";
-    //       }, i * elementDelay);
-    //     });
-    //   }
-    // }, document.querySelectorAll('.heading-1 span').length * elementDelay);
-    // // enter cover image
-    // setTimeout(function () {
-    //   for (let i = 0; i < document.querySelectorAll('.project-image-intro > div').length; i++) {
-    //     document.querySelectorAll('.project-image-intro > div').forEach((element, i) => {
-    //       setTimeout(function () {
-    //         element.style.visibility = "visible" ?? "";
-    //       }, i * 250);
-    //     });
-    //   }
-    // }, (document.querySelectorAll('.heading-1 span').length + document.querySelectorAll('.project-info-wrapper .project-info > div').length) * elementDelay);
-    // // enter other elements
-    // setTimeout(function () {
-    //   document.getElementsByClassName('main-container')[2].style.visibility = "visible";
-    // }, (document.querySelectorAll('.heading-1 span').length + document.querySelectorAll('.project-info-wrapper .project-info > div').length + document.querySelectorAll('.project-image-intro > div').length) * elementDelay);
-
-  // } else if ($(window).width() < 992) {
-  //     for (let i = 0; i < document.querySelectorAll('.case-top-bar-content > div').length; i++) {
-  //       document.querySelectorAll('.case-top-bar-content > div').forEach((element, i) => {
-  //         setTimeout(function () {
-  //           element.style.opacity = "1" ?? "";
-  //         }, i * elementDelay);
-  //       });
-  //     }
-  //     setTimeout(function () {
-  //       for (let i = 0; i < document.querySelectorAll('.project-info-wrapper > div').length; i++) {
-  //         document.querySelectorAll('.project-info-wrapper > div').forEach((element, i) => {
-  //           setTimeout(function () {
-  //             element.style.opacity = "1" ?? "";
-  //           }, i * elementDelay);
-  //         });
-  //       }
-  //     }, document.querySelectorAll('.case-top-bar-content > div').length * elementDelay);
-  //     setTimeout(function () {
-  //       for (let i = 0; i < document.querySelectorAll('.project-image-intro > div').length; i++) {
-  //         document.querySelectorAll('.project-image-intro > div').forEach((element, i) => {
-  //           setTimeout(function () {
-  //             element.style.visibility = "visible" ?? "";
-  //           }, i * elementDelay);
-  //         });
-  //       }
-  //     }, (document.querySelectorAll('.project-info-wrapper > div').length + document.querySelectorAll('.case-top-bar-content > div').length) * elementDelay);
-  //     setTimeout(function () {
-  //       for (let i = 0; i < document.querySelectorAll('.intro-desc-2 span').length; i++) {
-  //         document.querySelectorAll('.intro-desc-2 span').forEach((element, i) => {
-  //           setTimeout(function () {
-  //             element.style.display = "inline-block" ?? "";
-  //             daybreak.scroll.recalculatePageHeight();
-  //           }, i * elementDelay);
-  //         });
-  //       }
-  //     }, (document.querySelectorAll('.case-top-bar-content > div').length + document.querySelectorAll('.project-info-wrapper > div').length + document.querySelectorAll('.project-image-intro > div').length) * elementDelay);
-  //     setTimeout(function () {
-  //       document.getElementsByClassName('main-container')[2].style.visibility = "visible";
-  //     }, (document.querySelectorAll('.case-top-bar-content > div').length + document.querySelectorAll('.project-info-wrapper > div').length + document.querySelectorAll('.project-image-intro > div').length + document.querySelectorAll('.intro-desc-2 span').length) * elementDelay);
-  // };
-      
-  
-//   window.onscroll = function() {myFunction()};
-
-//   var navbar = document.getElementById("fsdfsdfsdf");
-//   var sticky = navbar.offsetTop;
-  
-
-//   function myFunction() {
-//     if (window.pageYOffset > sticky) {
-//       navbar.classList.add("sticky")
-//     } else {
-//       navbar.classList.remove("sticky");
-//     }
-//   }
-
-//   $(window).on('scroll', function() {
-//       scrollPosition = $(this).scrollTop();
-//       if (scrollPosition > 5) {
-//         document.querySelector("#case-top-bar-title").style.opacity = "0";
-//         document.querySelector("#project-expertise").classList.add("mobile-disappear");
-//       } else {
-//         document.querySelector("#case-top-bar-title").style.opacity = "1";
-//         document.querySelector("#project-expertise").classList.remove("mobile-disappear");
-//       }
-//   });
-
-  function debounce(callback, millisec = 100) {
-    let timeoutId;
-    function triggerDebounce() {
-      if (timeoutId) clearTimeout(timeoutId);
-      timeoutId = setTimeout(callback, millisec);
-    }
-
-    return triggerDebounce;
-  }
-
 
   function isInViewport(el) {
       const rect = el.getBoundingClientRect();
@@ -310,24 +184,11 @@ daybreak.router.useScript(()=>{
   const box = document.querySelector('#next-up-show');
 
   const handlePageScroll = (scrollPosition)=> {
-
-
-//     var navbar = document.getElementById("fsdfsdfsdf");
-//     var sticky = navbar.offsetTop;
-
-//     if (window.pageYOffset > sticky) {
-//       navbar.classList.add("sticky")
-//     } else {
-//       navbar.classList.remove("sticky");
-//     }
-
-
-    //scrollPosition = $(this).scrollTop();
     if (scrollPosition > 5) {
-      document.querySelector("#case-top-bar-title").style.opacity = "0";
+      // document.querySelector("#case-top-bar-title").style.opacity = "0";
       document.querySelector("#project-expertise").classList.add("mobile-disappear");
     } else {
-      document.querySelector("#case-top-bar-title").style.opacity = "1";
+      // document.querySelector("#case-top-bar-title").style.opacity = "1";
       document.querySelector("#project-expertise").classList.remove("mobile-disappear");
     }
 
@@ -362,15 +223,7 @@ daybreak.router.useScript(()=>{
     }
   }
 
-
   daybreak.scroll.observeScroll(handlePageScroll);  
-  // document.addEventListener('scroll', handlePageScroll, {
-  //     passive: true
-  // });
-
- 
-
-
 
   $( ".close-casestudy" ).mouseover(function() {
     document.querySelector(".back-icon").style.visibility = "visible";
@@ -390,15 +243,5 @@ daybreak.router.useScript(()=>{
     onAbort(()=>{
       document.body.classList.add("case-study");
     })
-
-    // document.removeEventListener('scroll', handlePageScroll, {
-    //   passive: true
-    // });
-
-    // const allImages = document.querySelectorAll("img");
-    // const imagesInView = otherProjectLinks.filter((link)=> {
-		// 	return isInViewport(link)
-		// });
-    
   }
 })
