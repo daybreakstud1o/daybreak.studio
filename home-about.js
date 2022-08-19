@@ -34,7 +34,7 @@ daybreak.router.useScript(() => {
 		return fix24HrString(pacificTimeStr.split(" ")[1]);
 	}
 
-	setInterval(()=>{
+	const updateTime = () => {
 		// periodically update the time elements
 		const allSfTimeElm = document.querySelectorAll('.sf-time');
 		const allTorontoTimeElm = document.querySelectorAll('.toronto-time');
@@ -44,7 +44,10 @@ daybreak.router.useScript(() => {
 
 		allSfTimeElm.forEach((elm) => elm.innerHTML = sfTime);
 		allTorontoTimeElm.forEach((elm) => elm.innerHTML = torontoTime);
-	},1000);
+	}
+
+	setInterval(updateTime,1000);
+	updateTime();
 
 	// async function torontotime() {
 	// 	const api_url = 'https://worldtimeapi.org/api/timezone/America/Toronto';
