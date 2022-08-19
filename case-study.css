@@ -13,11 +13,6 @@
 .case-study .main-container *:only-child {
   visibility: hidden;
 }
-
-.case-study .main-container span {
-  display: none;
-}
-
 .case-study .body-founders {
   visibility: hidden;
 }

@@ -15,11 +15,11 @@ daybreak.router.useScript(()=>{
       }
       return splitText;
     })();
-
+    
     elm.innerHTML = "";
     Array.from(wordsStr).forEach((str,i,arr)=>{
       const span = document.createElement("span");
-      
+      span.style.display = "none";
       if(elm.classList.contains(DESKTOP_ONLY))
         span.classList.add(DESKTOP_ONLY);
 
@@ -33,13 +33,22 @@ daybreak.router.useScript(()=>{
         span.innerText = str + "\xa0";
       }
       elm.appendChild(span);
-    })
+    });
+
+    return ()=>{
+      elm.children.forEach(()=>{
+        if(span.style.display !== "inline-block")
+          span.style.display = "inline-block";
+      })
+    }
   }
 
   const allHeaders = document.querySelectorAll(".heading-1");
-  allHeaders.forEach((headerElm)=>{
-    splitIntoSpans(headerElm);
+  const showSpanFunctions = allHeaders.map((headerElm)=>{
+    return splitIntoSpans(headerElm);
   })
+
+  
 
    // clone fixed nodes out of the current 
   function enableFixedElm(elms) {
@@ -151,6 +160,7 @@ daybreak.router.useScript(()=>{
       document.querySelectorAll(".main-container *:only-child, .body-founders").forEach((elm)=>{
         elm.style.visibility = "visible";
       });
+      showSpanFunctions.forEach((showSpanCallbacks)=>showSpanCallbacks());
     })
   },animationDoneTime);
     
