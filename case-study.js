@@ -38,10 +38,10 @@ daybreak.router.useScript(()=>{
 
     return ()=>{
       Array.from(elm.children).forEach((span)=>{
-        console.log(span)
-
-        if(span.style.display !== "inline-block")
+        if(span.style.display !== "inline-block"){
+          span.style.visibility = "visible";
           span.style.display = "inline-block";
+        }
       })
     }
   }
