@@ -1,6 +1,9 @@
 daybreak.router.useScript(()=>{
 
-  var elementDelay = 100;
+  const DESKTOP_ONLY = ".transition-desktop-only";
+  const MOBILE_ONLY = ".transition-mobile-only";
+
+  const elementDelay = 100;
 
   function splitIntoSpans(elm) {
     if (elm.childElementCount !== 0) return;
@@ -13,15 +16,14 @@ daybreak.router.useScript(()=>{
       return splitText;
     })();
 
-    
     elm.innerHTML = "";
     Array.from(wordsStr).forEach((str,i,arr)=>{
       const span = document.createElement("span");
       const isLastElm = i+1 === arr.length;
       if(isLastElm) {
-        span.innerText = str + "\xa0";
-      } else {
         span.innerText = str;
+      } else {
+        span.innerText = str + "\xa0";
       }
       elm.appendChild(span);
     })
@@ -29,7 +31,6 @@ daybreak.router.useScript(()=>{
 
   const allHeaders = document.querySelectorAll(".heading-1");
   allHeaders.forEach((headerElm)=>{
-    console.log(headerElm)
     splitIntoSpans(headerElm);
   })
 
@@ -103,50 +104,48 @@ daybreak.router.useScript(()=>{
 
   // if ($(window).width() > 992) {
     // enter top bar
-    const allMainContainers = Array.from(document.querySelectorAll(".main-container"));
-    const mainContainerInView = allMainContainers.filter((elm)=> {
-      return daybreak.scroll.isInViewport(elm);
-    })
+  const allMainContainers = Array.from(document.querySelectorAll(".main-container"));
+  const mainContainerInView = allMainContainers.filter((elm)=> {
+    return daybreak.scroll.isInViewport(elm);
+  })
 
-    const excludeClass = ({selectors=[], exclude})=>{
-      return selectors.map((selector)=>{
-        return `${selector}:not(${exclude}, * > ${exclude})`
-      }).join(",");
-    } 
+  const excludeClass = ({selectors=[], exclude})=>{
+    return selectors.map((selector)=>{
+      return `${selector}:not(${exclude}, * > ${exclude})`
+    }).join(",");
+  } 
 
-    const isMobile = window.innerWidth < 992;
-    const DESKTOP_ONLY = ".transition-desktop-only";
-    const MOBILE_ONLY = ".transition-mobile-only";
+  const isMobile = window.innerWidth < 992;
 
-    const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
-      const selector = excludeClass({
-        selectors: ["div:only-child", "img", "span", ".body-founders"], 
-        exclude: isMobile? DESKTOP_ONLY : MOBILE_ONLY
-      });
-      const elmsToEnter = Array.from(container.querySelectorAll(selector));
-      return elmsToEnter.map((elm)=> ()=>{
-        // use different entry method base on their
-        // element tag name 
-        if(elm.tagName === "SPAN") {
-          elm.style.display = "inline-block";
-          elm.style.visibility = "visible";
-          return;
-        }
-        elm.style.visibility = "visible";
-      })
-    })
-    elmsEnterAnimation.forEach((animation,i)=>{
-      setTimeout(animation, i * elementDelay);
+  const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
+    const selector = excludeClass({
+      selectors: ["div:only-child", "img", "span", ".body-founders"], 
+      exclude: isMobile? DESKTOP_ONLY : MOBILE_ONLY
     });
+    const elmsToEnter = Array.from(container.querySelectorAll(selector));
+    return elmsToEnter.map((elm)=> ()=>{
+      // use different entry method base on their
+      // element tag name 
+      if(elm.tagName === "SPAN") {
+        elm.style.display = "inline-block";
+        elm.style.visibility = "visible";
+        return;
+      }
+      elm.style.visibility = "visible";
+    })
+  })
+  elmsEnterAnimation.forEach((animation,i)=>{
+    setTimeout(animation, i * elementDelay);
+  });
 
-    const animationDoneTime = elementDelay * elmsEnterAnimation.length;
-    setTimeout(()=>{
-      requestAnimationFrame(()=>{
-        document.querySelectorAll(".main-container *:only-child, .body-founders").forEach((elm)=>{
-          elm.style.visibility = "visible";
-        });
-      })
-    },animationDoneTime);
+  const animationDoneTime = elementDelay * elmsEnterAnimation.length;
+  setTimeout(()=>{
+    requestAnimationFrame(()=>{
+      document.querySelectorAll(".main-container *:only-child, .body-founders").forEach((elm)=>{
+        elm.style.visibility = "visible";
+      });
+    })
+  },animationDoneTime);
     
     // const topBarElms = document.querySelectorAll('.case-top-bar-content > div');
     // const headlineWords = document.querySelectorAll('.heading-1 span');
