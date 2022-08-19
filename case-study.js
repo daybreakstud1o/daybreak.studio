@@ -350,6 +350,12 @@ daybreak.router.useScript(()=>{
   return ({beginTransition, onAbort})=>{
     daybreak.scroll.unobserveScroll(handlePageScroll);
     cleanupNavStickyElm();
+
+    // cleanup 
+    document.body.classList.remove("case-study");
+    onAbort(()=> {
+      document.body.classList.add("case-study");
+    })
     // document.removeEventListener('scroll', handlePageScroll, {
     //   passive: true
     // });
