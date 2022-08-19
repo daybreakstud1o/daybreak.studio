@@ -6,7 +6,7 @@ daybreak.router.useScript(()=>{
   const elementDelay = 100;
 
   function splitIntoSpans(elm) {
-    if (elm.childElementCount !== 0) return;
+    if (elm.childElementCount !== 0) return ()=>{};
     
     const wordsStr = (()=> {
       const splitText = elm.innerHTML.split(" ");
@@ -45,10 +45,7 @@ daybreak.router.useScript(()=>{
 
   const allHeaders = Array.from(document.querySelectorAll(".heading-1"));
   const showSpanFunctions = allHeaders.map((headerElm)=>{
-    const callback = splitIntoSpans(headerElm);
-
-    console.log(callback);
-    return callback;
+    return splitIntoSpans(headerElm);
   })
 
   
