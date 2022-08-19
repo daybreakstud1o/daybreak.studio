@@ -1,7 +1,7 @@
 daybreak.router.useScript(()=>{
 
-  const DESKTOP_ONLY = ".transition-desktop-only";
-  const MOBILE_ONLY = ".transition-mobile-only";
+  const DESKTOP_ONLY = "transition-desktop-only";
+  const MOBILE_ONLY = "transition-mobile-only";
 
   const elementDelay = 100;
 
@@ -127,7 +127,7 @@ daybreak.router.useScript(()=>{
   const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
     const selector = excludeClass({
       selectors: ["div:only-child", "img", "span", ".body-founders"], 
-      exclude: isMobile? DESKTOP_ONLY : MOBILE_ONLY
+      exclude: isMobile? `.${DESKTOP_ONLY}` : `.${MOBILE_ONLY}`
     });
     const elmsToEnter = Array.from(container.querySelectorAll(selector));
     return elmsToEnter.map((elm)=> ()=>{
