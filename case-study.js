@@ -6,14 +6,12 @@ daybreak.router.useScript(()=>{
     if (elm.childElementCount !== 0) return;
     
     const wordsStr = (()=> {
-      const splitText = elm.innerText.split(" ");
+      const splitText = elm.innerHTML.split(" ");
       if(splitText.length === 0) {
-        return elm.innerText;
+        return elm.innerHTML;
       }
       return splitText;
     })();
-
-    console.log(elm.innerHTML);
 
     
     elm.innerHTML = "";
