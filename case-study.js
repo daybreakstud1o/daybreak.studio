@@ -13,6 +13,8 @@ daybreak.router.useScript(()=>{
       return splitText;
     })();
 
+    console.log(wordsStr);
+
     
     elm.innerHTML = "";
     Array.from(wordsStr).forEach((str)=>{
