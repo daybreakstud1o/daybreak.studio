@@ -67,6 +67,7 @@ daybreak.router.useScript(()=>{
     originalElm.style.opacity = "0";
     
     const newElm = originalElm.cloneNode(true);
+    originalElm.removeAttribute("id");
     document.body.appendChild(newElm);
 
     newElm.style.position = "fixed";
