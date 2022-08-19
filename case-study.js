@@ -3,7 +3,7 @@ daybreak.router.useScript(()=>{
   var elementDelay = 100;
 
   function splitIntoSpans(elm) {
-    if (elm.childrenElementCount !== 1) return;
+    if (elm.childrenElementCount !== 0) return;
     
     const wordsStr = (()=> {
       const splitText = elm.innerText.split(" ");
