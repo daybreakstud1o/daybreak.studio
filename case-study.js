@@ -15,9 +15,14 @@ daybreak.router.useScript(()=>{
 
     
     elm.innerHTML = "";
-    Array.from(wordsStr).forEach((str)=>{
+    Array.from(wordsStr).forEach((str,i,arr)=>{
       const span = document.createElement("span");
-      span.innerText = str + "\xa0";
+      const isLastElm = i+1 === arr.length;
+      if(isLastElm) {
+        span.innerText = str + "\xa0";
+      } else {
+        span.innerText = str;
+      }
       elm.appendChild(span);
     })
   }
