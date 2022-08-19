@@ -99,7 +99,7 @@ daybreak.router.useScript(()=>{
       newElm.style.top = originalBounds.top + "px";
     }
     matchOriginalElmPosition();
-    const matchPositionDebounce = debounce(()=> matchOriginalElmPosition());
+    const matchPositionDebounce = debounce(()=> matchOriginalElmPosition(), 60);
 
     const matchOriginalElmScroll = (scroll)=> {
       const originalElmTop = parseFloat(originalBounds.top);
