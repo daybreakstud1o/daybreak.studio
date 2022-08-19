@@ -45,7 +45,10 @@ daybreak.router.useScript(()=>{
 
   const allHeaders = Array.from(document.querySelectorAll(".heading-1"));
   const showSpanFunctions = allHeaders.map((headerElm)=>{
-    return splitIntoSpans(headerElm);
+    const callback = splitIntoSpans(headerElm);
+
+    console.log(callback);
+    return callback;
   })
 
   
