@@ -4,7 +4,7 @@ daybreak.router.useScript(()=>{
 
   function splitIntoSpans(elm) {
     const wordsStr = elm.innerText.split(" ");
-    if (elm.childElementCount !== 0 && wordsStr.length > 1) return;
+    if (elm.childElementCount > 1 && wordsStr.length > 1) return;
     
     elm.innerHTML = "";
     Array.from(wordsStr).forEach((str)=>{
