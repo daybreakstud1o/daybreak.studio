@@ -3,14 +3,21 @@ daybreak.router.useScript(()=>{
   var elementDelay = 100;
 
   function splitIntoSpans(elm) {
-    const wordsStr = elm.innerText.split(" ");
-    return;
-    if (elm.childElementCount > 1 && wordsStr.length > 1) return;
+    if (elm.childrenElementCount !== 0) return;
+    
+    const wordsStr = (()=> {
+      const splitText = elm.innerText.split(" ");
+      if(splitText.length === 0) {
+        return elm.innerText;
+      }
+      return splitText;
+    })();
+
     
     elm.innerHTML = "";
     Array.from(wordsStr).forEach((str)=>{
       const span = document.createElement("span");
-      span.innerText = str + "\u00a0";
+      span.innerText = str + "&nbsp";
       elm.appendChild(span);
     })
   }
