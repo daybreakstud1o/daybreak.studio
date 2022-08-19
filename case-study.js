@@ -2,6 +2,23 @@ daybreak.router.useScript(()=>{
 
   var elementDelay = 100;
 
+  function splitIntoSpans(elm) {
+    if (elm.children.length !== 0) return;
+    
+    const wordsStr = elm.innerText.split(" ");
+    elm.innerHTML = "";
+    Array.from(wordsStr).forEach((str)=>{
+      const span = document.createElement("span");
+      span.innerText = str;
+      elm.appendChild(span);
+    })
+  }
+
+  const allHeaders = document.querySelectorAll(".heading-1");
+  allHeaders.forEach((headerElm)=>{
+    splitIntoSpans(headerElm);
+  })
+
    // clone fixed nodes out of the current 
   function enableFixedElm(elms) {
     elms.forEach((elm)=>{
