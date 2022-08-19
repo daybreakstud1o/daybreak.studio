@@ -141,6 +141,8 @@ daybreak.router.useScript(()=>{
     });
     const elmsToEnter = Array.from(container.querySelectorAll(selector));
     return elmsToEnter.map((elm)=> ()=>{
+      console.log(elm)
+
       // use different entry method base on their
       // element tag name 
       if(elm.tagName === "SPAN") {
