@@ -329,7 +329,7 @@ daybreak.router.useScript(()=>{
       // document.querySelector("#project-expertise").classList.add("mobile-disappear");
     } else {
       document.querySelector("#case-top-bar-title").style.opacity = "1";
-      document.querySelector("#project-expertise").style.opacity = "1";
+      document.querySelector("#project-expertise").style.opacity = ".7";
       // document.querySelector("#project-expertise").classList.remove("mobile-disappear");
     }
 
