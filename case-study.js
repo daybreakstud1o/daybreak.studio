@@ -9,7 +9,7 @@ daybreak.router.useScript(()=>{
     elm.innerHTML = "";
     Array.from(wordsStr).forEach((str)=>{
       const span = document.createElement("span");
-      span.innerText = str + " ";
+      span.innerText = str + "\u00a0";
       elm.appendChild(span);
     })
   }
