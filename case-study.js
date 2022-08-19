@@ -20,6 +20,7 @@ daybreak.router.useScript(()=>{
     Array.from(wordsStr).forEach((str,i,arr)=>{
       const span = document.createElement("span");
       span.style.display = "none";
+      
       if(elm.classList.contains(DESKTOP_ONLY))
         span.classList.add(DESKTOP_ONLY);
 
@@ -37,6 +38,8 @@ daybreak.router.useScript(()=>{
 
     return ()=>{
       Array.from(elm.children).forEach((span)=>{
+        console.log(span)
+
         if(span.style.display !== "inline-block")
           span.style.display = "inline-block";
       })
