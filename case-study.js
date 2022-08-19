@@ -93,16 +93,17 @@ daybreak.router.useScript(()=>{
     observer.observe(originalElm, { attributes: true, attributeFilter: ["style"], childList: true, subtree:true });
 
     let originalBounds = originalElm.getBoundingClientRect();
-
     const matchOriginalElmPosition = ()=>{
       originalBounds = originalElm.getBoundingClientRect();
       newElm.style.left = originalBounds.left + "px";
       newElm.style.top = originalBounds.top + "px";
     }
     matchOriginalElmPosition();
+    const matchPositionDebounce = debounce(()=> matchOriginalElmPosition());
 
     const matchOriginalElmScroll = (scroll)=> {
       const originalElmTop = parseFloat(originalBounds.top);
+      matchPositionDebounce();
       if(scroll > originalElmTop) {
         const scrollOffset = -originalElmTop;
         newElm.style.transform = `translateY(${scrollOffset}px)`;
@@ -284,6 +285,16 @@ daybreak.router.useScript(()=>{
 //         document.querySelector("#project-expertise").classList.remove("mobile-disappear");
 //       }
 //   });
+
+  function debounce(callback, millisec = 100) {
+    let timeoutId;
+    function triggerDebounce() {
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(callback, millisec);
+    }
+
+    return triggerDebounce;
+  }
 
 
   function isInViewport(el) {
