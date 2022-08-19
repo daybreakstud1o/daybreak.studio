@@ -79,21 +79,30 @@ daybreak.router.useScript(() => {
 			xhr.onload = () => {
 			var data = JSON.parse(xhr.response);
 			for (let i = 0; i < document.querySelectorAll('.city-' + slang + ' .clouds').length; i++) {
+
+				let elm;
 				if (data.weather[0].main == 'Clouds') {
-					document.querySelectorAll('.city-' + slang + ' .clouds')[i].style.display = 'block';
+					elm = document.querySelectorAll('.city-' + slang + ' .clouds');
 				} else if (data.weather[0].main == 'Clear') {
-					document.querySelectorAll('.city-' + slang + ' .clear')[i].style.display = 'block';
+					elm = document.querySelectorAll('.city-' + slang + ' .clear');
 				} else if (data.weather[0].main == 'Rain') {
-					document.querySelectorAll('.city-' + slang + ' .rain')[i].style.display = 'block';
+					elm = document.querySelectorAll('.city-' + slang + ' .rain');
 				} else if (data.weather[0].main == 'Snow') {
-					document.querySelectorAll('.city-' + slang + ' .snow')[i].style.display = 'block';
+					elm = document.querySelectorAll('.city-' + slang + ' .snow');
 				} else if (data.weather[0].main == 'Haze') {
-					document.querySelectorAll('.city-' + slang + ' .haze')[i].style.display = 'block';
+					elm = document.querySelectorAll('.city-' + slang + ' .haze');
 				} else if (data.weather[0].main == 'Thunderstorm') {
-					document.querySelectorAll('.city-' + slang + ' .thunderstorm')[i].style.display = 'block';
+					elm = document.querySelectorAll('.city-' + slang + ' .thunderstorm');
 				} else if (data.weather[0].main == 'Mist') {
-					document.querySelectorAll('.city-' + slang + ' .mist')[i].style.display = 'block';
+					elm = document.querySelectorAll('.city-' + slang + ' .mist')
 				}
+				if(!elm) return;
+				elm.style.display = 'block';
+				elm.style.opacity = '0';
+				elm.style.transition = 'opacity .3s linear';
+				requestAnimationFrame(()=>{
+					elm.style.opacity = "1";
+				})
 			}
 			// console.log(data.name + ", " + `${Math.round(data.main.temp - 273.15)}°C` + ", " + data.weather[0].main + ", " + data.weather[0].description)
 		};
