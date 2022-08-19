@@ -77,9 +77,19 @@ daybreak.router.useScript(()=>{
       return daybreak.scroll.isInViewport(elm);
     })
 
+    const excludeAttr = ({selectors=[], excludeAttr})=>{
+      return selectors.map((selector)=>{
+        return `${selector}:not[${excludeAttr}]`
+      }).join(",");
+    } 
+
+    const isMobile = window.innerWidth < 992;
     const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
-      const elmsToEnter = Array.from(container.querySelectorAll("div:only-child, img, span, .body-founders, .heading-1"));
-      console.log(elmsToEnter);
+      const selector = excludeAttr({
+        selector: ["div:only-child", "img", "span", ".body-founders", ".heading-1"], 
+        excludeAttr: isMobile? "transition-desktop-only" : "transition-mobile-only"
+      });
+      const elmsToEnter = Array.from(container.querySelectorAll(selector));
       return elmsToEnter.map((elm)=> ()=>{
         // use different entry method base on their
         // element tag name 
