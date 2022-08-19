@@ -79,7 +79,7 @@ daybreak.router.useScript(()=>{
 
     const excludeClass = ({selectors=[], exclude})=>{
       return selectors.map((selector)=>{
-        return `${selector}:not(${exclude})`
+        return `${selector}:not(${exclude}, * > ${exclude})`
       }).join(",");
     } 
 
