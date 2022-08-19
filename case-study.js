@@ -6,7 +6,7 @@ daybreak.router.useScript(()=>{
   const DESKTOP_ONLY = "transition-desktop-only";
   const MOBILE_ONLY = "transition-mobile-only";
 
-  const elementDelay = 100;
+  const elementDelay = 60;
 
   function splitIntoSpans(elm) {
     if (elm.childElementCount !== 0) return ()=>{};
