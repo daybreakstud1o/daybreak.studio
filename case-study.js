@@ -89,7 +89,7 @@ daybreak.router.useScript(()=>{
 
     const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
       const selector = excludeClass({
-        selector: ["div:only-child", "img", "span", ".body-founders", ".heading-1"], 
+        selectors: ["div:only-child", "img", "span", ".body-founders", ".heading-1"], 
         exclude: isMobile? DESKTOP_ONLY : MOBILE_ONLY
       });
       const elmsToEnter = Array.from(container.querySelectorAll(selector));
