@@ -325,10 +325,12 @@ daybreak.router.useScript(()=>{
     //scrollPosition = $(this).scrollTop();
     if (scrollPosition > 5) {
       document.querySelector("#case-top-bar-title").style.opacity = "0";
-      document.querySelector("#project-expertise").classList.add("mobile-disappear");
+      document.querySelector("#project-expertise").style.opacity = "0";
+      // document.querySelector("#project-expertise").classList.add("mobile-disappear");
     } else {
       document.querySelector("#case-top-bar-title").style.opacity = "1";
-      document.querySelector("#project-expertise").classList.remove("mobile-disappear");
+      document.querySelector("#project-expertise").style.opacity = "1";
+      // document.querySelector("#project-expertise").classList.remove("mobile-disappear");
     }
 
 
