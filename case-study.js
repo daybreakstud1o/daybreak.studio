@@ -24,6 +24,7 @@ daybreak.router.useScript(()=>{
 
   const allHeaders = document.querySelectorAll(".heading-1");
   allHeaders.forEach((headerElm)=>{
+    console.log(headerElm)
     splitIntoSpans(headerElm);
   })
 
