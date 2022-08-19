@@ -77,17 +77,20 @@ daybreak.router.useScript(()=>{
       return daybreak.scroll.isInViewport(elm);
     })
 
-    const excludeAttr = ({selectors=[], excludeAttr})=>{
+    const excludeClass = ({selectors=[], exclude})=>{
       return selectors.map((selector)=>{
-        return `${selector}:not[${excludeAttr}]`
+        return `${selector}:not(${exclude})`
       }).join(",");
     } 
 
     const isMobile = window.innerWidth < 992;
+    const DESKTOP_ONLY = ".transition-desktop-only";
+    const MOBILE_ONLY = ".transition-mobile-only";
+
     const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
-      const selector = excludeAttr({
+      const selector = excludeClass({
         selector: ["div:only-child", "img", "span", ".body-founders", ".heading-1"], 
-        excludeAttr: isMobile? "transition-desktop-only" : "transition-mobile-only"
+        exclude: isMobile? DESKTOP_ONLY : MOBILE_ONLY
       });
       const elmsToEnter = Array.from(container.querySelectorAll(selector));
       return elmsToEnter.map((elm)=> ()=>{
