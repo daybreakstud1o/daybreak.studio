@@ -36,7 +36,7 @@ daybreak.router.useScript(()=>{
     });
 
     return ()=>{
-      elm.children.forEach((span)=>{
+      Array.from(elm.children).forEach((span)=>{
         if(span.style.display !== "inline-block")
           span.style.display = "inline-block";
       })
