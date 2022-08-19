@@ -19,6 +19,13 @@ daybreak.router.useScript(()=>{
     elm.innerHTML = "";
     Array.from(wordsStr).forEach((str,i,arr)=>{
       const span = document.createElement("span");
+      
+      if(elm.classList.contains(DESKTOP_ONLY))
+        span.classList.add(DESKTOP_ONLY);
+
+      if(elm.classList.contains(MOBILE_ONLY))
+        span.classList.add(MOBILE_ONLY);
+
       const isLastElm = i+1 === arr.length;
       if(isLastElm) {
         span.innerText = str;
