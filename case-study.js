@@ -129,6 +129,7 @@ daybreak.router.useScript(()=>{
         // element tag name 
         if(elm.tagName === "SPAN") {
           elm.style.display = "inline-block";
+          elm.style.visibility = "visible";
           return;
         }
         elm.style.visibility = "visible";
