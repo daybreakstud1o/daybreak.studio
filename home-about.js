@@ -82,19 +82,19 @@ daybreak.router.useScript(() => {
 
 				let elm;
 				if (data.weather[0].main == 'Clouds') {
-					elm = document.querySelectorAll('.city-' + slang + ' .clouds');
+					elm = document.querySelectorAll('.city-' + slang + ' .clouds')[0];
 				} else if (data.weather[0].main == 'Clear') {
-					elm = document.querySelectorAll('.city-' + slang + ' .clear');
+					elm = document.querySelectorAll('.city-' + slang + ' .clear')[0];
 				} else if (data.weather[0].main == 'Rain') {
-					elm = document.querySelectorAll('.city-' + slang + ' .rain');
+					elm = document.querySelectorAll('.city-' + slang + ' .rain')[0];
 				} else if (data.weather[0].main == 'Snow') {
-					elm = document.querySelectorAll('.city-' + slang + ' .snow');
+					elm = document.querySelectorAll('.city-' + slang + ' .snow')[0];
 				} else if (data.weather[0].main == 'Haze') {
-					elm = document.querySelectorAll('.city-' + slang + ' .haze');
+					elm = document.querySelectorAll('.city-' + slang + ' .haze')[0];
 				} else if (data.weather[0].main == 'Thunderstorm') {
-					elm = document.querySelectorAll('.city-' + slang + ' .thunderstorm');
+					elm = document.querySelectorAll('.city-' + slang + ' .thunderstorm')[0];
 				} else if (data.weather[0].main == 'Mist') {
-					elm = document.querySelectorAll('.city-' + slang + ' .mist')
+					elm = document.querySelectorAll('.city-' + slang + ' .mist')[0]
 				}
 				if(!elm) return;
 				elm.style.display = 'block';
