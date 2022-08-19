@@ -13,7 +13,7 @@ daybreak.router.useScript(()=>{
       return splitText;
     })();
 
-    console.log(elm.innerText);
+    console.log(elm.innerHTML);
 
     
     elm.innerHTML = "";
