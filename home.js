@@ -302,7 +302,7 @@ daybreak.router.useScript(()=>{
 
 
 	const handlePageResize = ()=> {
-		if(window.innerWidth > 1000) {
+		if(window.innerWidth > 800) {
 			currentGridData = cellDataShuffled
 		} else {
 			currentGridData = cellDataMobileShuffled;
@@ -310,7 +310,7 @@ daybreak.router.useScript(()=>{
 		}
 	}
 	handlePageResize();
-	const pageResizeDebounced = debounce(handlePageResize, 300);
+	const pageResizeDebounced = debounce(handlePageResize, 100);
 	window.addEventListener("resize", pageResizeDebounced);
 	
 	
