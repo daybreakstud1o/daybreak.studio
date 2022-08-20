@@ -203,6 +203,7 @@ daybreak.router.useScript(()=>{
 
 	// handle project link enter
 	const projectLinkObserver = new IntersectionObserver((entries)=> {
+		
 		entries.forEach((entry)=> {
 			if(entry.isIntersecting) {
 				// elm on screen
@@ -210,10 +211,13 @@ daybreak.router.useScript(()=>{
 				entry.target.style.opacity = "1"
 			} else {
 				//@ts-ignore
-				entry.target.style.opacity = ".1"
+				entry.target.style.opacity = ".4"
 			}
 		})
-	},{ rootMargin: "0px 0px -25% 0px"});
+
+	},{ 
+		rootMargin: "20% 0px -40% 0px" 
+	});
 
 	const {
 		cleanupInfiniteGrid, 
