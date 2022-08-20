@@ -14,7 +14,7 @@ daybreak.router.useScript(()=>{
 	const _ = CELL_EMPTY;
 	const X = CELL_PROJECT;
 
-	const gridTemplates = [
+	const GRID_TEMPLATES_DESKTOP = [
 		createGridTemplate([
 			[_, X, _, X, X, _, _, X],
 			[X, _, X, _, _, _, X, _],
@@ -37,6 +37,23 @@ daybreak.router.useScript(()=>{
 			[X, _, _, _, X, _, _, X],
 			[X, _, X, _, _, X, _, _],
 		]),
+	]
+
+	const GRID_TEMPLATES_MOBILE = [
+		createGridTemplate([
+			[_,X,_],
+			[X,_,_],
+			[_,_,X],
+		]),
+		createGridTemplate([
+			[X,_,_],
+			[_,_,X],
+			[_,X,_],
+		]),
+		createGridTemplate([
+			[X,_,_],
+			[_,_,X],
+		])
 	]
 
 	const gridContainer = document.createElement("div");
@@ -176,10 +193,11 @@ daybreak.router.useScript(()=>{
 		unobservePageCreation, 
 		isInViewport,
 		enableScroll,
-		disableScroll
+		disableScroll,
+		setGridTemplates
 	} = createInfiniteGrid({
 		cols: 8,
-		templates: gridTemplates,
+		templates: GRID_TEMPLATES_DESKTOP,
 		baseElm: gridContainer,
 		renderCell: (cellInfo) => {
 			if (cellInfo.type === CELL_EMPTY) {
@@ -268,30 +286,40 @@ daybreak.router.useScript(()=>{
 		
 	}
 
-	observePageCreation(handlePageCreate)
+	observePageCreation(handlePageCreate);
 
+	const pageResizeDebounced = debounce(()=> {
+		if(window.innerWidth > 700)
+			setGridTemplates(GRID_TEMPLATES_DESKTOP)
+		else
+			setGridTemplates(GRID_TEMPLATES_MOBILE);
+	});
+	window.addEventListener("resize", pageResizeDebounced);
+	
+	
 	// cleanup function
 	return ({beginTransition, nextPath})=>{
-
+		
 		const finishCleanup = () => {
 			cleanupInfiniteGrid();
 			unobservePageCreation(handlePageCreate);
+			window.removeEventListener("resize", pageResizeDebounced);
 		}
-
+		
 		const {onAbort, finish} = beginTransition();
-
+		
 		const isAbout = nextPath.includes("/about");
 		const isContact = nextPath.includes("/contact");
-
+		
 		if(isAbout || isContact) {
 			selectedProject = null;
 			finishCleanup();
 			finish();
 			return;
 		}
-
+		
 		const TRANSITION_DURATION = 1000;
- 
+		
 		const otherProjectLinks = Array.from(document.querySelectorAll(`a[for-project]:not([href="${nextPath}"])`));
 		const selectedProjectLinks = Array.from(document.querySelectorAll(`a[href="${nextPath}"]`));
 		const linksInView = otherProjectLinks.filter((link)=> {
@@ -371,6 +399,7 @@ daybreak.router.useScript(()=>{
 			enableScroll();
 			selectedProject = null;
 			clearTimeout(timeout)
+			window.addEventListener("resize", pageResizeDebounced);
 		});
 	}
 })
@@ -425,4 +454,14 @@ function createTimeoutList() {
 	return {
 		addTimeout, clearAllTimeout
 	}
+}
+
+function debounce(callback, millisec) {
+  let timeoutId;
+  function triggerDebounce() {
+    if (timeoutId) clearTimeout(timeoutId);
+    timeoutId = setTimeout(callback, millisec);
+  }
+
+  return triggerDebounce;
 }
