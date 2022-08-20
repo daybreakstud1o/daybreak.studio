@@ -74,7 +74,20 @@ daybreak.router.useScript(()=>{
     return arr;
   }, [])
 
+  const cellDataMobile = projectDataFromHTML.reduce((arr, currProject) => {
+    arr.push({
+      // @ts-ignore
+      ...currProject, cover: currProject.cover[0]
+    })
+    return arr;
+  }, [])
+
 	const cellDataShuffled = shuffleGridData(cellData.reduce((arr, curr) => {
+    arr.push({ importance: curr.importance, data: curr });
+    return arr
+  }, []));
+
+	const cellDataMobileShuffled = shuffleGridData(cellDataMobile.reduce((arr, curr) => {
     arr.push({ importance: curr.importance, data: curr });
     return arr
   }, []));
@@ -175,6 +188,7 @@ daybreak.router.useScript(()=>{
 	// 
 	// ======================================================================
 	let selectedProject = null;
+	let currentGridData = cellDataShuffled;
 
 	// some selection utilities
 	const getOtherProjectImages = (projectName)=> {
@@ -203,7 +217,7 @@ daybreak.router.useScript(()=>{
 			if (cellInfo.type === CELL_EMPTY) {
 				return;
 			}
-			const cellData = cellDataShuffled.next();
+			const cellData = currentGridData.next();
 			const projectLink = document.createElement("a");
 			projectLink.href = cellData.href;
 			projectLink.style.display = "block";
@@ -288,10 +302,12 @@ daybreak.router.useScript(()=>{
 
 
 	const handlePageResize = ()=> {
-		if(window.innerWidth > 1000)
-			setGridTemplates(GRID_TEMPLATES_DESKTOP)
-		else
+		if(window.innerWidth > 1000) {
+			currentGridData = cellDataShuffled
+		} else {
+			currentGridData = cellDataMobileShuffled;
 			setGridTemplates(GRID_TEMPLATES_MOBILE);
+		}
 	}
 	handlePageResize();
 	const pageResizeDebounced = debounce(handlePageResize, 300);
