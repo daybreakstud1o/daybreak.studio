@@ -209,6 +209,8 @@ daybreak.router.useScript(()=>{
 				// elm on screen
 				//@ts-ignore
 				entry.target.style.display = "block";
+
+				console.log(entry.target)
 			} else {
 				//@ts-ignore
 				entry.target.style.display = "none";
@@ -252,7 +254,7 @@ daybreak.router.useScript(()=>{
 			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer(cellInfo);
 			const {year, name, description, expertise, projectInfoContent} = createProjectInfoContent(cellData);
 
-			projectInfoContainerObserver.observe(projectInfoContainerParent);
+			projectInfoContainerObserver.observe(projectInfoContainer);
 
 			projectInfoContent.appendChild(year);
 			projectInfoContent.appendChild(name);
@@ -309,7 +311,7 @@ daybreak.router.useScript(()=>{
 
 				cellInfo.elm.removeChild(projectLink);
 				projectInfoContainerParent.removeChild(projectInfoContainer);
-				projectInfoContainerObserver.unobserve(projectInfoContainerParent);
+				projectInfoContainerObserver.unobserve(projectInfoContainer);
 			}
 		}
 	});
