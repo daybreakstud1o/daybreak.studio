@@ -34,7 +34,7 @@ daybreak.router.useScript(()=>{
       if(isLastElm) {
         span.innerText = str;
       } else {
-        span.innerText = `${str} f`; // str + "&nbsp;";
+        span.innerText = `${str} `; // str + "&nbsp;";
       }
       elm.appendChild(span);
     });
