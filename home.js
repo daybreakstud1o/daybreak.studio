@@ -311,7 +311,7 @@ daybreak.router.useScript(()=>{
 		}
 	}
 	handlePageResize();
-	const pageResizeDebounced = debounce(handlePageResize, 300);
+	const pageResizeDebounced = debounce(handlePageResize, 60);
 	window.addEventListener("resize", pageResizeDebounced);
 	
 	
