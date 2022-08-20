@@ -303,14 +303,15 @@ daybreak.router.useScript(()=>{
 
 	const handlePageResize = ()=> {
 		if(window.innerWidth > 800) {
-			currentGridData = cellDataShuffled
+			currentGridData = cellDataShuffled;
+			setGridTemplates(GRID_TEMPLATES_DESKTOP);
 		} else {
 			currentGridData = cellDataMobileShuffled;
 			setGridTemplates(GRID_TEMPLATES_MOBILE);
 		}
 	}
 	handlePageResize();
-	const pageResizeDebounced = debounce(handlePageResize, 100);
+	const pageResizeDebounced = debounce(handlePageResize, 300);
 	window.addEventListener("resize", pageResizeDebounced);
 	
 	
