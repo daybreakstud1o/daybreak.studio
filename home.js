@@ -311,6 +311,7 @@ daybreak.router.useScript(()=>{
 	});
 
 	const handlePageCreate = ()=>{
+		console.log(document.readyState);
 		daybreak.cursor.refershCursorTargets();
 		daybreak.router.refershHrefTargets();
 	}
