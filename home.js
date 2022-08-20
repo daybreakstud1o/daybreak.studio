@@ -282,17 +282,16 @@ daybreak.router.useScript(()=>{
 	const handlePageCreate = ()=>{
 		daybreak.cursor.refershCursorTargets();
 		daybreak.router.refershHrefTargets();
-		
 	}
 
 	observePageCreation(handlePageCreate);
 
 	const pageResizeDebounced = debounce(()=> {
-		if(window.innerWidth > 700)
+		if(window.innerWidth > 1000)
 			setGridTemplates(GRID_TEMPLATES_DESKTOP)
 		else
 			setGridTemplates(GRID_TEMPLATES_MOBILE);
-	});
+	}, 300);
 	window.addEventListener("resize", pageResizeDebounced);
 	
 	
