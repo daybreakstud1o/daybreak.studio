@@ -207,13 +207,13 @@ daybreak.router.useScript(()=>{
 			if(entry.isIntersecting) {
 				// elm on screen
 				//@ts-ignore
-				entry.target.style.opacity = ".1"
+				entry.target.style.opacity = "1"
 			} else {
 				//@ts-ignore
-				entry.target.style.opacity = "1"
+				entry.target.style.opacity = ".1"
 			}
 		})
-	},{ rootMargin: "0px 0px 0px 0px"});
+	},{ rootMargin: "0px 0px 300px 0px"});
 
 	const {
 		cleanupInfiniteGrid, 
