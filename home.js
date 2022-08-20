@@ -213,7 +213,7 @@ daybreak.router.useScript(()=>{
 				entry.target.style.opacity = ".1"
 			}
 		})
-	},{ rootMargin: "0px 0px 300px 0px"});
+	},{ rootMargin: "0px 0px -25% 0px"});
 
 	const {
 		cleanupInfiniteGrid, 
@@ -311,7 +311,6 @@ daybreak.router.useScript(()=>{
 	});
 
 	const handlePageCreate = ()=>{
-		console.log(daybreak.cursor);
 		daybreak.cursor.refershCursorTargets();
 		daybreak.router.refershHrefTargets();
 	}
