@@ -209,8 +209,6 @@ daybreak.router.useScript(()=>{
 				// elm on screen
 				//@ts-ignore
 				entry.target.style.display = "block";
-
-				console.log(entry.target)
 			} else {
 				//@ts-ignore
 				entry.target.style.display = "none";
