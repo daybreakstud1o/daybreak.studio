@@ -286,12 +286,15 @@ daybreak.router.useScript(()=>{
 
 	observePageCreation(handlePageCreate);
 
-	const pageResizeDebounced = debounce(()=> {
+
+	const handlePageResize = ()=> {
 		if(window.innerWidth > 1000)
 			setGridTemplates(GRID_TEMPLATES_DESKTOP)
 		else
 			setGridTemplates(GRID_TEMPLATES_MOBILE);
-	}, 300);
+	}
+	handlePageResize();
+	const pageResizeDebounced = debounce(handlePageResize, 300);
 	window.addEventListener("resize", pageResizeDebounced);
 	
 	
