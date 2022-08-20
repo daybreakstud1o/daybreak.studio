@@ -23,7 +23,7 @@ daybreak.router.useScript(()=>{
     Array.from(wordsStr).forEach((str,i,arr)=>{
       const span = document.createElement("span");
       span.style.display = "none";
-      span.style.whiteSpace = "nowrap";
+      span.style.whiteSpace = "break-spaces";
       
       if(elm.classList.contains(DESKTOP_ONLY))
         span.classList.add(DESKTOP_ONLY);
