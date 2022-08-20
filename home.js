@@ -252,7 +252,7 @@ daybreak.router.useScript(()=>{
 			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer(cellInfo);
 			const {year, name, description, expertise, projectInfoContent} = createProjectInfoContent(cellData);
 
-			projectInfoContainerObserver.observe(projectInfoContainer);
+			projectInfoContainerObserver.observe(projectInfoContainerParent);
 
 			projectInfoContent.appendChild(year);
 			projectInfoContent.appendChild(name);
@@ -309,7 +309,7 @@ daybreak.router.useScript(()=>{
 
 				cellInfo.elm.removeChild(projectLink);
 				projectInfoContainerParent.removeChild(projectInfoContainer);
-				projectInfoContainerObserver.unobserve(projectInfoContainer);
+				projectInfoContainerObserver.unobserve(projectInfoContainerParent);
 			}
 		}
 	});
