@@ -273,8 +273,7 @@ daybreak.router.useScript(()=>{
 				projectLink.removeEventListener("mouseenter", handleMouseEnter);
 				projectLink.removeEventListener("mouseleave", handleMouseLeave);
 
-				projectLink.removeChild(projectImage);
-				cellInfo.elm.removeChild(projectImage);
+				cellInfo.elm.removeChild(projectLink);
 				projectInfoContainerParent.removeChild(projectInfoContainer);
 			}
 		}
