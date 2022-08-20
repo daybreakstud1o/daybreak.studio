@@ -201,6 +201,20 @@ daybreak.router.useScript(()=>{
 		return document.querySelectorAll(`a[for-project="${projectName}"]`);
 	}
 
+	// handle project link enter
+	const projectLinkObserver = new IntersectionObserver((entries)=> {
+		entries.forEach((entry)=> {
+			if(entry.isIntersecting) {
+				// elm on screen
+				//@ts-ignore
+				entry.target.style.opacity = ".1"
+			} else {
+				//@ts-ignore
+				entry.target.style.opacity = "1"
+			}
+		})
+	},{ rootMargin: "0px 0px 0px 0px"});
+
 	const {
 		cleanupInfiniteGrid, 
 		observePageCreation, 
@@ -229,6 +243,8 @@ daybreak.router.useScript(()=>{
 				selectedProject = cellData.name;
 			}
 			projectLink.addEventListener("click",handleLinkClick);
+			projectLinkObserver.observe(projectLink);
+
 
 			const projectImage = createProjectImage(cellData.name,cellData.cover);
 			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer(cellInfo);
@@ -289,6 +305,7 @@ daybreak.router.useScript(()=>{
 
 				cellInfo.elm.removeChild(projectLink);
 				projectInfoContainerParent.removeChild(projectInfoContainer);
+				projectLinkObserver.unobserve(projectLink);
 			}
 		}
 	});
