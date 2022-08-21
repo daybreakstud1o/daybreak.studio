@@ -143,9 +143,9 @@ daybreak.router.useScript(()=>{
 			const isCellRightEmpty = cellRight.type === CELL_EMPTY;
 
 			// grab the bottom element when its a mobile grid
-			if(isMobileGrid) {
-				return cellInfo.elm;
-			}
+			// if(isMobileGrid) {
+			// 	return cellInfo.elm;
+			// }
 			if(isCellRightEmpty) {
 				return cellRight.elm;
 			}
@@ -165,7 +165,7 @@ daybreak.router.useScript(()=>{
 		// projectInfoContent.style.position = "absolute";
 		// projectInfoContent.style.left = "0px";
 		// projectInfoContent.style.right = "0px";
-		projectInfoContent.style.height = "100%";
+		// projectInfoContent.style.height = "100%";
 
 		const year = document.createElement("div");
 		year.innerHTML = cellData.year;
