@@ -177,6 +177,7 @@ daybreak.router.useScript(()=>{
 		const name = document.createElement("div");
 		name.innerHTML = cellData.name;
 		name.classList.add("label");
+		year.style.marginTop = "8px";
 		name.style.fontSize = isMobileGrid ? "14px" : "";
 		
 		const description = document.createElement("div");
@@ -184,6 +185,7 @@ daybreak.router.useScript(()=>{
 		description.classList.add("body-founders-small");
 		description.style.marginBottom = "auto";
 		description.style.fontSize = isMobileGrid ? "12px" : "";
+		description.style.lineHeight = isMobileGrid ? "16px" : "";
 		
 		const expertise = document.createElement("div");
 		expertise.innerHTML = cellData.expertise.reduce((expertise,curr) => expertise + `<div>${curr}</div>`,"");
