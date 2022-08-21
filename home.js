@@ -232,7 +232,7 @@ daybreak.router.useScript(()=>{
 				const elm = getProjectDescriptionInView(project);
 				if(!elm) return;
 				//@ts-ignore
-				elm.style.transition = "opacity .2s linear";
+				elm.style.transition = "opacity .15s linear";
 				requestAnimationFrame(()=>{
 					//@ts-ignore
 					elm.style.opacity = "1";
