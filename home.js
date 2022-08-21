@@ -364,7 +364,7 @@ daybreak.router.useScript(()=>{
 			isMobileGrid = true;
 			currentGridData = cellDataMobileShuffled;
 			setGridTemplates(GRID_TEMPLATES_MOBILE);
-			setGridGap(16);
+			setGridGap(10);
 		}
 	}
 	handlePageResize();
