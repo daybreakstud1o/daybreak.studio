@@ -174,7 +174,6 @@ daybreak.router.useScript(()=>{
 		name.innerHTML = cellData.name;
 		name.classList.add("label");
 		name.style.marginTop = "8px";
-		name.style.fontSize = isMobileGrid ? "14px" : "";
 		
 		const description = document.createElement("div");
 		description.innerHTML = cellData.description;
