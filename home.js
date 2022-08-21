@@ -202,7 +202,7 @@ daybreak.router.useScript(()=>{
 	}
 
 	// handle project link enter
-	const projectInfoContainerObserver = new IntersectionObserver((entries)=> {
+	const linkContainerObserver = new IntersectionObserver((entries)=> {
 		
 		entries.forEach((entry)=> {
 			if(entry.isIntersecting) {
@@ -252,7 +252,7 @@ daybreak.router.useScript(()=>{
 			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer(cellInfo);
 			const {year, name, description, expertise, projectInfoContent} = createProjectInfoContent(cellData);
 
-			projectInfoContainerObserver.observe(projectInfoContainer);
+			linkContainerObserver.observe(projectLink);
 
 			projectInfoContent.appendChild(year);
 			projectInfoContent.appendChild(name);
@@ -309,7 +309,7 @@ daybreak.router.useScript(()=>{
 
 				cellInfo.elm.removeChild(projectLink);
 				projectInfoContainerParent.removeChild(projectInfoContainer);
-				projectInfoContainerObserver.unobserve(projectInfoContainer);
+				linkContainerObserver.unobserve(projectLink);
 			}
 		}
 	});
