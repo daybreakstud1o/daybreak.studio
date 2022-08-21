@@ -162,6 +162,7 @@ daybreak.router.useScript(()=>{
 		projectInfoContent.style.pointerEvents = "none";
 		projectInfoContent.style.display = "flex";
 		projectInfoContent.style.flexDirection = "column";
+		projectInfoContent.style.height = "100%";
 
 		const year = document.createElement("div");
 		year.innerHTML = cellData.year;
