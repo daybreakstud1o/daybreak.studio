@@ -131,8 +131,8 @@ daybreak.router.useScript(()=>{
 		projectInfoContainer.style.position = "absolute";
 		projectInfoContainer.style.left = "0px";
 		projectInfoContainer.style.right = "0px";
-		projectInfoContainer.style.top = isMobileGrid ? "100%": "0px";
-		projectInfoContainer.style.bottom = isMobileGrid? "unset": "0px";
+		projectInfoContainer.style.top = "0px";
+		projectInfoContainer.style.bottom = "0px";
 		projectInfoContainer.style.pointerEvents = "none";
 		projectInfoContainer.style.opacity = "0";
 		projectInfoContainer.setAttribute("for-project", cellData.name);
