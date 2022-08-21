@@ -231,6 +231,8 @@ daybreak.router.useScript(()=>{
 				// elm on screen
 				const elm = getProjectDescriptionInView(project);
 				if(!elm) return;
+				//@ts-ignore
+				elm.style.transition = "opacity .2s linear";
 				requestAnimationFrame(()=>{
 					//@ts-ignore
 					elm.style.opacity = "1";
