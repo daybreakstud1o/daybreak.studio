@@ -125,13 +125,14 @@ daybreak.router.useScript(()=>{
 		return projectImage;
 	}
 
-	const createProjectInfoContainer = (cellInfo)=>{
+	const createProjectInfoContainer = (cellInfo,cellData)=>{
 		// project info hovers
 		const projectInfoContainer = document.createElement("div");
 		projectInfoContainer.style.position = "relative";
 		projectInfoContainer.style.height = "100%";
 		projectInfoContainer.style.pointerEvents = "none";
 		projectInfoContainer.style.display = "none";
+		projectInfoContainer.setAttribute("for-project", cellData.name)
 
 		const getProjectInfoPlacement = (projectInfoContainer)=> {
 			const cellLeft = cellInfo.getNearbyCell(-1,0);
@@ -201,17 +202,22 @@ daybreak.router.useScript(()=>{
 		return document.querySelectorAll(`a[for-project="${projectName}"]`);
 	}
 
+	const getProjectDescription = (projectName) => {
+		return document.querySelectorAll(`div[for-project="${projectName}"]`);
+	}
+
 	// handle project link enter
 	const linkContainerObserver = new IntersectionObserver((entries)=> {
 		
 		entries.forEach((entry)=> {
+			const project = entry.target.getAttribute("for-project");
 			if(entry.isIntersecting) {
-				// elm on screen
+				// elm on screen				
 				//@ts-ignore
-				entry.target.style.display = "block";
+				getProjectDescription(project)[0].style.display = "block";
 			} else {
 				//@ts-ignore
-				entry.target.style.display = "none";
+				getProjectDescription(project)[0].style.display = "none";
 			}
 		})
 
@@ -249,10 +255,11 @@ daybreak.router.useScript(()=>{
 			projectLink.addEventListener("click",handleLinkClick);
 
 			const projectImage = createProjectImage(cellData.name,cellData.cover);
-			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer(cellInfo);
+			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer(cellInfo, cellData);
 			const {year, name, description, expertise, projectInfoContent} = createProjectInfoContent(cellData);
 
 			linkContainerObserver.observe(projectLink);
+
 
 			projectInfoContent.appendChild(year);
 			projectInfoContent.appendChild(name);
