@@ -131,7 +131,7 @@ daybreak.router.useScript(()=>{
 		projectInfoContainer.style.position = "relative";
 		projectInfoContainer.style.height = "100%";
 		projectInfoContainer.style.pointerEvents = "none";
-		projectInfoContainer.style.display = "none";
+		projectInfoContainer.style.opacity = "0";
 		projectInfoContainer.setAttribute("for-project", cellData.name)
 
 		const getProjectInfoPlacement = (projectInfoContainer)=> {
@@ -296,14 +296,14 @@ daybreak.router.useScript(()=>{
 				// transitioning out, disable the animation
 				if(selectedProject) return;
 
-				projectInfoContainer.style.display = "block";
+				projectInfoContainer.style.opacity = "1";
 				fadeOtherProjectsImage(cellData.name);
 			}
 			const handleMouseLeave = ()=>{
 				// transitioning out, disable the animation to remove distraction
 				if(selectedProject) return;
 
-				projectInfoContainer.style.display = "none";
+				projectInfoContainer.style.opacity = "0";
 				showOtherProjectsImage(cellData.name);
 			}
 
