@@ -14,7 +14,7 @@ daybreak.router.useScript(()=>{
 	const _ = CELL_EMPTY;
 	const X = CELL_PROJECT;
 
-	const GRID_TEMPLATES_DESKTOP = [
+	const GRID_TEMPLATES_LARGE = [
 		createGridTemplate([
 			[_, X, _, X, X, _, _, X],
 			[X, _, X, _, _, _, X, _],
@@ -36,6 +36,31 @@ daybreak.router.useScript(()=>{
 			[_, X, _, X, _, _, X, _],
 			[X, _, _, _, X, _, _, X],
 			[X, _, X, _, _, X, _, _],
+		]),
+	]
+
+	const GRID_TEMPLATE_MEDIUM = [
+		createGridTemplate([
+			[_, X, _, X],
+			[X, _, X, _],
+			[_, X, _, _],
+			[X, _, X, _],
+			[_, _, _, X],
+			[X, _, X, _],
+			[_, X, _, X],
+			[X, _, _, _],
+			[X, _, X, _],
+		]),
+		createGridTemplate([
+			[X, _, _, X],
+			[_, _, X, _],
+			[_, X, _, _],
+			[X, _, X, _],
+			[_, _, _, X],
+			[X, _, X, _],
+			[_, X, _, X],
+			[X, _, _, _],
+			[X, _, X, _],
 		]),
 	]
 
@@ -261,7 +286,7 @@ daybreak.router.useScript(()=>{
 		setGridTemplates
 	} = createInfiniteGrid({
 		cols: 8,
-		templates: GRID_TEMPLATES_DESKTOP,
+		templates: GRID_TEMPLATES_LARGE,
 		baseElm: gridContainer,
 		renderCell: (cellInfo) => {
 			const isCellMobileGrid = isMobileGrid;
@@ -356,19 +381,30 @@ daybreak.router.useScript(()=>{
 
 	observePageCreation(handlePageCreate);
 
+	const GRID_MEDIUM_BREAKPOINT = 800;
+	const GRID_LARGE_BREAKPOINT = 1200;
 
 	const handlePageResize = ()=> {
-		if(window.innerWidth > 800) {
+		if(window.innerWidth > GRID_LARGE_BREAKPOINT) {
 			currentGridData = cellDataShuffled;
 			isMobileGrid = false;
-			setGridTemplates(GRID_TEMPLATES_DESKTOP);
+			setGridTemplates(GRID_TEMPLATES_LARGE);
 			setGridGap(24);
-		} else {
-			isMobileGrid = true;
-			currentGridData = cellDataMobileShuffled;
-			setGridTemplates(GRID_TEMPLATES_MOBILE);
-			setGridGap(12);
-		}
+			return;
+		} 
+
+		if(window.innerWidth > GRID_MEDIUM_BREAKPOINT) {
+			currentGridData = cellDataShuffled;
+			isMobileGrid = false;
+			setGridTemplates(GRID_TEMPLATE_MEDIUM);
+			setGridGap(24);
+			return;
+		} 
+		
+		isMobileGrid = true;
+		currentGridData = cellDataMobileShuffled;
+		setGridTemplates(GRID_TEMPLATES_MOBILE);
+		setGridGap(12);
 	}
 	handlePageResize();
 	const pageResizeDebounced = debounce(handlePageResize, 60);
