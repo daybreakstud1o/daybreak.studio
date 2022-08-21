@@ -254,6 +254,7 @@ daybreak.router.useScript(()=>{
 		isInViewport,
 		enableScroll,
 		disableScroll,
+		setGridGap,
 		setGridTemplates
 	} = createInfiniteGrid({
 		cols: 8,
@@ -333,7 +334,6 @@ daybreak.router.useScript(()=>{
 			projectLink.addEventListener("mouseenter", handleMouseEnter);
 			projectLink.addEventListener("mouseleave", handleMouseLeave);
 
-			
 			// cleanup cell
 			return () => {
 				projectLink.removeEventListener("mouseenter", handleMouseEnter);
@@ -359,10 +359,12 @@ daybreak.router.useScript(()=>{
 			currentGridData = cellDataShuffled;
 			isMobileGrid = false;
 			setGridTemplates(GRID_TEMPLATES_DESKTOP);
+			setGridGap(24);
 		} else {
 			isMobileGrid = true;
 			currentGridData = cellDataMobileShuffled;
 			setGridTemplates(GRID_TEMPLATES_MOBILE);
+			setGridGap(16);
 		}
 	}
 	handlePageResize();
