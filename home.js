@@ -144,7 +144,8 @@ daybreak.router.useScript(()=>{
 			}
 			return cellLeft.elm;
 		}
-		const projectInfoContainerParent = getProjectInfoPlacement(projectInfoContainer); 
+		const projectInfoContainerParent = getProjectInfoPlacement(projectInfoContainer);
+		projectInfoContainerParent.style.position = "relative";
 
 		return {projectInfoContainer, projectInfoContainerParent};
 	}
@@ -256,6 +257,7 @@ daybreak.router.useScript(()=>{
 
 			const projectImage = createProjectImage(cellData.name,cellData.cover);
 			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer(cellInfo, cellData);
+
 			const {year, name, description, expertise, projectInfoContent} = createProjectInfoContent(cellData);
 
 			linkContainerObserver.observe(projectLink);
