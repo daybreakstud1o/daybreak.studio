@@ -222,7 +222,7 @@ daybreak.router.useScript(()=>{
 		})
 
 	},{ 
-		rootMargin: "-40% 0px -40% 0px" 
+		rootMargin: "-40% 0px -50% 0px" 
 	});
 
 	const {
