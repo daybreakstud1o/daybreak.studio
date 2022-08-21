@@ -140,11 +140,12 @@ daybreak.router.useScript(()=>{
 		const getProjectInfoPlacement = (projectInfoContainer)=> {
 			const cellLeft = cellInfo.getNearbyCell(-1,0);
 			const cellRight = cellInfo.getNearbyCell(1,0);			
+			const cellBottom =  cellInfo.getNearbyCell(0,1);
 			const isCellRightEmpty = cellRight.type === CELL_EMPTY;
 
 			// grab the bottom element when its a mobile grid
-			if(isMobileGrid)
-				return cellInfo.getNearbyCell(0,1);
+			if(isMobileGrid) 
+				return cellBottom.elm;
 
 			if(isCellRightEmpty) {
 				return cellRight.elm;
@@ -152,7 +153,6 @@ daybreak.router.useScript(()=>{
 			return cellLeft.elm;
 		}
 		const projectInfoContainerParent = getProjectInfoPlacement(projectInfoContainer);
-		console.log(projectInfoContainerParent);
 		projectInfoContainerParent.style.position = "relative";
 
 		return {projectInfoContainer, projectInfoContainerParent};
