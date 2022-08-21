@@ -143,8 +143,9 @@ daybreak.router.useScript(()=>{
 			const isCellRightEmpty = cellRight.type === CELL_EMPTY;
 
 			// grab the bottom element when its a mobile grid
-			if(isMobileGrid) 
+			if(isMobileGrid) {
 				return cellInfo.getNearbyCell(0,1).elm;
+			}
 
 			if(isCellRightEmpty) {
 				return cellRight.elm;
