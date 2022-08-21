@@ -212,21 +212,32 @@ daybreak.router.useScript(()=>{
 		return document.querySelectorAll(`a[for-project="${projectName}"]`);
 	}
 
-	const getProjectDescription = (projectName) => {
-		return document.querySelectorAll(`div[for-project="${projectName}"]`);
+	const getProjectDescriptionInView = (projectName) => {
+		const allProjectDescriptions = document.querySelectorAll(`div[for-project="${projectName}"]`);
+		for (let i = 0; i < allProjectDescriptions.length; i++) {
+			const elm = allProjectDescriptions[i];
+			if(isInViewport(elm)) {
+				return elm;
+			}
+		}
+		return
 	}
 
 	// handle project link enter
 	const linkContainerObserver = new IntersectionObserver((entries)=> {
 		entries.forEach((entry)=> {
 			const project = entry.target.getAttribute("for-project");
+
 			if(entry.isIntersecting) {
-				// elm on screen				
-				//@ts-ignore
-				getProjectDescription(project)[0].style.opacity = "1";
+				// elm on screen
+				const elm = getProjectDescriptionInView(project);
+				requestAnimationFrame(()=>{
+					//@ts-ignore
+					elm.style.opacity = "1";
+				})
 			} else {
 				//@ts-ignore
-				getProjectDescription(project)[0].style.opacity = "0";
+				getProjectDescriptionInView(project).style.opacity = "0";
 			}
 		})
 
