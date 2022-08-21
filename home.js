@@ -143,9 +143,9 @@ daybreak.router.useScript(()=>{
 			const isCellRightEmpty = cellRight.type === CELL_EMPTY;
 
 			// grab the bottom element when its a mobile grid
-			// if(isMobileGrid) {
-			// 	return cellInfo.elm;
-			// }
+			if(isMobileGrid) {
+				return cellInfo.elm;
+			}
 			if(isCellRightEmpty) {
 				return cellRight.elm;
 			}
@@ -219,7 +219,6 @@ daybreak.router.useScript(()=>{
 
 	// handle project link enter
 	const linkContainerObserver = new IntersectionObserver((entries)=> {
-		
 		entries.forEach((entry)=> {
 			const project = entry.target.getAttribute("for-project");
 			if(entry.isIntersecting) {
@@ -249,6 +248,8 @@ daybreak.router.useScript(()=>{
 		templates: GRID_TEMPLATES_DESKTOP,
 		baseElm: gridContainer,
 		renderCell: (cellInfo) => {
+			const isCellMobileGrid = isMobileGrid;
+
 			if (cellInfo.type === CELL_EMPTY) {
 				return;
 			}
@@ -270,7 +271,7 @@ daybreak.router.useScript(()=>{
 
 			const {year, name, description, expertise, projectInfoContent} = createProjectInfoContent(cellData, isMobileGrid);
 
-			linkContainerObserver.observe(projectLink);
+			isCellMobileGrid && linkContainerObserver.observe(projectLink);
 
 
 			projectInfoContent.appendChild(year);
@@ -328,7 +329,7 @@ daybreak.router.useScript(()=>{
 
 				cellInfo.elm.removeChild(projectLink);
 				projectInfoContainerParent.removeChild(projectInfoContainer);
-				linkContainerObserver.unobserve(projectLink);
+				isCellMobileGrid && linkContainerObserver.unobserve(projectLink);
 			}
 		}
 	});
