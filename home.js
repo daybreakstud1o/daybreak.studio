@@ -162,10 +162,6 @@ daybreak.router.useScript(()=>{
 		projectInfoContent.style.pointerEvents = "none";
 		projectInfoContent.style.display = "flex";
 		projectInfoContent.style.flexDirection = "column";
-		// projectInfoContent.style.position = "absolute";
-		// projectInfoContent.style.left = "0px";
-		// projectInfoContent.style.right = "0px";
-		// projectInfoContent.style.height = "100%";
 
 		const year = document.createElement("div");
 		year.innerHTML = cellData.year;
@@ -177,7 +173,7 @@ daybreak.router.useScript(()=>{
 		const name = document.createElement("div");
 		name.innerHTML = cellData.name;
 		name.classList.add("label");
-		year.style.marginTop = "8px";
+		name.style.marginTop = "8px";
 		name.style.fontSize = isMobileGrid ? "14px" : "";
 		
 		const description = document.createElement("div");
