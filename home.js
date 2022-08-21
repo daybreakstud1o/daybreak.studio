@@ -227,17 +227,19 @@ daybreak.router.useScript(()=>{
 	const linkContainerObserver = new IntersectionObserver((entries)=> {
 		entries.forEach((entry)=> {
 			const project = entry.target.getAttribute("for-project");
-
 			if(entry.isIntersecting) {
 				// elm on screen
 				const elm = getProjectDescriptionInView(project);
+				if(!elm) return;
 				requestAnimationFrame(()=>{
 					//@ts-ignore
 					elm.style.opacity = "1";
 				})
 			} else {
+				const elm = getProjectDescriptionInView(project);
+				if(!elm) return;
 				//@ts-ignore
-				getProjectDescriptionInView(project).style.opacity = "0";
+				elm.style.opacity = "0";
 			}
 		})
 
