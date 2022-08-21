@@ -218,10 +218,10 @@ daybreak.router.useScript(()=>{
 			if(entry.isIntersecting) {
 				// elm on screen				
 				//@ts-ignore
-				getProjectDescription(project)[0].style.display = "block";
+				getProjectDescription(project)[0].style.opacity = "1";
 			} else {
 				//@ts-ignore
-				getProjectDescription(project)[0].style.display = "none";
+				getProjectDescription(project)[0].style.opacity = "0";
 			}
 		})
 
