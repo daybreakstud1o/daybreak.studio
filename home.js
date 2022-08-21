@@ -152,6 +152,7 @@ daybreak.router.useScript(()=>{
 			return cellLeft.elm;
 		}
 		const projectInfoContainerParent = getProjectInfoPlacement(projectInfoContainer);
+		console.log(projectInfoContainerParent);
 		projectInfoContainerParent.style.position = "relative";
 
 		return {projectInfoContainer, projectInfoContainerParent};
