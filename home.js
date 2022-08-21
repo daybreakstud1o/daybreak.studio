@@ -125,7 +125,7 @@ daybreak.router.useScript(()=>{
 		return projectImage;
 	}
 
-	const createProjectInfoContainer = (cellInfo,cellData)=>{
+	const createProjectInfoContainer = (cellInfo,cellData, isMobileGrid = false)=>{
 		// project info hovers
 		const projectInfoContainer = document.createElement("div");
 		projectInfoContainer.style.position = "absolute";
@@ -142,6 +142,10 @@ daybreak.router.useScript(()=>{
 			const cellRight = cellInfo.getNearbyCell(1,0);			
 			const isCellRightEmpty = cellRight.type === CELL_EMPTY;
 
+			// grab the bottom element when its a mobile grid
+			if(isMobileGrid)
+				return cellInfo.getNearbyCell(0,1);
+
 			if(isCellRightEmpty) {
 				return cellRight.elm;
 			}
@@ -153,7 +157,7 @@ daybreak.router.useScript(()=>{
 		return {projectInfoContainer, projectInfoContainerParent};
 	}
 
-	const createProjectInfoContent = (cellData)=>{
+	const createProjectInfoContent = (cellData, isMobileGrid = false)=>{
 		const projectInfoContent = document.createElement("div");
 		projectInfoContent.style.pointerEvents = "none";
 		projectInfoContent.style.display = "flex";
@@ -168,6 +172,7 @@ daybreak.router.useScript(()=>{
 		year.classList.add("body-founders-small");
 		year.style.fontSize = "12px";
 		year.style.marginBottom = "16px";
+		year.style.display = isMobileGrid? "hidden":"block";
 		
 		const name = document.createElement("div");
 		name.innerHTML = cellData.name;
@@ -181,7 +186,8 @@ daybreak.router.useScript(()=>{
 		const expertise = document.createElement("div");
 		expertise.innerHTML = cellData.expertise.reduce((expertise,curr) => expertise + `<div>${curr}</div>`,"");
 		expertise.classList.add("body-founders-small");
-
+		expertise.style.display = isMobileGrid? "hidden":"block";
+		
 		return {projectInfoContent,year,name,description,expertise}
 	}
 
@@ -194,6 +200,7 @@ daybreak.router.useScript(()=>{
 	// ======================================================================
 	let selectedProject = null;
 	let currentGridData = cellDataShuffled;
+	let isMobileGrid = false;
 
 	// some selection utilities
 	const getOtherProjectImages = (projectName)=> {
@@ -259,9 +266,9 @@ daybreak.router.useScript(()=>{
 			projectLink.addEventListener("click",handleLinkClick);
 
 			const projectImage = createProjectImage(cellData.name,cellData.cover);
-			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer(cellInfo, cellData);
+			const {projectInfoContainer, projectInfoContainerParent} = createProjectInfoContainer(cellInfo, cellData, isMobileGrid);
 
-			const {year, name, description, expertise, projectInfoContent} = createProjectInfoContent(cellData);
+			const {year, name, description, expertise, projectInfoContent} = createProjectInfoContent(cellData, isMobileGrid);
 
 			linkContainerObserver.observe(projectLink);
 
@@ -337,8 +344,10 @@ daybreak.router.useScript(()=>{
 	const handlePageResize = ()=> {
 		if(window.innerWidth > 800) {
 			currentGridData = cellDataShuffled;
+			isMobileGrid = false;
 			setGridTemplates(GRID_TEMPLATES_DESKTOP);
 		} else {
+			isMobileGrid = true;
 			currentGridData = cellDataMobileShuffled;
 			setGridTemplates(GRID_TEMPLATES_MOBILE);
 		}
