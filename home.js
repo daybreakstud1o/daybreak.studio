@@ -128,8 +128,11 @@ daybreak.router.useScript(()=>{
 	const createProjectInfoContainer = (cellInfo,cellData)=>{
 		// project info hovers
 		const projectInfoContainer = document.createElement("div");
-		projectInfoContainer.style.position = "relative";
-		projectInfoContainer.style.height = "100%";
+		projectInfoContainer.style.position = "absolute";
+		projectInfoContainer.style.left = "0px";
+		projectInfoContainer.style.right = "0px";
+		projectInfoContainer.style.top = "0px";
+		projectInfoContainer.style.bottom = "0px";
 		projectInfoContainer.style.pointerEvents = "none";
 		projectInfoContainer.style.opacity = "0";
 		projectInfoContainer.setAttribute("for-project", cellData.name)
