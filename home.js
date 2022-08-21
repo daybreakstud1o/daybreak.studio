@@ -131,28 +131,27 @@ daybreak.router.useScript(()=>{
 		projectInfoContainer.style.position = "absolute";
 		projectInfoContainer.style.left = "0px";
 		projectInfoContainer.style.right = "0px";
-		projectInfoContainer.style.top = "0px";
-		projectInfoContainer.style.bottom = "0px";
+		projectInfoContainer.style.top = isMobileGrid ? "100%": "0px";
+		projectInfoContainer.style.bottom = isMobileGrid? "unset": "0px";
 		projectInfoContainer.style.pointerEvents = "none";
 		projectInfoContainer.style.opacity = "0";
-		projectInfoContainer.setAttribute("for-project", cellData.name)
+		projectInfoContainer.setAttribute("for-project", cellData.name);
 
-		const getProjectInfoPlacement = (projectInfoContainer)=> {
+		const getProjectInfoPlacement = ()=> {
 			const cellLeft = cellInfo.getNearbyCell(-1,0);
 			const cellRight = cellInfo.getNearbyCell(1,0);			
 			const isCellRightEmpty = cellRight.type === CELL_EMPTY;
 
 			// grab the bottom element when its a mobile grid
 			if(isMobileGrid) {
-				return cellInfo.getNearbyCell(0,1).elm;
+				return cellInfo.elm;
 			}
-
 			if(isCellRightEmpty) {
 				return cellRight.elm;
 			}
 			return cellLeft.elm;
 		}
-		const projectInfoContainerParent = getProjectInfoPlacement(projectInfoContainer);
+		const projectInfoContainerParent = getProjectInfoPlacement();
 		projectInfoContainerParent.style.position = "relative";
 
 		return {projectInfoContainer, projectInfoContainerParent};
