@@ -375,13 +375,13 @@ daybreak.router.useScript(()=>{
 			// thumbnail over state
 			const handleMouseEnter = ()=>{
 				// transitioning out, disable the animation
-				if(selectedProject) return;
+				if(selectedProject || isMobileGrid) return;
 				projectInfoContainer.style.opacity = "1";
 				fadeOtherProjectsImage(cellData.name);
 			}
 			const handleMouseLeave = ()=>{
 				// transitioning out, disable the animation to remove distraction
-				if(selectedProject) return;
+				if(selectedProject || isMobileGrid) return;
 				projectInfoContainer.style.opacity = "0";
 				showOtherProjectsImage(cellData.name);
 			}
