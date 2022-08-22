@@ -472,13 +472,11 @@ daybreak.router.useScript(()=>{
 				const verticalOffset = parentBounds.top - 16;
 				menuOpenButton.style.transform = `translate3d(${parentBounds.width - buttonBounds.width}px, -${verticalOffset}px, 0px)`;
 				daybreakInfo.style.transform = `translate3d(0px, -${verticalOffset}px, 0px)`;
-				daybreakInfo.style.opacity = `0`;
 			})
 			return;
 		}
 		requestAnimationFrame(()=>{
 			daybreakInfo.style.transform = `translate3d(0px,0px, 0px)`;
-			daybreakInfo.style.opacity = `1`;
 			menuOpenButton.style.transform = `translate3d(0px,0px,0px)`;
 		})
 	}
