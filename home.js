@@ -1,4 +1,4 @@
-//@ts-check
+
 //@ts-ignore
 daybreak.router.useScript(()=>{
 	console.log("enter home");
@@ -244,7 +244,6 @@ daybreak.router.useScript(()=>{
 		return {projectInfoContent,year,name,description,expertise}
 	}
 
-	
 
 	// ======================================================================
 	// 
@@ -312,7 +311,9 @@ daybreak.router.useScript(()=>{
 		disableScroll,
 		setGridGap,
 		setGridTemplates,
-		setTopPadding
+		setTopPadding,
+		observeScroll,
+		unobserveScroll
 	} = createInfiniteGrid({
 		cols: 8,
 		templates: GRID_TEMPLATES_LARGE,
@@ -342,7 +343,6 @@ daybreak.router.useScript(()=>{
 			const {year, name, description, expertise, projectInfoContent} = createProjectInfoContent(cellData, isMobileGrid);
 
 			isCellMobileGrid && linkContainerObserver.observe(projectLink);
-
 
 			projectInfoContent.appendChild(year);
 			projectInfoContent.appendChild(name);
@@ -451,12 +451,32 @@ daybreak.router.useScript(()=>{
 	handlePageResize();
 	const pageResizeDebounced = debounce(handlePageResize, 10);
 	window.addEventListener("resize", pageResizeDebounced);
+
+
 	
+	
+	const menuOpenButton = document.querySelector("#menu-open");
+	const daybreakInfo = document.querySelector(".daybreak-info");
+	menuOpenButton.style.transition = `translate .3s cubic-bezier(0.22, 1, 0.36, 1)`;
+	daybreakInfo.style.transition = `height .3s cubic-bezier(0.22, 1, 0.36, 1)`;
+	
+	const handleGridScroll = (scroll)=> {
+		if(scroll > 50) {
+			const buttonWidth = menuOpenButton.getBoundingClientRect().width;
+			const parentWidth = menuOpenButton.parentElement.getBoundingClientRect().width;
+			menuOpenButton.style.transform = `translateX(${parentWidth - buttonWidth}px)`;
+			daybreakInfo.style.height = `0px`;
+		}
+		menuOpenButton.style.transform = `translateX(0px)`;
+		daybreakInfo.style.height = `auto`;
+	}
+	observeScroll(handleGridScroll);
 	
 	// cleanup function
 	return ({beginTransition, nextPath})=>{
 		
 		const finishCleanup = () => {
+			unobserveScroll(handleGridScroll);
 			cleanupInfiniteGrid();
 			unobservePageCreation(handlePageCreate);
 			window.removeEventListener("resize", pageResizeDebounced);
@@ -548,6 +568,7 @@ daybreak.router.useScript(()=>{
 		disableScroll();
 		onAbort(()=> {
 			//@ts-ignore
+			observeScroll(handleGridScroll);
 			navBar.style.opacity = "1";
 			clearAllTimeout();
 			fadeInOtherLinks(linksInView);
