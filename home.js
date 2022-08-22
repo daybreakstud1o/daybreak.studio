@@ -466,27 +466,27 @@ daybreak.router.useScript(()=>{
 	let isInfoHidden = false;
 
 	const hideInfo = ()=> requestAnimationFrame(()=>{
-				isInfoHidden = true;
-				const buttonBounds = menuOpenButton.getBoundingClientRect();
-				const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
+		isInfoHidden = true;
+		const buttonBounds = menuOpenButton.getBoundingClientRect();
+		const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
 
-				const verticalOffset = parentBounds.top - 16;
-				const horizontalOffset = parentBounds.width - buttonBounds.width;
-				menuOpenButton.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px)`;
-				daybreakInfo.style.transform = `translate3d(${horizontalOffset/2}px, -${verticalOffset/2}px, 0px) scale(0)`;
-				daybreakInfo.style.opacity = `0`;
-			})
+		const verticalOffset = parentBounds.top - 16;
+		const horizontalOffset = parentBounds.width - buttonBounds.width;
+		menuOpenButton.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px)`;
+		daybreakInfo.style.transform = `translate3d(${horizontalOffset/2}px, -${verticalOffset/2}px, 0px) scale(0)`;
+		daybreakInfo.style.opacity = `0`;
+	})
 	const showInfo = ()=> requestAnimationFrame(()=>{
-				isInfoHidden = true;
-				const buttonBounds = menuOpenButton.getBoundingClientRect();
-				const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
+		isInfoHidden = false;
+		const buttonBounds = menuOpenButton.getBoundingClientRect();
+		const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
 
-				const verticalOffset = parentBounds.top - 16;
-				const horizontalOffset = parentBounds.width - buttonBounds.width;
-				menuOpenButton.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px)`;
-				daybreakInfo.style.transform = `translate3d(${horizontalOffset/2}px, -${verticalOffset/2}px, 0px) scale(0)`;
-				daybreakInfo.style.opacity = `0`;
-			})
+		const verticalOffset = parentBounds.top - 16;
+		const horizontalOffset = parentBounds.width - buttonBounds.width;
+		menuOpenButton.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px)`;
+		daybreakInfo.style.transform = `translate3d(${horizontalOffset/2}px, -${verticalOffset/2}px, 0px) scale(0)`;
+		daybreakInfo.style.opacity = `0`;
+	})
 	const handleGridScroll = (scroll)=> {
 		if(scroll > 0 && isMobileGrid) {
 			if(isInfoHidden) return;
