@@ -447,7 +447,7 @@ daybreak.router.useScript(()=>{
 		setTopPadding(180);
 	}
 	handlePageResize();
-	const pageResizeDebounced = debounce(handlePageResize, 100);
+	const pageResizeDebounced = debounce(handlePageResize, 10);
 	window.addEventListener("resize", pageResizeDebounced);
 	
 	
