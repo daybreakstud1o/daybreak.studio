@@ -295,10 +295,10 @@ function enableStickyPosition(element) {
 
 	console.log(element);
 
-	const computedElmStyle = element.computedStyleMap();
+	const computedElmStyle = window.getComputedStyle(element, null);
 
-	const stickyTop = parseInt(computedElmStyle.get("top"));
-	const elementHeight = parseInt(computedElmStyle.get("height"));
+	const stickyTop = parseInt(computedElmStyle.top);
+	const elementHeight = parseInt(computedElmStyle.height);
 
 	const stickyObserver = createIntersectionObserver({
 		rootMargin: `0px 0px 0px 0px`,
