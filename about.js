@@ -273,6 +273,7 @@ daybreak.router.useScript(()=>{
 	const cleanupDocumentSticky = enableAllStickyPosition();	
 	function enableAllStickyPosition() {
 		const stickyElm = document.querySelectorAll(".sticky");
+		console.log(stickyElm);
 
 		const cleanups = Array.from(stickyElm).map((elm)=>{
 			return enableStickyPosition(elm);
