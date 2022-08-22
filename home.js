@@ -99,11 +99,14 @@ daybreak.router.useScript(()=>{
 			[X,_,_],
 			[_,_,X],
 			[_,X,_],
+			[_,_,X],
 		]),
 		createGridTemplate([
-			[_,_,X],
+			[_,X,_],
 			[X,_,_],
-		])
+			[_,X,_],
+			[_,_,X],
+		]),
 	]
 
 	const gridContainer = document.createElement("div");
