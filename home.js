@@ -463,21 +463,26 @@ daybreak.router.useScript(()=>{
 	daybreakInfo.style.transitionDuration = `.3s`;
 	daybreakInfo.style.opacity = `1`;
 
+	let daybreakInfoHidden = false;
 	const handleGridScroll = (scroll)=> {
-		if(scroll > 50) {
+		if(scroll > 50 && !daybreakInfoHidden) {
 			requestAnimationFrame(()=>{
+				daybreakInfoHidden = true;
 				const buttonBounds = menuOpenButton.getBoundingClientRect();
 				const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
 
 				const verticalOffset = parentBounds.top - 16;
 				menuOpenButton.style.transform = `translate3d(${parentBounds.width - buttonBounds.width}px, -${verticalOffset}px, 0px)`;
 				daybreakInfo.style.transform = `translate3d(0px, -${verticalOffset}px, 0px)`;
+				daybreakInfo.style.opacity = `0`;
 			})
 			return;
 		}
 		requestAnimationFrame(()=>{
+			daybreakInfoHidden = false;
 			daybreakInfo.style.transform = `translate3d(0px,0px, 0px)`;
 			menuOpenButton.style.transform = `translate3d(0px,0px,0px)`;
+			daybreakInfo.style.opacity = `1`;
 		})
 	}
 	observeScroll(handleGridScroll);
