@@ -443,7 +443,7 @@ daybreak.router.useScript(()=>{
 		currentGridData = cellDataMobileShuffled;
 		setGridTemplates(GRID_TEMPLATES_MOBILE);
 		setGridGap(12);
-		setTopPadding(120);
+		setTopPadding(180);
 	}
 	handlePageResize();
 	const pageResizeDebounced = debounce(handlePageResize, 10);
