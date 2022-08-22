@@ -456,18 +456,16 @@ daybreak.router.useScript(()=>{
 	const menuOpenButton = document.querySelector("#menu-open");
 	const daybreakInfo = document.querySelector(".daybreak-info");
 	menuOpenButton.style.willChange = `transform`;
-	menuOpenButton.style.transition = `transform .3s cubic-bezier(.36,0,.24,.99)`;
+	menuOpenButton.style.transition = `transform .2s cubic-bezier(0.83, 0, 0.17, 1)`;
 	daybreakInfo.style.willChange = `transform,opacity`;
 	daybreakInfo.style.transitionProperty = `transform,opacity`;
-	daybreakInfo.style.transitionTimingFunction = `cubic-bezier(.36,0,.24,.99)`;
-	daybreakInfo.style.transitionDuration = `.3s`;
+	daybreakInfo.style.transitionTimingFunction = `cubic-bezier(0.83, 0, 0.17, 1)`;
+	daybreakInfo.style.transitionDuration = `.2s`;
 	daybreakInfo.style.opacity = `1`;
 
 	let isInfoHidden = false;
-	const handleGridScroll = (scroll)=> {
-		if(scroll > 0) {
-			if(isInfoHidden) return;
-			requestAnimationFrame(()=>{
+
+	const hideInfo = ()=> requestAnimationFrame(()=>{
 				isInfoHidden = true;
 				const buttonBounds = menuOpenButton.getBoundingClientRect();
 				const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
@@ -478,15 +476,28 @@ daybreak.router.useScript(()=>{
 				daybreakInfo.style.transform = `translate3d(${horizontalOffset/2}px, -${verticalOffset/2}px, 0px) scale(0)`;
 				daybreakInfo.style.opacity = `0`;
 			})
+	const showInfo = ()=> requestAnimationFrame(()=>{
+				isInfoHidden = true;
+				const buttonBounds = menuOpenButton.getBoundingClientRect();
+				const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
+
+				const verticalOffset = parentBounds.top - 16;
+				const horizontalOffset = parentBounds.width - buttonBounds.width;
+				menuOpenButton.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px)`;
+				daybreakInfo.style.transform = `translate3d(${horizontalOffset/2}px, -${verticalOffset/2}px, 0px) scale(0)`;
+				daybreakInfo.style.opacity = `0`;
+			})
+	const handleGridScroll = (scroll)=> {
+		if (!isMobileGrid) {
+			showInfo();
 			return;
 		}
-		requestAnimationFrame(()=>{
-			isInfoHidden = false;
-			daybreakInfoHidden = false;
-			daybreakInfo.style.transform = `translate3d(0px,0px, 0px) scale(1)`;
-			daybreakInfo.style.opacity = `1`;
-			menuOpenButton.style.transform = `translate3d(0px,0px,0px)`;
-		});
+		if(scroll > 0) {
+			if(isInfoHidden) return;
+			hideInfo();
+			return;
+		}
+		showInfo();
 	}
 	observeScroll(handleGridScroll);
 	
