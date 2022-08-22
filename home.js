@@ -488,11 +488,7 @@ daybreak.router.useScript(()=>{
 				daybreakInfo.style.opacity = `0`;
 			})
 	const handleGridScroll = (scroll)=> {
-		if (!isMobileGrid) {
-			showInfo();
-			return;
-		}
-		if(scroll > 0) {
+		if(scroll > 0 && isMobileGrid) {
 			if(isInfoHidden) return;
 			hideInfo();
 			return;
