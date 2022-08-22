@@ -63,6 +63,31 @@ daybreak.router.useScript(()=>{
 			[X, _, _, X, _, _],
 		]),
 	]
+	
+	const GRID_TEMPLATE_SMALL = [
+		createGridTemplate([
+			[_, X, _, X],
+			[X, _, X, _],
+			[_, X, _, _],
+			[X, _, X, _],
+			[_, _, _, X],
+			[X, _, X, _],
+			[_, X, _, X],
+			[X, _, _, _],
+			[X, _, X, _],
+		]),
+		createGridTemplate([
+			[_, X, X, X],
+			[X, _, _, _],
+			[_, _, X, _],
+			[X, _, X, X],
+			[_, X, _, _],
+			[X, _, _, X],
+			[_, X, _, _],
+			[_, _, X, _],
+			[X, _, _, _],
+		]),
+	]
 
 	const GRID_TEMPLATES_MOBILE = [
 		createGridTemplate([
@@ -381,6 +406,7 @@ daybreak.router.useScript(()=>{
 
 	observePageCreation(handlePageCreate);
 
+	const GRID_SMALL_BREAKPOINT = 400;
 	const GRID_MEDIUM_BREAKPOINT = 768;
 	const GRID_LARGE_BREAKPOINT = 1440;
 
@@ -397,6 +423,14 @@ daybreak.router.useScript(()=>{
 			currentGridData = cellDataShuffled;
 			isMobileGrid = false;
 			setGridTemplates(GRID_TEMPLATE_MEDIUM);
+			setGridGap(24);
+			return;
+		} 
+
+		if(window.innerWidth > GRID_SMALL_BREAKPOINT) {
+			currentGridData = cellDataShuffled;
+			isMobileGrid = true;
+			setGridTemplates(GRID_TEMPLATE_SMALL);
 			setGridGap(24);
 			return;
 		} 
