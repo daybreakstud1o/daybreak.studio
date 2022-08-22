@@ -429,7 +429,7 @@ daybreak.router.useScript(()=>{
 
 		if(window.innerWidth > GRID_SMALL_BREAKPOINT) {
 			currentGridData = cellDataShuffled;
-			isMobileGrid = true;
+			isMobileGrid = false;
 			setGridTemplates(GRID_TEMPLATE_SMALL);
 			setGridGap(24);
 			return;
