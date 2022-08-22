@@ -463,11 +463,9 @@ daybreak.router.useScript(()=>{
 	daybreakInfo.style.transitionDuration = `.3s`;
 	daybreakInfo.style.opacity = `1`;
 
-	let daybreakInfoHidden = false;
 	const handleGridScroll = (scroll)=> {
-		if(scroll > 50 && !daybreakInfoHidden) {
+		if(scroll > 50) {
 			requestAnimationFrame(()=>{
-				daybreakInfoHidden = true;
 				const buttonBounds = menuOpenButton.getBoundingClientRect();
 				const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
 
@@ -478,8 +476,6 @@ daybreak.router.useScript(()=>{
 			})
 			return;
 		}
-
-		if(!daybreakInfoHidden) return;
 		requestAnimationFrame(()=>{
 			daybreakInfoHidden = false;
 			daybreakInfo.style.transform = `translate3d(0px,0px, 0px)`;
