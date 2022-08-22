@@ -103,8 +103,8 @@ daybreak.router.useScript(()=>{
 		]),
 		createGridTemplate([
 			[_,X,_],
+			[_,_,X],
 			[X,_,_],
-			[_,X,_],
 			[_,_,X],
 		]),
 	]
