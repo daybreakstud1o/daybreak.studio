@@ -407,7 +407,7 @@ daybreak.router.useScript(()=>{
 		setGridGap(12);
 	}
 	handlePageResize();
-	const pageResizeDebounced = debounce(handlePageResize, 60);
+	const pageResizeDebounced = debounce(handlePageResize, 10);
 	window.addEventListener("resize", pageResizeDebounced);
 	
 	
