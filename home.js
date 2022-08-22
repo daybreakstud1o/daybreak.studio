@@ -478,6 +478,8 @@ daybreak.router.useScript(()=>{
 			})
 			return;
 		}
+
+		if(!daybreakInfoHidden) return;
 		requestAnimationFrame(()=>{
 			daybreakInfoHidden = false;
 			daybreakInfo.style.transform = `translate3d(0px,0px, 0px)`;
