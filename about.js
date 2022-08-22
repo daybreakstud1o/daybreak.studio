@@ -43,8 +43,8 @@ daybreak.router.useScript(()=>{
 
 		return ()=>{
 
-				document.querySelector('.daybreak-info').style.display = 'block';
-				document.querySelector('.cities-info').style.display = 'block';
+				document.querySelector('.daybreak-info').style.display = '';
+				document.querySelector('.cities-info').style.display = '';
 				document.querySelector('.daybreak-info').style.transitionDelay = '.3s';
 				document.querySelector('.cities-info').style.transitionDelay = '.3s';
 
