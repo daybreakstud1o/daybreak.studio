@@ -308,7 +308,8 @@ daybreak.router.useScript(()=>{
 		enableScroll,
 		disableScroll,
 		setGridGap,
-		setGridTemplates
+		setGridTemplates,
+		setTopPadding
 	} = createInfiniteGrid({
 		cols: 8,
 		templates: GRID_TEMPLATES_LARGE,
@@ -416,22 +417,25 @@ daybreak.router.useScript(()=>{
 			isMobileGrid = false;
 			setGridTemplates(GRID_TEMPLATES_LARGE);
 			setGridGap(24);
+			setTopPadding(0);
 			return;
 		} 
-
+		
 		if(window.innerWidth > GRID_MEDIUM_BREAKPOINT) {
 			currentGridData = cellDataShuffled;
 			isMobileGrid = false;
 			setGridTemplates(GRID_TEMPLATE_MEDIUM);
 			setGridGap(24);
+			setTopPadding(0);
 			return;
 		} 
-
+		
 		if(window.innerWidth > GRID_SMALL_BREAKPOINT) {
 			currentGridData = cellDataShuffled;
 			isMobileGrid = false;
 			setGridTemplates(GRID_TEMPLATE_SMALL);
 			setGridGap(24);
+			setTopPadding(0);
 			return;
 		} 
 		
@@ -439,6 +443,7 @@ daybreak.router.useScript(()=>{
 		currentGridData = cellDataMobileShuffled;
 		setGridTemplates(GRID_TEMPLATES_MOBILE);
 		setGridGap(12);
+		setTopPadding(120);
 	}
 	handlePageResize();
 	const pageResizeDebounced = debounce(handlePageResize, 10);
