@@ -376,14 +376,12 @@ daybreak.router.useScript(()=>{
 			const handleMouseEnter = ()=>{
 				// transitioning out, disable the animation
 				if(selectedProject) return;
-
 				projectInfoContainer.style.opacity = "1";
 				fadeOtherProjectsImage(cellData.name);
 			}
 			const handleMouseLeave = ()=>{
 				// transitioning out, disable the animation to remove distraction
 				if(selectedProject) return;
-
 				projectInfoContainer.style.opacity = "0";
 				showOtherProjectsImage(cellData.name);
 			}
@@ -477,7 +475,7 @@ daybreak.router.useScript(()=>{
 				const verticalOffset = parentBounds.top - 16;
 				const horizontalOffset = parentBounds.width - buttonBounds.width;
 				menuOpenButton.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px)`;
-				daybreakInfo.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px) scale(0)`;
+				daybreakInfo.style.transform = `translate3d(${horizontalOffset/2}px, -${verticalOffset/2}px, 0px) scale(0)`;
 				daybreakInfo.style.opacity = `0`;
 			})
 			return;
