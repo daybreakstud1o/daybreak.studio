@@ -456,11 +456,11 @@ daybreak.router.useScript(()=>{
 	const menuOpenButton = document.querySelector("#menu-open");
 	const daybreakInfo = document.querySelector(".daybreak-info");
 	menuOpenButton.style.willChange = `transform`;
-	menuOpenButton.style.transition = `transform .2s cubic-bezier(0.83, 0, 0.17, 1)`;
+	menuOpenButton.style.transition = `transform .3s cubic-bezier(0.85, 0, 0.15, 1)`;
 	daybreakInfo.style.willChange = `transform,opacity`;
 	daybreakInfo.style.transitionProperty = `transform,opacity`;
-	daybreakInfo.style.transitionTimingFunction = `cubic-bezier(0.83, 0, 0.17, 1)`;
-	daybreakInfo.style.transitionDuration = `.2s`;
+	daybreakInfo.style.transitionTimingFunction = `cubic-bezier(0.85, 0, 0.15, 1)`;
+	daybreakInfo.style.transitionDuration = `.3s`;
 	daybreakInfo.style.opacity = `1`;
 
 	let isInfoHidden = false;
