@@ -458,14 +458,17 @@ daybreak.router.useScript(()=>{
 	const menuOpenButton = document.querySelector("#menu-open");
 	const daybreakInfo = document.querySelector(".daybreak-info");
 	menuOpenButton.style.transition = `transform .3s cubic-bezier(0.22, 1, 0.36, 1)`;
-	daybreakInfo.style.transition = `height .3s cubic-bezier(0.22, 1, 0.36, 1)`;
+	daybreakInfo.style.transition = `transform .3s cubic-bezier(0.22, 1, 0.36, 1)`;
 
 	const handleGridScroll = (scroll)=> {
 		if(scroll > 50) {
 			requestAnimationFrame(()=>{
 				const buttonBounds = menuOpenButton.getBoundingClientRect();
 				const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
-				menuOpenButton.style.transform = `translate(${parentBounds.width - buttonBounds.width}px, -${parentBounds.top - 16}px)`;
+
+				const verticalOffset = parentBounds.top - 16;
+				menuOpenButton.style.transform = `translate3d(${parentBounds.width - buttonBounds.width}px, -${verticalOffset}px, 0px)`;
+				daybreakInfo.style.transform = `translate3d(0px, -${verticalOffset}px, 0px)`;
 			})
 			return;
 		}
