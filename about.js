@@ -47,11 +47,13 @@ daybreak.router.useScript(()=>{
 				document.querySelector('.cities-info').style.display = '';
 				document.querySelector('.daybreak-info').style.transitionDelay = '.3s';
 				document.querySelector('.cities-info').style.transitionDelay = '.3s';
-
+				
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 					document.querySelector('.daybreak-info').style.opacity = '1';
 					document.querySelector('.cities-info').style.opacity = '1';
+					document.querySelector('.daybreak-info').style.transitionDelay = '';
+					document.querySelector('.cities-info').style.transitionDelay = '';
 				})
 				document.querySelector('.nav-logo').style.width = '';
 
