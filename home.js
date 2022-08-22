@@ -467,7 +467,7 @@ daybreak.router.useScript(()=>{
 
 	let isInfoHidden = false;
 	const handleGridScroll = (scroll)=> {
-		if(scroll > 50) {
+		if(scroll > 20) {
 			if(isInfoHidden) return;
 			requestAnimationFrame(()=>{
 				isInfoHidden = true;
@@ -482,11 +482,13 @@ daybreak.router.useScript(()=>{
 			})
 			return;
 		}
-		isInfoHidden = false;
-		daybreakInfoHidden = false;
-		daybreakInfo.style.transform = `translate3d(0px,0px, 0px) scale(1)`;
-		daybreakInfo.style.opacity = `1`;
-		menuOpenButton.style.transform = `translate3d(0px,0px,0px)`;
+		requestAnimationFrame(()=>{
+			isInfoHidden = false;
+			daybreakInfoHidden = false;
+			daybreakInfo.style.transform = `translate3d(0px,0px, 0px) scale(1)`;
+			daybreakInfo.style.opacity = `1`;
+			menuOpenButton.style.transform = `translate3d(0px,0px,0px)`;
+		});
 	}
 	observeScroll(handleGridScroll);
 	
