@@ -449,8 +449,6 @@ daybreak.router.useScript(()=>{
 	handlePageResize();
 	const pageResizeDebounced = debounce(handlePageResize, 100);
 	window.addEventListener("resize", pageResizeDebounced);
-
-
 	
 	
 	const menuOpenButton = document.querySelector("#menu-open");
@@ -534,11 +532,8 @@ daybreak.router.useScript(()=>{
 		navBar.style.transform = "translateY(0%)";
 		
 		requestAnimationFrame(()=>{
-			//@ts-ignore
 			navBar.style.transitionProperty = "opacity";
-			//@ts-ignore
 			navBar.style.transitionDuration = ".2s";
-			//@ts-ignore
 			navBar.style.opacity = "0";
 		})
 
@@ -589,7 +584,6 @@ daybreak.router.useScript(()=>{
 		disableScroll();
 		onAbort(()=> {
 			//@ts-ignore
-			observeScroll(handleGridScroll);
 			navBar.style.opacity = "1";
 			clearAllTimeout();
 			fadeInOtherLinks(linksInView);
@@ -597,7 +591,6 @@ daybreak.router.useScript(()=>{
 			enableScroll();
 			selectedProject = null;
 			clearTimeout(timeout)
-			window.addEventListener("resize", pageResizeDebounced);
 		});
 	}
 })
