@@ -457,7 +457,7 @@ daybreak.router.useScript(()=>{
 	
 	const menuOpenButton = document.querySelector("#menu-open");
 	const daybreakInfo = document.querySelector(".daybreak-info");
-	menuOpenButton.style.transition = `translate .3s cubic-bezier(0.22, 1, 0.36, 1)`;
+	menuOpenButton.style.transition = `transform .3s cubic-bezier(0.22, 1, 0.36, 1)`;
 	daybreakInfo.style.transition = `height .3s cubic-bezier(0.22, 1, 0.36, 1)`;
 	daybreakInfo.style.overflowY = `hidden`;
 
