@@ -458,7 +458,7 @@ daybreak.router.useScript(()=>{
 	const menuOpenButton = document.querySelector("#menu-open");
 	const daybreakInfo = document.querySelector(".daybreak-info");
 	menuOpenButton.style.transition = `transform .3s cubic-bezier(0.22, 1, 0.36, 1)`;
-	daybreakInfo.style.transition = `transform .3s cubic-bezier(0.22, 1, 0.36, 1)`;
+	daybreakInfo.style.transition = `transform,opacity .3s cubic-bezier(0.22, 1, 0.36, 1)`;
 
 	const handleGridScroll = (scroll)=> {
 		if(scroll > 50) {
@@ -469,11 +469,14 @@ daybreak.router.useScript(()=>{
 				const verticalOffset = parentBounds.top - 16;
 				menuOpenButton.style.transform = `translate3d(${parentBounds.width - buttonBounds.width}px, -${verticalOffset}px, 0px)`;
 				daybreakInfo.style.transform = `translate3d(0px, -${verticalOffset}px, 0px)`;
+				daybreakInfo.style.opacity = `0`;
 			})
 			return;
 		}
 		requestAnimationFrame(()=>{
-			menuOpenButton.style.transform = `translateX(0px)`;
+			daybreakInfo.style.transform = `translate3d(0px,0px, 0px)`;
+			daybreakInfo.style.opacity = `1`;
+			menuOpenButton.style.transform = `translate3d(0px,0px,0px)`;
 		})
 	}
 	observeScroll(handleGridScroll);
