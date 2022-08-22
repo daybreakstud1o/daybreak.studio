@@ -382,7 +382,7 @@ daybreak.router.useScript(()=>{
 	observePageCreation(handlePageCreate);
 
 	const GRID_MEDIUM_BREAKPOINT = 768;
-	const GRID_LARGE_BREAKPOINT = 992;
+	const GRID_LARGE_BREAKPOINT = 1431;
 
 	const handlePageResize = ()=> {
 		if(window.innerWidth > GRID_LARGE_BREAKPOINT) {
