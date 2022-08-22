@@ -479,9 +479,9 @@ daybreak.router.useScript(()=>{
 		}
 		requestAnimationFrame(()=>{
 			daybreakInfoHidden = false;
-			daybreakInfo.style.transform = `translate3d(0px,0px, 0px) scale(0)`;
-			menuOpenButton.style.transform = `translate3d(0px,0px,0px)`;
+			daybreakInfo.style.transform = `translate3d(0px,0px, 0px) scale(1)`;
 			daybreakInfo.style.opacity = `1`;
+			menuOpenButton.style.transform = `translate3d(0px,0px,0px)`;
 		})
 	}
 	observeScroll(handleGridScroll);
