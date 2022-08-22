@@ -463,14 +463,16 @@ daybreak.router.useScript(()=>{
 
 	const handleGridScroll = (scroll)=> {
 		if(scroll > 50) {
-			const buttonWidth = menuOpenButton.getBoundingClientRect().width;
-			const parentWidth = menuOpenButton.parentElement.getBoundingClientRect().width;
-			menuOpenButton.style.transform = `translateX(${parentWidth - buttonWidth}px)`;
-			daybreakInfo.style.height = `0px`;
+			requestAnimationFrame(()=>{
+				const buttonWidth = menuOpenButton.getBoundingClientRect().width;
+				const parentWidth = menuOpenButton.parentElement.getBoundingClientRect().width;
+				menuOpenButton.style.transform = `translateX(${parentWidth - buttonWidth}px)`;
+			})
 			return;
 		}
-		menuOpenButton.style.transform = `translateX(0px)`;
-		daybreakInfo.style.height = `auto`;
+		requestAnimationFrame(()=>{
+			menuOpenButton.style.transform = `translateX(0px)`;
+		})
 	}
 	observeScroll(handleGridScroll);
 	
