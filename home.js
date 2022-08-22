@@ -407,7 +407,7 @@ daybreak.router.useScript(()=>{
 	observePageCreation(handlePageCreate);
 
 	const GRID_SMALL_BREAKPOINT = 479;
-	const GRID_MEDIUM_BREAKPOINT = 768;
+	const GRID_MEDIUM_BREAKPOINT = 991;
 	const GRID_LARGE_BREAKPOINT = 1440;
 
 	const handlePageResize = ()=> {
