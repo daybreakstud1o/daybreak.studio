@@ -462,6 +462,8 @@ daybreak.router.useScript(()=>{
 	daybreakInfo.style.opacity = `1`;
 
 	let isInfoHidden = false;
+	const daybreakLogoSmall = document.querySelector(".daybreak-logo-small");
+	const daybreakLogoBig = document.querySelector(".daybreak-logo-big");
 
 	const hideInfo = ()=> requestAnimationFrame(()=>{
 		isInfoHidden = true;
@@ -473,12 +475,19 @@ daybreak.router.useScript(()=>{
 		menuOpenButton.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px)`;
 		daybreakInfo.style.transform = `translate3d(${horizontalOffset/2}px, -${verticalOffset/2}px, 0px) scale(0)`;
 		daybreakInfo.style.opacity = `0`;
+
+
+		daybreakLogoSmall.classList.add("daybreak-logo-small--scrolled");
+		daybreakLogoSmall.classList.add("daybreak-logo-big--scrolled");
 	})
 	const showInfo = ()=> requestAnimationFrame(()=>{
 		isInfoHidden = false;
 		menuOpenButton.style.transform = `translate3d(0px, 0px, 0px)`;
 		daybreakInfo.style.transform = `translate3d(0px, 0px, 0px) scale(1)`;
 		daybreakInfo.style.opacity = `1`;
+
+		daybreakLogoSmall.classList.remove("daybreak-logo-small--scrolled");
+		daybreakLogoSmall.classList.remove("daybreak-logo-big--scrolled");
 	})
 	const handleGridScroll = (scroll)=> {
 		if(scroll > 0 && isMobileGrid) {
