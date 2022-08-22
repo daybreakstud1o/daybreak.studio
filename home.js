@@ -465,7 +465,7 @@ daybreak.router.useScript(()=>{
 
 	let isInfoHidden = false;
 	const handleGridScroll = (scroll)=> {
-		if(scroll > 20) {
+		if(scroll > 0) {
 			if(isInfoHidden) return;
 			requestAnimationFrame(()=>{
 				isInfoHidden = true;
