@@ -463,9 +463,9 @@ daybreak.router.useScript(()=>{
 	const handleGridScroll = (scroll)=> {
 		if(scroll > 50) {
 			requestAnimationFrame(()=>{
-				const buttonWidth = menuOpenButton.getBoundingClientRect().width;
-				const parentWidth = menuOpenButton.parentElement.getBoundingClientRect().width;
-				menuOpenButton.style.transform = `translateX(${parentWidth - buttonWidth}px)`;
+				const buttonBounds = menuOpenButton.getBoundingClientRect();
+				const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
+				menuOpenButton.style.transform = `translate(${parentBounds.width - buttonBounds.width}px, -${parentBounds.top - 16}px)`;
 			})
 			return;
 		}
