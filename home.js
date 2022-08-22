@@ -447,7 +447,7 @@ daybreak.router.useScript(()=>{
 		setTopPadding(180);
 	}
 	handlePageResize();
-	const pageResizeDebounced = debounce(handlePageResize, 10);
+	const pageResizeDebounced = debounce(handlePageResize, 100);
 	window.addEventListener("resize", pageResizeDebounced);
 
 
@@ -500,6 +500,7 @@ daybreak.router.useScript(()=>{
 			cleanupInfiniteGrid();
 			unobservePageCreation(handlePageCreate);
 			window.removeEventListener("resize", pageResizeDebounced);
+			linkContainerObserver.disconnect();
 		}
 		
 		const {onAbort, finish} = beginTransition();
