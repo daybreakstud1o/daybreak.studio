@@ -470,15 +470,16 @@ daybreak.router.useScript(()=>{
 				const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
 
 				const verticalOffset = parentBounds.top - 16;
-				menuOpenButton.style.transform = `translate3d(${parentBounds.width - buttonBounds.width}px, -${verticalOffset}px, 0px)`;
-				daybreakInfo.style.transform = `translate3d(0px, -${verticalOffset}px, 0px)`;
+				const horizontalOffset = parentBounds.width - buttonBounds.width;
+				menuOpenButton.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px)`;
+				daybreakInfo.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px) scale(0)`;
 				daybreakInfo.style.opacity = `0`;
 			})
 			return;
 		}
 		requestAnimationFrame(()=>{
 			daybreakInfoHidden = false;
-			daybreakInfo.style.transform = `translate3d(0px,0px, 0px)`;
+			daybreakInfo.style.transform = `translate3d(0px,0px, 0px) scale(0)`;
 			menuOpenButton.style.transform = `translate3d(0px,0px,0px)`;
 			daybreakInfo.style.opacity = `1`;
 		})
