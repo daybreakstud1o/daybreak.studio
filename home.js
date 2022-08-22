@@ -478,7 +478,7 @@ daybreak.router.useScript(()=>{
 
 
 		daybreakLogoSmall.classList.add("daybreak-logo-small--scrolled");
-		daybreakLogoSmall.classList.add("daybreak-logo-big--scrolled");
+		daybreakLogoBig.classList.add("daybreak-logo-big--scrolled");
 	})
 	const showInfo = ()=> requestAnimationFrame(()=>{
 		isInfoHidden = false;
@@ -487,7 +487,7 @@ daybreak.router.useScript(()=>{
 		daybreakInfo.style.opacity = `1`;
 
 		daybreakLogoSmall.classList.remove("daybreak-logo-small--scrolled");
-		daybreakLogoSmall.classList.remove("daybreak-logo-big--scrolled");
+		daybreakLogoBig.classList.remove("daybreak-logo-big--scrolled");
 	})
 	const handleGridScroll = (scroll)=> {
 		if(scroll > 0 && isMobileGrid) {
