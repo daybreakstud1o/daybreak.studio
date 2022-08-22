@@ -23,14 +23,14 @@ daybreak.router.useScript(()=>{
 
 	function animateInHero() {
 		document.querySelector('.nav-logo').style.width = '55vw';
-		document.querySelector('.nav-left .daybreak-info').style.opacity = '0';
-		document.querySelector('.nav-left .daybreak-info').style.transitionDelay = "0s";
-		document.querySelector('.nav-left .cities-info').style.opacity = '0';
-		document.querySelector('.nav-left .cities-info').style.transitionDelay = "0s";
+		document.querySelector('.daybreak-info').style.opacity = '0';
+		document.querySelector('.daybreak-info').style.transitionDelay = "0s";
+		document.querySelector('.cities-info').style.opacity = '0';
+		document.querySelector('.cities-info').style.transitionDelay = "0s";
 		
 		setTimeout(function() {
-			document.querySelector('.nav-left .daybreak-info').style.display = 'none';
-			document.querySelector('.nav-left .cities-info').style.display = 'none';
+			document.querySelector('.daybreak-info').style.display = 'none';
+			document.querySelector('.cities-info').style.display = 'none';
 			var elementDelay = 250;
 			for (let i = 0; i < document.querySelectorAll('.about-hero-split-item').length; i++) {
 				document.querySelectorAll('.about-hero-split-item').forEach((element, i) => {
@@ -43,15 +43,15 @@ daybreak.router.useScript(()=>{
 
 		return ()=>{
 
-				document.querySelector('.nav-left .daybreak-info').style.display = 'block';
-				document.querySelector('.nav-left .cities-info').style.display = 'block';
-				document.querySelector('.nav-left .daybreak-info').style.transitionDelay = '.3s';
-				document.querySelector('.nav-left .cities-info').style.transitionDelay = '.3s';
+				document.querySelector('.daybreak-info').style.display = 'block';
+				document.querySelector('.cities-info').style.display = 'block';
+				document.querySelector('.daybreak-info').style.transitionDelay = '.3s';
+				document.querySelector('.cities-info').style.transitionDelay = '.3s';
 
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
-					document.querySelector('.nav-left .daybreak-info').style.opacity = '1';
-					document.querySelector('.nav-left .cities-info').style.opacity = '1';
+					document.querySelector('.daybreak-info').style.opacity = '1';
+					document.querySelector('.cities-info').style.opacity = '1';
 				})
 				document.querySelector('.nav-logo').style.width = '131px';
 
