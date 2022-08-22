@@ -459,7 +459,6 @@ daybreak.router.useScript(()=>{
 	const daybreakInfo = document.querySelector(".daybreak-info");
 	menuOpenButton.style.transition = `transform .3s cubic-bezier(0.22, 1, 0.36, 1)`;
 	daybreakInfo.style.transition = `height .3s cubic-bezier(0.22, 1, 0.36, 1)`;
-	daybreakInfo.style.overflowY = `hidden`;
 
 	const handleGridScroll = (scroll)=> {
 		if(scroll > 50) {
