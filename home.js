@@ -80,7 +80,7 @@ daybreak.router.useScript(()=>{
 			[_, X, X, X],
 			[X, _, _, _],
 			[_, _, X, _],
-			[X, _, X, X],
+			[X, _, _, X],
 			[_, X, _, _],
 			[X, _, _, X],
 			[_, X, _, _],
@@ -406,7 +406,7 @@ daybreak.router.useScript(()=>{
 
 	observePageCreation(handlePageCreate);
 
-	const GRID_SMALL_BREAKPOINT = 400;
+	const GRID_SMALL_BREAKPOINT = 479;
 	const GRID_MEDIUM_BREAKPOINT = 768;
 	const GRID_LARGE_BREAKPOINT = 1440;
 
