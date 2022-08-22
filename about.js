@@ -53,7 +53,7 @@ daybreak.router.useScript(()=>{
 					document.querySelector('.daybreak-info').style.opacity = '1';
 					document.querySelector('.cities-info').style.opacity = '1';
 				})
-				document.querySelector('.nav-logo').style.width = '131px';
+				document.querySelector('.nav-logo').style.width = '';
 
 		}
 	}
