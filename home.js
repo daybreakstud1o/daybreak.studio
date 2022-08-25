@@ -502,8 +502,6 @@ daybreak.router.useScript(()=>{
 	
 	// cleanup function
 	return ({beginTransition, nextPath})=>{
-		
-		hideInfo();
 
 		const finishCleanup = () => {
 			unobserveScroll(handleGridScroll);
