@@ -52,8 +52,8 @@ daybreak.router.useScript(()=>{
 				window.requestAnimationFrame(()=>{
 					document.querySelector('.daybreak-info').style.opacity = '1';
 					document.querySelector('.cities-info').style.opacity = '1';
-					document.querySelector('.daybreak-info').style.transitionDelay = '';
-					document.querySelector('.cities-info').style.transitionDelay = '';
+					document.querySelector('.daybreak-info').style.transitionDelay = '.2s';
+					document.querySelector('.cities-info').style.transitionDelay = '.2s';
 				})
 				document.querySelector('.nav-logo').classList.remove("nav-logo--expanded");
 
