@@ -91,10 +91,10 @@ daybreak.router.useScript(()=>{
 
 	function setupLogoMinimizeOnScroll() {
 		function minimizeLogo() {
-			document.querySelector('.nav-logo').style.width = '131px';
+			document.querySelector('.nav-logo').classList.remove("nav-logo--expanded")
 		}
 		function maximizeLogo() {
-			document.querySelector('.nav-logo').style.width = '55vw';
+			document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
 		}
 
 		const handleScroll =(scroll)=>{
