@@ -22,7 +22,7 @@ daybreak.router.useScript(()=>{
 	console.log("enter about");
 
 	function animateInHero() {
-		document.querySelector('.nav-logo').style.width = '55vw';
+		document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
 		document.querySelector('.daybreak-info').style.opacity = '0';
 		document.querySelector('.daybreak-info').style.transitionDelay = "0s";
 		document.querySelector('.cities-info').style.opacity = '0';
@@ -55,7 +55,7 @@ daybreak.router.useScript(()=>{
 					document.querySelector('.daybreak-info').style.transitionDelay = '';
 					document.querySelector('.cities-info').style.transitionDelay = '';
 				})
-				document.querySelector('.nav-logo').style.width = '';
+				document.querySelector('.nav-logo').classList.remove("nav-logo--expanded");
 
 		}
 	}

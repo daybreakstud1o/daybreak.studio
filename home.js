@@ -476,7 +476,6 @@ daybreak.router.useScript(()=>{
 		daybreakInfo.style.transform = `translate3d(${horizontalOffset/2}px, -${verticalOffset/2}px, 0px) scale(0)`;
 		daybreakInfo.style.opacity = `0`;
 
-
 		daybreakLogoSmall.classList.add("daybreak-logo-small--scrolled");
 		daybreakLogoBig.classList.add("daybreak-logo-big--scrolled");
 	})
@@ -497,11 +496,15 @@ daybreak.router.useScript(()=>{
 		}
 		showInfo();
 	}
+	// show info when page loaded
+	showInfo(); 
 	observeScroll(handleGridScroll);
 	
 	// cleanup function
 	return ({beginTransition, nextPath})=>{
 		
+		hideInfo();
+
 		const finishCleanup = () => {
 			unobserveScroll(handleGridScroll);
 			cleanupInfiniteGrid();
@@ -509,7 +512,7 @@ daybreak.router.useScript(()=>{
 			window.removeEventListener("resize", pageResizeDebounced);
 			linkContainerObserver.disconnect();
 		}
-		
+
 		const {onAbort, finish} = beginTransition();
 		
 		const isAbout = nextPath.includes("/about");
@@ -599,7 +602,8 @@ daybreak.router.useScript(()=>{
 			fadeInSelectedLinks(selectedProjectInView);
 			enableScroll();
 			selectedProject = null;
-			clearTimeout(timeout)
+			clearTimeout(timeout);
+			showInfo();
 		});
 	}
 })
