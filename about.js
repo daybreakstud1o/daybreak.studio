@@ -295,8 +295,6 @@ daybreak.router.useScript(()=>{
 
 function enableStickyPosition(element) {
 
-	console.log(element);
-
 	const computedElmStyle = window.getComputedStyle(element, null);
 
 	const stickyTop = parseInt(computedElmStyle.top);
