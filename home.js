@@ -450,7 +450,7 @@ daybreak.router.useScript(()=>{
 	const pageResizeDebounced = debounce(handlePageResize, 10);
 	window.addEventListener("resize", pageResizeDebounced);
 	
-	const daybreakInfo = ()=>{
+	const daybreakInfo = (()=>{
 		const menuOpenButton = document.querySelector("#menu-open");
 	
 		menuOpenButton.style.willChange = `transform`;
@@ -511,7 +511,7 @@ daybreak.router.useScript(()=>{
 			cleanupInfo,
 			initInfo,
 		}
-	}
+	})();
 
 	daybreakInfo.initInfo();
 	
