@@ -475,13 +475,14 @@ daybreak.router.useScript(()=>{
 		menuOpenButton.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px)`;
 		daybreakInfo.style.transform = `translate3d(${horizontalOffset/2}px, -${verticalOffset/2}px, 0px) scale(0)`;
 		daybreakInfo.style.opacity = `0`;
-
+		
 		daybreakLogoSmall.classList.add("daybreak-logo-small--scrolled");
 		daybreakLogoBig.classList.add("daybreak-logo-big--scrolled");
 	})
 	const showInfo = ()=> requestAnimationFrame(()=>{
 		isInfoHidden = false;
 		menuOpenButton.style.transform = `translate3d(0px, 0px, 0px)`;
+		daybreakInfo.style.transitionDuration = "0s";
 		daybreakInfo.style.transform = `translate3d(0px, 0px, 0px) scale(1)`;
 		daybreakInfo.style.opacity = `1`;
 
