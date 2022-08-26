@@ -459,14 +459,6 @@ daybreak.router.useScript(()=>{
 	
 		let isInfoHidden = false;
 
-		menuOpenButton.style.willChange = `transform`;
-		menuOpenButton.style.transition = `transform .3s cubic-bezier(0.85, 0, 0.15, 1)`;
-		daybreakInfo.style.willChange = `transform,opacity`;
-		daybreakInfo.style.transitionProperty = `transform,opacity`;
-		daybreakInfo.style.transitionTimingFunction = `cubic-bezier(0.85, 0, 0.15, 1)`;
-		daybreakInfo.style.transitionDuration = `.3s`;
-		daybreakInfo.style.opacity = `1`;
-
 		const hideInfo = ()=> requestAnimationFrame(()=>{
 			isInfoHidden = true;
 			const buttonBounds = menuOpenButton.getBoundingClientRect();
@@ -502,13 +494,20 @@ daybreak.router.useScript(()=>{
 		const cleanupInfo = ()=>{
 			unobserveScroll(handleGridScroll);
 			menuOpenButton.style.transform = ``;
+			menuOpenButton.style.transitionDuration = "0s";
 		}
 		const initInfo = ()=> {
 			observeScroll(handleGridScroll);
 			handleGridScroll(getScrollPosition());
-			requestAnimationFrame(()=>{
-				daybreakInfo.style.transitionDelay = "0s";
-			})
+			
+			menuOpenButton.style.willChange = `transform`;
+			menuOpenButton.style.transition = `transform .3s cubic-bezier(0.85, 0, 0.15, 1)`;
+			daybreakInfo.style.willChange = `transform,opacity`;
+			daybreakInfo.style.transitionDelay = "0s";
+			daybreakInfo.style.transitionProperty = `transform,opacity`;
+			daybreakInfo.style.transitionTimingFunction = `cubic-bezier(0.85, 0, 0.15, 1)`;
+			daybreakInfo.style.transitionDuration = `.3s`;
+			daybreakInfo.style.opacity = `1`;
 		}
 		return {
 			cleanupInfo,
