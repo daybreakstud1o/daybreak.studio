@@ -113,11 +113,11 @@ daybreak.router.useScript(() => {
 
 
 	document.getElementById('menu-open').onclick = function openMobileNav() {
-		document.getElementById('mobile-nav').style.maxHeight = '100vh'
+		document.getElementById('mobile-nav').style.maxHeight = '100%'
 		// document.body.style.overflow="hidden";
 	}
 	document.getElementById('menu-close').onclick = function closeMobileNav() {
-		document.getElementById('mobile-nav').style.maxHeight = '0vh'
+		document.getElementById('mobile-nav').style.maxHeight = '0%'
 		// document.body.style.overflow="scroll";
 	}
 
