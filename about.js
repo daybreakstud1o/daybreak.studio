@@ -50,7 +50,7 @@ daybreak.router.useScript(()=>{
 				
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
-					document.querySelector('.daybreak-info').style.opacity = '1';
+					document.querySelector('.daybreak-info').style.opacity = '.7';
 					document.querySelector('.cities-info').style.opacity = '1';
 					document.querySelector('.daybreak-info').style.transitionDelay = '.25s';
 					document.querySelector('.cities-info').style.transitionDelay = '.2s';
