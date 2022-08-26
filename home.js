@@ -483,8 +483,11 @@ daybreak.router.useScript(()=>{
 		isInfoHidden = false;
 		menuOpenButton.style.transform = `translate3d(0px, 0px, 0px)`;
 		daybreakInfo.style.transitionDelay = "0s";
-		daybreakInfo.style.transform = `translate3d(0px, 0px, 0px) scale(1)`;
-		daybreakInfo.style.opacity = `1`;
+
+		requestAnimationFrame(()=>{
+			daybreakInfo.style.transform = `translate3d(0px, 0px, 0px) scale(1)`;
+			daybreakInfo.style.opacity = `1`;
+		})
 
 		daybreakLogoSmall.classList.remove("daybreak-logo-small--scrolled");
 		daybreakLogoBig.classList.remove("daybreak-logo-big--scrolled");
