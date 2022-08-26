@@ -483,12 +483,10 @@ daybreak.router.useScript(()=>{
 		isInfoHidden = false;
 		menuOpenButton.style.transform = `translate3d(0px, 0px, 0px)`;
 		daybreakInfo.style.transitionDelay = "0s";
-
-		requestAnimationFrame(()=>{
-			daybreakInfo.style.transform = `translate3d(0px, 0px, 0px) scale(1)`;
-			daybreakInfo.style.opacity = `1`;
-		})
-
+		daybreakInfo.style.transform = `translate3d(0px, 0px, 0px) scale(1)`;
+		daybreakInfo.style.opacity = `1`;
+		daybreakInfo.style.transitionProperty = "transform,opacity";
+		
 		daybreakLogoSmall.classList.remove("daybreak-logo-small--scrolled");
 		daybreakLogoBig.classList.remove("daybreak-logo-big--scrolled");
 	})
@@ -502,6 +500,7 @@ daybreak.router.useScript(()=>{
 	}
 	// show info when page loaded
 	showInfo(); 
+	daybreakInfo.style.transitionProperty = "";
 	observeScroll(handleGridScroll);
 	
 	// cleanup function
