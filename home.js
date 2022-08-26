@@ -508,7 +508,6 @@ daybreak.router.useScript(()=>{
 			daybreakInfo.style.transitionTimingFunction = `cubic-bezier(0.85, 0, 0.15, 1)`;
 			daybreakInfo.style.transitionDuration = `.3s`;
 			daybreakInfo.style.opacity = `1`;
-			showInfo();
 		}
 		return {
 			cleanupInfo,
