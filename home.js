@@ -501,9 +501,7 @@ daybreak.router.useScript(()=>{
 		
 		const cleanupInfo = ()=>{
 			unobserveScroll(handleGridScroll);
-			daybreakInfo.style.transform = `translate3d(0px, 0px, 0px) scale(1)`;
-			daybreakLogoSmall.classList.remove("daybreak-logo-small--scrolled");
-			daybreakLogoBig.classList.remove("daybreak-logo-big--scrolled");
+			daybreakInfo.style.transform = ``;
 		}
 		const initInfo = ()=> {
 			observeScroll(handleGridScroll);
