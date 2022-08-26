@@ -484,9 +484,8 @@ daybreak.router.useScript(()=>{
 		const showInfo = ()=> requestAnimationFrame(()=>{
 			isInfoHidden = false;
 			menuOpenButton.style.transform = `translate3d(0px, 0px, 0px)`;
-			daybreakInfo.style.transitionDelay = "0s";
 			daybreakInfo.style.transform = `translate3d(0px, 0px, 0px) scale(1)`;
-			daybreakInfo.style.opacity = `1`;
+			daybreakInfo.style.opacity = `.7`;
 			
 			daybreakLogoSmall.classList.remove("daybreak-logo-small--scrolled");
 			daybreakLogoBig.classList.remove("daybreak-logo-big--scrolled");
@@ -509,6 +508,9 @@ daybreak.router.useScript(()=>{
 		const initInfo = ()=> {
 			observeScroll(handleGridScroll);
 			handleGridScroll(getScrollPosition());
+			requestAnimationFrame(()=>{
+				daybreakInfo.style.transitionDelay = "0s";
+			})
 		}
 		return {
 			cleanupInfo,
