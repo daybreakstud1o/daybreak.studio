@@ -501,7 +501,7 @@ daybreak.router.useScript(()=>{
 		
 		const cleanupInfo = ()=>{
 			unobserveScroll(handleGridScroll);
-			daybreakInfo.style.transform = ``;
+			menuOpenButton.style.transform = ``;
 		}
 		const initInfo = ()=> {
 			observeScroll(handleGridScroll);
