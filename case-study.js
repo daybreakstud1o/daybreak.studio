@@ -3,6 +3,9 @@ daybreak.router.useScript(()=>{
   // add the basic case study class
   document.body.classList.add("case-study");
 
+  document.querySelector(".scroll-container").classList.add("full-height");
+
+
   const DESKTOP_ONLY = "transition-desktop-only";
   const MOBILE_ONLY = "transition-mobile-only";
 
