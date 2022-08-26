@@ -452,7 +452,12 @@ daybreak.router.useScript(()=>{
 	
 	const daybreakInfo = (()=>{
 		const menuOpenButton = document.querySelector("#menu-open");
+		const daybreakInfo = document.querySelector(".daybreak-info");
+		const daybreakLogoSmall = document.querySelector(".daybreak-logo-small");
+		const daybreakLogoBig = document.querySelector(".daybreak-logo-big");
 	
+		let isInfoHidden = false;
+
 		menuOpenButton.style.willChange = `transform`;
 		menuOpenButton.style.transition = `transform .3s cubic-bezier(0.85, 0, 0.15, 1)`;
 		daybreakInfo.style.willChange = `transform,opacity`;
@@ -461,11 +466,6 @@ daybreak.router.useScript(()=>{
 		daybreakInfo.style.transitionDuration = `.3s`;
 		daybreakInfo.style.opacity = `1`;
 
-		let isInfoHidden = false;
-		const daybreakLogoSmall = document.querySelector(".daybreak-logo-small");
-		const daybreakLogoBig = document.querySelector(".daybreak-logo-big");
-
-		const daybreakInfo = document.querySelector(".daybreak-info");
 		const hideInfo = ()=> requestAnimationFrame(()=>{
 			isInfoHidden = true;
 			const buttonBounds = menuOpenButton.getBoundingClientRect();
