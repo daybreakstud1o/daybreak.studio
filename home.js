@@ -452,7 +452,7 @@ daybreak.router.useScript(()=>{
 	
 	
 	const menuOpenButton = document.querySelector("#menu-open");
-	const daybreakInfo = document.querySelector(".daybreak-info");
+	
 	menuOpenButton.style.willChange = `transform`;
 	menuOpenButton.style.transition = `transform .3s cubic-bezier(0.85, 0, 0.15, 1)`;
 	daybreakInfo.style.willChange = `transform,opacity`;
@@ -465,47 +465,64 @@ daybreak.router.useScript(()=>{
 	const daybreakLogoSmall = document.querySelector(".daybreak-logo-small");
 	const daybreakLogoBig = document.querySelector(".daybreak-logo-big");
 
-	const hideInfo = ()=> requestAnimationFrame(()=>{
-		isInfoHidden = true;
-		const buttonBounds = menuOpenButton.getBoundingClientRect();
-		const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
 
-		const verticalOffset = parentBounds.top - 16;
-		const horizontalOffset = parentBounds.width - buttonBounds.width;
-		menuOpenButton.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px)`;
-		daybreakInfo.style.transform = `translate3d(${horizontalOffset/2}px, -${verticalOffset/2}px, 0px) scale(0)`;
-		daybreakInfo.style.opacity = `0`;
-		
-		daybreakLogoSmall.classList.add("daybreak-logo-small--scrolled");
-		daybreakLogoBig.classList.add("daybreak-logo-big--scrolled");
-	})
-	const showInfo = ()=> requestAnimationFrame(()=>{
-		isInfoHidden = false;
-		menuOpenButton.style.transform = `translate3d(0px, 0px, 0px)`;
-		daybreakInfo.style.transitionDelay = "0s";
-		daybreakInfo.style.transform = `translate3d(0px, 0px, 0px) scale(1)`;
-		daybreakInfo.style.opacity = `1`;
-		
-		daybreakLogoSmall.classList.remove("daybreak-logo-small--scrolled");
-		daybreakLogoBig.classList.remove("daybreak-logo-big--scrolled");
-	})
-	const handleGridScroll = (scroll)=> {
-		if(scroll > 0 && isMobileGrid) {
-			if(isInfoHidden) return;
-			hideInfo();
-			return;
+	const daybreakInfo = ()=>{
+		const daybreakInfo = document.querySelector(".daybreak-info");
+		const hideInfo = ()=> requestAnimationFrame(()=>{
+			isInfoHidden = true;
+			const buttonBounds = menuOpenButton.getBoundingClientRect();
+			const parentBounds = menuOpenButton.parentElement.getBoundingClientRect();
+	
+			const verticalOffset = parentBounds.top - 16;
+			const horizontalOffset = parentBounds.width - buttonBounds.width;
+			menuOpenButton.style.transform = `translate3d(${horizontalOffset}px, -${verticalOffset}px, 0px)`;
+			daybreakInfo.style.transform = `translate3d(${horizontalOffset/2}px, -${verticalOffset/2}px, 0px) scale(0)`;
+			daybreakInfo.style.opacity = `0`;
+			
+			daybreakLogoSmall.classList.add("daybreak-logo-small--scrolled");
+			daybreakLogoBig.classList.add("daybreak-logo-big--scrolled");
+		})
+		const showInfo = ()=> requestAnimationFrame(()=>{
+			isInfoHidden = false;
+			menuOpenButton.style.transform = `translate3d(0px, 0px, 0px)`;
+			daybreakInfo.style.transitionDelay = "0s";
+			daybreakInfo.style.transform = `translate3d(0px, 0px, 0px) scale(1)`;
+			daybreakInfo.style.opacity = `1`;
+			
+			daybreakLogoSmall.classList.remove("daybreak-logo-small--scrolled");
+			daybreakLogoBig.classList.remove("daybreak-logo-big--scrolled");
+		})
+		const handleGridScroll = (scroll)=> {
+			if(scroll > 0 && isMobileGrid) {
+				if(isInfoHidden) return;
+				hideInfo();
+				return;
+			}
+			showInfo();
 		}
-		showInfo();
+		
+		const cleanupInfo = ()=>{
+			unobserveScroll(handleGridScroll);
+		}
+		const initInfo = ()=> {
+			observeScroll(handleGridScroll);
+		}
+		return {
+			showInfo,
+			hideInfo,
+			cleanupInfo,
+			initInfo,
+		}
 	}
-	// show info when page loaded
-	showInfo(); 
-	observeScroll(handleGridScroll);
+
+	daybreakInfo.initInfo();
+	
 	
 	// cleanup function
 	return ({beginTransition, nextPath})=>{
 
 		const finishCleanup = () => {
-			unobserveScroll(handleGridScroll);
+			daybreakInfo.cleanupInfo();
 			cleanupInfiniteGrid();
 			unobservePageCreation(handlePageCreate);
 			window.removeEventListener("resize", pageResizeDebounced);
@@ -602,7 +619,7 @@ daybreak.router.useScript(()=>{
 			enableScroll();
 			selectedProject = null;
 			clearTimeout(timeout);
-			showInfo();
+			daybreakInfo.initInfo();
 		});
 	}
 })
