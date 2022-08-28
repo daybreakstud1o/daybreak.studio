@@ -251,6 +251,7 @@ daybreak.router.useScript(()=>{
 	// 
 	// ======================================================================
 	let selectedProject = null;
+	let projectIdCount = 0;
 	let currentGridData = cellDataShuffled;
 	let isMobileGrid = false;
 
@@ -321,7 +322,7 @@ daybreak.router.useScript(()=>{
 		baseElm: gridContainer,
 		renderCell: (cellInfo) => {
 			const isCellMobileGrid = isMobileGrid;
-
+			
 			if (cellInfo.type === CELL_EMPTY) {
 				return;
 			}
@@ -331,10 +332,13 @@ daybreak.router.useScript(()=>{
 			projectLink.style.display = "block";
 			projectLink.style.backgroundColor = "#D9D9D9";
 			projectLink.classList.add("hover-target-big");
-			projectLink.setAttribute("for-project", cellData.name)
+
+			// assign project id
+			const thisProjectId = cellData.name + projectIdCount;
+			projectLink.setAttribute("for-project", thisProjectId)
 
 			const handleLinkClick =  ()=> {
-				selectedProject = cellData.name;
+				selectedProject = thisProjectId;
 			}
 			projectLink.addEventListener("click",handleLinkClick);
 
@@ -543,11 +547,32 @@ daybreak.router.useScript(()=>{
 		
 		const TRANSITION_DURATION = 1000;
 		
-		const otherProjectLinks = Array.from(document.querySelectorAll(`a[for-project]:not([href="${nextPath}"])`));
+		// const otherProjectLinks = Array.from(document.querySelectorAll(`a[for-project]:not([href="${nextPath}"])`));
+		const allProjectLinks = Array.from(document.querySelectorAll(`a[for-project]`));
 		const selectedProjectLinks = Array.from(document.querySelectorAll(`a[href="${nextPath}"]`));
-		const linksInView = otherProjectLinks.filter((link)=> {
+		
+
+		const selectedLinkIndex = 0;
+		const linksInView = allProjectLinks.filter((link, index)=> {
+			if(link.getAttribute("for-project") === selectedProject) {
+				selectedLinkIndex = index;
+			}
+
 			return isInViewport(link)
 		});
+
+		const {linksBefore, linksAfter} = linksInView.reduce((prev, curr, index)=>{
+			
+			if(index > selectedLinkIndex) {
+				prev.linksAfter.push(curr);
+				return prev;
+			}
+
+			prev.linksBefore.push(curr);
+			return prev;
+
+		},{linksBefore:[],linksAfter:[]});
+
 		const selectedProjectInView = selectedProjectLinks.filter((link)=> {
 			return isInViewport(link)
 		})
@@ -566,12 +591,26 @@ daybreak.router.useScript(()=>{
 		})
 
 		const fadeOutOtherLinks = (linksInView) => {
-			linksInView.forEach((elm, index)=> {
-				// fade out all the in view images
+
+			const biggerItemCount = Math.max(linksBefore.length, linksAfter.length);
+
+			linksBefore.forEach((elm, index)=> {
 				addTimeout(()=>{
 					elm.style.opacity = "0";
-				}, (index/linksInView.length) * TRANSITION_DURATION * .5);
+				}, (index/biggerItemCount) * TRANSITION_DURATION * .5);
 			});
+
+			linksAfter.reverse().forEach((elm, index)=> {
+				addTimeout(()=>{
+					elm.style.opacity = "0";
+				}, (index/biggerItemCount) * TRANSITION_DURATION * .5);
+			});
+			// linksInView.forEach((elm, index)=> {
+			// 	// fade out all the in view images
+			// 	addTimeout(()=>{
+			// 		elm.style.opacity = "0";
+			// 	}, (index/linksInView.length) * TRANSITION_DURATION * .5);
+			// });
 		}
 		const fadeInOtherLinks = (linksInView)=>{
 			linksInView.forEach((elm) => {
@@ -584,7 +623,6 @@ daybreak.router.useScript(()=>{
 
 		const fadeOutSelectedLinks = (selectedLinks) =>{
 			const delay = TRANSITION_DURATION * .9;
-			console.log(selectedLinks);
 			selectedLinks.forEach((elm,index)=> {
 				// fade out all the in view images
 				addTimeout(()=>{
