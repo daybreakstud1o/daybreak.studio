@@ -557,6 +557,7 @@ daybreak.router.useScript(()=>{
 		const linksInView = allProjectLinks.filter((link, index)=> {
 			if(isSelectedLink(link)) {
 				selectedLinkIndex = index;
+				console.log(selectedLinkIndex)
 			}
 
 			return isInViewport(link)
@@ -576,17 +577,14 @@ daybreak.router.useScript(()=>{
 
 		// fade out nav
 		const navBar = document.querySelector(".navbar");
-		//@ts-ignore
 		navBar.style.transform = "translateY(0%)";
-		
 		requestAnimationFrame(()=>{
 			navBar.style.transitionProperty = "opacity";
 			navBar.style.transitionDuration = ".2s";
 			navBar.style.opacity = "0";
 		})
 
-		const fadeInLinks = (linksBefore, linksAfter) => {
-
+		const fadeOutLinks = (linksBefore, linksAfter) => {
 			const biggerItemCount = Math.max(linksBefore.length, linksAfter.length);
 
 			linksBefore.forEach((elm, index)=> {
@@ -604,17 +602,17 @@ daybreak.router.useScript(()=>{
 			});
 		}
 
-		const fadeOutLinks = (links) => {
+		const fadeInLinks = (links) => {
 			const delay = TRANSITION_DURATION * .9;
 			links.forEach((elm,index)=> {
 				// fade out all the in view images
 				addTimeout(()=>{
-					elm.style.opacity = "0";
+					elm.style.opacity = "1";
 				}, index * TRANSITION_DURATION * .1 + delay);
 			});
 		}
 
-		fadeInLinks(linksBefore, linksAfter);
+		fadeOutLinks(linksBefore, linksAfter);
 		
 		const timeout = setTimeout(()=>{
 			finish();
@@ -626,7 +624,7 @@ daybreak.router.useScript(()=>{
 			//@ts-ignore
 			navBar.style.opacity = "1";
 			clearAllTimeout();
-			fadeOutLinks(linksInView);
+			fadeInLinks(linksInView);
 			enableScroll();
 			selectedProject = null;
 			clearTimeout(timeout);
