@@ -557,7 +557,6 @@ daybreak.router.useScript(()=>{
 		const linksInView = allProjectLinks.filter((link, index)=> {
 			if(isSelectedLink(link)) {
 				selectedLinkIndex = index;
-				console.log(selectedLinkIndex)
 			}
 
 			return isInViewport(link)
@@ -572,6 +571,10 @@ daybreak.router.useScript(()=>{
 			return prev;
 
 		},{linksBefore:[],linksAfter:[]});
+		
+		console.log(linksBefore);
+		console.log(linksAfter);
+
 
 		const {addTimeout, clearAllTimeout} = createTimeoutList();
 
