@@ -335,6 +335,7 @@ daybreak.router.useScript(()=>{
 
 			// assign project id
 			const thisProjectId = cellData.name + projectIdCount;
+			projectIdCount ++;
 			projectLink.setAttribute("for-project", thisProjectId)
 
 			const handleLinkClick =  ()=> {
