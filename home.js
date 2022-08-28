@@ -550,9 +550,7 @@ daybreak.router.useScript(()=>{
 		
 		const TRANSITION_DURATION = 1000;
 		
-		// const otherProjectLinks = Array.from(document.querySelectorAll(`a[for-project]:not([href="${nextPath}"])`));
 		const allProjectLinks = Array.from(document.querySelectorAll(`a[for-project]`));
-		const selectedProjectLinks = Array.from(document.querySelectorAll(`a[href="${nextPath}"]`));
 		const isSelectedLink = (link) => link.getAttribute("for-project") === selectedProject;
 
 		let selectedLinkIndex = 0;
@@ -564,21 +562,15 @@ daybreak.router.useScript(()=>{
 			return isInViewport(link)
 		});
 
-		const {linksBefore, linksAfter} = linksInView.reduce((prev, curr, index)=>{
-			
+		const {linksBefore, linksAfter} = linksInView.reduce((prev, curr, index) => {
 			if(index > selectedLinkIndex) {
 				prev.linksAfter.push(curr);
 				return prev;
 			}
-
 			prev.linksBefore.push(curr);
 			return prev;
 
 		},{linksBefore:[],linksAfter:[]});
-
-		const selectedProjectInView = selectedProjectLinks.filter((link)=> {
-			return isInViewport(link)
-		})
 
 		const {addTimeout, clearAllTimeout} = createTimeoutList();
 
@@ -593,7 +585,7 @@ daybreak.router.useScript(()=>{
 			navBar.style.opacity = "0";
 		})
 
-		const fadeOutOtherLinks = (linksInView) => {
+		const fadeInLinks = (linksBefore, linksAfter) => {
 
 			const biggerItemCount = Math.max(linksBefore.length, linksAfter.length);
 
@@ -610,25 +602,11 @@ daybreak.router.useScript(()=>{
 					elm.style.opacity = "0";
 				}, (index/biggerItemCount) * TRANSITION_DURATION * .5);
 			});
-			// linksInView.forEach((elm, index)=> {
-			// 	// fade out all the in view images
-			// 	addTimeout(()=>{
-			// 		elm.style.opacity = "0";
-			// 	}, (index/linksInView.length) * TRANSITION_DURATION * .5);
-			// });
-		}
-		const fadeInOtherLinks = (linksInView)=>{
-			linksInView.forEach((elm) => {
-				// fade out all the in view images
-				addTimeout(()=>{
-					elm.style.opacity = "1";
-				}, Math.random() * .5);
-			});
 		}
 
-		const fadeOutSelectedLinks = (selectedLinks) =>{
+		const fadeOutLinks = (links) => {
 			const delay = TRANSITION_DURATION * .9;
-			selectedLinks.forEach((elm,index)=> {
+			links.forEach((elm,index)=> {
 				// fade out all the in view images
 				addTimeout(()=>{
 					elm.style.opacity = "0";
@@ -636,16 +614,7 @@ daybreak.router.useScript(()=>{
 			});
 		}
 
-		const fadeInSelectedLinks = (selectedLinks) =>{
-			selectedLinks.forEach((elm)=> {
-				// fade out all the in view images
-				addTimeout(()=>{
-					elm.style.opacity = "1";
-				}, Math.random() * .3);
-			});
-		}
-		fadeOutOtherLinks(linksInView);
-		fadeOutSelectedLinks(selectedProjectInView)
+		fadeInLinks(linksBefore, linksAfter);
 		
 		const timeout = setTimeout(()=>{
 			finish();
@@ -657,8 +626,7 @@ daybreak.router.useScript(()=>{
 			//@ts-ignore
 			navBar.style.opacity = "1";
 			clearAllTimeout();
-			fadeInOtherLinks(linksInView);
-			fadeInSelectedLinks(selectedProjectInView);
+			fadeOutLinks(linksInView);
 			enableScroll();
 			selectedProject = null;
 			clearTimeout(timeout);
