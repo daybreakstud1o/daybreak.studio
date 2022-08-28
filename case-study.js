@@ -80,6 +80,8 @@ daybreak.router.useScript(()=>{
     newElm.style.opacity = "1";
     newElm.style.visibility = "visible";
 
+    newElm.classList.add("sticky-info");
+
     const getChildIndex = (element)=>Array.from(element.parentNode.children).indexOf(element);
     const observer = new MutationObserver((mutationList, observer) => {
       for (const mutation of mutationList) {
@@ -94,6 +96,7 @@ daybreak.router.useScript(()=>{
     });
     observer.observe(originalElm, { attributes: true, attributeFilter: ["style"], childList: true, subtree:true });
 
+
     let originalBounds = originalElm.getBoundingClientRect();
     const matchOriginalElmPosition = ()=>{
       originalBounds = originalElm.getBoundingClientRect();
@@ -102,22 +105,43 @@ daybreak.router.useScript(()=>{
     }
     matchOriginalElmPosition();
 
+
+    let inScrolledState = false;
+    const enterScrolledState = ()=> {
+      if(inScrolledState) return;
+      
+      newElm.classList.add("sticky-info--scrolled");
+      
+      inScrolledState = true;
+    }
+    const exitScrolledState = ()=> {
+      if(!inScrolledState) return;
+  
+      newElm.classList.remove("sticky-info--scrolled");
+
+      inScrolledState = false;
+    }
+
     const matchOriginalElmScroll = (scroll)=> {
       const originalElmTop = parseFloat(originalBounds.top);
       
       if(scroll > originalElmTop) {
         const scrollOffset = -originalElmTop;
         newElm.style.transform = `translateY(${scrollOffset}px)`;
+        enterScrolledState();
       } else {
         const scrollOffset = -scroll;
         newElm.style.transform = `translateY(${scrollOffset}px)`;
+        exitScrolledState();
       }
     }
+
     
     daybreak.scroll.observeScroll(matchOriginalElmScroll);
     window.addEventListener("resize", matchOriginalElmPosition);
     
     return ()=> {
+      observer.disconnect();
       daybreak.scroll.unobserveScroll(matchOriginalElmScroll);
       window.removeEventListener("resize", matchOriginalElmPosition);
     }

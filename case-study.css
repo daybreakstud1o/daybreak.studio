@@ -6,6 +6,7 @@
 	transition: 0.6s ease;
 } */
 
+
 .case-study .heading-1 {
   visibility: hidden;
 }
@@ -33,25 +34,24 @@
 
 
 @media screen and (max-width: 767px) {
-  .mobile-disappear {
+  .sticky-info > div {
     transition: 0.6s ease-out;
-  	opacity: 0;
   }
-  .sticky .body-founders:nth-child(2) {
+  .sticky-info > div:nth-child(2) {
     transform: translateX(0);
   }
 }
 @media screen and (min-width: 768px) {
-  .sticky .body-founders:nth-child(2) {
-    transform: translateX(50vw);
+  .sticky-info--scrolled > div:nth-child(2) {
+    transform: translateX(50vw) !important;
   }
 }
 @media screen and (min-width: 992px) {
-	.sticky .body-founders:nth-child(1) {
-	transform: translateX(5vw);
+	.sticky-info--scrolled > div:nth-child(1) {
+	  transform: translateX(5vw) !important;
   }
-  .sticky .body-founders:nth-child(2) {
-    transform: translateX(10vw);
+  .sticky-info--scrolled > div:nth-child(2) {
+    transform: translateX(10vw) !important;
   }
 }
 
