@@ -554,15 +554,20 @@ daybreak.router.useScript(()=>{
 		const isSelectedLink = (link) => link.getAttribute("for-project") === selectedProject;
 
 		let selectedLinkIndex = 0;
-		const originalLength = allProjectLinks.length;
+		let firstLinkInView = 0;
 		const linksInView = allProjectLinks.filter((link, index)=> {
-			if(isSelectedLink(link)) {
-				selectedLinkIndex = index;
+
+			const isVisible = isInViewport(link);
+			if(isVisible && firstLinkInView === 0) {
+				firstLinkInView = index;
 			}
 
-			return isInViewport(link)
+			if(isSelectedLink(link)) {
+				selectedLinkIndex = index - firstLinkInView;
+			}
+
+			return isVisible
 		});
-		selectedLinkIndex = selectedLinkIndex -  (originalLength - linksInView.length);
 
 		const {linksBefore, linksAfter} = linksInView.reduce((prev, curr, index) => {
 			if(index > selectedLinkIndex) {
@@ -573,11 +578,6 @@ daybreak.router.useScript(()=>{
 			return prev;
 
 		},{linksBefore:[],linksAfter:[]});
-
-		
-		console.log(linksBefore);
-		console.log(linksAfter);
-
 
 		const {addTimeout, clearAllTimeout} = createTimeoutList();
 
