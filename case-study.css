@@ -33,10 +33,10 @@
 }
 
 
+.sticky-info > div {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
 @media screen and (max-width: 767px) {
-  .sticky-info > div {
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
   .sticky-info > div:nth-child(2) {
     transform: translateX(0);
   }
