@@ -571,6 +571,11 @@ daybreak.router.useScript(()=>{
 			return prev;
 
 		},{linksBefore:[],linksAfter:[]});
+
+
+		console.log(selectedLinkIndex);
+		console.log(index);
+
 		
 		console.log(linksBefore);
 		console.log(linksAfter);
