@@ -552,7 +552,7 @@ daybreak.router.useScript(()=>{
 		const selectedProjectLinks = Array.from(document.querySelectorAll(`a[href="${nextPath}"]`));
 		
 
-		const selectedLinkIndex = 0;
+		let selectedLinkIndex = 0;
 		const linksInView = allProjectLinks.filter((link, index)=> {
 			if(link.getAttribute("for-project") === selectedProject) {
 				selectedLinkIndex = index;
