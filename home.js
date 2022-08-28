@@ -550,11 +550,11 @@ daybreak.router.useScript(()=>{
 		// const otherProjectLinks = Array.from(document.querySelectorAll(`a[for-project]:not([href="${nextPath}"])`));
 		const allProjectLinks = Array.from(document.querySelectorAll(`a[for-project]`));
 		const selectedProjectLinks = Array.from(document.querySelectorAll(`a[href="${nextPath}"]`));
-		
+		const isSelectedLink = (link) => link.getAttribute("for-project") === selectedProject;
 
 		let selectedLinkIndex = 0;
 		const linksInView = allProjectLinks.filter((link, index)=> {
-			if(link.getAttribute("for-project") === selectedProject) {
+			if(isSelectedLink(link)) {
 				selectedLinkIndex = index;
 			}
 
@@ -596,12 +596,14 @@ daybreak.router.useScript(()=>{
 
 			linksBefore.forEach((elm, index)=> {
 				addTimeout(()=>{
+					if (isSelectedLink(elm)) return;
 					elm.style.opacity = "0";
 				}, (index/biggerItemCount) * TRANSITION_DURATION * .5);
 			});
 
 			linksAfter.reverse().forEach((elm, index)=> {
 				addTimeout(()=>{
+					if (isSelectedLink(elm)) return;
 					elm.style.opacity = "0";
 				}, (index/biggerItemCount) * TRANSITION_DURATION * .5);
 			});
