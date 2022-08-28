@@ -537,6 +537,8 @@ daybreak.router.useScript(()=>{
 		
 		const isAbout = nextPath.includes("/about");
 		const isContact = nextPath.includes("/contact");
+
+		console.log(selectedProject)
 		
 		if(isAbout || isContact) {
 			selectedProject = null;
