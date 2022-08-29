@@ -130,11 +130,13 @@ daybreak.router.useScript(() => {
 		}, 400);
 	}
 	window.addEventListener("resize", handleResize);
-
-	const handleLocationChnage = ()=>{
+	
+	return ()=>{
+		window.removeEventListener("resize", handleResize);
 
 		const navRight = document.querySelector(".nav-right");
-		console.log(navRight.children)
+		if(!navRight) return;
+
 		Array.from(navRight.children).forEach((elm)=>{ 
 			console.log(elm.href);
 			if (!elm.href) return;
@@ -145,11 +147,5 @@ daybreak.router.useScript(() => {
 			}
 			elm.classList.remove("w--current");
 		});
-		window.removeEventListener('locationchange', handleLocationChnage);
-	}
-	
-	return ()=>{
-		window.removeEventListener("resize", handleResize);
-		window.addEventListener('locationchange', handleLocationChnage);
 	}
 });
