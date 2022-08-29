@@ -140,7 +140,7 @@ daybreak.router.useScript(() => {
 			console.log(elm.href);
 			if (!elm.href) return;
 
-			if(location.pathname === "") {
+			if(location.pathname === "" || location.pathname === "/") {
 				index === 0 && elm.classList.add("w--current");
 				index !== 0 && elm.classList.remove("w--current");
 				return;
