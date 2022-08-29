@@ -133,7 +133,7 @@ daybreak.router.useScript(() => {
 
 	const handleLocationChnage = ()=>{
 		const navRight = document.querySelector(".nav-right");
-		navRight.forEach((elm)=>{ 
+		navRight.children.forEach((elm)=>{ 
 			if (!elm.href) return;
 			if (elm.href.indexOf(location.pathname) !== -1){
 				elm.classList.add("w--current");
@@ -143,9 +143,9 @@ daybreak.router.useScript(() => {
 		});
 		window.removeEventListener('locationchange', handleLocationChnage);
 	}
-	window.addEventListener('locationchange', handleLocationChnage);
 	
 	return ()=>{
 		window.removeEventListener("resize", handleResize);
+		window.addEventListener('locationchange', handleLocationChnage);
 	}
 });
