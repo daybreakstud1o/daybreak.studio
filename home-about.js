@@ -132,7 +132,9 @@ daybreak.router.useScript(() => {
 	window.addEventListener("resize", handleResize);
 
 	const handleLocationChnage = ()=>{
+
 		const navRight = document.querySelector(".nav-right");
+		console.log(navRight.children)
 		Array.from(navRight.children).forEach((elm)=>{ 
 			console.log(elm.href);
 			if (!elm.href) return;
