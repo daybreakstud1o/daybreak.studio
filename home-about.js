@@ -1,5 +1,4 @@
 daybreak.router.useScript(() => {
-
 	// javascript some how has 24 in their hour
 	function fix24HrString(str) {
 		const strSplitted = str.split(":");
@@ -123,11 +122,30 @@ daybreak.router.useScript(() => {
 
 
 	let resizeTimer;
-	window.addEventListener("resize", () => {
+	const handleResize = () => {
 		document.body.classList.add("resize-animation-stopper");
 		clearTimeout(resizeTimer);
 		resizeTimer = setTimeout(() => {
 			document.body.classList.remove("resize-animation-stopper");
 		}, 400);
-	});
+	}
+	window.addEventListener("resize", handleResize);
+
+	const handleLocationChnage = ()=>{
+		const navRight = document.querySelector(".nav-right");
+		navRight.forEach((elm)=>{ 
+			if (!elm.href) return;
+			if (elm.href.indexOf(location.pathname) !== -1){
+				elm.classList.add("w--current");
+				return;
+			}
+			elm.classList.remove("w--current");
+		});
+	}
+	window.addEventListener('locationchange', handleLocationChnage);
+	
+	return ()=>{
+		window.removeEventListener("resize", handleResize);
+		window.removeEventListener('locationchange', handleLocationChnage);
+	}
 });
