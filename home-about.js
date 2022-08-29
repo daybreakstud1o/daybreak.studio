@@ -133,10 +133,9 @@ daybreak.router.useScript(() => {
 
 	const handleLocationChnage = ()=>{
 		const navRight = document.querySelector(".nav-right");
-		navRight.children.forEach((elm)=>{ 
-			if (!elm.href) return;
+		Array.from(navRight.children).forEach((elm)=>{ 
 			console.log(elm.href);
-			console.log(elm.href.indexOf(location.pathname));
+			if (!elm.href) return;
 
 			if (elm.href.indexOf(location.pathname) !== -1){
 				elm.classList.add("w--current");
