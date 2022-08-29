@@ -139,9 +139,15 @@ daybreak.router.useScript(() => {
 		const navRight = document.querySelector(".nav-right");
 		if(!navRight) return;
 
-		Array.from(navRight.children).forEach((elm)=>{ 
+		Array.from(navRight.children).forEach((elm, index)=>{ 
 			console.log(elm.href);
 			if (!elm.href) return;
+
+			if(location.pathname === "") {
+				index === 0 && elm.classList.add("w--current");
+				index !== 0 && elm.classList.remove("w--current");
+				return;
+			}
 
 			if (elm.href.indexOf(location.pathname) !== -1){
 				elm.classList.add("w--current");
