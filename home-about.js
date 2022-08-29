@@ -48,28 +48,6 @@ daybreak.router.useScript(() => {
 	const interval = setInterval(updateTime,1000);
 	updateTime();
 
-	// async function torontotime() {
-	// 	const api_url = 'https://worldtimeapi.org/api/timezone/America/Toronto';
-	// 	const response = await fetch(api_url);
-	// 	const data = await response.json();
-	// 	const { datetime } = data;
-	// 	for (let i = 0; i < document.querySelectorAll('.toronto-time').length; i++) {
-	// 		document.querySelectorAll(".toronto-time")[i].innerHTML = datetime.substring(11,19);
-	// 	}
-	// }
-	// async function SFtime() {
-	// 	const api_url = 'https://worldtimeapi.org/api/timezone/America/Los_Angeles';
-	// 	const response = await fetch(api_url);
-	// 	const data = await response.json();
-	// 	const { datetime } = data;
-	// 	for (let i = 0; i < document.querySelectorAll('.sf-time').length; i++) {
-	// 		document.querySelectorAll(".sf-time")[i].innerHTML = datetime.substring(11,19);
-	// 	}
-	// }
-
-
-	// console.log(document.querySelectorAll('.toronto-time').length);
-
 	weatherUpdate = (city, slang) => {
 		const xhr = new XMLHttpRequest();
 		xhr.open(
@@ -103,7 +81,6 @@ daybreak.router.useScript(() => {
 					elm.style.opacity = "1";
 				})
 			}
-			// console.log(data.name + ", " + `${Math.round(data.main.temp - 273.15)}°C` + ", " + data.weather[0].main + ", " + data.weather[0].description)
 		};
 	};
 
@@ -137,7 +114,6 @@ daybreak.router.useScript(() => {
 		if(!navRight) return;
 
 		Array.from(navRight.children).forEach((elm, index)=>{ 
-			console.log(elm.href);
 			if (!elm.href) return;
 
 			if(location.pathname === "" || location.pathname === "/") {

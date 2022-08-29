@@ -301,21 +301,6 @@ daybreak.router.useScript(()=>{
 		}
 	}
 
-	//  $(window).scroll(function() {   
-	//    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-	//      var wHeight = $(window).height();
-	//      var eOffset = $('.layout-' + number + ' .projects').offset().top;
-	//      var eHeight = $('.layout-' + number + ' .projects').height();
-	//      $(window).scrollTop(eOffset - wHeight + eHeight); 
-	//      console.log("bottom");
-	//    }
-		
-	// 	 if(window.scrollY==0) {
-	//      var eOffset = $('#duplicate').offset().top; 
-	//      $(window).scrollTop(eOffset - 126);
-	//      console.log("top");
-	//    }
-	// });
 
 	var intervalId = window.setInterval(function(){
 		torontotime()
