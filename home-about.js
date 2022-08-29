@@ -145,6 +145,7 @@ daybreak.router.useScript(() => {
 	window.addEventListener('locationchange', handleLocationChnage);
 	
 	return ()=>{
+		console.log("change")
 		window.removeEventListener("resize", handleResize);
 		window.removeEventListener('locationchange', handleLocationChnage);
 	}
