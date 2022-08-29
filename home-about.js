@@ -45,7 +45,7 @@ daybreak.router.useScript(() => {
 		allTorontoTimeElm.forEach((elm) => elm.innerHTML = torontoTime);
 	}
 
-	setInterval(updateTime,1000);
+	const interval = setInterval(updateTime,1000);
 	updateTime();
 
 	// async function torontotime() {
@@ -132,6 +132,8 @@ daybreak.router.useScript(() => {
 	window.addEventListener("resize", handleResize);
 	
 	return ()=>{
+		clearInterval(interval);
+
 		window.removeEventListener("resize", handleResize);
 
 		const navRight = document.querySelector(".nav-right");
