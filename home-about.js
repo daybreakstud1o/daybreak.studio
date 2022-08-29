@@ -130,12 +130,9 @@ daybreak.router.useScript(() => {
 		}, 400);
 	}
 	window.addEventListener("resize", handleResize);
-	
-	return ()=>{
-		clearInterval(interval);
 
-		window.removeEventListener("resize", handleResize);
 
+	const setNavCurrent = ()=>{
 		const navRight = document.querySelector(".nav-right");
 		if(!navRight) return;
 
@@ -155,5 +152,12 @@ daybreak.router.useScript(() => {
 			}
 			elm.classList.remove("w--current");
 		});
+	}
+	setNavCurrent();
+	
+	return ()=>{
+		clearInterval(interval);
+
+		window.removeEventListener("resize", handleResize);
 	}
 });
