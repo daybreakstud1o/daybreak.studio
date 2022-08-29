@@ -141,12 +141,11 @@ daybreak.router.useScript(() => {
 			}
 			elm.classList.remove("w--current");
 		});
+		window.removeEventListener('locationchange', handleLocationChnage);
 	}
 	window.addEventListener('locationchange', handleLocationChnage);
 	
 	return ()=>{
-		console.log("change")
 		window.removeEventListener("resize", handleResize);
-		window.removeEventListener('locationchange', handleLocationChnage);
 	}
 });
