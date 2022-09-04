@@ -86,6 +86,8 @@ daybreak.router.useScript(() => {
 
 	weatherUpdate("toronto", "toronto");
 	weatherUpdate("san fransisco", "sf");
+	
+	console.log(weatherUpdate("toronto", "toronto"));
 
 
 	document.getElementById('menu-open').onclick = function openMobileNav() {
