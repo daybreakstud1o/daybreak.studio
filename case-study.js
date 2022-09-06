@@ -229,23 +229,23 @@ daybreak.router.useScript(()=>{
           }, i * elementDelay);
         });
       }
-      setTimeout(function () {
-        for (let i = 0; i < document.querySelectorAll('.scroll-arrows svg path').length; i++) {
-          document.querySelectorAll('.scroll-arrows svg path').forEach((element, i) => {
-            setTimeout(function () {
-              element.style.opacity = "1";
-            }, i * elementDelay);
-          });
-        }
-      }, document.querySelectorAll('.next-up-info > div').length * elementDelay);
+//       setTimeout(function () {
+//         for (let i = 0; i < document.querySelectorAll('.scroll-arrows svg path').length; i++) {
+//           document.querySelectorAll('.scroll-arrows svg path').forEach((element, i) => {
+//             setTimeout(function () {
+//               element.style.opacity = "1";
+//             }, i * elementDelay);
+//           });
+//         }
+//       }, document.querySelectorAll('.next-up-info > div').length * elementDelay);
     } else if (isInViewport(box) === false) {
       document.querySelector('.next-up-overlay').style.opacity = "0";
       for (let i = 0; i < document.querySelectorAll('.next-up-info > div').length; i++) {
         document.querySelectorAll('.next-up-info > div')[i].style.opacity = "0";
       }
-      for (let i = 0; i < document.querySelectorAll('.scroll-arrows svg path').length; i++) {
-        document.querySelectorAll('.scroll-arrows svg path')[i].style.opacity = "0.5";
-      }
+//       for (let i = 0; i < document.querySelectorAll('.scroll-arrows svg path').length; i++) {
+//         document.querySelectorAll('.scroll-arrows svg path')[i].style.opacity = "0.5";
+//       }
     }
   }
 
