@@ -134,8 +134,8 @@ daybreak.router.useScript(()=>{
 	function classOfTheirOwnEnter() {
 		var elementDelay = 100;
 		setTimeout(function () {
-			for (let i = 0; i < document.querySelectorAll('.after-carousel .heading-massive span').length; i++) {
-				document.querySelectorAll('.after-carousel .heading-massive span').forEach((element, i) => {
+			for (let i = 0; i < document.querySelectorAll('.after-carousel .heading-huge span').length; i++) {
+				document.querySelectorAll('.after-carousel .heading-huge span').forEach((element, i) => {
 					setTimeout(function () {
 						// element.style.display = "inline-block" ?? "";
 						element.style.visibility = "visible";
