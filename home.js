@@ -192,10 +192,21 @@ daybreak.router.useScript(()=>{
 		projectImage.height = 756;
 		
 		// onload animation
+		var shapeLoader = 75;
 		projectImage.style.opacity = "0";
 		projectImage.style.transitionProperty = "opacity";
 		projectImage.style.transitionDuration = ".3s";
-		projectImage.onload = () => projectImage.style.opacity = "1";
+		projectImage.onload = () => 
+ 
+					for (let i = 0; i < projectImage.length; i++) {
+						projectImage.forEach((element, i) => {
+							setTimeout(function () {
+								element.style.opacity = "1";
+							}, i * shapeLoader);
+						});
+					};
+		//projectImage.onload = () => projectImage.style.opacity = "1";
+
 
 		return projectImage;
 	}
