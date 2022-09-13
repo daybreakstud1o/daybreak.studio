@@ -196,19 +196,17 @@ daybreak.router.useScript(()=>{
 		projectImage.style.opacity = "0";
 		projectImage.style.transitionProperty = "opacity";
 		projectImage.style.transitionDuration = ".3s";
+		setTimeout(function () {
+			projectImage.onload = () => projectImage.style.opacity = "1";
+		}, i * shapeLoader);
 //  		projectImage.forEach((element, i) => {
 // 							setTimeout(function () {
 // 								element.style.opacity = "1";
 // 							}, i * shapeLoader);
 // 						});
-		projectImage.onload = () => projectImage.style.opacity = "1";
-// 		for (let i = 0; i < document.querySelectorAll('img').length; i++) {
-// 			document.querySelectorAll('img').forEach((element, i) => {
-// 				setTimeout(function () {
-// 					element.style.display = "1" ?? "";
-// 				}, i * shapeLoader);
-// 			});
-// 		}
+		
+	//	projectImage.onload = () => projectImage.style.opacity = "1";
+
 
 
 		return projectImage;
