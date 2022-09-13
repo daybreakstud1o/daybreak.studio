@@ -83,6 +83,7 @@ daybreak.router.useScript(() => {
 					elm.style.opacity = "1";
 				})
 			}
+				console.log(data.name + ", " + `${Math.round(data.main.temp - 273.15)}°C` + ", " + data.weather[0].main + ", " + data.weather[0].description)
 		};
 	};
 
