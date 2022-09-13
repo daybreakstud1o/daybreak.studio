@@ -201,7 +201,14 @@ daybreak.router.useScript(()=>{
 // 								element.style.opacity = "1";
 // 							}, i * shapeLoader);
 // 						});
-		projectImage.onload = () => projectImage.style.opacity = "1";
+		//projectImage.onload = () => projectImage.style.opacity = "1";
+		for (let i = 0; i < document.querySelectorAll(img).length; i++) {
+			document.querySelectorAll(img).forEach((element, i) => {
+				setTimeout(function () {
+					element.style.display = "1" ?? "";
+				}, i * shapeLoader);
+			});
+		}
 
 
 		return projectImage;
