@@ -196,9 +196,12 @@ daybreak.router.useScript(()=>{
 		projectImage.style.opacity = "0";
 		projectImage.style.transitionProperty = "opacity";
 		projectImage.style.transitionDuration = ".3s";
-		setTimeout(function () {
-			projectImage.onload = () => projectImage.style.opacity = "1";
-		}, i * shapeLoader);
+		for (let i = 0; i < projectImage.length; i++) {
+			setTimeout(function () {
+				projectImage.onload = () => projectImage.style.opacity = "1";
+			}, i * shapeLoader);
+		};
+
 //  		projectImage.forEach((element, i) => {
 // 							setTimeout(function () {
 // 								element.style.opacity = "1";
