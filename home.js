@@ -338,6 +338,24 @@ daybreak.router.useScript(()=>{
 	},{ 
 		rootMargin: "-220px 0px -55% 0px" 
 	});
+	
+	  	var shapeLoadTime = 0;
+  
+    var shapeLoader = 75;
+
+    setTimeout(function () {
+			loadTiles()
+	    function loadTiles() {
+	      for (let i = 0; i < document.querySelectorAll('img').length; i++) {
+					document.querySelectorAll('img').forEach((element, i) => {
+						setTimeout(function () {
+							element.style.visibility = "visible";
+						}, i * shapeLoader);
+					});
+	      }
+	    }
+
+    }, shapeLoadTime);
 
 	const {
 		cleanupInfiniteGrid, 
