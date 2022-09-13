@@ -202,8 +202,8 @@ daybreak.router.useScript(()=>{
 // 							}, i * shapeLoader);
 // 						});
 		//projectImage.onload = () => projectImage.style.opacity = "1";
-		for (let i = 0; i < document.querySelectorAll(img).length; i++) {
-			document.querySelectorAll(img).forEach((element, i) => {
+		for (let i = 0; i < document.querySelectorAll('img').length; i++) {
+			document.querySelectorAll('img').forEach((element, i) => {
 				setTimeout(function () {
 					element.style.display = "1" ?? "";
 				}, i * shapeLoader);
