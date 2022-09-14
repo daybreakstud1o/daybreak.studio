@@ -680,6 +680,18 @@ daybreak.router.useScript(()=>{
 	}
 })
 
+append()
+function append() {
+	var shapeLoader = 75;
+		    for (let i = 0; i < document.querySelectorAll('img').length; i++) {
+					document.querySelectorAll('img').forEach((element, i) => {
+						setTimeout(function () {
+							element.style.visibility = "visible";
+						}, i * shapeLoader);
+					});
+	      }
+}
+
 
 function readProjectDataFromHTML() {
 	const baseElm = document.querySelector(".all-daybreak-projects");
