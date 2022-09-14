@@ -685,7 +685,7 @@ function append() {
 	var shapeLoader = 75;
 		    for (let i = 0; i < document.querySelectorAll('img').length; i++) {
 					document.querySelectorAll('img').forEach((element, i) => {
-						element[i].className += " " + "test";
+						element.className += " " + "test";
 					});
 	      }
 }
