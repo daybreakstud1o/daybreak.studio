@@ -212,9 +212,11 @@ daybreak.router.useScript(()=>{
   const handlePageScroll = (scrollPosition)=> {
     if (scrollPosition > 5) {
       document.querySelector("#case-top-bar-title").style.opacity = "0";
+      document.querySelector("#case-top-bar-title").style.pointerEvents = "none";
       document.querySelector("#project-expertise").classList.add("mobile-disappear");
     } else {
       document.querySelector("#case-top-bar-title").style.opacity = "1";
+      document.querySelector("#case-top-bar-title").style.pointerEvents = "auto";
       document.querySelector("#project-expertise").classList.remove("mobile-disappear");
     }
 
