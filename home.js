@@ -196,6 +196,7 @@ daybreak.router.useScript(()=>{
 		projectImage.style.opacity = "0";
 		projectImage.style.transitionProperty = "opacity";
 		projectImage.style.transitionDuration = ".3s";
+		projectImage.classList.add("my-class");
 // 		for (let i = 0; i < projectImage.length; i++) {
 // 			projectImage.forEach((element, i) => {
 // 				setTimeout(function () {
@@ -680,15 +681,15 @@ daybreak.router.useScript(()=>{
 	}
 })
 
-append()
-function append() {
-	var shapeLoader = 75;
-		    for (let i = 0; i < document.querySelectorAll('img').length; i++) {
-					document.querySelectorAll('img').forEach((element, i) => {
-						element.className += " " + "test";
-					});
-	      }
-}
+// append()
+// function append() {
+// 	var shapeLoader = 75;
+// 		    for (let i = 0; i < document.querySelectorAll('img').length; i++) {
+// 					document.querySelectorAll('img').forEach((element, i) => {
+// 						element.className += " " + "test";
+// 					});
+// 	      }
+// }
 
 
 function readProjectDataFromHTML() {
