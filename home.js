@@ -679,6 +679,14 @@ daybreak.router.useScript(()=>{
 			daybreakInfo.initInfo();
 		});
 	}
+			var elementDelay = 250;
+      for (let i = 0; i < document.querySelectorAll('.my-class').length; i++) {
+        document.querySelectorAll('.my-class').forEach((element, i) => {
+          setTimeout(function () {
+            element.style.visibility = "visible" ?? "";
+          }, i * elementDelay);
+        });
+      }
 })
 
 // append()
