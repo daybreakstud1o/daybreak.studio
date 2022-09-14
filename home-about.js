@@ -91,6 +91,17 @@ daybreak.router.useScript(() => {
 	weatherUpdate("san fransisco", "sf");
 	
 	console.log(weatherUpdate("toronto", "toronto"));
+	
+	      test('San%20Fransisco%2C%20California%2C%20United%20States')
+      test('Toronto%2C%20Ontario%2C%20Canada')
+
+      async function test(city) {
+        const api_url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/' + city + '?unitGroup=metric&key=KHUCKDMB45BL3RMRSR9MECKKB&contentType=json';
+        const response = await fetch(api_url);
+        const data = await response.json();
+
+        console.log(data.currentConditions.conditions)
+      }
 
 
 	document.getElementById('menu-open').onclick = function openMobileNav() {
