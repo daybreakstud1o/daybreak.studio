@@ -37,7 +37,7 @@
 #close-casestudy:hover .back-icon, .ext-link:hover .link-icon {
 	display: block;
 }
-.hover-orange:hover {
+#close-casestudy:hover .hover-orange, #close-casestudy:hover .body-founders {
 	color: #f25410!important;
 }
 
