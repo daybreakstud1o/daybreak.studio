@@ -211,21 +211,21 @@ daybreak.router.useScript(()=>{
 // 							}, i * shapeLoader);
 // 						});
 		
-		//projectImage.onload = () => projectImage.style.opacity = "1";
-			var delay = TRANSITION_DURATION * .9;
-		projectImage.onload = (projectImage) =>
-			projectImage.forEach((elm,index)=> {
-				// fade out all the in view images
-				addTimeout(()=>{
-					elm.style.opacity = "1";
-				}, index * TRANSITION_DURATION * .1 + delay);
-			});
-		}
+		projectImage.onload = () => projectImage.style.opacity = "1";
+// 			var delay = TRANSITION_DURATION * .9;
+// 		projectImage.onload = (projectImage) =>
+// 			projectImage.forEach((elm,index)=> {
+// 				// fade out all the in view images
+// 				addTimeout(()=>{
+// 					elm.style.opacity = "1";
+// 				}, index * TRANSITION_DURATION * .1 + delay);
+// 			});
+// 		}
 
 
 
 		return projectImage;
-	});
+	}
 	
 	append()
 	function append() {
