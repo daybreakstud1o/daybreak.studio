@@ -213,7 +213,7 @@ daybreak.router.useScript(()=>{
 		
 		//projectImage.onload = () => projectImage.style.opacity = "1";
 		projectImage.onload = (projectImage) =>
-			const delay = TRANSITION_DURATION * .9;
+			var delay = TRANSITION_DURATION * .9;
 			projectImage.forEach((elm,index)=> {
 				// fade out all the in view images
 				addTimeout(()=>{
