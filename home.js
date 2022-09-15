@@ -668,7 +668,7 @@ daybreak.router.useScript(()=>{
 				// fade out all the in view images
 				addTimeout(()=>{
 					elm.style.opacity = "1";
-				}, index * TRANSITION_DURATION * .1 + delay);
+				}, index * TRANSITION_DURATION * .9 + delay);
 			});
 		}
 
