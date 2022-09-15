@@ -31,6 +31,9 @@
   	opacity: 0;
   }
 }
+.close-casestudy:hover .back-icon {
+	display: block;
+}
 
 
 .sticky-info > div {
