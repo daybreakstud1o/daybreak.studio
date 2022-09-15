@@ -31,7 +31,10 @@
   	opacity: 0;
   }
 }
-.close-casestudy:hover .back-icon {
+.back-icon {
+	display: none;
+}
+#close-casestudy:hover .back-icon {
 	display: block;
 }
 
