@@ -91,8 +91,8 @@ daybreak.router.useScript(() => {
 // 	weatherUpdate("san fransisco", "sf");
 	
 	
-	newWeather('San%20Fransisco%2C%20California%2C%20United%20States', 'toronto')
-	newWeather('Toronto%2C%20Ontario%2C%20Canada', 'sf')
+	newWeather('San%20Fransisco%2C%20California%2C%20United%20States', 'sf')
+	newWeather('Toronto%2C%20Ontario%2C%20Canada', 'toronto')
 
 	async function newWeather(city,slang) {
 		const api_url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/' + city + '?unitGroup=metric&key=KHUCKDMB45BL3RMRSR9MECKKB&contentType=json';
