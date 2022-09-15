@@ -253,13 +253,13 @@ daybreak.router.useScript(()=>{
 
   daybreak.scroll.observeScroll(handlePageScroll);  
 
-  $( ".close-casestudy" ).mouseover(function() {
-    document.querySelector(".back-icon").style.visibility = "visible";
-  });
+//   $( ".close-casestudy" ).mouseover(function() {
+//     document.querySelector(".back-icon").style.visibility = "visible";
+//   });
 
-  $( ".close-casestudy" ).mouseout(function() {
-    document.querySelector(".back-icon").style.visibility = "hidden";
-  });
+//   $( ".close-casestudy" ).mouseout(function() {
+//     document.querySelector(".back-icon").style.visibility = "hidden";
+//   });
 
   return ({beginTransition, onAbort})=>{
     daybreak.scroll.unobserveScroll(handlePageScroll);
