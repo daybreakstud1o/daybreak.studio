@@ -394,10 +394,10 @@ daybreak.router.useScript(()=>{
 			projectLink.href = cellData.href;
 			projectLink.style.display = "block";
 			projectLink.style.backgroundColor = "#D9D9D9";
-			projectLink.classList.add("hover-target-big", "project-tile");
 
 			// assign project id
 			const thisProjectId = cellData.name + projectIdCount;
+			projectLink.classList.add("hover-target-big", thisProjectId);
 			projectIdCount ++;
 			projectLink.setAttribute("for-project", thisProjectId)
 
