@@ -197,7 +197,6 @@ daybreak.router.useScript(()=>{
 		projectImage.style.opacity = "0";
 		projectImage.style.transitionProperty = "opacity";
 		projectImage.style.transitionDuration = ".3s";
-		projectImage.classList.add("my-class");
 // 		for (let i = 0; i < projectImage.length; i++) {
 // 			projectImage.forEach((element, i) => {
 // 				setTimeout(function () {
@@ -395,7 +394,7 @@ daybreak.router.useScript(()=>{
 			projectLink.href = cellData.href;
 			projectLink.style.display = "block";
 			projectLink.style.backgroundColor = "#D9D9D9";
-			projectLink.classList.add("hover-target-big");
+			projectLink.classList.add("hover-target-big project-tile");
 
 			// assign project id
 			const thisProjectId = cellData.name + projectIdCount;
@@ -422,13 +421,6 @@ daybreak.router.useScript(()=>{
 			projectInfoContainerParent.appendChild(projectInfoContainer);
 			projectInfoContainer.appendChild(projectInfoContent)
 			
-// 			var shapeLoader = 0.5;
-// 			projectLink.forEach((elm,index)=> {
-// 				// fade out all the in view images
-// 				addTimeout(()=>{
-// 					elm.appendChild(projectImage);
-// 				}, index * shapeLoader);
-// 			});
 			projectLink.appendChild(projectImage);
 			cellInfo.elm.appendChild(projectLink);
 
