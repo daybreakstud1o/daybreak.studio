@@ -217,6 +217,18 @@ daybreak.router.useScript(()=>{
 
 		return projectImage;
 	}
+	
+	append()
+	function append() {
+		var shapeLoader = 75;
+		for (let i = 0; i < document.querySelectorAll('.my-class').length; i++) {
+			document.querySelectorAll('.my-class').forEach((element, i) => {
+				setTimeout(function () {
+					element.style.display = "block";
+				}, i * shapeLoader);
+			});
+		}
+	}
 
 	const createProjectInfoContainer = (cellInfo,cellData, isMobileGrid = false)=>{
 		// project info hovers
