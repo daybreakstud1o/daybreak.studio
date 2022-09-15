@@ -422,14 +422,14 @@ daybreak.router.useScript(()=>{
 			projectInfoContainerParent.appendChild(projectInfoContainer);
 			projectInfoContainer.appendChild(projectInfoContent)
 			
-			var shapeLoader = 0.5;
-			projectLink.forEach((elm,index)=> {
-				// fade out all the in view images
-				addTimeout(()=>{
-					elm.appendChild(projectImage);
-				}, index * shapeLoader);
-			});
-			//projectLink.appendChild(projectImage);
+// 			var shapeLoader = 0.5;
+// 			projectLink.forEach((elm,index)=> {
+// 				// fade out all the in view images
+// 				addTimeout(()=>{
+// 					elm.appendChild(projectImage);
+// 				}, index * shapeLoader);
+// 			});
+			projectLink.appendChild(projectImage);
 			cellInfo.elm.appendChild(projectLink);
 
 			const FADE_OPACITY = .1;
