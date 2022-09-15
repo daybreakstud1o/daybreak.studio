@@ -148,7 +148,7 @@ daybreak.router.useScript(()=>{
 	}
 
 	function softwareEnterDesktop() {
-		var elementDelay = 250;
+		var elementDelay = 200;
 		for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
 			document.querySelectorAll('.software-sequence').forEach((element, i) => {
 				setTimeout(function () {
@@ -170,7 +170,7 @@ daybreak.router.useScript(()=>{
 	}
 
 	function brandsEnterDesktop() {
-		var elementDelay = 250;
+		var elementDelay = 200;
 		for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
 			document.querySelectorAll('.software-sequence').forEach((element, i) => {
 				setTimeout(function () {
@@ -192,7 +192,7 @@ daybreak.router.useScript(()=>{
 	}
 
 	function softwareEnterMobile() {
-		var elementDelay = 250;
+		var elementDelay = 200;
 		for (let i = 0; i < document.querySelectorAll('.software-sequence').length; i++) {
 			document.querySelectorAll('.software-sequence').forEach((element, i) => {
 				setTimeout(function () {
@@ -206,7 +206,7 @@ daybreak.router.useScript(()=>{
 	}
 
 	function brandsEnterMobile() {
-		var elementDelay = 250;
+		var elementDelay = 200;
 		for (let i = 0; i < document.querySelectorAll('.brands-sequence').length; i++) {
 			document.querySelectorAll('.brands-sequence').forEach((element, i) => {
 				setTimeout(function () {
