@@ -221,7 +221,7 @@ daybreak.router.useScript(()=>{
 					elm.style.opacity = "1";
 				}, index * TRANSITION_DURATION * .1 + delay);
 			});
-		});
+
 
 
 
