@@ -211,7 +211,7 @@ daybreak.router.useScript(()=>{
 // 							}, i * shapeLoader);
 // 						});
 		
-		//projectImage.onload = () => projectImage.style.opacity = "1";
+		projectImage.onload = () => projectImage.style.opacity = "1";
 
 
 
