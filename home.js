@@ -423,7 +423,7 @@ daybreak.router.useScript(()=>{
 			projectInfoContainer.appendChild(projectInfoContent)
 			
 			var shapeLoader = 0.5;
-			projectImage.forEach((elm,index)=> {
+			projectLink.forEach((elm,index)=> {
 				// fade out all the in view images
 				addTimeout(()=>{
 					elm.appendChild(projectImage);
