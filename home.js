@@ -398,8 +398,8 @@ daybreak.router.useScript(()=>{
 			// assign project id
 			const thisProjectId = cellData.name + projectIdCount;
 			const noWhitespace = thisProjectId.replace(/\s/g, '');
-			projectLink.classList.add("hover-target-big", noWhitespace);
 			projectIdCount ++;
+			projectLink.classList.add("hover-target-big", "project-tile", noWhitespace);
 			projectLink.setAttribute("for-project", thisProjectId)
 
 			const handleLinkClick =  ()=> {
