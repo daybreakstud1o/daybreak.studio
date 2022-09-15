@@ -37,6 +37,8 @@
 #close-casestudy:hover .back-icon, .ext-link:hover .link-icon {
 	display: block;
 }
+.hover-orange:hover {
+	color: #f25410!important;
 
 
 .sticky-info > div {
