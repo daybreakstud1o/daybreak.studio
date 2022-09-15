@@ -225,7 +225,7 @@ daybreak.router.useScript(()=>{
 
 
 		return projectImage;
-	}
+	});
 	
 	append()
 	function append() {
