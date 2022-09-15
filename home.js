@@ -662,14 +662,14 @@ daybreak.router.useScript(()=>{
 			linksBefore.forEach((elm, index)=> {
 				addTimeout(()=>{
 					if (isSelectedLink(elm)) return;
-					elm.style.opacity = "0";
+					elm.style.visibility = "hidden";
 				}, (index/biggerItemCount) * TRANSITION_DURATION * .5);
 			});
 
 			linksAfter.reverse().forEach((elm, index)=> {
 				addTimeout(()=>{
 					if (isSelectedLink(elm)) return;
-					elm.style.opacity = "0";
+					elm.style.visibility = "hidden";
 				}, (index/biggerItemCount) * TRANSITION_DURATION * .5);
 			});
 		}
