@@ -31,10 +31,10 @@
   	opacity: 0;
   }
 }
-.back-icon {
+.back-icon, .link-icon {
 	display: none;
 }
-#close-casestudy:hover .back-icon {
+#close-casestudy:hover .back-icon, .ext-link:hover .link-icon {
 	display: block;
 }
 
