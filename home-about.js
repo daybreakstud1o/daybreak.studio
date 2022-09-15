@@ -88,35 +88,37 @@ daybreak.router.useScript(() => {
 	};
 
 	weatherUpdate("toronto", "toronto");
+	weatherUpdate("oakland", "sf");
 	
 	
-	newWeather('San%20Fransisco%2C%20California%2C%20United%20States', 'sf')
+	newWeather('San%20Fransisco%2C%20California%2C%20United%20States')
+        newWeather('Toronto%2C%20Ontario%2C%20Canada')
 
 	async function newWeather(city,slang) {
 		const api_url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/' + city + '?unitGroup=metric&key=KHUCKDMB45BL3RMRSR9MECKKB&contentType=json';
 		const response = await fetch(api_url);
 		const data = await response.json();
 		
-		for (let i = 0; i < document.querySelectorAll('.city-' + slang + ' .clouds').length; i++) {
+// 		for (let i = 0; i < document.querySelectorAll('.city-' + slang + ' .clouds').length; i++) {
 
-				let elm;
-				if (data.currentConditions.conditions == 'Partially Cloudy' || data.currentConditions.conditions == 'Cloudy') {
-					elm = document.querySelectorAll('.city-' + slang + ' .clouds')[0];
-				} else if (data.currentConditions.conditions == 'Clear') {
-					elm = document.querySelectorAll('.city-' + slang + ' .clear')[0];
-				} else if (data.currentConditions.conditions == 'Rain' || data.currentConditions.conditions == 'Rain, Partially Cloudy' || data.currentConditions.conditions == 'Rain, Overcast') {
-					elm = document.querySelectorAll('.city-' + slang + ' .rain')[0];
-				} else if (data.currentConditions.conditions == 'Overcast') {
-					elm = document.querySelectorAll('.city-' + slang + ' .haze')[0];
-				} 
-				if(!elm) return;
-				elm.style.display = 'block';
-				elm.style.opacity = '0';
-				elm.style.transition = 'opacity .3s linear';
-				requestAnimationFrame(()=>{
-					elm.style.opacity = "1";
-				})
-			}
+// 				let elm;
+// 				if (data.currentConditions.conditions == 'Partially Cloudy' || data.currentConditions.conditions == 'Cloudy') {
+// 					elm = document.querySelectorAll('.city-' + slang + ' .clouds')[0];
+// 				} else if (data.currentConditions.conditions == 'Clear') {
+// 					elm = document.querySelectorAll('.city-' + slang + ' .clear')[0];
+// 				} else if (data.currentConditions.conditions == 'Rain' || data.currentConditions.conditions == 'Rain, Partially Cloudy' || data.currentConditions.conditions == 'Rain, Overcast') {
+// 					elm = document.querySelectorAll('.city-' + slang + ' .rain')[0];
+// 				} else if (data.currentConditions.conditions == 'Overcast') {
+// 					elm = document.querySelectorAll('.city-' + slang + ' .haze')[0];
+// 				} 
+// 				if(!elm) return;
+// 				elm.style.display = 'block';
+// 				elm.style.opacity = '0';
+// 				elm.style.transition = 'opacity .3s linear';
+// 				requestAnimationFrame(()=>{
+// 					elm.style.opacity = "1";
+// 				})
+// 			}
 
 		console.log(data.currentConditions.conditions)
 	}
