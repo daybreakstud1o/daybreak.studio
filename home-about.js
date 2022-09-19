@@ -76,11 +76,11 @@ daybreak.router.useScript(() => {
 					elm = document.querySelectorAll('.city-' + slang + ' .drizzle')[0]
 				}
 				if(!elm) return;
-				elm[0].style.display = 'block';
-				elm[0].style.opacity = '0';
-				elm[0].style.transition = 'opacity .3s linear';
+				elm.style.display = 'block';
+				elm.style.opacity = '0';
+				elm.style.transition = 'opacity .3s linear';
 				requestAnimationFrame(()=>{
-					elm[0].style.opacity = "1";
+					elm.style.opacity = "1";
 				})
 			}
 				console.log(data.name + ", " + `${Math.round(data.main.temp - 273.15)}°C` + ", " + data.weather[0].main + ", " + data.weather[0].description)
