@@ -70,7 +70,7 @@ daybreak.router.useScript(() => {
 					elm = document.querySelectorAll('.city-' + slang + ' .haze')[0];
 				} else if (data.weather[0].main == 'Thunderstorm') {
 					elm = document.querySelectorAll('.city-' + slang + ' .thunderstorm')[0];
-				} else if (data.weather[0].main == 'Mist') {
+				} else if (data.weather[0].main == 'Mist') || (data.weather[0].main == 'Fog') {
 					elm = document.querySelectorAll('.city-' + slang + ' .mist')[0]
 				} else if (data.weather[0].main == 'Drizzle') {
 					elm = document.querySelectorAll('.city-' + slang + ' .drizzle')[0]
