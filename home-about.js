@@ -25,7 +25,7 @@ daybreak.router.useScript(() => {
 
 		// pacific time
 		const pacificTimeStr = date.toLocaleString("en-US", {
-			timeZone: "America/Los_Angeles",
+			timeZone: "Europe/London",
 			hour12: false
 		})
 
@@ -88,9 +88,9 @@ daybreak.router.useScript(() => {
 	};
 
 	weatherUpdate("toronto", "toronto");
-	weatherUpdate("oakland", "sf");
+	weatherUpdate("london", "sf");
 	weatherUpdate("toronto", "toronto-2");
-	weatherUpdate("oakland", "sf-2");
+	weatherUpdate("london", "sf-2");
 	
 	
 // 	newWeather('San%20Fransisco%2C%20California%2C%20United%20States')
