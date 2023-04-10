@@ -24,7 +24,6 @@ daybreak.router.useScript(()=>{
 	function animateInHero() {
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.navbar').classList.add("dark")
-		document.querySelector('.test1').classList.add("dark")
 		document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
 		document.querySelector('.daybreak-info').style.opacity = '0';
 		document.querySelector('.daybreak-info').style.transitionDelay = "0s";
@@ -60,7 +59,6 @@ daybreak.router.useScript(()=>{
 				})
 				document.querySelector('.background').classList.remove("dark")
 				document.querySelector('.navbar').classList.remove("dark")
-				document.querySelector('.test1').classList.remove("dark")
 				document.querySelector('.nav-logo').classList.remove("nav-logo--expanded");
 
 		}
