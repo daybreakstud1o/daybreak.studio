@@ -62,7 +62,7 @@ daybreak.router.useScript(()=>{
 				document.querySelector('.test1').classList.remove("dark")
 				document.querySelector('.nav-logo').classList.remove("nav-logo--expanded");
 				document.querySelectorAll('.nav-logo path').forEach((item) => {
-				  item.style.fill = "#fff"
+				  item.style.fill = "black"
 				});
 
 		}
