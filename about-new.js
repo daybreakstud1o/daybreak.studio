@@ -122,7 +122,6 @@ daybreak.router.useScript(()=>{
 		var linkUrl = $(this).attr('href');
 		setTimeout(function(url) { window.location = url; }, 1000, linkUrl);
 	});
-
 	$( "#home-link, #contact-link" ).click(function() {
 		document.querySelector('.nav-logo').style.width = '131px';
 		document.querySelector('.nav-left .daybreak-info').style.display = 'block';
