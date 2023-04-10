@@ -23,7 +23,7 @@ daybreak.router.useScript(()=>{
 
 	function animateInHero() {
 		document.querySelector('.navbar').classList.add("nav-logo--dark")
-    document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
+    		document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
 		document.querySelector('.daybreak-info').style.opacity = '0';
 		document.querySelector('.daybreak-info').style.transitionDelay = "0s";
 		document.querySelector('.cities-info').style.opacity = '0';
