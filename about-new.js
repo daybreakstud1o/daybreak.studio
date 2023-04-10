@@ -223,7 +223,7 @@ daybreak.router.useScript(()=>{
 // 	}
 
 
-// 	const {cleanupIntersectionObserver, onIntersectionChange} = createIntersectionObserver();
+ 	const {cleanupIntersectionObserver, onIntersectionChange} = createIntersectionObserver();
 
 // 	const onElementEnter = (elm, callback) => {
 // 		onIntersectionChange(elm,(entry)=> {
@@ -241,7 +241,7 @@ daybreak.router.useScript(()=>{
 // 	const softwareEnter = document.querySelector('#software-enter');
 // 	const brandsEnter = document.querySelector('#brands-enter');
 
-// 	const mobileBreakpoint = 767;
+ 	const mobileBreakpoint = 767;
 
 // 	// enter software
 // 	onElementEnter(softwareEnter, (entry)=>{
