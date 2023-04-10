@@ -22,11 +22,7 @@ daybreak.router.useScript(()=>{
 	console.log("enter about");
 
 	function animateInHero() {
-		document.querySelector('.test1').classList.add("dark")
-    		document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
-		//document.querySelectorAll('.nav-logo path').forEach((item) => {
-		//  item.style.fill = "#fff"
-		//});
+		document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
 		document.querySelector('.daybreak-info').style.opacity = '0';
 		document.querySelector('.daybreak-info').style.transitionDelay = "0s";
 		document.querySelector('.cities-info').style.opacity = '0';
@@ -59,11 +55,7 @@ daybreak.router.useScript(()=>{
 					document.querySelector('.daybreak-info').style.transitionDelay = '.25s';
 					document.querySelector('.cities-info').style.transitionDelay = '.2s';
 				})
-				document.querySelector('.test1').classList.remove("dark")
 				document.querySelector('.nav-logo').classList.remove("nav-logo--expanded");
-				//document.querySelectorAll('.nav-logo path').forEach((item) => {
-				//  item.style.fill = "black"
-				//});
 
 		}
 	}
@@ -424,4 +416,3 @@ function onFullyLoaded(callback) {
 
 	return abort;
 }
-
