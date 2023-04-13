@@ -29,6 +29,17 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.daybreak-info').style.transitionDelay = "0s";
 		document.querySelector('.cities-info').style.opacity = '0';
 		document.querySelector('.cities-info').style.transitionDelay = "0s";
+		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
+    		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
+		document.querySelectorAll('.about-carousel img').forEach((element) => {
+		  element.setAttribute("sizes", "")
+		});
+		document.querySelectorAll('.about-carousel img.wide').forEach((element) => {
+		  element.style.minWidth = wide + 'px'
+		});
+		document.querySelectorAll('.about-carousel img.narrow').forEach((element) => {
+		  element.style.minWidth = narrow + 'px'
+		});
 		
 		setTimeout(function() {
 			document.querySelector('.daybreak-info').style.display = 'none';
