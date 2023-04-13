@@ -34,12 +34,12 @@ daybreak.router.useScript(()=>{
 		document.querySelectorAll('.about-carousel img').forEach((element) => {
 		  element.setAttribute("sizes", "")
 		});
-		document.querySelectorAll('.about-carousel img.wide').forEach((element) => {
-		  element.style.minWidth = wide + 'px'
-		});
-		document.querySelectorAll('.about-carousel img.narrow').forEach((element) => {
-		  element.style.minWidth = narrow + 'px'
-		});
+// 		document.querySelectorAll('.about-carousel img.wide').forEach((element) => {
+// 		  element.style.minWidth = wide + 'px'
+// 		});
+// 		document.querySelectorAll('.about-carousel img.narrow').forEach((element) => {
+// 		  element.style.minWidth = narrow + 'px'
+// 		});
 		
 		setTimeout(function() {
 			document.querySelector('.daybreak-info').style.display = 'none';
