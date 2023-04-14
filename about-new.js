@@ -100,8 +100,8 @@ daybreak.router.useScript(()=>{
 	  e.preventDefault();
 	  const x = e.pageX - slider.offsetLeft;
 	  const walk = (x - startX) * 1.8; //scroll-fast
-	  //slider.scrollLeft = scrollLeft - walk;
-	  slider.scrollTo({ top: 0, left: scrollLeft - walk, behavior: "smooth" });
+	  slider.scrollLeft = scrollLeft - walk;
+	  //slider.scrollTo({ top: 0, left: scrollLeft - walk, behavior: "smooth" });
 	});
 
 	function setupLogoMinimizeOnScroll() {
