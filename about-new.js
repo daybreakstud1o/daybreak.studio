@@ -99,7 +99,7 @@ daybreak.router.useScript(()=>{
 	  if(!isDown) return;
 	  e.preventDefault();
 	  const x = e.pageX - slider.offsetLeft;
-	  const walk = (x - startX) * 1.8; //scroll-fast
+	  const walk = (x - startX) * 1; //scroll-fast
 	  slider.scrollLeft = scrollLeft - walk;
 	});
 
