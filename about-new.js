@@ -104,7 +104,7 @@ daybreak.router.useScript(()=>{
 // 	  //slider.scrollTo({ top: 0, left: scrollLeft - walk, behavior: "smooth" });
 // 	});
 	
-	  const slider = document.querySelector('.items');
+	  const slider = document.querySelector('.about-carousel');
 	  let isDown = false;
 	  let startX;
 	  let scrollLeft;
