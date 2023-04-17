@@ -41,6 +41,44 @@ daybreak.router.useScript(()=>{
 		  element.style.minWidth = narrow
 		});
 		
+		var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
+		var Arr = Array.prototype.slice.call(list).sort((a, b) => 0.5 - Math.random());
+		var visible = Arr.splice(0,9)
+		var invisible = Arr.slice(-5)
+
+
+		visible.forEach((item, index) => {
+			var n = index + 1
+			item.style.gridArea = 'Area-' + n
+		})
+		invisible.forEach((item, index) => {
+			item.style.display = 'none'
+		})
+		function replace() {
+		}
+		setInterval(function () {
+			var random = visible[Math.floor(Math.random() * visible.length)];
+			random.style.display = 'none'
+		  var fuckthis = random.style.gridArea
+		  random.style.gridArea = ''
+
+		  var random1 = invisible[Math.floor(Math.random() * invisible.length)];
+		  console.log(random1)
+		  random1.style.display = 'block'
+			random1.style.gridArea = fuckthis.substr(9, 6)
+
+		  const index = visible.indexOf(random)
+		  if (index > -1) { 
+		    visible.splice(index, 1) 
+		  }
+		  invisible.push(random)
+		  const index1 = invisible.indexOf(random1)
+		  if (index1 > -1) { 
+		    invisible.splice(index1, 1) 
+		  }
+		  visible.push(random1)
+		}, 1000);
+		
 		setTimeout(function() {
 			document.querySelector('.daybreak-info').style.display = 'none';
 			document.querySelector('.cities-info').style.display = 'none';
