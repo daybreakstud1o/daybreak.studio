@@ -46,7 +46,6 @@ daybreak.router.useScript(()=>{
 		var visible = Arr.splice(0,9)
 		var invisible = Arr.slice(-5)
 
-
 		visible.forEach((item, index) => {
 			var n = index + 1
 			item.style.gridArea = 'Area-' + n
@@ -64,8 +63,11 @@ daybreak.router.useScript(()=>{
 
 		  var random1 = invisible[Math.floor(Math.random() * invisible.length)];
 		  console.log(random1)
-		  random1.style.display = 'block'
+		  setTimeout(function() {
+		    random1.style.display = 'block'
 			random1.style.gridArea = fuckthis.substr(9, 6)
+		  }, 950)
+		  
 
 		  const index = visible.indexOf(random)
 		  if (index > -1) { 
