@@ -41,6 +41,65 @@ daybreak.router.useScript(()=>{
 		  element.style.minWidth = narrow
 		});
 		
+		var interval = 4000
+		shift()
+		var myInterval = setInterval(shift, interval * 4);
+
+		function shift() {
+			move('0','brands')
+			setTimeout(function() {
+		    move('1','brands')
+		  }, interval)
+		  setTimeout(function() {
+		      move('2','brands')
+		  }, interval *2)
+		  setTimeout(function() {
+		      move('3','brands')
+		  }, interval * 3)
+			move('0','software')
+			setTimeout(function() {
+		    move('1','software')
+		  }, interval)
+		  setTimeout(function() {
+		      move('2','software')
+		  }, interval *2)
+		  setTimeout(function() {
+		      move('3','software')
+		  }, interval * 3)
+		}
+
+
+		function move(i,type) {
+		  var elm = document.querySelectorAll('#'+type+'-selector .about-selector--item')[i]
+		  var bar = document.querySelector('#'+type+'-selector .progress-bar')
+		  var push = elm.offsetTop
+			var height = document.querySelectorAll('#'+type+'-selector .item-height')[i].offsetHeight + "px"
+
+		  if (i == '0') {
+		    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = push + "px"
+		  } else {
+		  var descHeight = document.querySelectorAll('#'+type+'-selector .about-selector--item .desc')[i-1].offsetHeight
+		    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = (push - descHeight) + "px"
+		  }
+		  for (let x = 0; x < document.querySelectorAll('#'+type+'-selector .about-selector--item').length; x++) {
+			document.querySelectorAll('#'+type+'-selector .about-selector--item')[x].style.height = document.querySelectorAll('#'+type+'-selector .body-founders._100')[x].offsetHeight + "px"
+		  }
+
+		  elm.style.height = height
+		  bar.animate(
+		    [
+		      { transform: "translateY(-100%)" },
+		      { transform: "translateY(0%)" },
+		    ],
+		    {
+		      duration: interval,
+		      iterations: 1,
+		    }
+		  );
+
+		  document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.height = height
+		}
+
 		
 		var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
 		var Arr = Array.prototype.slice.call(list).sort((a, b) => 0.5 - Math.random());
