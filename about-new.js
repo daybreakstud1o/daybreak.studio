@@ -78,7 +78,7 @@ daybreak.router.useScript(()=>{
 		function move(i,type) {
 		  var bar = document.querySelector('#'+type+'-selector .progress-bar')
 		  var height = document.querySelectorAll('#'+type+'-selector .item-height')[i].offsetHeight + "px"
-		  var push = eval('type'+elm)[i].offsetTop
+		  var push = eval(type+'elm')[i].offsetTop
 
 		  if (i == '0') {
 		    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = push + "px"
@@ -90,7 +90,7 @@ daybreak.router.useScript(()=>{
 			document.querySelectorAll('#'+type+'-selector .about-selector--item')[x].style.height = document.querySelectorAll('#'+type+'-selector .body-founders._100')[x].offsetHeight + "px"
 		  }
 
-		  eval('type'+elm)[i].style.height = height
+		  eval(type+'elm')[i].style.height = height
 		  bar.animate(
 		    [
 		      { transform: "translateY(-100%)" },
