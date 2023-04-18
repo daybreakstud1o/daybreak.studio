@@ -72,7 +72,7 @@ daybreak.router.useScript(()=>{
 		var interval = 4000
 		shift()
 		var myInterval = setInterval(shift, interval * 4);
-		clearInterval(myInterval)
+		//clearInterval(myInterval)
 
 		function move(i,type) {
 		  var elm = document.querySelectorAll('#'+type+'-selector .about-selector--item')[i]
