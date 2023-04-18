@@ -47,7 +47,7 @@ daybreak.router.useScript(()=>{
 		
 		
 		
-		var interval = 4000
+		var interval = 6000
 		var one, two, three, four, five, six;
 		shift()
 		var myInterval = setInterval(shift, interval * 4);
