@@ -122,8 +122,6 @@ daybreak.router.useScript(()=>{
 		    item.setAttribute('area', '')
 		})
 
-		var logoInterval = 1000
-
 		function changeLogo() {
 			var random = visible.sort(() => .5 - Math.random()).slice(0,3)
 			var random1 = invisible.sort(() => .5 - Math.random()).slice(0,3)
