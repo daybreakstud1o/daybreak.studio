@@ -46,32 +46,34 @@ daybreak.router.useScript(()=>{
 		});
 		
 		
-
-		function shift() {
-			  move('0','brands')
-			  setTimeout(function() {
-			    move('1','brands')
-			  }, interval)
-			  setTimeout(function() {
-			      move('2','brands')
-			  }, interval *2)
-			  setTimeout(function() {
-			      move('3','brands')
-			  }, interval * 3)
-				move('0','software')
-				setTimeout(function() {
-			    move('1','software')
-			  }, interval)
-			  setTimeout(function() {
-			      move('2','software')
-			  }, interval *2)
-			  setTimeout(function() {
-			      move('3','software')
-			  }, interval * 3)
-		}
+		
 		var interval = 4000
+		var one, two, three, four, five, six;
 		shift()
 		var myInterval = setInterval(shift, interval * 4);
+		function shift() {
+			  move('0','brands')
+			  one = setTimeout(function(){ 
+			    move('1','brands')
+		          }, interval);
+		   	  two = setTimeout(function(){ 
+			    move('2','brands')
+		          }, interval * 2);
+			  three = setTimeout(function(){ 
+			    move('3','brands')
+		          }, interval * 3);
+			
+			  move('0','software')
+			  four = setTimeout(function(){ 
+			    move('1','software')
+		          }, interval);
+		   	  five = setTimeout(function(){ 
+			    move('2','software')
+		          }, interval * 2);
+			  six = setTimeout(function(){ 
+			    move('3','software')
+		          }, interval * 3);
+		}
 		
 
 		function move(i,type) {
@@ -207,6 +209,12 @@ daybreak.router.useScript(()=>{
 				document.querySelector('.navbar').classList.remove("dark")
 				document.querySelector('.nav-logo').classList.remove("nav-logo--expanded");
 				clearInterval(myInterval);
+				clearTimeout(one);
+				clearTimeout(two);
+				clearTimeout(three);
+				clearTimeout(four);
+				clearTimeout(five);
+				clearTimeout(six);
 
 		}
 	}
