@@ -19,11 +19,33 @@ function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.displ
 }
 
 function test() {
-		var interval = 4000
-		shift()
-		var myInterval = setInterval(shift, interval * 4);
-		clearInterval(myInterval);
-		var interval = 4000
+
+}
+
+daybreak.router.useScript(()=>{
+	console.log("enter about");
+
+	function animateInHero() {
+		document.querySelector('.background').classList.add("dark")
+		document.querySelector('.navbar').classList.add("dark")
+		document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
+		document.querySelector('.daybreak-info').style.opacity = '0';
+		document.querySelector('.daybreak-info').style.transitionDelay = "0s";
+		document.querySelector('.cities-info').style.opacity = '0';
+		document.querySelector('.cities-info').style.transitionDelay = "0s";
+		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
+    		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
+		document.querySelectorAll('.about-carousel > *').forEach((element) => {
+		  element.setAttribute("sizes", "")
+		});
+		document.querySelectorAll('.about-carousel .wide').forEach((element) => {
+		  element.style.minWidth = wide
+		});
+		document.querySelectorAll('.about-carousel .narrow').forEach((element) => {
+		  element.style.minWidth = narrow
+		});
+		
+		
 
 		function shift() {
 			move('0','brands')
@@ -47,7 +69,10 @@ function test() {
 		      move('3','software')
 		  }, interval * 3)
 		}
-
+		var interval = 4000
+		shift()
+		var myInterval = setInterval(shift, interval * 4);
+		clearInterval(myInterval)
 
 		function move(i,type) {
 		  var elm = document.querySelectorAll('#'+type+'-selector .about-selector--item')[i]
@@ -79,32 +104,6 @@ function test() {
 
 		  document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.height = height
 		}
-}
-
-daybreak.router.useScript(()=>{
-	console.log("enter about");
-
-	function animateInHero() {
-		document.querySelector('.background').classList.add("dark")
-		document.querySelector('.navbar').classList.add("dark")
-		document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
-		document.querySelector('.daybreak-info').style.opacity = '0';
-		document.querySelector('.daybreak-info').style.transitionDelay = "0s";
-		document.querySelector('.cities-info').style.opacity = '0';
-		document.querySelector('.cities-info').style.transitionDelay = "0s";
-		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
-    		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
-		document.querySelectorAll('.about-carousel > *').forEach((element) => {
-		  element.setAttribute("sizes", "")
-		});
-		document.querySelectorAll('.about-carousel .wide').forEach((element) => {
-		  element.style.minWidth = wide
-		});
-		document.querySelectorAll('.about-carousel .narrow').forEach((element) => {
-		  element.style.minWidth = narrow
-		});
-		
-		test()
 
 		
 		var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
