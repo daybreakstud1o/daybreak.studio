@@ -276,7 +276,7 @@ daybreak.router.useScript(()=>{
 	  }
 	  function momentumLoop(){
 	    slider.scrollLeft += velX;
-	    velX *= 0.95; 
+	    velX *= 1.2; 
 	    if (Math.abs(velX) > 0.5){
 	      momentumID = requestAnimationFrame(momentumLoop);
 	    }
