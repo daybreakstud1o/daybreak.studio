@@ -277,8 +277,8 @@ daybreak.router.useScript(()=>{
 	  }
 	  function momentumLoop(){
 	    element.scrollLeft += velX;
-	    velX *= 0.95; 
-	    if (Math.abs(velX) > 0.8){
+	    velX *= 0.97; 
+	    if (Math.abs(velX) > 0.5){
 	      momentumID = requestAnimationFrame(momentumLoop);
 	    }
 	  }
