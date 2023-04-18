@@ -104,7 +104,8 @@ daybreak.router.useScript(()=>{
 			  );
 
 			  document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.height = height
-			  document.querySelector('#'+type+ '-' + i).style.zIndex = '2'
+			  console.log(document.querySelectorAll('.'+type+'-img img'))
+			  //document.querySelector('#'+type+ '-' + i).style.zIndex = '2'
 		}
 		
 		var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
