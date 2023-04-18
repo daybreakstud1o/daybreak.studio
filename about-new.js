@@ -19,9 +19,11 @@ function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.displ
 }
 
 function test() {
-			var interval = 4000
+		var interval = 4000
 		shift()
 		var myInterval = setInterval(shift, interval * 4);
+		clearInterval(myInterval);
+		var interval = 4000
 
 		function shift() {
 			move('0','brands')
