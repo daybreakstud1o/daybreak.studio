@@ -206,6 +206,7 @@ daybreak.router.useScript(()=>{
 				document.querySelector('.background').classList.remove("dark")
 				document.querySelector('.navbar').classList.remove("dark")
 				document.querySelector('.nav-logo').classList.remove("nav-logo--expanded");
+				clearInterval(myInterval);
 
 		}
 	}
