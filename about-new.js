@@ -221,41 +221,42 @@ daybreak.router.useScript(()=>{
 	}
 	const resetHero = animateInHero();
 	
-	  const slider = document.querySelector('.about-carousel');
+	document.querySelectorAll('.about-carousel').forEach((element, i) => {
+	  
 	  let isDown = false;
 	  let startX;
 	  let scrollLeft;
 
-	  slider.addEventListener('mousedown', (e) => {
+	  element.addEventListener('mousedown', (e) => {
 	    isDown = true;
 	    //slider.classList.add('active');
-	    startX = e.pageX - slider.offsetLeft;
-	    scrollLeft = slider.scrollLeft;
+	    startX = e.pageX - element.offsetLeft;
+	    scrollLeft = element.scrollLeft;
 	    cancelMomentumTracking();
 	  });
 
 
-	  slider.addEventListener('mouseleave', () => {
+	  element.addEventListener('mouseleave', () => {
 	    isDown = false;
 	    //slider.classList.remove('active');
 	  });
 
 
-	  slider.addEventListener('mouseup', () => {
+	  element.addEventListener('mouseup', () => {
 	    isDown = false;
 	    //slider.classList.remove('active');
 	    beginMomentumTracking();
 	  });
 
 
-	  slider.addEventListener('mousemove', (e) => {
+	  element.addEventListener('mousemove', (e) => {
 	    if(!isDown) return;
 	    e.preventDefault();
-	    const x = e.pageX - slider.offsetLeft;
+	    const x = e.pageX - element.offsetLeft;
 	    const walk = (x - startX) * 1; //scroll-fast
-	    var prevScrollLeft = slider.scrollLeft;
-	    slider.scrollLeft = scrollLeft - walk;
-	    velX = slider.scrollLeft - prevScrollLeft;
+	    var prevScrollLeft = element.scrollLeft;
+	    element.scrollLeft = scrollLeft - walk;
+	    velX = element.scrollLeft - prevScrollLeft;
 	  });
 
 	  // Momentum 
@@ -263,7 +264,7 @@ daybreak.router.useScript(()=>{
 	  var velX = 0;
 	  var momentumID;
 
-	  slider.addEventListener('wheel', (e) => {
+	  element.addEventListener('wheel', (e) => {
 	    cancelMomentumTracking();
 	  });  
 
@@ -275,12 +276,14 @@ daybreak.router.useScript(()=>{
 	    cancelAnimationFrame(momentumID);
 	  }
 	  function momentumLoop(){
-	    slider.scrollLeft += velX;
+	    element.scrollLeft += velX;
 	    velX *= 0.95; 
 	    if (Math.abs(velX) > 0.6){
 	      momentumID = requestAnimationFrame(momentumLoop);
 	    }
 	  }
+	});
+	  
 
 	function setupLogoMinimizeOnScroll() {
 		function minimizeLogo() {
