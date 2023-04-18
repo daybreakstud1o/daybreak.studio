@@ -75,7 +75,6 @@ daybreak.router.useScript(()=>{
 		          }, interval * 3);
 		}
 		
-
 		function move(i,type) {
 			var elm = document.querySelectorAll('#'+type+'-selector .about-selector--item')[i]
 			var bar = document.querySelector('#'+type+'-selector .progress-bar')
@@ -105,6 +104,7 @@ daybreak.router.useScript(()=>{
 			  );
 
 			  document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.height = height
+			  document.querySelectorAll('#'+type+'-selector .image-fill img')[i].style.zIndex = '2'
 		}
 		
 		var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
