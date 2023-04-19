@@ -91,6 +91,7 @@ daybreak.router.useScript(() => {
 	weatherUpdate("london", "sf");
 	weatherUpdate("toronto", "toronto-2");
 	weatherUpdate("london", "sf-2");
+	weatherUpdate("toronto", "toronto-3");
 	
 	
 // 	newWeather('San%20Fransisco%2C%20California%2C%20United%20States')
