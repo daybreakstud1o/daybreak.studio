@@ -3,7 +3,32 @@
 daybreak.router.useScript(()=>{
 	console.log("enter home");
 
-	
+	function animateInHero() {
+		document.querySelector('.nav-wrapper').classList.add("nav-home")
+		
+// 		setTimeout(function() {
+// 			document.querySelector('.daybreak-info').style.display = 'none';
+// 			document.querySelector('.cities-info').style.display = 'none';
+// 			var elementDelay = 250;
+// 			for (let i = 0; i < document.querySelectorAll('.about-hero-split-item').length; i++) {
+// 				document.querySelectorAll('.about-hero-split-item').forEach((element, i) => {
+// 					setTimeout(function () {
+// 						element.style.opacity = "1";
+// 					}, i * elementDelay);
+// 				});
+// 			}
+// 		}, 200);
+
+		return ()=>{
+				
+				// delay one frame so that transition delay is in effect
+				window.requestAnimationFrame(()=>{
+				})
+				document.querySelector('.nav-wrapper').classList.remove("nav-home")
+
+		}
+	}
+	const resetHero = animateInHero();
 
 
 	// ======================================================================
