@@ -4,7 +4,7 @@ daybreak.router.useScript(()=>{
 	console.log("enter home");
 
 	function animateInHero() {
-		document.querySelector('.nav-wrapper').classList.add("nav-home")
+		document.querySelector('.navbar').classList.add("nav-home")
 		
 // 		setTimeout(function() {
 // 			document.querySelector('.daybreak-info').style.display = 'none';
@@ -24,7 +24,7 @@ daybreak.router.useScript(()=>{
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 				})
-				document.querySelector('.nav-wrapper').classList.remove("nav-home")
+				document.querySelector('.navbar').classList.remove("nav-home")
 
 		}
 	}
