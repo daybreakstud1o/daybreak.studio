@@ -33,6 +33,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.daybreak-info').style.transitionDelay = "0s";
 		document.querySelector('.cities-info').style.opacity = '0';
 		document.querySelector('.cities-info').style.transitionDelay = "0s";
+		document.querySelector('.nav-wrapper').classList.remove("nav-home")
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
     		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
 		document.querySelectorAll('.about-carousel > *').forEach((element) => {
