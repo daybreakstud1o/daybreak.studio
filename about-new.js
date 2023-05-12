@@ -28,11 +28,7 @@ daybreak.router.useScript(()=>{
 	function animateInHero() {
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.nav-wrapper').classList.add("dark")
-		document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
-		document.querySelector('.daybreak-info').style.opacity = '0';
-		document.querySelector('.daybreak-info').style.transitionDelay = "0s";
-		document.querySelector('.cities-info').style.opacity = '0';
-		document.querySelector('.cities-info').style.transitionDelay = "0s";
+		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--expanded")
 		document.querySelector('.nav-wrapper').classList.remove("nav-home")
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
     		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
@@ -194,22 +190,13 @@ daybreak.router.useScript(()=>{
 		}, 200);
 
 		return ()=>{
-
-				document.querySelector('.daybreak-info').style.display = '';
-				document.querySelector('.cities-info').style.display = '';
-				document.querySelector('.daybreak-info').style.transitionDelay = '.3s';
-				document.querySelector('.cities-info').style.transitionDelay = '.3s';
 				
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
-					document.querySelector('.daybreak-info').style.opacity = '.7';
-					document.querySelector('.cities-info').style.opacity = '1';
-					document.querySelector('.daybreak-info').style.transitionDelay = '.25s';
-					document.querySelector('.cities-info').style.transitionDelay = '.2s';
 				})
 				document.querySelector('.background').classList.remove("dark")
 				document.querySelector('.nav-wrapper').classList.remove("dark")
-				document.querySelector('.nav-logo').classList.remove("nav-logo--expanded");
+				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--expanded");
 				clearInterval(myInterval);
 				clearTimeout(one);
 				clearTimeout(two);
