@@ -27,9 +27,9 @@ daybreak.router.useScript(()=>{
 
 	function animateInHero() {
 		document.querySelector('.background').classList.add("dark")
-		document.querySelector('.nav-wrapper').classList.add("dark")
+		document.querySelector('.nav-container').classList.add("dark")
 		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
-		document.querySelector('.nav-wrapper').classList.remove("nav-home")
+		document.querySelector('.nav-container').classList.remove("nav-home")
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
     		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
 		document.querySelectorAll('.about-carousel > *').forEach((element) => {
@@ -195,7 +195,7 @@ daybreak.router.useScript(()=>{
 				window.requestAnimationFrame(()=>{
 				})
 				document.querySelector('.background').classList.remove("dark")
-				document.querySelector('.nav-wrapper').classList.remove("dark")
+				document.querySelector('.nav-container').classList.remove("dark")
 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
 				clearInterval(myInterval);
 				clearTimeout(one);
