@@ -177,8 +177,6 @@ daybreak.router.useScript(()=>{
 		
 		
 		setTimeout(function() {
-			document.querySelector('.daybreak-info').style.display = 'none';
-			document.querySelector('.cities-info').style.display = 'none';
 			var elementDelay = 250;
 			for (let i = 0; i < document.querySelectorAll('.about-hero-split-item').length; i++) {
 				document.querySelectorAll('.about-hero-split-item').forEach((element, i) => {
