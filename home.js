@@ -30,7 +30,6 @@ daybreak.router.useScript(()=>{
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 				})
-				document.querySelector('#real-nav').style.top = '0px'
 				document.querySelector('.nav-container').classList.remove("nav-home")
 
 		}
