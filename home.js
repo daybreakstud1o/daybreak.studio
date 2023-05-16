@@ -8,7 +8,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-container').classList.add("nav-home")
 		$(window).scroll(function (event) {
 		    var scroll = 400 - $(window).scrollTop()
-		    document.querySelector('#real-nav').style.top = scroll + 'px'
+		    document.querySelector('#real-nav').style.paddingTop = scroll + 'px'
 		});
 		
 // 		setTimeout(function() {
