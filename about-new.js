@@ -24,7 +24,7 @@ function test() {
 
 daybreak.router.useScript(()=>{
 	console.log("enter about");
-
+	$('html,body').scrollTop(0);
 	function animateInHero() {
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark")
