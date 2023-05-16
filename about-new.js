@@ -24,8 +24,8 @@ function test() {
 
 daybreak.router.useScript(()=>{
 	console.log("enter about");
-	window.scrollTo(0, 0);
 	function animateInHero() {
+		window.scrollTo(0, 0);
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark")
 		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
