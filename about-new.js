@@ -24,12 +24,9 @@ function test() {
 
 daybreak.router.useScript(()=>{
 	console.log("enter about");
-	window.scrollTo({ top: 0, behavior: 'smooth' })
+	document.body.scrollTop = 0;
+  	document.documentElement.scrollTop = 0;
 	function animateInHero() {
-		window.scrollTo({ top: 0, behavior: 'smooth' })
-		window.onload = function(){
-		    window.scrollTo({ top: 0, behavior: 'smooth' })
-		}
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark")
 		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
