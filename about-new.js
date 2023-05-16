@@ -33,7 +33,6 @@ daybreak.router.useScript(()=>{
 		document.querySelector('#real-nav').style.top = '25'
 		document.querySelector('.nav-container').classList.remove("nav-home")
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
-		document.querySelector('#real-nav').style.top = 'auto'
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
     		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
 		document.querySelectorAll('.about-carousel > *').forEach((element) => {
