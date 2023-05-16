@@ -2,8 +2,8 @@
 //@ts-ignore
 daybreak.router.useScript(()=>{
 	console.log("enter home");
-	window.scrollTo(0, 0);
 	function animateInHero() {
+		window.scrollTo(0, 0);
 		document.querySelector('.nav-container').classList.add("nav-home")
 		$(window).scroll(function (event) {
 		    var scroll = $(window).scrollTop();
