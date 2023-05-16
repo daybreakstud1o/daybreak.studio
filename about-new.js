@@ -24,7 +24,9 @@ function test() {
 
 daybreak.router.useScript(()=>{
 	console.log("enter about");
+	window.scrollTo({ top: 0, behavior: 'smooth' })
 	function animateInHero() {
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 		window.onload = function(){
 		    window.scrollTo({ top: 0, behavior: 'smooth' })
 		}
