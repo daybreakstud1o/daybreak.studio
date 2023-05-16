@@ -2,7 +2,9 @@
 //@ts-ignore
 daybreak.router.useScript(()=>{
 	console.log("enter home");
+	window.scrollTo({ top: 0, behavior: 'smooth' })
 	function animateInHero() {
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 		window.onload = function(){
 		    window.scrollTo({ top: 0, behavior: 'smooth' })
 		}
