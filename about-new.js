@@ -30,7 +30,6 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark")
 		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
-		document.querySelector('#real-nav').style.top = '0px'
 		document.querySelector('.nav-container').classList.remove("nav-home")
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
