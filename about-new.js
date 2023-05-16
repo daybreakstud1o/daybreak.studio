@@ -27,6 +27,9 @@ daybreak.router.useScript(()=>{
 	document.body.scrollTop = 0;
   	document.documentElement.scrollTop = 0;
 	function animateInHero() {
+		$(window).scroll(function (event) {
+		    document.querySelector('#real-nav').style.top = '0px'
+		});
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark")
 		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
