@@ -201,6 +201,7 @@ daybreak.router.useScript(()=>{
 				document.querySelector('.background').classList.remove("dark")
 				document.querySelector('.nav-container').classList.remove("dark")
 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
+				document.querySelector('#real-nav').style.top = '400px'
 				document.querySelector('.content').style.transform = 'translateY(40vh)'
 				clearInterval(myInterval);
 				clearTimeout(one);
