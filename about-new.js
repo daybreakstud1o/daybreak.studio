@@ -26,7 +26,7 @@ daybreak.router.useScript(()=>{
 	console.log("enter about");
 	function animateInHero() {
 		window.onload = function(){
-		    window.scrollTo(0,0);
+		    window.scrollTo({ top: 0, behavior: 'smooth' })
 		}
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark")
