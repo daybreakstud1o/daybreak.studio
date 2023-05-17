@@ -9,9 +9,10 @@ daybreak.router.useScript(()=>{
 		document.querySelector('#real-nav').style.top = '400px'
 		$(window).scroll(function (event) {
 		    var scroll = 400 - $(window).scrollTop()
-		    document.querySelector('#real-nav').style.top = scroll + 'px'
 		    if(document.querySelector('#real-nav').offsetTop <= 0) {
-			    console.log('sticky')
+			document.querySelector('#real-nav').style.top = '0px'
+		    } else {
+		    	document.querySelector('#real-nav').style.top = scroll + 'px'
 		    }
 		});
 		
