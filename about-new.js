@@ -34,7 +34,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-container').classList.add("dark")
 		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
 		document.querySelector('.nav-container').classList.remove("nav-home")
-		document.querySelector('#real-nav1').style.top = '0px'
+		document.querySelector('.nav-test').classList.add("close")
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
     		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
@@ -201,7 +201,7 @@ daybreak.router.useScript(()=>{
 				document.querySelector('.background').classList.remove("dark")
 				document.querySelector('.nav-container').classList.remove("dark")
 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
-				document.querySelector('#real-nav').style.top = '400px'
+				document.querySelector('.nav-test').classList.remove("close")
 				document.querySelector('.content').style.transform = 'translateY(40vh)'
 				clearInterval(myInterval);
 				clearTimeout(one);
