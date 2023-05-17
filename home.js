@@ -6,7 +6,7 @@ daybreak.router.useScript(()=>{
   	document.documentElement.scrollTop = 0;
 	function animateInHero() {
 		document.querySelector('.nav-container').classList.add("nav-home")
-		document.querySelector('#real-nav').style.top = '400px'
+		//document.querySelector('#real-nav').style.top = '400px'
 		$(window).scroll(function (event) {
 // 		    if(document.querySelector('#real-nav').offsetTop <= 0) {
 // 			console.log('fixed')
@@ -36,7 +36,7 @@ daybreak.router.useScript(()=>{
 				window.requestAnimationFrame(()=>{
 				})
 				document.querySelector('.nav-container').classList.remove("nav-home")
-				document.querySelector('#real-nav').style.top = '0px'
+//				document.querySelector('#real-nav').style.top = '0px'
 
 		}
 	}
