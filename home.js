@@ -13,7 +13,7 @@ daybreak.router.useScript(()=>{
 			//console.log('fixed')
 		    //} else if(document.querySelector('#real-nav').offsetTop > 0) {
 		   	var scroll = 400 - $(window).scrollTop()
-		    	document.querySelector('#real-nav').style.top = scroll + 'px'
+		    	document.querySelector('#real-nav1').style.top = scroll + 'px'
 			//console.log('scroll')
 		    //}
 		});
