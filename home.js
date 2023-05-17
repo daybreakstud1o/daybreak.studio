@@ -10,6 +10,7 @@ daybreak.router.useScript(()=>{
 		$(window).scroll(function (event) {
 		    var scroll = 400 - $(window).scrollTop()
 		    document.querySelector('#real-nav').style.top = scroll + 'px'
+		    console.log(document.querySelector('#real-nav').offsetTop)
 		});
 		
 // 		setTimeout(function() {
