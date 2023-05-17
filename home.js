@@ -8,14 +8,13 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-container').classList.add("nav-home")
 		document.querySelector('#real-nav').style.top = '400px'
 		$(window).scroll(function (event) {
-		    //if(document.querySelector('#real-nav').offsetTop <= 0) {
-			
-			//console.log('fixed')
-		    //} else if(document.querySelector('#real-nav').offsetTop > 0) {
+		    if(document.querySelector('#real-nav').offsetTop <= 0) {
+			console.log('fixed')
+		    } else if(document.querySelector('#real-nav').offsetTop > 0) {
 		   	var scroll = 400 - $(window).scrollTop()
 		    	document.querySelector('#real-nav1').style.top = scroll + 'px'
-			//console.log('scroll')
-		    //}
+			console.log('scroll')
+		    }
 		});
 		
 // 		setTimeout(function() {
