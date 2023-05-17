@@ -27,14 +27,14 @@ daybreak.router.useScript(()=>{
 	document.body.scrollTop = 0;
   	document.documentElement.scrollTop = 0;
 	function animateInHero() {
-		$(window).scroll(function (event) {
-		    document.querySelector('#real-nav').style.top = '0px'
-		});
+// 		$(window).scroll(function (event) {
+// 		    document.querySelector('#real-nav').style.top = '0px'
+// 		});
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark")
 		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
 		document.querySelector('.nav-container').classList.remove("nav-home")
-		document.querySelector('#real-nav').style.top = '0px'
+		document.querySelector('#real-nav1').style.top = '0px'
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
     		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
