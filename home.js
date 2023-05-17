@@ -17,7 +17,7 @@ daybreak.router.useScript(()=>{
 			var navWidth = document.querySelector('#sticky-nav').getBoundingClientRect().width
 			console.log(navTop)
 			document.querySelector('#real-nav1').style.top = navTop + 'px'
-			document.querySelector('#real-nav1').style.top = navWidth + 'px'
+			document.querySelector('#real-nav1').style.width = navWidth + 'px'
 // 		    }
 		});
 		
