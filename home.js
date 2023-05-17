@@ -8,10 +8,10 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-container').classList.add("nav-home")
 		document.querySelector('#real-nav').style.top = '400px'
 		$(window).scroll(function (event) {
-		    var scroll = 400 - $(window).scrollTop()
 		    if(document.querySelector('#real-nav').offsetTop <= 0) {
 			document.querySelector('#real-nav').style.top = '0px'
-		    } else {
+		    } else if(document.querySelector('#real-nav').offsetTop > 0) {
+		   	var scroll = 400 - $(window).scrollTop()
 		    	document.querySelector('#real-nav').style.top = scroll + 'px'
 		    }
 		});
