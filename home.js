@@ -11,8 +11,8 @@ daybreak.router.useScript(()=>{
 // 		    if(document.querySelector('#real-nav').offsetTop <= 0) {
 // 			console.log('fixed')
 // 		    } else if(document.querySelector('#real-nav').offsetTop > 0) {
- 		   	var scroll = 400 - $(window).scrollTop()
- 		    	document.querySelector('#real-nav').style.top = scroll + 'px'
+// 		   	var scroll = 400 - $(window).scrollTop()
+// 		    	document.querySelector('#real-nav').style.top = scroll + 'px'
  			console.log(document.querySelector('#real-nav1').getBoundingClientRect().top)
 // 		    }
 		});
