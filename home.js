@@ -7,7 +7,6 @@ daybreak.router.useScript(()=>{
 	function animateInHero() {
 		const padTop = []
 		document.querySelector('.nav-container').classList.add("nav-home")
-		document.querySelector('.nav-test').style.paddingTop = '40vh';
 		//document.querySelector('#real-nav').style.top = '400px'
 		$(window).scroll(function (event) {
 // 		    if(document.querySelector('#real-nav').offsetTop <= 0) {
