@@ -5,6 +5,7 @@ daybreak.router.useScript(()=>{
 	document.body.scrollTop = 0;
   	document.documentElement.scrollTop = 0;
 	function animateInHero() {
+		const padTop = []
 		document.querySelector('.nav-container').classList.add("nav-home")
 		//document.querySelector('#real-nav').style.top = '400px'
 		$(window).scroll(function (event) {
@@ -13,9 +14,9 @@ daybreak.router.useScript(()=>{
 // 		    } else if(document.querySelector('#real-nav').offsetTop > 0) {
 // 		   	var scroll = 400 - $(window).scrollTop()
 // 		    	document.querySelector('#real-nav').style.top = scroll + 'px'
-//  			var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
+  			var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
 // 			var navWidth = document.querySelector('#sticky-nav').getBoundingClientRect().width
-// 			console.log(navTop)
+ 			padTop.push(navTop)
 // 			document.querySelector('#real-nav1').style.top = navTop + 'px'
 // 			document.querySelector('#real-nav1').style.width = navWidth + 'px'
 // 		    }
@@ -35,12 +36,12 @@ daybreak.router.useScript(()=>{
 // 		}, 200);
 
 		return ()=>{	
-				document.querySelector('.nav-test').style.paddingTop = document.querySelector('#real-nav1').getBoundingClientRect().top + 'px'
-				console.log(document.querySelector('#real-nav1').getBoundingClientRect().top)
 				
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 				})
+				document.querySelector('.nav-test').style.paddingTop = padTop[padTop.length - 1] + 'px'
+				console.log(padTop[padTop.length - 1])
 				document.querySelector('.nav-container').classList.remove("nav-home")
 //				document.querySelector('#real-nav').style.top = '0px'
 
