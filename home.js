@@ -42,6 +42,7 @@ daybreak.router.useScript(()=>{
 				})
 				document.querySelector('.nav-test').style.paddingTop = padTop[padTop.length - 1] + 'px'
 				console.log(padTop[padTop.length - 1])
+				console.log('test')
 				document.querySelector('.nav-container').classList.remove("nav-home")
 //				document.querySelector('#real-nav').style.top = '0px'
 
