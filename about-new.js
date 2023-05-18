@@ -30,9 +30,7 @@ daybreak.router.useScript(()=>{
 // 		document.querySelector('.animate-test').style.top = '0!important'
 	function animateInHero() {
 //		document.querySelector('.animate-test').style.top = '0!important'
-		setTimeout(function() {
-			document.querySelector('.animate-test').classList.add('fuck')
-		}, 100);
+		document.querySelector('.animate-test').classList.add('fuck')
 		$(window).scroll(function (event) {
 		    document.querySelector('.animate-test').style.top = '0!important'
 		});
