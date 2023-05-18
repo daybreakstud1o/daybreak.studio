@@ -21,11 +21,13 @@ function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.displ
 function test() {
 
 }
+		document.querySelector('.animate-test').style.top = '0px!important'
 
 daybreak.router.useScript(()=>{
 	console.log("enter about");
 	document.body.scrollTop = 0;
   	document.documentElement.scrollTop = 0;
+		document.querySelector('.animate-test').style.top = '0px!important'
 	function animateInHero() {
 		document.querySelector('.animate-test').style.top = '0px!important'
 		$(window).scroll(function (event) {
