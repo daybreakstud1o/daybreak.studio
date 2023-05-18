@@ -14,10 +14,9 @@ daybreak.router.useScript(()=>{
 // 		    } else if(document.querySelector('#real-nav').offsetTop > 0) {
 // 		   	var scroll = 400 - $(window).scrollTop()
 // 		    	document.querySelector('#real-nav').style.top = scroll + 'px'
-  			var navTop = -(document.querySelector('#real-nav1').getBoundingClientRect().top)
+  			var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
 // 			var navWidth = document.querySelector('#sticky-nav').getBoundingClientRect().width
-			console.log(navTop)
- 			document.querySelector('.animate-test').style.marginTop = navTop + 'px'
+ 			document.querySelector('.animate-test').style.top = navTop + 'px'
 // 			document.querySelector('#real-nav1').style.width = navWidth + 'px'
 // 		    }
 		});
