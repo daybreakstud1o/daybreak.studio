@@ -27,8 +27,9 @@ daybreak.router.useScript(()=>{
 	document.body.scrollTop = 0;
   	document.documentElement.scrollTop = 0;
 	function animateInHero() {
+		document.querySelector('.animate-test').style.top = '0px!important'
 		$(window).scroll(function (event) {
-		    document.querySelector('.animate-test').style.top = '0px'
+		    document.querySelector('.animate-test').style.top = '0px!important'
 		});
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark")
