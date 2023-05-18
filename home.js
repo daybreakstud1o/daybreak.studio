@@ -16,8 +16,7 @@ daybreak.router.useScript(()=>{
 // 		    	document.querySelector('#real-nav').style.top = scroll + 'px'
   			var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
 // 			var navWidth = document.querySelector('#sticky-nav').getBoundingClientRect().width
- 			padTop.push(navTop)
-// 			document.querySelector('#real-nav1').style.top = navTop + 'px'
+ 			document.querySelector('.animate-test').style.top = navTop + 'px'
 // 			document.querySelector('#real-nav1').style.width = navWidth + 'px'
 // 		    }
 		});
