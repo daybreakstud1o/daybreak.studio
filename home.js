@@ -39,7 +39,7 @@ daybreak.router.useScript(()=>{
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 				})
-				document.querySelector('.animate-test').style.top = '0!important'
+				//document.querySelector('.animate-test').style.top = '0!important'
 				document.querySelector('.nav-container').classList.remove("nav-home")
 //				document.querySelector('#real-nav').style.top = '0px'
 
@@ -48,14 +48,14 @@ daybreak.router.useScript(()=>{
 	const resetHero = animateInHero();
 	
 	
-				$( "#fwesdfsdfsd" ).on( "click", function() {
-					document.querySelector('.animate-test').style.top = '0!important'
-					console.log('hi')
-				} );
-	document.querySelector('#fwesdfsdfsd').addEventListener("click", (event) => {
-		document.querySelector('.animate-test').style.top = '0!important'
-					console.log('hi')
-	});
+// 				$( "#fwesdfsdfsd" ).on( "click", function() {
+// 					document.querySelector('.animate-test').style.top = '0!important'
+// 					console.log('hi')
+// 				} );
+// 	document.querySelector('#fwesdfsdfsd').addEventListener("click", (event) => {
+// 		document.querySelector('.animate-test').style.top = '0!important'
+// 					console.log('hi')
+// 	});
 
 
 	// ======================================================================
