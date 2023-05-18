@@ -2,8 +2,8 @@
 //@ts-ignore
 daybreak.router.useScript(()=>{
 	console.log("enter home");
-	document.body.scrollTop = 0;
-   	document.documentElement.scrollTop = 0;
+//	document.body.scrollTop = 0;
+//   	document.documentElement.scrollTop = 0;
 	function animateInHero() {
 		const padTop = []
 		document.querySelector('.nav-container').classList.add("nav-home")
