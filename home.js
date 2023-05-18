@@ -46,6 +46,12 @@ daybreak.router.useScript(()=>{
 		}
 	}
 	const resetHero = animateInHero();
+	
+	
+				$( "#fwesdfsdfsd" ).on( "click", function() {
+					document.querySelector('.animate-test').style.top = '0px!important'
+					console.log('hi')
+				} );
 
 
 	// ======================================================================
