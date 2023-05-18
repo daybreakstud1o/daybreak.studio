@@ -40,8 +40,9 @@ daybreak.router.useScript(()=>{
 				
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
+					document.querySelector('.nav-test').style.paddingTop = '0!important';
 				})
-				document.querySelector('.nav-test').style.paddingTop = '0';
+				document.querySelector('.nav-test').style.paddingTop = '0!important';
 				document.querySelector('.nav-container').classList.remove("nav-home")
 //				document.querySelector('#real-nav').style.top = '0px'
 
