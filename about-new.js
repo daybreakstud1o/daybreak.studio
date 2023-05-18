@@ -30,6 +30,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.animate-test').style.top = '0px!important'
 	function animateInHero() {
 		document.querySelector('.animate-test').style.top = '0px!important'
+		document.querySelector('.animate-test').classList.add('fuck')
 		$(window).scroll(function (event) {
 		    document.querySelector('.animate-test').style.top = '0px!important'
 		});
@@ -206,6 +207,7 @@ daybreak.router.useScript(()=>{
 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
 				document.querySelector('.nav-test').classList.remove("close","dark")
 				document.querySelector('.content').style.transform = 'translateY(40vh)'
+				document.querySelector('.animate-test').classList.remove('fuck')
 				clearInterval(myInterval);
 				clearTimeout(one);
 				clearTimeout(two);
