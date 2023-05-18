@@ -52,6 +52,10 @@ daybreak.router.useScript(()=>{
 					document.querySelector('.animate-test').style.top = '0px!important'
 					console.log('hi')
 				} );
+	document.querySelector('#fwesdfsdfsd').addEventListener("click", (event) => {
+		document.querySelector('.animate-test').style.top = '0px!important'
+					console.log('hi')
+	});
 
 
 	// ======================================================================
