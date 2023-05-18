@@ -30,7 +30,6 @@ daybreak.router.useScript(()=>{
 // 		$(window).scroll(function (event) {
 // 		    document.querySelector('#real-nav').style.top = '0px'
 // 		});
-		document.querySelector('.nav-test').style.paddingTop = '0vh!important';
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark")
 		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
