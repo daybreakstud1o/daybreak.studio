@@ -6,6 +6,9 @@ daybreak.router.useScript(()=>{
 //   	document.documentElement.scrollTop = 0;
 	function animateInHero() {
 		const padTop = []
+		setTimeout(function() {
+			document.querySelector('.nav-test').classList.remove("home-load")
+		}, 600);
 		document.querySelector('.nav-container').classList.add("nav-home")
 		//document.querySelector('#real-nav').style.top = '400px'
 		$(window).scroll(function (event) {
