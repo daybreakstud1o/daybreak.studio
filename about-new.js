@@ -25,8 +25,8 @@ function test() {
 
 daybreak.router.useScript(()=>{
 	console.log("enter about");
-	document.body.scrollTop = 0;
-  	document.documentElement.scrollTop = 0;
+//	document.body.scrollTop = 0;
+//  	document.documentElement.scrollTop = 0;
 // 		document.querySelector('.animate-test').style.top = '0!important'
 	function animateInHero() {
 //		document.querySelector('.animate-test').style.top = '0!important'
