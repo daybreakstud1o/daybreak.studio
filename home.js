@@ -40,6 +40,7 @@ daybreak.router.useScript(()=>{
 				window.requestAnimationFrame(()=>{
 				})
 				document.querySelector('.nav-test').style.paddingTop = document.querySelector('#real-nav1').getBoundingClientRect().top + 'px'
+				console.log(document.querySelector('#real-nav1').getBoundingClientRect().top)
 				document.querySelector('.nav-container').classList.remove("nav-home")
 //				document.querySelector('#real-nav').style.top = '0px'
 
