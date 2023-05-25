@@ -227,8 +227,9 @@ daybreak.router.useScript(()=>{
 		}
 	}
 	const resetHero = animateInHero();
-	
-	document.querySelector('.content').style.transform = "translateY(-20vh!important)"
+	setTimeout(function() {
+		document.querySelector('.content').style.transform = "translateY(-20vh!important)"
+	}, 600);
 	
 	document.querySelectorAll('.about-carousel').forEach((element, i) => {
 	  
