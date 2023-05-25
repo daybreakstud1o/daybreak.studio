@@ -35,11 +35,10 @@ daybreak.router.useScript(()=>{
 		$(window).scroll(function (event) {
 		    document.querySelector('.animate-test').style.top = '0!important'
 		});
-		document.querySelector('.background').classList.add("dark")
-		document.querySelector('.nav-container').classList.add("dark")
+		document.querySelector('.nav-container').classList.add("dark","transform")
 		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
 		document.querySelector('.nav-container').classList.remove("nav-home")
-		document.querySelector('.nav-test').classList.add("close","dark")
+		document.querySelector('.nav-test').classList.add("close")
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
     let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
@@ -70,20 +69,12 @@ daybreak.router.useScript(()=>{
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 				})
-				document.querySelector('.background').classList.remove("dark")
-				document.querySelector('.nav-container').classList.remove("dark")
-				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
-				document.querySelector('.nav-test').classList.remove("close","dark")
-				document.querySelector('.content').style.transform = 'translateY(40vh)'
-				document.querySelector('.animate-test').classList.remove('fuck')
-				clearInterval(myInterval);
-				clearTimeout(one);
-				clearTimeout(two);
-				clearTimeout(three);
-				clearTimeout(four);
-				clearTimeout(five);
-				clearTimeout(six);
-
+// 				document.querySelector('.background').classList.remove("dark")
+// 				document.querySelector('.nav-container').classList.remove("dark","transform")
+// 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
+// 				document.querySelector('.nav-test').classList.remove("close","dark")
+// 				document.querySelector('.content').style.transform = 'translateY(40vh)'
+// 				document.querySelector('.animate-test').classList.remove('fuck')
 		}
 	}
 	const resetHero = animateInHero();
