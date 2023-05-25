@@ -5,7 +5,12 @@ daybreak.router.useScript(()=>{
 //	document.body.scrollTop = 0;
 //   	document.documentElement.scrollTop = 0;
 	function animateInHero() {
-		
+		document.querySelector('.background').classList.remove("dark")
+		document.querySelector('.nav-container').classList.remove("dark","transform")
+		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
+		document.querySelector('.nav-test').classList.remove("close","dark")
+		document.querySelector('.content').style.transform = 'translateY(40vh)'
+		document.querySelector('.animate-test').classList.remove('fuck')
 		const padTop = []
 		setTimeout(function() {
 			document.querySelector('.nav-test').classList.remove("home-load")
