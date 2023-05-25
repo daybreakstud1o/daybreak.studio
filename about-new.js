@@ -37,9 +37,9 @@ daybreak.router.useScript(()=>{
 // 		document.querySelector('.nav-test').style.height = windowHeight + 'px'
 //		document.querySelector('.animate-test').style.top = '0!important'
 //		document.querySelector('.animate-test').classList.add('fuck')
-		$(window).scroll(function (event) {
-		    document.querySelector('.animate-test').style.top = '0!important'
-		});
+// 		$(window).scroll(function (event) {
+// 		    document.querySelector('.animate-test').style.top = '0!important'
+// 		});
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.footer').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark","transform")
