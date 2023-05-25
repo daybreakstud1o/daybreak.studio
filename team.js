@@ -25,13 +25,13 @@ function test() {
 daybreak.router.useScript(()=>{
 	console.log("enter team");
 	function animateInHero() {
-// 		var body = document.body,
-// 		    html = document.documentElement;
+		var body = document.body,
+		    html = document.documentElement;
 		
-// 		var windowHeight = Math.max( body.scrollHeight, body.offsetHeight, 
-// 		    			html.clientHeight, html.scrollHeight, html.offsetHeight );
-// 		document.querySelector('.nav-test').style.height = windowHeight + 'px'
-		document.querySelector('.animate-test').classList.add('fuck')
+		var windowHeight = Math.max( body.scrollHeight, body.offsetHeight, 
+		    			html.clientHeight, html.scrollHeight, html.offsetHeight );
+		document.querySelector('.nav-test').style.height = windowHeight + 'px'
+//		document.querySelector('.animate-test').classList.add('fuck')
 		$(window).scroll(function (event) {
 		    document.querySelector('.animate-test').style.top = '0!important'
 		});
