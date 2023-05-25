@@ -228,6 +228,8 @@ daybreak.router.useScript(()=>{
 	}
 	const resetHero = animateInHero();
 	
+	document.querySelector('.content').style.transform = "translateY(-20vh)"
+	
 	document.querySelectorAll('.about-carousel').forEach((element, i) => {
 	  
 	  let isDown = false;
