@@ -35,7 +35,7 @@ daybreak.router.useScript(()=>{
 		$(window).scroll(function (event) {
 		    document.querySelector('.animate-test').style.top = '0!important'
 		});
-		document.querySelector('.nav-container').classList.add("dark","transform")
+		document.querySelector('.nav-container').classList.add("transform")
 		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
 		document.querySelector('.nav-container').classList.remove("nav-home")
 		document.querySelector('.nav-test').classList.add("close")
