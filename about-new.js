@@ -40,6 +40,7 @@ daybreak.router.useScript(()=>{
 // 		$(window).scroll(function (event) {
 // 		    document.querySelector('.animate-test').style.top = '0!important'
 // 		});
+		document.querySelector('.about-content').classList.add("auto")
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.footer').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark","transform")
@@ -216,6 +217,7 @@ daybreak.router.useScript(()=>{
 // 				document.querySelector('.content').style.transform = 'translateY(40vh)'
 // 				document.querySelector('.animate-test').classList.remove('fuck')
 				document.querySelector('.footer').classList.remove("dark")
+				document.querySelector('.about-content').classList.remove("auto")
 				clearInterval(myInterval);
 				clearTimeout(one);
 				clearTimeout(two);
