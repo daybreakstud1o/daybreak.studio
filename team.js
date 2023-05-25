@@ -27,7 +27,7 @@ daybreak.router.useScript(()=>{
 	function animateInHero() {
 		var body = document.body,
 		    html = document.documentElement;
-
+		
 		var windowHeight = Math.max( body.scrollHeight, body.offsetHeight, 
 		    			html.clientHeight, html.scrollHeight, html.offsetHeight );
 		document.querySelector('.nav-test').style.height = windowHeight + 'px'
@@ -35,6 +35,11 @@ daybreak.router.useScript(()=>{
 		$(window).scroll(function (event) {
 		    document.querySelector('.animate-test').style.top = '0!important'
 		});
+		
+		document.querySelector('.background').classList.remove("dark")
+		document.querySelector('.nav-container').classList.remove("dark")
+		document.querySelector('.nav-test').classList.remove("dark")
+		
 		document.querySelector('.nav-container').classList.add("transform")
 		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
 		document.querySelector('.nav-container').classList.remove("nav-home")
