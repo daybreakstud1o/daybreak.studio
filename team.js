@@ -69,12 +69,12 @@ daybreak.router.useScript(()=>{
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 				})
-				document.querySelector('.background').classList.remove("dark")
-				document.querySelector('.nav-container').classList.remove("dark","transform")
-				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
-				document.querySelector('.nav-test').classList.remove("close","dark")
-				document.querySelector('.content').style.transform = 'translateY(40vh)'
-				document.querySelector('.animate-test').classList.remove('fuck')
+// 				document.querySelector('.background').classList.remove("dark")
+// 				document.querySelector('.nav-container').classList.remove("dark","transform")
+// 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
+// 				document.querySelector('.nav-test').classList.remove("close","dark")
+// 				document.querySelector('.content').style.transform = 'translateY(40vh)'
+// 				document.querySelector('.animate-test').classList.remove('fuck')
 		}
 	}
 	const resetHero = animateInHero();
