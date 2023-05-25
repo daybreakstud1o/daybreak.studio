@@ -11,7 +11,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
 		document.querySelector('.nav-test').classList.remove("close","dark")
 		document.querySelector('.content').style.transform = 'translateY(40vh)'
-		document.querySelector('.animate-test').classList.remove('fuck')
+// 		document.querySelector('.animate-test').classList.remove('fuck')
 		const padTop = []
 		setTimeout(function() {
 			document.querySelector('.nav-test').classList.remove("home-load")
