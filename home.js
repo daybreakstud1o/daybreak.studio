@@ -7,6 +7,7 @@ daybreak.router.useScript(()=>{
 	function animateInHero() {
 		document.querySelector('.background').classList.remove("dark")
 		document.querySelector('.nav-container').classList.remove("dark","transform")
+		document.querySelector('.nav-container').classList.add("nav-home")
 		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
 		document.querySelector('.nav-test').classList.remove("close","dark")
 		document.querySelector('.content').style.transform = 'translateY(40vh)'
@@ -15,7 +16,6 @@ daybreak.router.useScript(()=>{
 		setTimeout(function() {
 			document.querySelector('.nav-test').classList.remove("home-load")
 		}, 600);
-		document.querySelector('.nav-container').classList.add("nav-home")
 		//document.querySelector('#real-nav').style.top = '400px'
 		$(window).scroll(function (event) {
 // 		    if(document.querySelector('#real-nav').offsetTop <= 0) {
