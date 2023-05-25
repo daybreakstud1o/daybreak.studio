@@ -41,6 +41,7 @@ daybreak.router.useScript(()=>{
 		    document.querySelector('.animate-test').style.top = '0!important'
 		});
 		document.querySelector('.background').classList.add("dark")
+		document.querySelector('.footer').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark","transform")
 		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
 		document.querySelector('.nav-container').classList.remove("nav-home")
