@@ -36,7 +36,7 @@ daybreak.router.useScript(()=>{
 // 		    			html.clientHeight, html.scrollHeight, html.offsetHeight );
 // 		document.querySelector('.nav-test').style.height = windowHeight + 'px'
 //		document.querySelector('.animate-test').style.top = '0!important'
-		document.querySelector('.animate-test').classList.add('fuck')
+//		document.querySelector('.animate-test').classList.add('fuck')
 		$(window).scroll(function (event) {
 		    document.querySelector('.animate-test').style.top = '0!important'
 		});
