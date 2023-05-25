@@ -17,18 +17,18 @@ daybreak.router.useScript(()=>{
 			document.querySelector('.nav-test').classList.remove("home-load")
 		}, 600);
 		//document.querySelector('#real-nav').style.top = '400px'
-		$(window).scroll(function (event) {
+//		$(window).scroll(function (event) {
 // 		    if(document.querySelector('#real-nav').offsetTop <= 0) {
 // 			console.log('fixed')
 // 		    } else if(document.querySelector('#real-nav').offsetTop > 0) {
 // 		   	var scroll = 400 - $(window).scrollTop()
 // 		    	document.querySelector('#real-nav').style.top = scroll + 'px'
-  			var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
+//  			var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
 // 			var navWidth = document.querySelector('#sticky-nav').getBoundingClientRect().width
- 			document.querySelector('.animate-test').style.top = navTop + 'px'
+// 			document.querySelector('.animate-test').style.top = navTop + 'px'
 // 			document.querySelector('#real-nav1').style.width = navWidth + 'px'
 // 		    }
-		});
+//		});
 		
 // 		setTimeout(function() {
 // 			document.querySelector('.daybreak-info').style.display = 'none';
