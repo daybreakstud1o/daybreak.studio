@@ -43,7 +43,9 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.footer').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark","transform")
-		document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized")
+		setTimeout(function() {
+			document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized");
+		}, 450);
 		document.querySelector('.nav-container').classList.remove("nav-home")
 		document.querySelector('.nav-test').classList.add("close","dark")
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
