@@ -10,14 +10,16 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-container').classList.add("nav-home")
 		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
 		document.querySelector('.nav-test').classList.remove("close","dark")
-		document.querySelector('#real-nav1').style.height = "108px";
+		setTimeout(function() {
+			document.querySelector('#real-nav1').style.height = "108px"
+		}, 600);
 		
 //		document.querySelector('.content').style.transform = 'translateY(40vh)'
 // 		document.querySelector('.animate-test').classList.remove('fuck')
-		const padTop = []
-		setTimeout(function() {
-			document.querySelector('.nav-test').classList.remove("home-load")
-		}, 600);
+// 		const padTop = []
+// 		setTimeout(function() {
+// 			document.querySelector('.nav-test').classList.remove("home-load")
+// 		}, 600);
 		//document.querySelector('#real-nav').style.top = '400px'
 //		$(window).scroll(function (event) {
 // 		    if(document.querySelector('#real-nav').offsetTop <= 0) {
