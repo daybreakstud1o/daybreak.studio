@@ -10,6 +10,8 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-container').classList.add("nav-home")
 		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
 		document.querySelector('.nav-test').classList.remove("close","dark")
+		document.querySelector('#real-nav1').classList.remove("full-height")
+		
 //		document.querySelector('.content').style.transform = 'translateY(40vh)'
 // 		document.querySelector('.animate-test').classList.remove('fuck')
 		const padTop = []
