@@ -8,9 +8,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.background').classList.remove("dark")
 		document.querySelector('.nav-container').classList.remove("dark","transform")
 		document.querySelector('.nav-container').classList.add("nav-home")
-		setTimeout(function() {
-			document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
-		}, 450);
+		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
 		document.querySelector('.nav-test').classList.remove("close","dark")
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.height = "108px"
