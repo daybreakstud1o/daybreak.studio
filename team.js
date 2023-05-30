@@ -1,26 +1,26 @@
-function breakIntoSpan(baseElm) {
-	const content = baseElm.innerHTML;
-	const words = content.split(" ");
-	const wordSpans = words.map((word)=>{
-		const spanElm = document.createElement("span");
-		span.innerHTML = word;
-		return spanElm;
-	})
-	return wordSpans;
-}
+// function breakIntoSpan(baseElm) {
+// 	const content = baseElm.innerHTML;
+// 	const words = content.split(" ");
+// 	const wordSpans = words.map((word)=>{
+// 		const spanElm = document.createElement("span");
+// 		span.innerHTML = word;
+// 		return spanElm;
+// 	})
+// 	return wordSpans;
+// }
 
-function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.display = "block"}}) {
-	for (let i = 0; i<wordElms.length; i++) {
-		const elm = wordElms[i];
-		setTimeout(()=> {
-			styler(elm.style);
-		}, i * delay);
-	}
-}
+// function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.display = "block"}}) {
+// 	for (let i = 0; i<wordElms.length; i++) {
+// 		const elm = wordElms[i];
+// 		setTimeout(()=> {
+// 			styler(elm.style);
+// 		}, i * delay);
+// 	}
+// }
 
-function test() {
+// function test() {
 
-}
+// }
 
 daybreak.router.useScript(()=>{
 	console.log("enter team");
@@ -48,7 +48,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.add("close")
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
-    let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
+    		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
 		document.querySelectorAll('.about-carousel > *').forEach((element) => {
 		  element.setAttribute("sizes", "")
 		});
