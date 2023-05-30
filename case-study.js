@@ -23,7 +23,7 @@
 // }
 
 daybreak.router.useScript(()=>{
-	console.log("enter team");
+	console.log("enter case study");
 	function animateInHero() {
 		var body = document.body,
 		    html = document.documentElement;
