@@ -1,275 +1,334 @@
+// function breakIntoSpan(baseElm) {
+// 	const content = baseElm.innerHTML;
+// 	const words = content.split(" ");
+// 	const wordSpans = words.map((word)=>{
+// 		const spanElm = document.createElement("span");
+// 		span.innerHTML = word;
+// 		return spanElm;
+// 	})
+// 	return wordSpans;
+// }
+
+// function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.display = "block"}}) {
+// 	for (let i = 0; i<wordElms.length; i++) {
+// 		const elm = wordElms[i];
+// 		setTimeout(()=> {
+// 			styler(elm.style);
+// 		}, i * delay);
+// 	}
+// }
+
+// function test() {
+
+// }
+
 daybreak.router.useScript(()=>{
+	console.log("enter team");
+	function animateInHero() {
+		var body = document.body,
+		    html = document.documentElement;
+		
+		var windowHeight = Math.max( body.scrollHeight, body.offsetHeight, 
+		    			html.clientHeight, html.scrollHeight, html.offsetHeight );
+		document.querySelector('.nav-test').style.height = windowHeight + 'px'
+//		document.querySelector('.animate-test').classList.add('fuck')
+// 		$(window).scroll(function (event) {
+// 		    document.querySelector('.animate-test').style.top = '0!important'
+// 		});
+		
+		document.querySelector('.background').classList.remove("dark")
+		document.querySelector('.nav-container').classList.remove("dark")
+		document.querySelector('.nav-test').classList.remove("dark")
+		
+		document.querySelector('.nav-container').classList.add("transform")
+		setTimeout(function() {
+			document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized");
+		}, 450);
+		document.querySelector('.nav-container').classList.remove("nav-home")
+		document.querySelector('.nav-test').classList.add("close", "casestudy")    
+		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 
-  // add the basic case study class
-  document.body.classList.add("case-study");
+		
+		
+// 		setTimeout(function() {
+// 			var elementDelay = 250;
+// 			for (let i = 0; i < document.querySelectorAll('.about-hero-split-item').length; i++) {
+// 				document.querySelectorAll('.about-hero-split-item').forEach((element, i) => {
+// 					setTimeout(function () {
+// 						element.style.opacity = "1";
+// 					}, i * elementDelay);
+// 				});
+// 			}
+// 		}, 200);
 
+		return ()=>{
+				
+				// delay one frame so that transition delay is in effect
+				window.requestAnimationFrame(()=>{
+				})
+// 				document.querySelector('.background').classList.remove("dark")
+// 				document.querySelector('.nav-container').classList.remove("dark","transform")
+// 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
+// 				document.querySelector('.nav-test').classList.remove("close","dark")
+// 				document.querySelector('.content').style.transform = 'translateY(40vh)'
+// 				document.querySelector('.animate-test').classList.remove('fuck')
+		}
+	}
+	const resetHero = animateInHero();
+	
+	document.querySelectorAll('.about-carousel').forEach((element, i) => {
+	  
+	  let isDown = false;
+	  let startX;
+	  let scrollLeft;
 
-  const DESKTOP_ONLY = "transition-desktop-only";
-  const MOBILE_ONLY = "transition-mobile-only";
-
-  const elementDelay = 60;
-
-  function splitIntoSpans(elm) {
-    if (elm.childElementCount !== 0) return ()=>{};
-    
-    const wordsStr = (()=> {
-      const splitText = elm.innerHTML.split(" ");
-      if(splitText.length === 0) {
-        return elm.innerHTML;
-      }
-      return splitText;
-    })();
-    
-    elm.innerHTML = "";
-    Array.from(wordsStr).forEach((str,i,arr)=>{
-      const span = document.createElement("span");
-      span.style.display = "none";
-      span.style.whiteSpace = "break-spaces";
-      
-      if(elm.classList.contains(DESKTOP_ONLY))
-        span.classList.add(DESKTOP_ONLY);
-
-      if(elm.classList.contains(MOBILE_ONLY))
-        span.classList.add(MOBILE_ONLY);
-
-      const isLastElm = i+1 === arr.length;
-      if(isLastElm) {
-        span.innerText = str;
-      } else {
-        span.innerText = `${str} `; // str + "&nbsp;";
-      }
-      elm.appendChild(span);
-    });
-
-    return ()=>{
-      Array.from(elm.children).forEach((span)=>{
-        if(span.style.display !== "inline-block"){
-          span.style.visibility = "visible";
-          span.style.display = "inline-block";
-        }
-      })
-    }
-  }
-
-  const allHeaders = Array.from(document.querySelectorAll(".heading-1"));
-  const showSpanFunctions = allHeaders.map((headerElm)=>{
-    return splitIntoSpans(headerElm);
-  })
-
-   // clone fixed nodes out of the current 
-  function enableFixedElm(elms) {
-    elms.forEach((elm)=>{
-      const newElm = elm.cloneNode(true);
-      newElm.remove();
-      document.body.appendChild(newElm);
-    });
-  }
-  const scrollFixedElm = document.querySelectorAll(".fixed, .next-up-image");
-  enableFixedElm(scrollFixedElm);
-
-  // Fix nav sticky position
-  const stickyNavElm = document.querySelector("#fsdfsdfsdf");
-  function enableNavStickyElm(originalElm) {
-    originalElm.style.opacity = "0";
-    
-    const newElm = originalElm.cloneNode(true);
-    originalElm.removeAttribute("id");
-    document.body.appendChild(newElm);
-
-    newElm.style.position = "fixed";
-    newElm.style.opacity = "1";
-    newElm.style.visibility = "visible";
-
-    newElm.classList.add("sticky-info");
-
-    const getChildIndex = (element)=>Array.from(element.parentNode.children).indexOf(element);
-    const observer = new MutationObserver((mutationList, observer) => {
-      for (const mutation of mutationList) {
-        if (mutation.attributeName !== "style") return; 
-        if (mutation.target.style.visibility === "visible") {
-          requestAnimationFrame(()=>{
-            const index = getChildIndex(mutation.target);
-            newElm.children[index].style.cssText = mutation.target.style.cssText;
-          })
-        }
-      }
-    });
-    observer.observe(originalElm, { attributes: true, attributeFilter: ["style"], childList: true, subtree:true });
+	  element.addEventListener('mousedown', (e) => {
+	    isDown = true;
+	    //slider.classList.add('active');
+	    startX = e.pageX - element.offsetLeft;
+	    scrollLeft = element.scrollLeft;
+	    cancelMomentumTracking();
+	  });
 
 
-    let originalBounds = originalElm.getBoundingClientRect();
-    const matchOriginalElmPosition = ()=>{
-      originalBounds = originalElm.getBoundingClientRect();
-      newElm.style.left = originalBounds.left + "px";
-      newElm.style.top = originalBounds.top + "px";
-    }
-    matchOriginalElmPosition();
+	  element.addEventListener('mouseleave', () => {
+	    isDown = false;
+	    //slider.classList.remove('active');
+	  });
 
 
-    let inScrolledState = false;
-    const enterScrolledState = ()=> {
-      if(inScrolledState) return;
-      
-      newElm.classList.add("sticky-info--scrolled");
-      
-      inScrolledState = true;
-    }
-    const exitScrolledState = ()=> {
-      if(!inScrolledState) return;
-  
-      newElm.classList.remove("sticky-info--scrolled");
-
-      inScrolledState = false;
-    }
-
-    const matchOriginalElmScroll = (scroll)=> {
-      const originalElmTop = parseFloat(originalBounds.top);
-      
-      if(scroll > originalElmTop) {
-        const scrollOffset = -originalElmTop;
-        newElm.style.transform = `translateY(${scrollOffset}px)`;
-        enterScrolledState();
-      } else {
-        const scrollOffset = -scroll;
-        newElm.style.transform = `translateY(${scrollOffset}px)`;
-        exitScrolledState();
-      }
-    }
-
-    
-    daybreak.scroll.observeScroll(matchOriginalElmScroll);
-    window.addEventListener("resize", matchOriginalElmPosition);
-    
-    return ()=> {
-      observer.disconnect();
-      daybreak.scroll.unobserveScroll(matchOriginalElmScroll);
-      window.removeEventListener("resize", matchOriginalElmPosition);
-    }
-  }
-  const cleanupNavStickyElm = enableNavStickyElm(stickyNavElm);
+	  element.addEventListener('mouseup', () => {
+	    isDown = false;
+	    //slider.classList.remove('active');
+	    beginMomentumTracking();
+	  });
 
 
-  // if ($(window).width() > 992) {
-    // enter top bar
-  const allMainContainers = Array.from(document.querySelectorAll(".main-container"));
-  const mainContainerInView = allMainContainers.filter((elm)=> {
-    return daybreak.scroll.isInViewport(elm);
-  })
+	  element.addEventListener('mousemove', (e) => {
+	    if(!isDown) return;
+	    e.preventDefault();
+	    const x = e.pageX - element.offsetLeft;
+	    const walk = (x - startX) * 1; //scroll-fast
+	    var prevScrollLeft = element.scrollLeft;
+	    element.scrollLeft = scrollLeft - walk;
+	    velX = element.scrollLeft - prevScrollLeft;
+	  });
 
-  const excludeClass = ({selectors=[], exclude})=>{
-    return selectors.map((selector)=>{
-      return `${selector}:not(${exclude}, * > ${exclude})`
-    }).join(",");
-  } 
+	  // Momentum 
 
-  const isMobile = window.innerWidth < 992;
+	  var velX = 0;
+	  var momentumID;
 
-  const elmsEnterAnimation = mainContainerInView.flatMap((container)=> {
-    const selector = excludeClass({
-      selectors: ["div:only-child", "img", "span", ".body-founders"], 
-      exclude: isMobile? `.${DESKTOP_ONLY}` : `.${MOBILE_ONLY}`
-    });
-    const elmsToEnter = Array.from(container.querySelectorAll(selector));
-    return elmsToEnter.map((elm)=> ()=>{
+	  element.addEventListener('wheel', (e) => {
+	    cancelMomentumTracking();
+	  });  
 
-      // use different entry method base on their
-      // element tag name 
-      if(elm.tagName === "SPAN") {
-        elm.style.display = "inline-block";
-        elm.style.visibility = "visible";
-        return;
-      }
-      elm.style.visibility = "visible";
-    })
-  })
-  elmsEnterAnimation.forEach((animation,i)=>{
-    setTimeout(animation, i * elementDelay);
-  });
+	  function beginMomentumTracking(){
+	    cancelMomentumTracking();
+	    momentumID = requestAnimationFrame(momentumLoop);
+	  }
+	  function cancelMomentumTracking(){
+	    cancelAnimationFrame(momentumID);
+	  }
+	  function momentumLoop(){
+	    element.scrollLeft += velX;
+	    velX *= 0.97; 
+	    if (Math.abs(velX) > 0.5){
+	      momentumID = requestAnimationFrame(momentumLoop);
+	    }
+	  }
+	});
+	  
 
-  const animationDoneTime = elementDelay * elmsEnterAnimation.length;
-  setTimeout(()=>{
-    requestAnimationFrame(()=>{
-      document.querySelectorAll(".main-container *:only-child, .body-founders").forEach((elm)=>{
-        elm.style.visibility = "visible";
-      });
-      showSpanFunctions.forEach((showSpanCallbacks)=>showSpanCallbacks());
-    })
-  },animationDoneTime);
+	function setupLogoMinimizeOnScroll() {
+		function minimizeLogo() {
+			document.querySelector('.nav-logo').classList.remove("nav-logo--expanded")
+		}
+		function maximizeLogo() {
+			document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
+		}
 
-  function isInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      return (
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+		const handleScroll =(scroll)=>{
+			// const scroll = window.scrollY;
+			if (scroll >= 100) {
+					minimizeLogo()
+			} else if (scroll < 100) {
+					maximizeLogo()
+			}
+		}
+		// window.addEventListener("scroll", handleScroll);
+		daybreak.scroll.observeScroll(handleScroll)
 
-      );
-  }
+		return ()=>{
+			minimizeLogo();
+			daybreak.scroll.unobserveScroll(handleScroll)
+			// window.removeEventListener("scroll", handleScroll);
+		}
+	}
+	const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
+		
+	// TODO: create transition
+	/* 
+	$('#home-link, #contact-link').click(function(e) {
+		e.preventDefault();
+		var linkUrl = $(this).attr('href');
+		setTimeout(function(url) { window.location = url; }, 1000, linkUrl);
+	});
+	$( "#home-link, #contact-link" ).click(function() {
+		document.querySelector('.nav-logo').style.width = '131px';
+		document.querySelector('.nav-left .daybreak-info').style.display = 'block';
+		document.querySelector('.nav-left .cities-info').style.display = 'block';
+		document.querySelector('.nav-left .daybreak-info').style.opacity = '1';
+		document.querySelector('.nav-left .cities-info').style.opacity = '1';
+	});*/
 
-  const box = document.querySelector('#next-up-show');
-  
-  const handlePageScroll = (scrollPosition)=> {
-    if (scrollPosition > 5) {
-      document.querySelector("#case-top-bar-title").style.opacity = "0";
-      document.querySelector("#case-top-bar-title").style.pointerEvents = "none";
-      document.querySelector("#project-expertise").classList.add("mobile-disappear");
-    } else {
-      document.querySelector("#case-top-bar-title").style.opacity = "1";
-      document.querySelector("#case-top-bar-title").style.pointerEvents = "auto";
-      document.querySelector("#project-expertise").classList.remove("mobile-disappear");
-    }
 
+ 	const {cleanupIntersectionObserver, onIntersectionChange} = createIntersectionObserver();
 
-    if (isInViewport(box) === true) {
-      document.querySelector('.next-up-overlay').style.opacity = "1";
-      var elementDelay = 250;
-      for (let i = 0; i < document.querySelectorAll('.next-up-info > div').length; i++) {
-        document.querySelectorAll('.next-up-info > div').forEach((element, i) => {
-          setTimeout(function () {
-            element.style.opacity = "1" ?? "";
-          }, i * elementDelay);
-        });
-      }
-//       setTimeout(function () {
-//         for (let i = 0; i < document.querySelectorAll('.scroll-arrows svg path').length; i++) {
-//           document.querySelectorAll('.scroll-arrows svg path').forEach((element, i) => {
-//             setTimeout(function () {
-//               element.style.opacity = "1";
-//             }, i * elementDelay);
-//           });
-//         }
-//       }, document.querySelectorAll('.next-up-info > div').length * elementDelay);
-    } else if (isInViewport(box) === false) {
-      document.querySelector('.next-up-overlay').style.opacity = "0";
-      for (let i = 0; i < document.querySelectorAll('.next-up-info > div').length; i++) {
-        document.querySelectorAll('.next-up-info > div')[i].style.opacity = "0";
-      }
-//       for (let i = 0; i < document.querySelectorAll('.scroll-arrows svg path').length; i++) {
-//         document.querySelectorAll('.scroll-arrows svg path')[i].style.opacity = "0.5";
-//       }
-    }
-  }
+ 	const mobileBreakpoint = 767;
 
-  daybreak.scroll.observeScroll(handlePageScroll);  
+	const cleanupDocumentSticky = enableAllStickyPosition();	
+	function enableAllStickyPosition() {
+		const stickyElm = document.querySelectorAll(".sticky");
 
-//   $( ".close-casestudy" ).mouseover(function() {
-//     document.querySelector(".back-icon").style.visibility = "visible";
-//   });
-
-//   $( ".close-casestudy" ).mouseout(function() {
-//     document.querySelector(".back-icon").style.visibility = "hidden";
-//   });
-
-  return ({beginTransition, onAbort})=>{
-    daybreak.scroll.unobserveScroll(handlePageScroll);
-    cleanupNavStickyElm();
-
-    const { finish } = beginTransition();
-    document.body.classList.remove("case-study");
-    finish();
-    onAbort(()=>{
-      document.body.classList.add("case-study");
-    })
-  }
+		const cleanups = Array.from(stickyElm).map((elm)=>{
+			return enableStickyPosition(elm);
+		})
+		
+		return ()=> cleanups.forEach((cleanup)=>cleanup());
+	}
+	
+	
+	return ()=>{
+		console.log("leaving about");
+		cleanupLogoMinimizeOnScroll();
+		resetHero();
+		cleanupIntersectionObserver();
+		cleanupDocumentSticky();
+	}
 })
+
+function enableStickyPosition(element) {
+
+	const computedElmStyle = window.getComputedStyle(element, null);
+
+	const stickyTop = parseInt(computedElmStyle.top);
+	const elementHeight = parseInt(computedElmStyle.height);
+
+	const stickyObserver = createIntersectionObserver({
+		rootMargin: `0px 0px 0px 0px`,
+		threshold: [0.0, 1.0]
+	});
+
+	// start calculating scroll when the element on screen
+	const handleScroll = (scrollProgress)=>{
+		const parentOffsetBound = element.parentElement.getBoundingClientRect();
+
+		const stickyOffsetValue = -parentOffsetBound.top + stickyTop;
+		const stickyBottomPosition = stickyOffsetValue + elementHeight;
+
+		// before the sticky area
+		if(stickyOffsetValue < 0) {
+			// reset when before the sticking point
+			element.style.transform = `translateY(0px)`;
+			return;
+		} 
+
+		// over the sticky area
+		if(stickyBottomPosition > parentOffsetBound.height) {
+			// allow the element to scroll like other element,
+			// aka not doing any compensation
+			return;
+		}
+		
+		// withing the sticky area
+		// compensate the y position to make it always in one position
+		element.style.transform = `translateY(${stickyOffsetValue}px)`;
+	}
+
+	stickyObserver.onIntersectionChange(element, (entry)=>{
+
+		if(entry.intersectionRatio === 1) {
+			daybreak.scroll.observeScroll(handleScroll);
+		}
+
+		if(entry.intersectionRatio === 0) {
+			daybreak.scroll.unobserveScroll(handleScroll);
+		}
+	})
+
+	return ()=>{
+		stickyObserver.cleanupIntersectionObserver()
+	}
+}
+
+
+function createIntersectionObserver(config = {rootMargin: '0px', threshold: 1.0}) {
+	
+	let options = {
+		root: document.querySelector('.scroll-container'),
+		rootMargin: (config && config.rootMargin) || "0px",
+		threshold: (config && config.threshold) || 1.0
+	}
+	let entryCallbackCount = 0;
+	const elementEntryCallback = {};
+	const handleIntersectionChange = (entries, observer) => {
+		entries.forEach((entry) => {
+			// Each entry describes an intersection change for one observed
+			// target element:
+			//   entry.boundingClientRect
+			//   entry.intersectionRatio
+			//   entry.intersectionRect
+			//   entry.isIntersecting
+			//   entry.rootBounds
+			//   entry.target
+			//   entry.time
+			const intersectionId = entry.target.getAttribute("intersection-observer-id");
+			elementEntryCallback[intersectionId](entry);
+		});
+	};
+	let observer = new IntersectionObserver(handleIntersectionChange, options);
+	
+	let abortCallbacks = []
+	function onIntersectionChange(element, callback) {
+		const abort = onFullyLoaded(()=> {
+			element.setAttribute("intersection-observer-id", entryCallbackCount);
+			elementEntryCallback[entryCallbackCount] = callback;
+			observer.observe(element);
+			entryCallbackCount++;
+		})
+		abortCallbacks.push(abort);
+	}
+
+	function cleanupIntersectionObserver() {
+		observer.disconnect();
+		abortCallbacks.forEach((abort)=>abort());
+	}
+
+	return {
+		onIntersectionChange,
+		cleanupIntersectionObserver
+	}
+}
+
+function onFullyLoaded(callback) {
+	let aborted = false;
+	const abort = ()=> {
+		aborted = true;
+	};
+	const invoke = ()=> {
+		callback();
+	}
+	
+	if (document.readyState !== "complete") {
+		window.addEventListener("load", () => {
+			if(!aborted) 
+				invoke()
+		});
+	} else {
+		//invoke right if body is loaded
+		invoke();
+	}
+
+	return abort;
+}
