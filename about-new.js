@@ -195,16 +195,16 @@ daybreak.router.useScript(()=>{
 		
 		
 		
-		setTimeout(function() {
-			var elementDelay = 250;
-			for (let i = 0; i < document.querySelectorAll('.about-hero-split-item').length; i++) {
-				document.querySelectorAll('.about-hero-split-item').forEach((element, i) => {
-					setTimeout(function () {
-						element.style.opacity = "1";
-					}, i * elementDelay);
-				});
-			}
-		}, 200);
+// 		setTimeout(function() {
+// 			var elementDelay = 250;
+// 			for (let i = 0; i < document.querySelectorAll('.about-hero-split-item').length; i++) {
+// 				document.querySelectorAll('.about-hero-split-item').forEach((element, i) => {
+// 					setTimeout(function () {
+// 						element.style.opacity = "1";
+// 					}, i * elementDelay);
+// 				});
+// 			}
+// 		}, 200);
 
 		return ()=>{
 				
