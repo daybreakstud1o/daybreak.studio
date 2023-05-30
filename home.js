@@ -6,7 +6,7 @@ daybreak.router.useScript(()=>{
 //   	document.documentElement.scrollTop = 0;
 	function animateInHero() {
 		document.querySelector('.background').classList.remove("dark")
-		document.querySelector('.nav-container').classList.remove("dark","transform")
+		document.querySelector('.nav-container').classList.remove("dark","transform","casestudy-bg")
 		document.querySelector('.nav-container').classList.add("nav-home")
 		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
 		document.querySelector('.nav-test').classList.remove("close","dark","casestudy")
