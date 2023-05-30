@@ -1,26 +1,26 @@
-function breakIntoSpan(baseElm) {
-	const content = baseElm.innerHTML;
-	const words = content.split(" ");
-	const wordSpans = words.map((word)=>{
-		const spanElm = document.createElement("span");
-		span.innerHTML = word;
-		return spanElm;
-	})
-	return wordSpans;
-}
+// function breakIntoSpan(baseElm) {
+// 	const content = baseElm.innerHTML;
+// 	const words = content.split(" ");
+// 	const wordSpans = words.map((word)=>{
+// 		const spanElm = document.createElement("span");
+// 		span.innerHTML = word;
+// 		return spanElm;
+// 	})
+// 	return wordSpans;
+// }
 
-function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.display = "block"}}) {
-	for (let i = 0; i<wordElms.length; i++) {
-		const elm = wordElms[i];
-		setTimeout(()=> {
-			styler(elm.style);
-		}, i * delay);
-	}
-}
+// function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.display = "block"}}) {
+// 	for (let i = 0; i<wordElms.length; i++) {
+// 		const elm = wordElms[i];
+// 		setTimeout(()=> {
+// 			styler(elm.style);
+// 		}, i * delay);
+// 	}
+// }
 
-function test() {
+// function test() {
 
-}
+// }
 //		document.querySelector('.animate-test').style.top = '0!important'
 
 daybreak.router.useScript(()=>{
