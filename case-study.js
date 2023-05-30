@@ -140,32 +140,32 @@ daybreak.router.useScript(()=>{
 	});
 	  
 
-	function setupLogoMinimizeOnScroll() {
-		function minimizeLogo() {
-			document.querySelector('.nav-logo').classList.remove("nav-logo--expanded")
-		}
-		function maximizeLogo() {
-			document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
-		}
+// 	function setupLogoMinimizeOnScroll() {
+// 		function minimizeLogo() {
+// 			document.querySelector('.nav-logo').classList.remove("nav-logo--expanded")
+// 		}
+// 		function maximizeLogo() {
+// 			document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
+// 		}
 
-		const handleScroll =(scroll)=>{
-			// const scroll = window.scrollY;
-			if (scroll >= 100) {
-					minimizeLogo()
-			} else if (scroll < 100) {
-					maximizeLogo()
-			}
-		}
-		// window.addEventListener("scroll", handleScroll);
-		daybreak.scroll.observeScroll(handleScroll)
+// 		const handleScroll =(scroll)=>{
+// 			// const scroll = window.scrollY;
+// 			if (scroll >= 100) {
+// 					minimizeLogo()
+// 			} else if (scroll < 100) {
+// 					maximizeLogo()
+// 			}
+// 		}
+// 		// window.addEventListener("scroll", handleScroll);
+// 		daybreak.scroll.observeScroll(handleScroll)
 
-		return ()=>{
-			minimizeLogo();
-			daybreak.scroll.unobserveScroll(handleScroll)
-			// window.removeEventListener("scroll", handleScroll);
-		}
-	}
-	const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
+// 		return ()=>{
+// 			minimizeLogo();
+// 			daybreak.scroll.unobserveScroll(handleScroll)
+// 			// window.removeEventListener("scroll", handleScroll);
+// 		}
+// 	}
+// 	const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
 		
 	// TODO: create transition
 	/* 
