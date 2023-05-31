@@ -233,21 +233,6 @@ daybreak.router.useScript(()=>{
 // 		document.querySelector('.content').classList.remove("hide")
 // 	}, 100);
 	
-	document.addEventListener('DOMContentLoaded', function() {
-	  window.onscroll = function() {myFunction()};
-
-	  var navbar = document.querySelector("#real-nav1");
-	  var sticky = navbar.offsetTop;
-
-	  function myFunction() {
-	    console.log(sticky+", "+window.pageYOffset)
-	    if (window.pageYOffset >= sticky) {
-	      navbar.classList.add("sticky")
-	    } else {
-	      navbar.classList.remove("sticky");
-	    }
-	  }
-	});
 	
 	document.querySelectorAll('.about-carousel').forEach((element, i) => {
 	  
