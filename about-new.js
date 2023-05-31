@@ -218,7 +218,6 @@ daybreak.router.useScript(()=>{
 // 				document.querySelector('.content').style.transform = 'translateY(40vh)'
 // 				document.querySelector('.animate-test').classList.remove('fuck')
 				document.querySelector('.footer').classList.remove("dark")
-				document.querySelector('#real-nav1').classList.remove("sticky")
 				clearInterval(myInterval);
 				clearTimeout(one);
 				clearTimeout(two);
