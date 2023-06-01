@@ -25,19 +25,19 @@ daybreak.router.useScript(()=>{
 		  element.style.minWidth = small
 		  element.style.opacity = '1'
 		  element.style.pointerEvents = 'all'
-		  //element.style.height = '70vw'
+		  element.style.height = '50vw'
 		});
 		document.querySelectorAll('.thumbnail-row .big').forEach((element) => {
 		  element.style.minWidth = big
 		  element.style.opacity = '1'
 		  element.style.pointerEvents = 'all'
-		  //element.style.height = '70vw'
+		  element.style.height = '50vw'
 		});
 		document.querySelectorAll('.thumbnail-row .half').forEach((element) => {
 		  element.style.minWidth = half
 		  element.style.opacity = '1'
 		  element.style.pointerEvents = 'all'
-		  //element.style.height = '70vw'
+		  element.style.height = '50vw'
 		});
 		
 //		document.querySelector('.content').style.transform = 'translateY(40vh)'
