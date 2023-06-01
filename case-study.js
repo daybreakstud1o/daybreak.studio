@@ -54,10 +54,10 @@ daybreak.router.useScript(()=>{
 		let full = document.querySelector('#full').offsetWidth + 'px'
 		document.getElementById(project).style.minWidth = full
 		document.getElementById(project).style.height = '70vw'
-		document.getElementById(project).style.pointerEvents = 'none'
 		
 		document.querySelectorAll('.thumbnail').forEach((element) => {
 		  element.style.opacity = '0'
+		  element.style.pointerEvents = 'none'
 		});
 		document.getElementById(project).style.opacity = '1'
 		
