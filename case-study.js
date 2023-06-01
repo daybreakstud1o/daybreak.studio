@@ -53,7 +53,7 @@ daybreak.router.useScript(()=>{
 		console.log(project)
 
 		let full = document.querySelector('#full').offsetWidth + 'px'
-		document.querySelectorAll('.thumbnail-row #'+project).style.minWidth = full
+		document.querySelectorAll('.thumbnail#'+project).style.minWidth = full
 		
 
 		
