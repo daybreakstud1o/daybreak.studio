@@ -47,6 +47,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-container').classList.remove("nav-home")
 		document.querySelector('.nav-test').classList.add("close", "casestudy")    
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
+		const currentUrl = window.location.href;
 		console.log(currentUrl);
 
 		let full = document.querySelector('#full').offsetWidth + 'px'
