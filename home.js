@@ -14,6 +14,22 @@ daybreak.router.useScript(()=>{
 			document.querySelector('#real-nav1').style.height = "108px"
 		}, 600);
 		
+		let small = document.querySelector('#small').offsetWidth + 'px'
+    		let big = document.querySelector('#big').offsetWidth + 'px'
+    		let half = document.querySelector('#half').offsetWidth + 'px'
+// 		document.querySelectorAll('.about-carousel > *').forEach((element) => {
+// 		  element.setAttribute("sizes", "")
+// 		});
+		document.querySelectorAll('.thumbnail-row .small').forEach((element) => {
+		  element.style.minWidth = small
+		});
+		document.querySelectorAll('.thumbnail-row .big').forEach((element) => {
+		  element.style.minWidth = big
+		});
+		document.querySelectorAll('.thumbnail-row .half').forEach((element) => {
+		  element.style.minWidth = half
+		});
+		
 //		document.querySelector('.content').style.transform = 'translateY(40vh)'
 // 		document.querySelector('.animate-test').classList.remove('fuck')
 // 		const padTop = []
