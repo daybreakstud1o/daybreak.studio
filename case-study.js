@@ -53,7 +53,7 @@ daybreak.router.useScript(()=>{
 		var project = slug[slug.length - 1]
 		let full = document.querySelector('#full').offsetWidth + 'px'
 		document.getElementById(project).style.minWidth = full
-		document.getElementById(project).classList.remove('hover-target-big')
+		document.getElementById(project).style.pointerEvents = 'none'
 		
 		document.querySelectorAll('.thumbnail').forEach((element) => {
 		  element.style.opacity = '0'
