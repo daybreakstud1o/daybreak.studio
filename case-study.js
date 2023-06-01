@@ -102,7 +102,7 @@ daybreak.router.useScript(()=>{
 		  	var topPos = currentElement.getBoundingClientRect().top
 			if (topPos <= 0) {
 				for (let i = 0; i < document.querySelectorAll(".casestudy-nav-indicator-item").length; i++) {
-					document.querySelectorAll(".casestudy-nav-indicator-item").style.opacity = '0.2'
+					document.querySelectorAll(".casestudy-nav-indicator-item")[i].style.opacity = '0.2'
 				}
 				document.querySelectorAll(".casestudy-nav-indicator-item")[index].style.opacity = '1'
 			}
