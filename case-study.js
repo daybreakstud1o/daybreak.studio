@@ -48,7 +48,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.add("close", "casestudy")    
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 		let full = document.querySelector('#full').offsetWidth + 'px'
-		document.querySelectorAll('.thumbnail-row div').forEach((element) => {
+		document.querySelectorAll('.thumbnail-row .thumbnail').forEach((element) => {
 		  element.style.minWidth = full
 		});
 
