@@ -62,7 +62,7 @@ daybreak.router.useScript(()=>{
 		});
 		document.getElementById(project).style.opacity = '1'
 		
-
+		
 		
 		
 // 		setTimeout(function() {
@@ -91,6 +91,15 @@ daybreak.router.useScript(()=>{
 		}
 	}
 	const resetHero = animateInHero();
+	
+	//function indicator() {
+		document.querySelector(".casestudy-nav-indicator").innerHTML = ''
+		document.querySelectorAll('.casestudy-container').forEach(function(currentElement, index) {
+			const navItem = document.createElement("div")
+			navItem.classList.add('casestudy-nav-indicator-item')
+			document.querySelector(".casestudy-nav-indicator").appendChild(navItem)
+		})
+	//}
 	
 	document.querySelectorAll('.about-carousel').forEach((element, i) => {
 	  
