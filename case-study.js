@@ -54,6 +54,7 @@ daybreak.router.useScript(()=>{
 		let full = document.querySelector('#full').offsetWidth + 'px'
 		document.getElementById(project).style.minWidth = full
 		document.getElementById(project).style.height = '70vw'
+		document.querySelector('.content').style.zIndex = '-1'
 		
 		document.querySelectorAll('.thumbnail').forEach((element) => {
 		  element.style.opacity = '0'
@@ -80,6 +81,7 @@ daybreak.router.useScript(()=>{
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 				})
+				document.querySelector('.content').style.zIndex = 'auto'
 // 				document.querySelector('.background').classList.remove("dark")
 // 				document.querySelector('.nav-container').classList.remove("dark","transform")
 // 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
