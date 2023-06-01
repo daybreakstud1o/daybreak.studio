@@ -50,6 +50,7 @@ daybreak.router.useScript(()=>{
 		const currentUrl = window.location.href;
 		var slug = currentUrl.split("/");
 		var project = slug[slug.length - 1]
+		console.log(project)
 
 		let full = document.querySelector('#full').offsetWidth + 'px'
 		document.querySelectorAll('.thumbnail-row #'+project).style.minWidth = full
