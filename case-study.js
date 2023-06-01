@@ -101,6 +101,7 @@ daybreak.router.useScript(()=>{
 		$( window ).on( "scroll", function() {
 		  	var topPos = currentElement.getBoundingClientRect().top
 			if (topPos <= 0) {
+				document.querySelector(".casestudy-nav-indicator div").style.opacity = '0.2'
 				document.querySelectorAll(".casestudy-nav-indicator-item")[index].style.opacity = '1'
 			}
 		} );
