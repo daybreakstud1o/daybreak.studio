@@ -49,12 +49,11 @@ daybreak.router.useScript(()=>{
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 		const currentUrl = window.location.href;
 		var slug = currentUrl.split("/");
-		console.log(slug[slug.length - 1])
+		var project = slug[slug.length - 1]
 
 		let full = document.querySelector('#full').offsetWidth + 'px'
-		document.querySelectorAll('.thumbnail-row .thumbnail').forEach((element) => {
-		  element.style.minWidth = full
-		});
+		document.querySelectorAll('.thumbnail-row #'+project).style.minWidth = full
+		
 
 		
 		
