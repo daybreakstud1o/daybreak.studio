@@ -24,17 +24,17 @@ daybreak.router.useScript(()=>{
 		document.querySelectorAll('.thumbnail-row .small').forEach((element) => {
 		  element.style.minWidth = small
 		  element.style.opacity = '1'
-		  element.classList.add('hover-target-big')
+		  element.style.pointerEvents = 'all'
 		});
 		document.querySelectorAll('.thumbnail-row .big').forEach((element) => {
 		  element.style.minWidth = big
 		  element.style.opacity = '1'
-		  element.classList.add('hover-target-big')
+		  element.style.pointerEvents = 'all'
 		});
 		document.querySelectorAll('.thumbnail-row .half').forEach((element) => {
 		  element.style.minWidth = half
 		  element.style.opacity = '1'
-		  element.classList.add('hover-target-big')
+		  element.style.pointerEvents = 'all'
 		});
 		
 //		document.querySelector('.content').style.transform = 'translateY(40vh)'
