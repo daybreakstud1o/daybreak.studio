@@ -48,7 +48,8 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.add("close", "casestudy")    
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 		const currentUrl = window.location.href;
-		console.log(currentUrl);
+		var slug = currentUrl.split("/");
+		console.log(slug[slug.length - 1])
 
 		let full = document.querySelector('#full').offsetWidth + 'px'
 		document.querySelectorAll('.thumbnail-row .thumbnail').forEach((element) => {
