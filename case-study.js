@@ -101,7 +101,7 @@ daybreak.router.useScript(()=>{
 		$( window ).on( "scroll", function() {
 		  	var topPos = currentElement.getBoundingClientRect().top
 			if (topPos <= 0) {
-				document.querySelector(".casestudy-nav-indicator")[index].style.opacity = '1'
+				document.querySelectorAll(".casestudy-nav-indicator")[index].style.opacity = '1'
 			}
 		} );
 	})
