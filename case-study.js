@@ -47,11 +47,10 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-container').classList.remove("nav-home")
 		document.querySelector('.nav-test').classList.add("close", "casestudy")    
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
+		
 		const currentUrl = window.location.href;
 		var slug = currentUrl.split("/");
 		var project = slug[slug.length - 1]
-		console.log(project)
-
 		let full = document.querySelector('#full').offsetWidth + 'px'
 		document.getElementById(project).style.minWidth = full
 		
