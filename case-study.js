@@ -53,6 +53,11 @@ daybreak.router.useScript(()=>{
 		var project = slug[slug.length - 1]
 		let full = document.querySelector('#full').offsetWidth + 'px'
 		document.getElementById(project).style.minWidth = full
+		document.getElementById(project).style.opacity = '1!important'
+		
+		document.querySelectorAll('.thumbnail').forEach((element) => {
+		  element.style.opacity = '0'
+		});
 		
 
 		
