@@ -92,14 +92,21 @@ daybreak.router.useScript(()=>{
 	}
 	const resetHero = animateInHero();
 	
-	//function indicator() {
-		document.querySelector(".casestudy-nav-indicator").innerHTML = ''
-		document.querySelectorAll('.casestudy-container').forEach(function(currentElement, index) {
-			const navItem = document.createElement("div")
-			navItem.classList.add('casestudy-nav-indicator-item')
-			document.querySelector(".casestudy-nav-indicator").appendChild(navItem)
-		})
-	//}
+	document.querySelector(".casestudy-nav-indicator").innerHTML = ''
+	document.querySelectorAll('.casestudy-container').forEach(function(currentElement, index) {
+		const navItem = document.createElement("div")
+		navItem.classList.add('casestudy-nav-indicator-item')
+		document.querySelector(".casestudy-nav-indicator").appendChild(navItem)
+		
+		$( window ).on( "scroll", function() {
+		  	var topPos = currentElement.getBoundingClientRect().top
+			if (topPos <= 0) {
+				currentElement.style.opacity = '1'
+			}
+		} );
+	})
+	
+
 	
 	document.querySelectorAll('.about-carousel').forEach((element, i) => {
 	  
