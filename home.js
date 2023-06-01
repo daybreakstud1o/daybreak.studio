@@ -14,6 +14,7 @@ daybreak.router.useScript(()=>{
 			document.querySelector('#real-nav1').style.height = "108px"
 		}, 600);
 		
+    		let full = document.querySelector('#full').offsetWidth + 'px'
 		let small = document.querySelector('#small').offsetWidth + 'px'
     		let big = document.querySelector('#big').offsetWidth + 'px'
     		let half = document.querySelector('#half').offsetWidth + 'px'
