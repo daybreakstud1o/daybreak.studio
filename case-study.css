@@ -6,6 +6,21 @@
 	transition: 0.6s ease;
 } */
 
+.casestudy-nav:hover .casestudy-nav--content-bottom {
+    opacity: 1;
+    display: grid;
+    grid-template-rows: 1fr;
+    padding-bottom: 36px
+}
+.casestudy-nav--content-bottom {
+    opacity: 0;
+    display: grid;
+    grid-template-rows: 0fr;
+}
+.casestudy-nav-indicator-item:hover {
+    opacity: 0.5;
+}
+
 
 .case-study .heading-1 {
   visibility: hidden;
