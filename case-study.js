@@ -35,6 +35,7 @@ daybreak.router.useScript(()=>{
 // 		$(window).scroll(function (event) {
 // 		    document.querySelector('.animate-test').style.top = '0!important'
 // 		});
+	   	document.documentElement.scrollTop = 0;
 		
 		document.querySelector('.background').classList.remove("dark")
 		document.querySelector('.nav-container').classList.remove("dark")
