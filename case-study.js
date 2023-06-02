@@ -96,11 +96,11 @@ daybreak.router.useScript(()=>{
 	document.querySelector(".casestudy-nav-indicator").innerHTML = ''
 	document.querySelectorAll('.casestudy-container').forEach(function(currentElement, index) {
 		const navItem = document.createElement("div")
-		navItem.classList.add('casestudy-nav-indicator-item')
+		navItem.classList.add('casestudy-nav-indicator-item', 'hover-target-big')
 		document.querySelector(".casestudy-nav-indicator").appendChild(navItem)
-		for (let i = 0; i < document.querySelectorAll(".casestudy-nav-indicator-item").length; i++) {
-			document.querySelectorAll(".casestudy-nav-indicator-item")[i].style.opacity = '0.2'
-		}
+// 		for (let i = 0; i < document.querySelectorAll(".casestudy-nav-indicator-item").length; i++) {
+// 			document.querySelectorAll(".casestudy-nav-indicator-item")[i].style.opacity = '0.2'
+// 		}
 		
 		$( window ).on( "scroll", function() {
 		  	var topPos = currentElement.getBoundingClientRect().top
