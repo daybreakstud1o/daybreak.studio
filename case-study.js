@@ -48,9 +48,6 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-container').classList.remove("nav-home")
 		document.querySelector('.nav-test').classList.add("close", "casestudy")    
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
-		for (let i = 0; i < document.querySelectorAll(".casestudy-nav-indicator-item").length; i++) {
-			document.querySelectorAll(".casestudy-nav-indicator-item")[i].style.opacity = '0.2'
-		}
 		
 		const currentUrl = window.location.href;
 		var slug = currentUrl.split("/");
@@ -101,6 +98,9 @@ daybreak.router.useScript(()=>{
 		const navItem = document.createElement("div")
 		navItem.classList.add('casestudy-nav-indicator-item')
 		document.querySelector(".casestudy-nav-indicator").appendChild(navItem)
+		for (let i = 0; i < document.querySelectorAll(".casestudy-nav-indicator-item").length; i++) {
+			document.querySelectorAll(".casestudy-nav-indicator-item")[i].style.opacity = '0.2'
+		}
 		
 		$( window ).on( "scroll", function() {
 		  	var topPos = currentElement.getBoundingClientRect().top
