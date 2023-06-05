@@ -1,0 +1,7 @@
+.thumbnail-info {
+  opacity: 0;
+  transition: 0.6s ease;
+}
+.thumbnail:hover .thumbnail-info {
+  opacity: 1;
+}
