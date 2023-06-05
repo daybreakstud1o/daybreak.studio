@@ -86,6 +86,13 @@ daybreak.router.useScript(()=>{
 	}
 	const resetHero = animateInHero();
 	
+	$( "#hypercard" ).on( "click", function() {
+		document.querySelector('.thumbnail-row').style.justifyContent = "flex-start"
+	} );
+	$( "#pager" ).on( "click", function() {
+		document.querySelector('.thumbnail-row').style.justifyContent = "flex-end"
+	} );
+	
 	
 	
 	
