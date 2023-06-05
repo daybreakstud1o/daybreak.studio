@@ -40,7 +40,7 @@ daybreak.router.useScript(()=>{
 // 		$(window).scroll(function (event) {
 // 		    document.querySelector('.animate-test').style.top = '0!important'
 // 		});
-		document.querySelector('.background').classList.add("dark")
+//		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.footer').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark","transform")
 		setTimeout(function() {
