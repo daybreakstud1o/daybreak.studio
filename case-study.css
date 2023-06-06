@@ -10,6 +10,16 @@
   background: #F25410!important;
 }
 
+.casestudy-nav-back .body-founders{
+    opacity:0;
+    transform:translateX(-30%);
+    transition-delay:0.6s;
+}
+.casestudy-nav:hover .casestudy-nav-back .body-founders{
+    opacity:1;
+    transform:translateX(-10%)
+}
+
 .casestudy-nav:hover .casestudy-nav--content-bottom {
     opacity: 1;
     display: grid;
