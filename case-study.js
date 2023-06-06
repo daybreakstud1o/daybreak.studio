@@ -58,7 +58,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.content').style.zIndex = '-1'
 		
 		setTimeout(function() {
-			document.getElementById('pager').style.classList.add('full')
+			document.getElementById('pager').classList.add('full')
 			document.getElementById('pager').style.top = '3000px'
 		}, 1000);
 		
