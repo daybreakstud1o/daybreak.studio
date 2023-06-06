@@ -57,6 +57,13 @@ daybreak.router.useScript(()=>{
 		document.getElementById(project).style.height = '55vw'
 		document.querySelector('.content').style.zIndex = '-1'
 		
+		setTimeout(function() {
+			document.getElementById('#pager').style.minWidth = full
+			document.getElementById('#pager').style.opacity = '1'
+			document.getElementById('#pager').style.position = 'absolute'
+			document.getElementById('#pager').style.top = '3000px'
+		}, 1000);
+		
 		document.querySelectorAll('.thumbnail').forEach((element) => {
 		  element.style.opacity = '0'
 		  element.style.pointerEvents = 'none'
