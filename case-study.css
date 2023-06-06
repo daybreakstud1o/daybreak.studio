@@ -35,6 +35,12 @@
     opacity: 0.5;
 }
 
+.thumbnail.full {
+	position: absolute;
+	width: 100%;
+	opacity: 1;
+}
+
 
 .case-study .heading-1 {
   visibility: hidden;
