@@ -58,9 +58,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.content').style.zIndex = '-1'
 		
 		setTimeout(function() {
-			document.getElementById('pager').style.minWidth = full
-			document.getElementById('pager').style.opacity = '1'
-			document.getElementById('pager').style.position = 'absolute'
+			document.getElementById('pager').style.classList.add('full')
 			document.getElementById('pager').style.top = '3000px'
 		}, 1000);
 		
@@ -90,6 +88,8 @@ daybreak.router.useScript(()=>{
 				window.requestAnimationFrame(()=>{
 				})
 				document.querySelector('.content').style.zIndex = 'auto'
+				document.getElementById('pager').style.classList.remove('full')
+				document.getElementById('pager').style.top = 'auto'
 // 				document.querySelector('.background').classList.remove("dark")
 // 				document.querySelector('.nav-container').classList.remove("dark","transform")
 // 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
