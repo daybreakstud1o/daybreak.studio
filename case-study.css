@@ -13,7 +13,7 @@
 .casestudy-nav-back .body-founders{
     opacity:0;
     transform:translateX(-30%);
-    transition-delay:0.6s;
+    transition-delay:0.3s;
 }
 .casestudy-nav:hover .casestudy-nav-back .body-founders{
     opacity:1;
