@@ -12,12 +12,12 @@
 
 .casestudy-nav-back .body-founders{
     opacity:0;
-    transform:translateX(-30%);
+    transform:translateX(-40%);
     transition-delay:0.3s!important;
 }
 .casestudy-nav:hover .casestudy-nav-back .body-founders{
     opacity:1;
-    transform:translateX(-10%)
+    transform:translateX(-20%)
 }
 
 .casestudy-nav:hover .casestudy-nav--content-bottom {
