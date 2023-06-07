@@ -63,135 +63,135 @@ daybreak.router.useScript(()=>{
 		
 		
 		
-// 		var interval = 6000
-// 		var one, two, three, four, five, six;
-// 		shift()
-// 		var myInterval = setInterval(shift, interval * 4);
-// 		function shift() {
-// 			  move('0','brands')
-// 			  one = setTimeout(function(){ 
-// 			    move('1','brands')
-// 		          }, interval);
-// 		   	  two = setTimeout(function(){ 
-// 			    move('2','brands')
-// 		          }, interval * 2);
-// 			  three = setTimeout(function(){ 
-// 			    move('3','brands')
-// 		          }, interval * 3);
+		var interval = 6000
+		var one, two, three, four, five, six;
+		shift()
+		var myInterval = setInterval(shift, interval * 4);
+		function shift() {
+			  move('0','brands')
+			  one = setTimeout(function(){ 
+			    move('1','brands')
+		          }, interval);
+		   	  two = setTimeout(function(){ 
+			    move('2','brands')
+		          }, interval * 2);
+			  three = setTimeout(function(){ 
+			    move('3','brands')
+		          }, interval * 3);
 			
-// 			  move('0','software')
-// 			  four = setTimeout(function(){ 
-// 			    move('1','software')
-// 		          }, interval);
-// 		   	  five = setTimeout(function(){ 
-// 			    move('2','software')
-// 		          }, interval * 2);
-// 			  six = setTimeout(function(){ 
-// 			    move('3','software')
-// 		          }, interval * 3);
-// 		}
+			  move('0','software')
+			  four = setTimeout(function(){ 
+			    move('1','software')
+		          }, interval);
+		   	  five = setTimeout(function(){ 
+			    move('2','software')
+		          }, interval * 2);
+			  six = setTimeout(function(){ 
+			    move('3','software')
+		          }, interval * 3);
+		}
 		
-// 		function move(i,type) {
-// 			var elm = document.querySelectorAll('#'+type+'-selector .about-selector--item')[i]
-// 			var bar = document.querySelector('#'+type+'-selector .progress-bar')
-// 			var push = elm.offsetTop
-// 			var height = document.querySelectorAll('#'+type+'-selector .item-height')[i].offsetHeight + "px"
+		function move(i,type) {
+			var elm = document.querySelectorAll('#'+type+'-selector .about-selector--item')[i]
+			var bar = document.querySelector('#'+type+'-selector .progress-bar')
+			var push = elm.offsetTop
+			var height = document.querySelectorAll('#'+type+'-selector .item-height')[i].offsetHeight + "px"
 
-// 			  if (i == '0') {
-// 			    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = push + "px"
-// 			  } else {
-// 			  var descHeight = document.querySelectorAll('#'+type+'-selector .about-selector--item .desc')[i-1].offsetHeight
-// 			    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = (push - descHeight) + "px"
-// 			  }
-// 			  for (let x = 0; x < document.querySelectorAll('#'+type+'-selector .about-selector--item').length; x++) {
-// 				document.querySelectorAll('#'+type+'-selector .about-selector--item')[x].style.height = document.querySelectorAll('#'+type+'-selector .body-founders._100')[x].offsetHeight + "px"
-// 			  }
+			  if (i == '0') {
+			    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = push + "px"
+			  } else {
+			  var descHeight = document.querySelectorAll('#'+type+'-selector .about-selector--item .desc')[i-1].offsetHeight
+			    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = (push - descHeight) + "px"
+			  }
+			  for (let x = 0; x < document.querySelectorAll('#'+type+'-selector .about-selector--item').length; x++) {
+				document.querySelectorAll('#'+type+'-selector .about-selector--item')[x].style.height = document.querySelectorAll('#'+type+'-selector .body-founders._100')[x].offsetHeight + "px"
+			  }
 
-// 			  elm.style.height = height
-// 			  bar.animate(
-// 			    [
-// 			      { transform: "translateY(-100%)" },
-// 			      { transform: "translateY(0%)" },
-// 			    ],
-// 			    {
-// 			      duration: interval,
-// 			      iterations: 1,
-// 			    }
-// 			  );
+			  elm.style.height = height
+			  bar.animate(
+			    [
+			      { transform: "translateY(-100%)" },
+			      { transform: "translateY(0%)" },
+			    ],
+			    {
+			      duration: interval,
+			      iterations: 1,
+			    }
+			  );
 
-// 			  document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.height = height
-// 			  document.querySelectorAll('.'+type+ '-img img').forEach((item, index) => {
-// 			    item.style.zIndex = '-1'
-// 			  })
-// 			  document.querySelector('#'+type+ '-' + i).style.zIndex = '2'
-// 		}
+			  document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.height = height
+			  document.querySelectorAll('.'+type+ '-img img').forEach((item, index) => {
+			    item.style.zIndex = '-1'
+			  })
+			  document.querySelector('#'+type+ '-' + i).style.zIndex = '2'
+		}
 		
-// 		var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
-// 		var Arr = Array.prototype.slice.call(list).sort((a, b) => 0.5 - Math.random());
-// 		var visible = Arr.splice(0,9)
-// 		var invisible = Arr.slice(-5)
+		var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
+		var Arr = Array.prototype.slice.call(list).sort((a, b) => 0.5 - Math.random());
+		var visible = Arr.splice(0,9)
+		var invisible = Arr.slice(-5)
 
-// 		visible.forEach((item, index) => {
-// 		    var n = index + 1
-// 		    item.style.gridArea = 'Area-' + n
-// 		    item.setAttribute('area', 'Area-' + n)
-// 		})
-// 		invisible.forEach((item, index) => {
-// 		    item.style.opacity = '0'
-// 		    item.setAttribute('area', '')
-// 		})
+		visible.forEach((item, index) => {
+		    var n = index + 1
+		    item.style.gridArea = 'Area-' + n
+		    item.setAttribute('area', 'Area-' + n)
+		})
+		invisible.forEach((item, index) => {
+		    item.style.opacity = '0'
+		    item.setAttribute('area', '')
+		})
 
-// 		function changeLogo() {
-// 			var random = visible.sort(() => .5 - Math.random()).slice(0,3)
-// 			var random1 = invisible.sort(() => .5 - Math.random()).slice(0,3)
+		function changeLogo() {
+			var random = visible.sort(() => .5 - Math.random()).slice(0,3)
+			var random1 = invisible.sort(() => .5 - Math.random()).slice(0,3)
 
-// 			random.forEach((item) => {
-// 			const index = visible.indexOf(item)
-// 		    if (index > -1) { 
-// 		      visible.splice(index, 1) 
-// 		    }
-// 		    invisible.push(item)
-// 			})
-// 		  random1.forEach((item) => {
-// 			const index = invisible.indexOf(item)
-// 		    if (index > -1) { 
-// 		      invisible.splice(index, 1) 
-// 		    }
-// 		    visible.push(item)
-// 			})
+			random.forEach((item) => {
+			const index = visible.indexOf(item)
+		    if (index > -1) { 
+		      visible.splice(index, 1) 
+		    }
+		    invisible.push(item)
+			})
+		  random1.forEach((item) => {
+			const index = invisible.indexOf(item)
+		    if (index > -1) { 
+		      invisible.splice(index, 1) 
+		    }
+		    visible.push(item)
+			})
 
-// 		  return [random,random1]
-// 		}
-// 		var interval1 = 300
-// 		sdhjdsdfhj()
-// 		var myInterval1 = setInterval(sdhjdsdfhj, interval1 * 10);
+		  return [random,random1]
+		}
+		var interval1 = 300
+		sdhjdsdfhj()
+		var myInterval1 = setInterval(sdhjdsdfhj, interval1 * 10);
 
-// 		function sdhjdsdfhj() {
-// 		  var items = changeLogo()
-// 		  var visibleList = items[0]
-// 		  var invisibleList = items[1]
-// 		  var fml0 = visibleList[0].getAttribute('area')
-// 		  var fml1 = visibleList[1].getAttribute('area')
-// 		  var fml2 = visibleList[2].getAttribute('area')
+		function sdhjdsdfhj() {
+		  var items = changeLogo()
+		  var visibleList = items[0]
+		  var invisibleList = items[1]
+		  var fml0 = visibleList[0].getAttribute('area')
+		  var fml1 = visibleList[1].getAttribute('area')
+		  var fml2 = visibleList[2].getAttribute('area')
 
-// 		  setTimeout(function () { appear('0') }, interval1 * 1)
-// 		  setTimeout(function () { appear('1') }, interval1 * 2)
-// 		  setTimeout(function () { appear('2') }, interval1 * 3)
-// 		  setTimeout(function () { disappear('0') }, interval1 * 4)
-// 		  setTimeout(function () { disappear('1') }, interval1 * 5)
-// 		  setTimeout(function () { disappear('2') }, interval1 * 6)
+		  setTimeout(function () { appear('0') }, interval1 * 1)
+		  setTimeout(function () { appear('1') }, interval1 * 2)
+		  setTimeout(function () { appear('2') }, interval1 * 3)
+		  setTimeout(function () { disappear('0') }, interval1 * 4)
+		  setTimeout(function () { disappear('1') }, interval1 * 5)
+		  setTimeout(function () { disappear('2') }, interval1 * 6)
 
-// 		  function appear(node) {
-// 			visibleList[node].style.opacity = '0'
-// 		    visibleList[node].style.gridArea = ''
-// 		    visibleList[node].setAttribute('area', '')
-// 		  }
-// 		  function disappear(node) {
-// 			invisibleList[node].style.opacity = '1'
-// 			invisibleList[node].style.gridArea = eval('fml' + node)
-// 		    invisibleList[node].setAttribute('area', eval('fml' + node))
-// 		  }
-// 		}
+		  function appear(node) {
+			visibleList[node].style.opacity = '0'
+		    visibleList[node].style.gridArea = ''
+		    visibleList[node].setAttribute('area', '')
+		  }
+		  function disappear(node) {
+			invisibleList[node].style.opacity = '1'
+			invisibleList[node].style.gridArea = eval('fml' + node)
+		    invisibleList[node].setAttribute('area', eval('fml' + node))
+		  }
+		}
 		
 		
 		
