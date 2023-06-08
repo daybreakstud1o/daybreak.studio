@@ -58,9 +58,9 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.content').style.zIndex = '-1'
 		
 		setTimeout(function() {
+			var outroTop = window.pageYOffset + document.querySelector('.outro-placeholder').getBoundingClientRect().top
 			document.getElementById('pager').classList.add('full')
-			document.getElementById('pager').style.top = '3000px'
-			console.log(window.pageYOffset + document.querySelector('.outro-placeholder').getBoundingClientRect().top)
+			document.getElementById('pager').style.top = outroTop + 'px'
 		}, 1000);
 		
 		document.querySelectorAll('.thumbnail').forEach((element) => {
