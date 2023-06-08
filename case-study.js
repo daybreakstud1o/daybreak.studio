@@ -59,8 +59,15 @@ daybreak.router.useScript(()=>{
 		
 		setTimeout(function() {
 			var outroTop = window.pageYOffset + document.querySelector('.outro-placeholder').getBoundingClientRect().top
-			document.getElementById('pager').classList.add('full')
-			document.getElementById('pager').style.top = outroTop + 'px'
+			if (project == 'hypercard') {
+				next('pager')
+			} else if (project == 'pager') {
+				next('capital')
+			} 
+			function next(project) {
+				document.getElementById(project).classList.add('full')
+				document.getElementById(project).style.top = outroTop + 'px'	
+			}
 		}, 1000);
 		
 		document.querySelectorAll('.thumbnail').forEach((element) => {
@@ -89,8 +96,8 @@ daybreak.router.useScript(()=>{
 				window.requestAnimationFrame(()=>{
 				})
 				document.querySelector('.content').style.zIndex = 'auto'
-				//document.getElementById('pager').classList.remove('full')
-				document.getElementById('pager').style.top = '0'
+				document.getElementById('pager').classList.remove('full')
+				document.getElementById('pager').style.top = 'auto'
 // 				document.querySelector('.background').classList.remove("dark")
 // 				document.querySelector('.nav-container').classList.remove("dark","transform")
 // 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
