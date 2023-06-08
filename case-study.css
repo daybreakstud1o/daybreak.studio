@@ -36,6 +36,7 @@
 }
 
 .thumbnail.full {
+	pointer-events: all!important;
 	position: absolute;
 	width: 100%;
 	opacity: 1!important;
