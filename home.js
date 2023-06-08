@@ -93,20 +93,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.thumbnail-row').style.justifyContent = "flex-end"
 	} );
 	
-	$('#team-link').click(function(e) {
-  e.preventDefault();
-  setTimeout(function(url) { window.location = '/team' }, 600, this.href);
-  document.querySelector('.background').classList.remove("dark")
-		document.querySelector('.nav-container').classList.remove("dark")
-		document.querySelector('.nav-test').classList.remove("dark")
-		
-		document.querySelector('.nav-container').classList.add("transform")
-		setTimeout(function() {
-			document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized");
-		}, 450);
-		document.querySelector('.nav-container').classList.remove("nav-home")
-		document.querySelector('.nav-test').classList.add("close")
-});
+
 	
 	
 	
