@@ -60,6 +60,7 @@ daybreak.router.useScript(()=>{
 		setTimeout(function() {
 			document.getElementById('pager').classList.add('full')
 			document.getElementById('pager').style.top = '3000px'
+			console.log(window.pageYOffset + document.querySelector('.outro-placeholder').getBoundingClientRect().top)
 		}, 1000);
 		
 		document.querySelectorAll('.thumbnail').forEach((element) => {
