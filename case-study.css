@@ -10,6 +10,12 @@
     transform-origin: center;
 }
 
+.casestudy-nav-back .body-founders{
+    opacity:0;
+    transform:translateX(-40%);
+    transition-delay:0.3s!important;
+}
+
 .logo-back g.rotate1 {
     animation: 0.6s ease-in-out out1 forwards;
 }
@@ -39,9 +45,14 @@
 }
 
 @media screen and (max-width: 991px) {
+	.casestudy-nav.open .casestudy-nav-back .body-founders{
+	    opacity:1;
+	    transform:translateX(-15%)
+	}
 	.casestudy-nav.open .casestudy-nav--content-bottom {
 	    height: 100vh;
 	}
+	
 	.casestudy-nav.open .logo-back g.rotate1 {
 	    animation: 0.3s ease-in in1 forwards;
 	}
@@ -72,16 +83,10 @@
 }
 
 @media screen and (min-width: 992px) {
-	.casestudy-nav-back .body-founders{
-	    opacity:0;
-	    transform:translateX(-40%);
-	    transition-delay:0.3s!important;
-	}
 	.casestudy-nav:hover .casestudy-nav-back .body-founders{
 	    opacity:1;
 	    transform:translateX(-15%)
 	}
-
 	.casestudy-nav:hover .casestudy-nav--content-bottom {
 	    opacity: 1;
 	    display: grid;
