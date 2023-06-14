@@ -12,6 +12,11 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.remove("close","dark","casestudy")
 		document.querySelector('html').classList.remove('open')
 		
+		document.getElementById('pager').classList.remove('full')
+		document.getElementById('pager').style.top = 'auto'
+		document.getElementById('capital').classList.remove('full')
+		document.getElementById('capital').style.top = 'auto'
+		
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.height = "108px"
 		}, 600);
