@@ -50,6 +50,10 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.add("close","dark")
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 		
+		setTimeout(function() {
+	    		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
+		}, 600);
+		
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
     		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
 // 		document.querySelectorAll('.about-carousel > *').forEach((element) => {
@@ -233,9 +237,6 @@ daybreak.router.useScript(()=>{
 // 	setTimeout(function() {
 // 		document.querySelector('.content').classList.remove("hide")
 // 	}, 100);
-	$(window).on("on resize",function(e){
-	    document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
-	  });
 	
 	
 	document.querySelectorAll('.about-carousel').forEach((element, i) => {
