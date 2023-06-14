@@ -25,6 +25,9 @@
 daybreak.router.useScript(()=>{
 	console.log("enter case study");
 	function animateInHero() {
+		setTimeout(function() {
+			document.querySelector('html').style.scrollBehavior = 'auto'
+		}, 1000);
 // 		var body = document.body,
 // 		    html = document.documentElement;
 		
@@ -107,7 +110,6 @@ daybreak.router.useScript(()=>{
 				window.requestAnimationFrame(()=>{
 				})
 				document.querySelector('.content').style.zIndex = 'auto'
-				document.querySelector('html').style.scrollBehavior = 'auto'
 				
 // 				document.querySelector('.background').classList.remove("dark")
 // 				document.querySelector('.nav-container').classList.remove("dark","transform")
