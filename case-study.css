@@ -43,6 +43,18 @@
 .logo-back g.trunk {
     animation: 0.3s ease-in out9 forwards;
 }
+.casestudy-name {
+	position: absolute;
+	opacity: 0;
+	top: 72px;
+	left: 48px;
+}
+
+@media screen and (max-width: 767px) {
+	html.open .casestudy-name {
+		opacity: 1;
+	}
+}
 
 @media screen and (max-width: 991px) {
 	html.open .casestudy-nav .casestudy-nav-back .body-founders{
