@@ -50,9 +50,6 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.add("close","dark")
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 		
-		console.log(document.querySelector(".content").offsetHeight)
-		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
-		
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
     		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
 // 		document.querySelectorAll('.about-carousel > *').forEach((element) => {
