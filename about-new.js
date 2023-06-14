@@ -50,7 +50,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.add("close","dark")
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 		
-		document.querySelector('.content').style.height = 'auto'
+		console.log(document.querySelector(".content").offsetHeight)
 		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
 		
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
