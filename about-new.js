@@ -29,7 +29,7 @@ daybreak.router.useScript(()=>{
 //  	document.documentElement.scrollTop = 0;
 // 		document.querySelector('.animate-test').style.top = '0!important'
 	function animateInHero() {
-		document.querySelector('html').style.scrollBehavior = 'smooth'
+		document.querySelector('html').style.scrollBehavior = 'auto'
 // 		var body = document.body,
 // 		    html = document.documentElement;
 
