@@ -62,13 +62,17 @@ daybreak.router.useScript(()=>{
 		document.getElementById(project).style.height = '55vw'
 		document.querySelector('.content').style.zIndex = '-1'
 		
+		if (project == 'hypercard') {
+			document.getElementById('hypercard').style.top = '0px'	
+		} else if (project == 'pager') {
+			document.getElementById('pager').style.top = '0px'
+		} 
+		
 		setTimeout(function() {
 			var outroTop = window.pageYOffset + document.querySelector('.outro-placeholder').getBoundingClientRect().top
 			if (project == 'hypercard') {
-				document.getElementById('hypercard').style.top = '0px'	
 				next('pager')
-			} else if (project == 'pager') {
-				document.getElementById('pager').style.top = '0px'	
+			} else if (project == 'pager') {	
 				next('capital')
 			} 
 			function next(project) {
