@@ -233,6 +233,9 @@ daybreak.router.useScript(()=>{
 // 	setTimeout(function() {
 // 		document.querySelector('.content').classList.remove("hide")
 // 	}, 100);
+	$(window).on("on resize",function(e){
+	    document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
+	  });
 	
 	
 	document.querySelectorAll('.about-carousel').forEach((element, i) => {
