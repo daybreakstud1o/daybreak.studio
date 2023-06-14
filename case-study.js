@@ -51,7 +51,7 @@ daybreak.router.useScript(()=>{
 		
 		setTimeout(function() {
 	    		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
-		}, 600);
+		}, 1500);
 		
 		const currentUrl = window.location.href;
 		var slug = currentUrl.split("/");
@@ -113,6 +113,13 @@ daybreak.router.useScript(()=>{
 		}
 	}
 	const resetHero = animateInHero();
+	
+	$( "#casestudy-menu-open" ).on( "click", function() {
+		document.querySelector('.casestudy-nav').classList.add('open')
+	} );
+	$( "#casestudy-menu-close" ).on( "click", function() {
+		document.querySelector('.casestudy-nav').classList.remove('open')
+	} );
 	
 	document.querySelector(".casestudy-nav-indicator").innerHTML = ''
 	document.querySelectorAll('.casestudy-container').forEach(function(currentElement, index) {
