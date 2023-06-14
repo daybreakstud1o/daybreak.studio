@@ -6,10 +6,66 @@
 	transition: 0.6s ease;
 } */
 
+.head, .rotate1, .rotate2, .rotate3, .rotate4, .rotate5, .rotate6, .rotate7 {
+    transform-origin: center;
+}
+
+.logo-back.arrow-animate g.rotate1 {
+    animation: 0.6s ease-in-out out1 forwards;
+}
+.logo-back.arrow-animate g.rotate2 {
+    animation: 0.6s ease-in-out out2 forwards;
+}
+.logo-back.arrow-animate g.rotate3 {
+    animation: 0.6s ease-in-out out3 forwards;
+}
+.logo-back.arrow-animate g.rotate4 {
+    animation: 0.6s ease-in-out out4 forwards;
+}
+.logo-back.arrow-animate g.rotate5 {
+    animation: 0.6s ease-in-out out5 forwards;
+}
+.logo-back.arrow-animate g.rotate6 {
+    animation: 0.6s ease-in-out out6 forwards;
+}
+.logo-back.arrow-animate g.rotate7 {
+    animation: 0.6s ease-in-out out7 forwards;
+}
+.logo-back.arrow-animate g.head {
+    animation: 0.6s ease-in-out out8 forwards;
+}
+.logo-back.arrow-animate g.trunk {
+    animation: 0.3s ease-in out9 forwards;
+}
+.casestudy-nav:hover .logo-back.arrow-animate g.rotate1 {
+    animation: 0.3s ease-in in1 forwards;
+}
+.casestudy-nav:hover .logo-back.arrow-animate g.rotate2 {
+    animation: 0.3s ease-in in2 forwards;
+}
+.casestudy-nav:hover .logo-back.arrow-animate g.rotate3 {
+    animation: 0.3s ease-in in3 forwards;
+}
+.casestudy-nav:hover .logo-back.arrow-animate g.rotate4 {
+    animation: 0.3s ease-in in4 forwards;
+}
+.casestudy-nav:hover .logo-back.arrow-animate g.rotate5 {
+    animation: 0.3s ease-in in5 forwards;
+}
+.casestudy-nav:hover .logo-back.arrow-animate g.rotate6 {
+    animation: 0.3s ease-in in6 forwards;
+}
+.casestudy-nav:hover .logo-back.arrow-animate g.rotate7 {
+    animation: 0.3s ease-in in7 forwards;
+}
+.casestudy-nav:hover .logo-back.arrow-animate g.head {
+    animation: 0.6s ease-in-out in8 forwards;
+}
+.casestudy-nav:hover .logo-back.arrow-animate g.trunk {
+    animation: 0.6s ease-in-out in9 forwards;
+}
+
 @media screen and (min-width: 992px) {
-	.head, .rotate1, .rotate2, .rotate3, .rotate4, .rotate5, .rotate6, .rotate7 {
-	    transform-origin: center;
-	}
 	.logo-back g.rotate1 {
 	    animation: 0.6s ease-in-out out1 forwards;
 	}
