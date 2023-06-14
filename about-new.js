@@ -43,6 +43,8 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.background').classList.add("dark")
 		document.querySelector('.footer').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("dark","transform")
+		document.querySelector('html').classList.remove('open')
+		
 		setTimeout(function() {
 			document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized");
 		}, 450);
