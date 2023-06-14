@@ -65,7 +65,7 @@ daybreak.router.useScript(()=>{
 		setTimeout(function() {
 			var outroTop = window.pageYOffset + document.querySelector('.outro-placeholder').getBoundingClientRect().top
 			if (project == 'hypercard') {
-				document.getElementById('hyper').style.top = '0px'	
+				document.getElementById('hypercard').style.top = '0px'	
 				next('pager')
 			} else if (project == 'pager') {
 				document.getElementById('pager').style.top = '0px'	
