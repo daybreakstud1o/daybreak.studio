@@ -49,6 +49,8 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.add("close", "casestudy")    
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)'}, 600)
 		
+		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
+		
 		const currentUrl = window.location.href;
 		var slug = currentUrl.split("/");
 		var project = slug[slug.length - 1]
