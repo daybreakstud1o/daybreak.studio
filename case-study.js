@@ -101,10 +101,7 @@ daybreak.router.useScript(()=>{
 				window.requestAnimationFrame(()=>{
 				})
 				document.querySelector('.content').style.zIndex = 'auto'
-				document.getElementById('pager').classList.remove('full')
-				document.getElementById('pager').style.top = 'auto'
-				document.getElementById('capital').classList.remove('full')
-				document.getElementById('capital').style.top = 'auto'
+				
 // 				document.querySelector('.background').classList.remove("dark")
 // 				document.querySelector('.nav-container').classList.remove("dark","transform")
 // 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
