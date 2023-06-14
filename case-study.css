@@ -50,7 +50,7 @@
 	    transform:translateX(-15%)
 	}
 	.casestudy-nav.open .casestudy-nav--content-bottom {
-	    height: 100vh;
+	    max-height: 100vh;
 	}
 	
 	.casestudy-nav.open .logo-back g.rotate1 {
