@@ -25,6 +25,7 @@
 daybreak.router.useScript(()=>{
 	console.log("enter case study");
 	function animateInHero() {
+		document.querySelector('html').style.scrollBehavior = 'auto'
 // 		var body = document.body,
 // 		    html = document.documentElement;
 		
