@@ -52,6 +52,11 @@
 	html.open .casestudy-nav .casestudy-nav--content-bottom {
 	    max-height: 100vh;
 	}
+	html.open, html.open body {
+		margin: 0;
+		height: 100%;
+		overflow: hidden;
+	}
 	
 	html.open .casestudy-nav .logo-back g.rotate1 {
 	    animation: 0.3s ease-in in1 forwards;
