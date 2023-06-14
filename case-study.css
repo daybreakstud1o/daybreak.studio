@@ -51,12 +51,6 @@
 	transition: 1s ease;
 }
 
-@media screen and (max-width: 767px) {
-	html.open .casestudy-name {
-		opacity: 1;
-	}
-}
-
 @media screen and (max-width: 991px) {
 	html.open .casestudy-nav .casestudy-nav-back .body-founders{
 	    opacity:1;
