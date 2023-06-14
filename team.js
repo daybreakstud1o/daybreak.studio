@@ -39,6 +39,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.background').classList.remove("dark")
 		document.querySelector('.nav-container').classList.remove("dark")
 		document.querySelector('.nav-test').classList.remove("dark")
+		document.querySelector('html').classList.remove('open')
 		
 		document.querySelector('.nav-container').classList.add("transform")
 		setTimeout(function() {
