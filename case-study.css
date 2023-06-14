@@ -64,6 +64,8 @@
 	.casestudy-nav:hover .logo-back g.trunk {
 	    animation: 0.6s ease-in-out in9 forwards;
 	}
+}
+
 	@keyframes in1 {
 	    0% {
 		transform: rotateZ(0) translate(0);
@@ -238,7 +240,6 @@
 		transform: translate(0);
 	    }
 	}
-}
 
 .casestudy-nav .body-founders::selection, .casestudy-nav .body-fractul::selection {
   background: #F25410!important;
