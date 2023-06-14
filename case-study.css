@@ -47,7 +47,8 @@
 	position: absolute;
 	opacity: 0;
 	top: 72px;
-	left: 48px;
+	left: 24px;
+	transition: 1s ease;
 }
 
 @media screen and (max-width: 767px) {
