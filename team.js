@@ -49,6 +49,9 @@ daybreak.router.useScript(()=>{
 		setTimeout(function(){
 			document.querySelector('.content').style.transform = 'translateY(0)'
 		}, 600)
+		
+		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
+		
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
     		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
 // 		document.querySelectorAll('.about-carousel > *').forEach((element) => {
