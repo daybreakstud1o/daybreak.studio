@@ -89,6 +89,10 @@ daybreak.router.useScript(()=>{
 	}
 	const resetHero = animateInHero();
 	
+	$(window).on("on resize",function(e){
+	    document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
+	  });
+	
 	document.querySelectorAll('.about-carousel').forEach((element, i) => {
 	  
 	  let isDown = false;
