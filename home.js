@@ -5,6 +5,7 @@ daybreak.router.useScript(()=>{
 //	document.body.scrollTop = 0;
 //   	document.documentElement.scrollTop = 0;
 	function animateInHero() {
+		document.querySelector('html').style.scrollBehavior = 'auto'
 		document.querySelector('.background').classList.remove("dark")
 		document.querySelector('.nav-container').classList.remove("dark","transform","casestudy-bg")
 		document.querySelector('.nav-container').classList.add("nav-home")
