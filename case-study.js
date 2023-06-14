@@ -62,11 +62,11 @@ daybreak.router.useScript(()=>{
 		document.getElementById(project).style.height = '55vw'
 		document.querySelector('.content').style.zIndex = '-1'
 		
-// 		if (project == 'hypercard') {
-// 			document.getElementById('hypercard').style.top = '0px'	
-// 		} else if (project == 'pager') {
-// 			document.getElementById('pager').style.top = '0px'
-// 		} 
+		if (project == 'hypercard') {
+			document.querySelectorAll('.thumbnail-row')[0].style.justifyContent = 'flex-start'
+		} else if (project == 'pager') {
+			document.querySelectorAll('.thumbnail-row')[0].style.justifyContent = 'flex-end'
+		} 
 		
 // 		setTimeout(function() {
 // 			var outroTop = window.pageYOffset + document.querySelector('.outro-placeholder').getBoundingClientRect().top
