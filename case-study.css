@@ -40,33 +40,33 @@
 
 @media screen and (max-width: 991px) {
 	.casestudy-nav.open .casestudy-nav--content-bottom {
-		height: 100vh;
+	    height: 100vh;
 	}
-	.casestudy-nav.arrow-animate .logo-back g.rotate1 {
+	.casestudy-nav.open .logo-back g.rotate1 {
 	    animation: 0.3s ease-in in1 forwards;
 	}
-	.casestudy-nav.arrow-animate .logo-back g.rotate2 {
+	.casestudy-nav.open .logo-back g.rotate2 {
 	    animation: 0.3s ease-in in2 forwards;
 	}
-	.casestudy-nav.arrow-animate .logo-back g.rotate3 {
+	.casestudy-nav.open .logo-back g.rotate3 {
 	    animation: 0.3s ease-in in3 forwards;
 	}
-	.casestudy-nav.arrow-animate .logo-back g.rotate4 {
+	.casestudy-nav.open .logo-back g.rotate4 {
 	    animation: 0.3s ease-in in4 forwards;
 	}
-	.casestudy-nav.arrow-animate .logo-back g.rotate5 {
+	.casestudy-nav.open .logo-back g.rotate5 {
 	    animation: 0.3s ease-in in5 forwards;
 	}
-	.casestudy-nav.arrow-animate .logo-back g.rotate6 {
+	.casestudy-nav.open .logo-back g.rotate6 {
 	    animation: 0.3s ease-in in6 forwards;
 	}
-	.casestudy-nav.arrow-animate .logo-back g.rotate7 {
+	.casestudy-nav.open .logo-back g.rotate7 {
 	    animation: 0.3s ease-in in7 forwards;
 	}
-	.casestudy-nav.arrow-animate .logo-back g.head {
+	.casestudy-nav.open .logo-back g.head {
 	    animation: 0.6s ease-in-out in8 forwards;
 	}
-	.casestudy-nav.arrow-animate .logo-back g.trunk {
+	.casestudy-nav.open .logo-back g.trunk {
 	    animation: 0.6s ease-in-out in9 forwards;
 	}
 }
