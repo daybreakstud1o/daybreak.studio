@@ -1,6 +1,6 @@
 @media only screen and (max-width: 767px) {
   .thumbnail-row.flex-end a:not(.casestudy-thumbnail-height) {
-    height: 42.5vw;
+    height: 75vw;
   }
   .thumbnail-row.flex-end .casestudy-thumbnail-height {
     top: auto!important;
