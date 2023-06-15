@@ -171,7 +171,6 @@ daybreak.router.useScript(() => {
 	setNavCurrent();
 	
 	return ()=>{
-		clearInterval(interval);
 		setNavCurrent();
 		window.removeEventListener("resize", handleResize);
 	}
