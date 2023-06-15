@@ -166,6 +166,17 @@ daybreak.router.useScript(()=>{
 
 		return `${hr}:${min}:${sec}`
 	}
+	
+	function getVancouverTime() {
+		const date = new Date();
+
+		// eastern time
+		const eastCoastTimeStr = date.toLocaleString("en-US", {
+			timeZone: "America/Los_Angeles",
+			hour12: false
+		})
+		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
+	}
 
 	function getTorontoTime() {
 		const date = new Date();
@@ -177,14 +188,31 @@ daybreak.router.useScript(()=>{
 		})
 		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
 	}
+	
+	function getLondonTime() {
+		const date = new Date();
+
+		// eastern time
+		const eastCoastTimeStr = date.toLocaleString("en-US", {
+			timeZone: "Europe/London",
+			hour12: false
+		})
+		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
+	}
 
 	const updateTime = () => {
 		// periodically update the time elements
+		const allVancouverTimeElm = document.querySelectorAll('.pst');
 		const allTorontoTimeElm = document.querySelectorAll('.est');
+		const allLondonTimeElm = document.querySelectorAll('.gst');
 
+		const vancouverTime = getVancouverTime();
 		const torontoTime = getTorontoTime();
+		const londonTime = getLondonTime();
 
+		allVancouverTimeElm.forEach((elm) => elm.innerHTML = vancouverTime);
 		allTorontoTimeElm.forEach((elm) => elm.innerHTML = torontoTime);
+		allLondonTimeElm.forEach((elm) => elm.innerHTML = londonTime);
 	}
 
 	const interval = setInterval(updateTime,1000);
