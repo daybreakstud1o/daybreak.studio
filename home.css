@@ -6,3 +6,14 @@
     top: auto!important;
   }
 }
+
+@media only screen and (max-width: 991px) {
+	.content.hide {
+		opacity: 0;
+		transform: translateY(80vh)
+	}
+	.content {
+		opacity: 0;
+		transform: translateY(80vh);
+	}
+}
