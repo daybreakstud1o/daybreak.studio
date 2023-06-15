@@ -172,6 +172,6 @@ daybreak.router.useScript(() => {
 	
 	return ()=>{
 		setNavCurrent();
-		window.removeEventListener("resize", handleResize);
+		//window.removeEventListener("resize", handleResize);
 	}
 });
