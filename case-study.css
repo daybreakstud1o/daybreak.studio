@@ -390,6 +390,15 @@
     }
 }
 
+@media only screen and (max-width: 767px) {
+  .thumbnail-row.flex-end a:not(.casestudy-thumbnail-height) {
+    height: 0;
+  }
+  .thumbnail-row.flex-end .casestudy-thumbnail-height {
+    top: -8px!important;
+  }
+}
+
 /* .heading-1 span {
 	display: none;
 }
