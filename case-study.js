@@ -65,10 +65,14 @@ daybreak.router.useScript(()=>{
 		document.getElementById(project).classList.add('casestudy-thumbnail-height')
 		document.querySelector('.content').style.zIndex = '-1'
 		
+		for (let i = 0; i < document.querySelectorAll('.thumbnail-row').length; i++) {
+		  document.querySelectorAll('.thumbnail-row')[i].classList.remove('flex-start','flex-end')
+		}
+		
 		if (project == 'hypercard') {
-			document.querySelectorAll('.thumbnail-row')[0].style.justifyContent = 'flex-start'
+			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-start')
 		} else if (project == 'pager') {
-			document.querySelectorAll('.thumbnail-row')[0].style.justifyContent = 'flex-end'
+			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-end')
 		} 
 		
 // 		setTimeout(function() {
