@@ -386,11 +386,11 @@
 
 @media only screen and (max-width: 991px) {
 	.content.hide {
-		opacity: 0;
+		display: none;
 		transform: translateY(80vh)
 	}
 	.content {
-		opacity: 0;
+		display: none;
 		transform: translateY(80vh);
 	}
 }
