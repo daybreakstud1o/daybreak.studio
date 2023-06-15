@@ -385,6 +385,9 @@
 }*/
 
 @media only screen and (max-width: 991px) {
+	.content.hide {
+	    transform: translateY(80vh)
+	}
 	.content {
 		transform: translateY(80vh);
 	}
