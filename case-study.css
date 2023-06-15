@@ -6,6 +6,10 @@
 	transition: 0.6s ease;
 } */
 
+.content {
+	transform: translateY(80vh);
+}
+
 .head, .rotate1, .rotate2, .rotate3, .rotate4, .rotate5, .rotate6, .rotate7 {
     transform-origin: center;
 }
