@@ -84,6 +84,7 @@ daybreak.router.useScript(()=>{
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 				})
+				clearInterval(interval);
 // 				document.querySelector('.background').classList.remove("dark")
 // 				document.querySelector('.nav-container').classList.remove("dark","transform")
 // 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
