@@ -204,7 +204,7 @@ daybreak.router.useScript(()=>{
 		// periodically update the time elements
 		const allVancouverTimeElm = document.querySelectorAll('.pst');
 		const allTorontoTimeElm = document.querySelectorAll('.est');
-		const allLondonTimeElm = document.querySelectorAll('.gst');
+		const allLondonTimeElm = document.querySelectorAll('.gmt');
 
 		const vancouverTime = getVancouverTime();
 		const torontoTime = getTorontoTime();
