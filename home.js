@@ -11,6 +11,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-container').classList.add("nav-home")
 		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
 		document.querySelector('.nav-test').classList.remove("close","dark","casestudy")
+		document.querySelector('html').classList.remove('open')
 		
 		document.getElementById('pager').classList.remove('full')
 		document.getElementById('pager').style.top = 'auto'
@@ -19,7 +20,6 @@ daybreak.router.useScript(()=>{
 		
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.height = "108px"
-			document.querySelector('html').classList.remove('open')
 		}, 600);
 		
 //		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
