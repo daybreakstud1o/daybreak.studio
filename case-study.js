@@ -62,7 +62,7 @@ daybreak.router.useScript(()=>{
 		var project = slug[slug.length - 1]
 		let full = document.querySelector('#full').offsetWidth + 'px'
 		document.getElementById(project).style.minWidth = full
-		document.getElementById(project).style.height = '55vw'
+		document.getElementById(project).classList.add('casestudy-thumbnail-height')
 		document.querySelector('.content').style.zIndex = '-1'
 		
 		if (project == 'hypercard') {
