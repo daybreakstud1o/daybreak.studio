@@ -173,7 +173,7 @@ daybreak.router.useScript(()=>{
 		// eastern time
 		const eastCoastTimeStr = date.toLocaleString("en-US", {
 			timeZone: "America/Los_Angeles",
-			hour12: false
+			hour12: true
 		})
 		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
 	}
@@ -184,7 +184,7 @@ daybreak.router.useScript(()=>{
 		// eastern time
 		const eastCoastTimeStr = date.toLocaleString("en-US", {
 			timeZone: "America/New_York",
-			hour12: false
+			hour12: true
 		})
 		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
 	}
@@ -195,7 +195,7 @@ daybreak.router.useScript(()=>{
 		// eastern time
 		const eastCoastTimeStr = date.toLocaleString("en-US", {
 			timeZone: "Europe/London",
-			hour12: false
+			hour12: true
 		})
 		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
 	}
