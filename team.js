@@ -157,6 +157,38 @@ daybreak.router.useScript(()=>{
 	    }
 	  }
 	});
+	
+	function fix24HrString(str) {
+		const strSplitted = str.split(":");
+		const hr = strSplitted[0] === "24"? "00":strSplitted[0];
+		const min = strSplitted[1];
+		const sec = strSplitted[2];
+
+		return `${hr}:${min}:${sec}`
+	}
+
+	function getTorontoTime() {
+		const date = new Date();
+
+		// eastern time
+		const eastCoastTimeStr = date.toLocaleString("en-US", {
+			timeZone: "America/New_York",
+			hour12: false
+		})
+		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
+	}
+
+	const updateTime = () => {
+		// periodically update the time elements
+		const allTorontoTimeElm = document.querySelectorAll('.est');
+
+		const torontoTime = getTorontoTime();
+
+		allTorontoTimeElm.forEach((elm) => elm.innerHTML = torontoTime);
+	}
+
+	const interval = setInterval(updateTime,1000);
+	updateTime();
 	  
 
 	function setupLogoMinimizeOnScroll() {
