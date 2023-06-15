@@ -1,1 +1,8 @@
-
+@media only screen and (max-width: 767px) {
+  .thumbnail-row.flex-end a:not(.casestudy-thumbnail-height) {
+    height: auto;
+  }
+  .thumbnail-row.flex-end .casestudy-thumbnail-height {
+    top: auto!important;
+  }
+}
