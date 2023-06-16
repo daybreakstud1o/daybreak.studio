@@ -76,9 +76,11 @@ daybreak.router.useScript(()=>{
 		} else if (project == 'pager') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-end')
 		} else if (project == 'capital') {
-			//document.querySelector('.thumbnails-wrapper').style.top = 'calc(-8px - 35vw)'
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
 			document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-start')
+		} else if (project == 'project-4') {
+			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
+			document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-end')
 		} 
 		
 // 		setTimeout(function() {
