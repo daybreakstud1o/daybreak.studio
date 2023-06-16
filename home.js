@@ -15,7 +15,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.remove("close","dark","casestudy")
 		document.querySelector('html').classList.remove('open')
 		
-		document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1')
+		document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2')
 		document.getElementById('hypercard').classList.remove('full')
 		document.getElementById('hypercard').style.top = 'auto'
 		document.getElementById('pager').classList.remove('full')
@@ -24,6 +24,10 @@ daybreak.router.useScript(()=>{
 		document.getElementById('capital').style.top = 'auto'
 		document.getElementById('project-4').classList.remove('full')
 		document.getElementById('project-4').style.top = 'auto'
+		document.getElementById('project-5').classList.remove('full')
+		document.getElementById('project-5').style.top = 'auto'
+		document.getElementById('project-6').classList.remove('full')
+		document.getElementById('project-6').style.top = 'auto'
 		
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.height = "108px"
