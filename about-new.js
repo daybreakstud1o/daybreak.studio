@@ -24,12 +24,12 @@
 //		document.querySelector('.animate-test').style.top = '0!important'
 
 daybreak.router.useScript(()=>{
-	console.log("enter about: " +new Date(8.64e15).toString());
+	console.log("enter about: " +new Date.now());
 //	document.body.scrollTop = 0;
 //  	document.documentElement.scrollTop = 0;
 // 		document.querySelector('.animate-test').style.top = '0!important'
 	function animateInHero() {
-		console.log("enter animate hero: " +new Date(8.64e15).toString());
+		console.log("enter animate hero: " +new Date.now());
 		document.querySelector('html').style.scrollBehavior = 'auto'
 // 		var body = document.body,
 // 		    html = document.documentElement;
@@ -71,7 +71,7 @@ daybreak.router.useScript(()=>{
 		});
 		
 		
-		console.log("enter interval: " +new Date(8.64e15).toString());
+		console.log("enter interval: " +new Date.now());
 		
 		
 		
@@ -103,7 +103,7 @@ daybreak.router.useScript(()=>{
 		          }, interval * 3);
 		}
 		
-		console.log("enter interval: " +new Date(8.64e15).toString())
+		console.log("enter interval: " +new Date.now())
 		
 		function move(i,type) {
 			var elm = document.querySelectorAll('#'+type+'-selector .about-selector--item')[i]
@@ -140,7 +140,7 @@ daybreak.router.useScript(()=>{
 			  document.querySelector('#'+type+ '-' + i).style.zIndex = '2'
 		}
 		
-		console.log('enter list: ' +new Date(8.64e15).toString());
+		console.log('enter list: ' +new Date.now());
 		
 		var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
 		var Arr = Array.prototype.slice.call(list).sort((a, b) => 0.5 - Math.random());
@@ -182,7 +182,7 @@ daybreak.router.useScript(()=>{
 		sdhjdsdfhj()
 		var myInterval1 = setInterval(sdhjdsdfhj, interval1 * 10);
 		
-		console.log('enter logo: ' +new Date(8.64e15).toString());
+		console.log('enter logo: ' +new Date.now());
 
 		function sdhjdsdfhj() {
 		  var items = changeLogo()
@@ -210,7 +210,7 @@ daybreak.router.useScript(()=>{
 		    invisibleList[node].setAttribute('area', eval('fml' + node))
 		  }
 		}
-		console.log('finished load in: ' +new Date(8.64e15).toString());
+		console.log('finished load in: ' +new Date.now());
 		
 		
 		
@@ -247,7 +247,7 @@ daybreak.router.useScript(()=>{
 
 		}
 	}
-	console.log('other code: ' +new Date(8.64e15).toString());
+	console.log('other code: ' +new Date.now());
 	const resetHero = animateInHero();
 // 	setTimeout(function() {
 // 		document.querySelector('.content').classList.remove("hide")
