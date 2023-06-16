@@ -69,6 +69,7 @@ daybreak.router.useScript(()=>{
 		  document.querySelectorAll('.thumbnail-row')[i].classList.remove('flex-start','flex-end')
 		}
 		var thumbnailsTop = 0 - document.getElementById(project).getBoundingClientRect().top
+		console.log(document.getElementById(project).getBoundingClientRect())
 		
 		if (project == 'hypercard') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-start')
