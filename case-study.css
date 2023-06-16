@@ -382,7 +382,7 @@
   .sticky-info--scrolled > div:nth-child(2) {
     transform: translateX(10vw) !important;
   }
-}*/
+}
 
 .content.hide {
 	opacity: 0;
@@ -398,7 +398,7 @@
 	.content {
 		transform: translateY(80vh);
 	}
-}
+}*/
 
 @media only screen and (max-width: 767px) {
     .close #real-nav1 {
