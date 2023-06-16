@@ -29,7 +29,7 @@ daybreak.router.useScript(()=>{
 			document.querySelector('#real-nav1').style.height = "108px"
 		}, 600);
 		setTimeout(function() {
-			document.querySelector('#real-nav1').style.transition = "0.6s ease-in"
+			document.querySelector('#real-nav1').style.transition = "0.6s ease-in-out"
 		}, 2000);
 		
 //		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
