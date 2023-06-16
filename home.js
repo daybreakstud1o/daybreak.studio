@@ -13,6 +13,9 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.remove("close","dark","casestudy")
 		document.querySelector('html').classList.remove('open')
 		
+		document.getElementById('thumbnails-wrapper').style.top = 'auto'
+		document.getElementById('hypercard').classList.remove('full')
+		document.getElementById('hypercard').style.top = 'auto'
 		document.getElementById('pager').classList.remove('full')
 		document.getElementById('pager').style.top = 'auto'
 		document.getElementById('capital').classList.remove('full')
