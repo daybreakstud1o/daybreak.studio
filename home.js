@@ -10,7 +10,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-container').classList.remove("dark","transform","casestudy-bg")
 		document.querySelector('.nav-container').classList.add("nav-home")
 		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
-		document.querySelector('.nav-test').classList.remove("close","dark","casestudy")
+		document.querySelector('.nav-test').classList.remove("close","dark","casestudy","flesh-top-1")
 		document.querySelector('html').classList.remove('open')
 		
 		document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1')
