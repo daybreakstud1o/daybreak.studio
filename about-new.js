@@ -58,7 +58,7 @@ daybreak.router.useScript(()=>{
 		}, 600);
 		
 		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
-    		let narrow = document.querySelector('#test1').offsetWidth + 'px'
+    		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
 // 		document.querySelectorAll('.about-carousel > *').forEach((element) => {
 // 		  element.setAttribute("sizes", "")
 // 		});
