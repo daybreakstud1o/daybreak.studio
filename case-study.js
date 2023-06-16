@@ -81,6 +81,14 @@ daybreak.router.useScript(()=>{
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
 			document.querySelector('#real-nav1').classList.add("flesh-top-1")
 			document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-end')
+		} else if (project == 'project-5') {
+			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-2')
+			document.querySelector('#real-nav1').classList.add("flesh-top-2")
+			document.querySelectorAll('.thumbnail-row')[2].classList.add('flex-start')
+		} else if (project == 'project-6') {
+			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-2')
+			document.querySelector('#real-nav1').classList.add("flesh-top-2")
+			document.querySelectorAll('.thumbnail-row')[2].classList.add('flex-end')
 		} 
 		
 // 		setTimeout(function() {
