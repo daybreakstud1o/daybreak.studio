@@ -74,6 +74,7 @@ daybreak.router.useScript(()=>{
 		} else if (project == 'pager') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-end')
 		} else if (project == 'capital') {
+			document.querySelector('.content').style.top = document.getElementById(project).getBoundingClientRect().top
 			document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-start')
 		} 
 		
