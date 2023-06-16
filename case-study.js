@@ -68,8 +68,6 @@ daybreak.router.useScript(()=>{
 		for (let i = 0; i < document.querySelectorAll('.thumbnail-row').length; i++) {
 		  document.querySelectorAll('.thumbnail-row')[i].classList.remove('flex-start','flex-end')
 		}
-		var thumbnailsTop = 0 - document.getElementById(project).getBoundingClientRect().top
-		console.log(document.getElementById(project).getBoundingClientRect())
 		
 		if (project == 'hypercard') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-start')
@@ -81,6 +79,7 @@ daybreak.router.useScript(()=>{
 			document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-start')
 		} else if (project == 'project-4') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
+			document.querySelector('#real-nav1').classList.add("flesh-top-1")
 			document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-end')
 		} 
 		
