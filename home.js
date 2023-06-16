@@ -8,7 +8,8 @@ daybreak.router.useScript(()=>{
 		document.documentElement.scrollTop = 0;
 		document.querySelector('html').style.scrollBehavior = 'smooth'
 		document.querySelector('.background').classList.remove("dark")
-		document.querySelector('.nav-container').classList.remove("dark","transform","casestudy-bg","flesh-top-1")
+		document.querySelector('.nav-container').classList.remove("dark","transform","casestudy-bg")
+		document.querySelector('.real-nav').classList.remove("flesh-top-1")
 		document.querySelector('.nav-container').classList.add("nav-home")
 		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
 		document.querySelector('.nav-test').classList.remove("close","dark","casestudy")
