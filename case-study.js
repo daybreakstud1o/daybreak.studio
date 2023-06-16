@@ -68,13 +68,14 @@ daybreak.router.useScript(()=>{
 		for (let i = 0; i < document.querySelectorAll('.thumbnail-row').length; i++) {
 		  document.querySelectorAll('.thumbnail-row')[i].classList.remove('flex-start','flex-end')
 		}
+		var thumbnailsTop = 0 - document.getElementById(project).getBoundingClientRect().top
 		
 		if (project == 'hypercard') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-start')
 		} else if (project == 'pager') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-end')
 		} else if (project == 'capital') {
-			document.querySelector('.content').style.top = document.getElementById(project).getBoundingClientRect().top
+			document.querySelector('.thumbnails-wrapper').style.top = thumbnailsTop + 'px'
 			document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-start')
 		} 
 		
