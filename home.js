@@ -20,6 +20,8 @@ daybreak.router.useScript(()=>{
 		document.getElementById('pager').style.top = 'auto'
 		document.getElementById('capital').classList.remove('full')
 		document.getElementById('capital').style.top = 'auto'
+		document.getElementById('project-4').classList.remove('full')
+		document.getElementById('project-4').style.top = 'auto'
 		
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.height = "108px"
