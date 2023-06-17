@@ -31,6 +31,7 @@ daybreak.router.useScript(()=>{
 		
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.height = "108px"
+			document.querySelector('.nav-test').style.height = 'auto'
 		}, 600);
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.transition = "0.6s ease-in-out"
