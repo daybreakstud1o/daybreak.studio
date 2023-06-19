@@ -31,7 +31,7 @@ daybreak.router.useScript(()=>{
 		
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.height = '7.5vw'
-			document.querySelector('#real-nav1').style.maxHeight = '164px'
+			//document.querySelector('#real-nav1').style.maxHeight = '164px'
 			document.querySelector('.nav-test').style.height = 'auto'
 		}, 600);
 		setTimeout(function() {
