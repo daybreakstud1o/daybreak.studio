@@ -221,32 +221,32 @@ daybreak.router.useScript(()=>{
 	updateTime();
 	  
 
-	function setupLogoMinimizeOnScroll() {
-		function minimizeLogo() {
-			document.querySelector('.nav-logo').classList.remove("nav-logo--expanded")
-		}
-		function maximizeLogo() {
-			document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
-		}
+	// function setupLogoMinimizeOnScroll() {
+	// 	function minimizeLogo() {
+	// 		document.querySelector('.nav-logo').classList.remove("nav-logo--expanded")
+	// 	}
+	// 	function maximizeLogo() {
+	// 		document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
+	// 	}
 
-		const handleScroll =(scroll)=>{
-			// const scroll = window.scrollY;
-			if (scroll >= 100) {
-					minimizeLogo()
-			} else if (scroll < 100) {
-					maximizeLogo()
-			}
-		}
-		// window.addEventListener("scroll", handleScroll);
-		daybreak.scroll.observeScroll(handleScroll)
+	// 	const handleScroll =(scroll)=>{
+	// 		// const scroll = window.scrollY;
+	// 		if (scroll >= 100) {
+	// 				minimizeLogo()
+	// 		} else if (scroll < 100) {
+	// 				maximizeLogo()
+	// 		}
+	// 	}
+	// 	// window.addEventListener("scroll", handleScroll);
+	// 	daybreak.scroll.observeScroll(handleScroll)
 
-		return ()=>{
-			minimizeLogo();
-			daybreak.scroll.unobserveScroll(handleScroll)
-			// window.removeEventListener("scroll", handleScroll);
-		}
-	}
-	const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
+	// 	return ()=>{
+	// 		minimizeLogo();
+	// 		daybreak.scroll.unobserveScroll(handleScroll)
+	// 		// window.removeEventListener("scroll", handleScroll);
+	// 	}
+	// }
+	// const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
 		
 	// TODO: create transition
 	/* 
@@ -264,29 +264,29 @@ daybreak.router.useScript(()=>{
 	});*/
 
 
- 	const {cleanupIntersectionObserver, onIntersectionChange} = createIntersectionObserver();
+ // 	const {cleanupIntersectionObserver, onIntersectionChange} = createIntersectionObserver();
 
- 	const mobileBreakpoint = 767;
+ // 	const mobileBreakpoint = 767;
 
-	const cleanupDocumentSticky = enableAllStickyPosition();	
-	function enableAllStickyPosition() {
-		const stickyElm = document.querySelectorAll(".sticky");
+	// const cleanupDocumentSticky = enableAllStickyPosition();	
+	// function enableAllStickyPosition() {
+	// 	const stickyElm = document.querySelectorAll(".sticky");
 
-		const cleanups = Array.from(stickyElm).map((elm)=>{
-			return enableStickyPosition(elm);
-		})
+	// 	const cleanups = Array.from(stickyElm).map((elm)=>{
+	// 		return enableStickyPosition(elm);
+	// 	})
 		
-		return ()=> cleanups.forEach((cleanup)=>cleanup());
-	}
+	// 	return ()=> cleanups.forEach((cleanup)=>cleanup());
+	// }
 	
 	
-	return ()=>{
-		console.log("leaving about");
-		cleanupLogoMinimizeOnScroll();
-		resetHero();
-		cleanupIntersectionObserver();
-		cleanupDocumentSticky();
-	}
+	// return ()=>{
+	// 	console.log("leaving about");
+	// 	cleanupLogoMinimizeOnScroll();
+	// 	resetHero();
+	// 	cleanupIntersectionObserver();
+	// 	cleanupDocumentSticky();
+	// }
 })
 
 function enableStickyPosition(element) {
