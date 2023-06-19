@@ -12,7 +12,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('#real-nav1').classList.remove("flesh-top-1","flesh-top-2")
 		document.querySelector('.nav-container').classList.add("nav-home")
 		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
-		document.querySelector('.nav-test').classList.remove("close","dark","casestudy")
+		document.querySelector('.nav-test').classList.remove("close","dark","casestudy","short")
 		document.querySelector('html').classList.remove('open')
 		
 		document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2')
