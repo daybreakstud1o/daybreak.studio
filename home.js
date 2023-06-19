@@ -133,16 +133,7 @@ daybreak.router.useScript(()=>{
 		});
 	});
 
-	$(window).on("load scroll",function(e){
-		var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
-		if (navTop == 0) {
-			document.querySelector('.nav-test').classList.add("short")
-			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
-		} else if (navTop > 0) {
-			document.querySelector('.nav-test').classList.remove("short")
-			document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
-		}
-	});
+	
 	
 	$( "#hypercard" ).on( "click", function() {
 		document.querySelector('.thumbnail-row').style.justifyContent = "flex-start"
