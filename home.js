@@ -106,6 +106,7 @@ daybreak.router.useScript(()=>{
 				})
 				//document.querySelector('.animate-test').style.top = '0!important'
 				document.querySelector('.nav-container').classList.remove("nav-home")
+				document.querySelector('.nav-test').classList.remove("short")
 
 //				document.querySelector('#real-nav').style.top = '0px'
 
