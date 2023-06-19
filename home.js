@@ -111,6 +111,8 @@ daybreak.router.useScript(()=>{
 		}
 	}
 	const resetHero = animateInHero();
+
+	console.log(document.querySelector('#real-nav1').getBoundingClientRect().top)
 	
 	$( "#hypercard" ).on( "click", function() {
 		document.querySelector('.thumbnail-row').style.justifyContent = "flex-start"
