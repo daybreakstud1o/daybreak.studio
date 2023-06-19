@@ -117,6 +117,9 @@ daybreak.router.useScript(()=>{
 		if (navTop == 0) {
 			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
 			document.querySelector('.logo-wrapper').style.height = '4.5vw'
+		} else if (navTop > 0) {
+			document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
+			document.querySelector('.logo-wrapper').style.height = '7.5vw'
 		}
 	});
 	
