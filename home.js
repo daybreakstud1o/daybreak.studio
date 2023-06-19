@@ -1,6 +1,8 @@
 
 //@ts-ignore
+		document.documentElement.scrollTop = 0;
 daybreak.router.useScript(()=>{
+		document.documentElement.scrollTop = 0;
 	console.log("enter home");
 //	document.body.scrollTop = 0;
 //   	document.documentElement.scrollTop = 0;
