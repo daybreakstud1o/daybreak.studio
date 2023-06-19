@@ -116,10 +116,10 @@ daybreak.router.useScript(()=>{
 		var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
 		if (navTop == 0) {
 			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
-			document.querySelector('.logo-wrapper').style.height = '4.5vw'
+			document.querySelector('#real-nav1').style.height = '4.5vw'
 		} else if (navTop > 0) {
 			document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
-			document.querySelector('.logo-wrapper').style.height = '7.5vw'
+			document.querySelector('#real-nav1').style.height = '7.5vw'
 		}
 	});
 	
