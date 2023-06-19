@@ -318,32 +318,32 @@ daybreak.router.useScript(()=>{
 	});
 	  
 
-	function setupLogoMinimizeOnScroll() {
-		function minimizeLogo() {
-			document.querySelector('.nav-logo').classList.remove("nav-logo--expanded")
-		}
-		function maximizeLogo() {
-			document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
-		}
+	// function setupLogoMinimizeOnScroll() {
+	// 	function minimizeLogo() {
+	// 		document.querySelector('.nav-logo').classList.remove("nav-logo--expanded")
+	// 	}
+	// 	function maximizeLogo() {
+	// 		document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
+	// 	}
 
-		const handleScroll =(scroll)=>{
-			// const scroll = window.scrollY;
-			if (scroll >= 100) {
-					minimizeLogo()
-			} else if (scroll < 100) {
-					maximizeLogo()
-			}
-		}
-		// window.addEventListener("scroll", handleScroll);
-		daybreak.scroll.observeScroll(handleScroll)
+	// 	const handleScroll =(scroll)=>{
+	// 		// const scroll = window.scrollY;
+	// 		if (scroll >= 100) {
+	// 				minimizeLogo()
+	// 		} else if (scroll < 100) {
+	// 				maximizeLogo()
+	// 		}
+	// 	}
+	// 	// window.addEventListener("scroll", handleScroll);
+	// 	daybreak.scroll.observeScroll(handleScroll)
 
-		return ()=>{
-			minimizeLogo();
-			daybreak.scroll.unobserveScroll(handleScroll)
-			// window.removeEventListener("scroll", handleScroll);
-		}
-	}
-	const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
+	// 	return ()=>{
+	// 		minimizeLogo();
+	// 		daybreak.scroll.unobserveScroll(handleScroll)
+	// 		// window.removeEventListener("scroll", handleScroll);
+	// 	}
+	// }
+	// const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
 		
 	// TODO: create transition
 	/* 
@@ -361,84 +361,84 @@ daybreak.router.useScript(()=>{
 	});*/
 
 
- 	const {cleanupIntersectionObserver, onIntersectionChange} = createIntersectionObserver();
+ // 	const {cleanupIntersectionObserver, onIntersectionChange} = createIntersectionObserver();
 
- 	const mobileBreakpoint = 767;
+ // 	const mobileBreakpoint = 767;
 
-	const cleanupDocumentSticky = enableAllStickyPosition();	
-	function enableAllStickyPosition() {
-		const stickyElm = document.querySelectorAll(".sticky");
+	// const cleanupDocumentSticky = enableAllStickyPosition();	
+	// function enableAllStickyPosition() {
+	// 	const stickyElm = document.querySelectorAll(".sticky");
 
-		const cleanups = Array.from(stickyElm).map((elm)=>{
-			return enableStickyPosition(elm);
-		})
+	// 	const cleanups = Array.from(stickyElm).map((elm)=>{
+	// 		return enableStickyPosition(elm);
+	// 	})
 		
-		return ()=> cleanups.forEach((cleanup)=>cleanup());
-	}
+	// 	return ()=> cleanups.forEach((cleanup)=>cleanup());
+	// }
 	
 	
-	return ()=>{
-		console.log("leaving about");
-		cleanupLogoMinimizeOnScroll();
-		resetHero();
-		cleanupIntersectionObserver();
-		cleanupDocumentSticky();
-	}
+	// return ()=>{
+	// 	console.log("leaving about");
+	// 	cleanupLogoMinimizeOnScroll();
+	// 	resetHero();
+	// 	cleanupIntersectionObserver();
+	// 	cleanupDocumentSticky();
+	// }
 })
 
-function enableStickyPosition(element) {
+// function enableStickyPosition(element) {
 
-	const computedElmStyle = window.getComputedStyle(element, null);
+// 	const computedElmStyle = window.getComputedStyle(element, null);
 
-	const stickyTop = parseInt(computedElmStyle.top);
-	const elementHeight = parseInt(computedElmStyle.height);
+// 	const stickyTop = parseInt(computedElmStyle.top);
+// 	const elementHeight = parseInt(computedElmStyle.height);
 
-	const stickyObserver = createIntersectionObserver({
-		rootMargin: `0px 0px 0px 0px`,
-		threshold: [0.0, 1.0]
-	});
+// 	const stickyObserver = createIntersectionObserver({
+// 		rootMargin: `0px 0px 0px 0px`,
+// 		threshold: [0.0, 1.0]
+// 	});
 
-	// start calculating scroll when the element on screen
-	const handleScroll = (scrollProgress)=>{
-		const parentOffsetBound = element.parentElement.getBoundingClientRect();
+// 	// start calculating scroll when the element on screen
+// 	const handleScroll = (scrollProgress)=>{
+// 		const parentOffsetBound = element.parentElement.getBoundingClientRect();
 
-		const stickyOffsetValue = -parentOffsetBound.top + stickyTop;
-		const stickyBottomPosition = stickyOffsetValue + elementHeight;
+// 		const stickyOffsetValue = -parentOffsetBound.top + stickyTop;
+// 		const stickyBottomPosition = stickyOffsetValue + elementHeight;
 
-		// before the sticky area
-		if(stickyOffsetValue < 0) {
-			// reset when before the sticking point
-			element.style.transform = `translateY(0px)`;
-			return;
-		} 
+// 		// before the sticky area
+// 		if(stickyOffsetValue < 0) {
+// 			// reset when before the sticking point
+// 			element.style.transform = `translateY(0px)`;
+// 			return;
+// 		} 
 
-		// over the sticky area
-		if(stickyBottomPosition > parentOffsetBound.height) {
-			// allow the element to scroll like other element,
-			// aka not doing any compensation
-			return;
-		}
+// 		// over the sticky area
+// 		if(stickyBottomPosition > parentOffsetBound.height) {
+// 			// allow the element to scroll like other element,
+// 			// aka not doing any compensation
+// 			return;
+// 		}
 		
-		// withing the sticky area
-		// compensate the y position to make it always in one position
-		element.style.transform = `translateY(${stickyOffsetValue}px)`;
-	}
+// 		// withing the sticky area
+// 		// compensate the y position to make it always in one position
+// 		element.style.transform = `translateY(${stickyOffsetValue}px)`;
+// 	}
 
-	stickyObserver.onIntersectionChange(element, (entry)=>{
+// 	stickyObserver.onIntersectionChange(element, (entry)=>{
 
-		if(entry.intersectionRatio === 1) {
-			daybreak.scroll.observeScroll(handleScroll);
-		}
+// 		if(entry.intersectionRatio === 1) {
+// 			daybreak.scroll.observeScroll(handleScroll);
+// 		}
 
-		if(entry.intersectionRatio === 0) {
-			daybreak.scroll.unobserveScroll(handleScroll);
-		}
-	})
+// 		if(entry.intersectionRatio === 0) {
+// 			daybreak.scroll.unobserveScroll(handleScroll);
+// 		}
+// 	})
 
-	return ()=>{
-		stickyObserver.cleanupIntersectionObserver()
-	}
-}
+// 	return ()=>{
+// 		stickyObserver.cleanupIntersectionObserver()
+// 	}
+// }
 
 
 function createIntersectionObserver(config = {rootMargin: '0px', threshold: 1.0}) {
