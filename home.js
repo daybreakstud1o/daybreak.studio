@@ -30,7 +30,7 @@ daybreak.router.useScript(()=>{
 		document.getElementById('project-6').style.top = 'auto'
 		
 		setTimeout(function() {
-			document.querySelector('#real-nav1').style.height = "108px"
+			document.querySelector('#real-nav1').style.height = "7.5vw"
 			document.querySelector('.nav-test').style.height = 'auto'
 		}, 600);
 		setTimeout(function() {
@@ -113,7 +113,11 @@ daybreak.router.useScript(()=>{
 	const resetHero = animateInHero();
 
 	$(window).on("load scroll",function(e){
-		console.log(document.querySelector('#real-nav1').getBoundingClientRect().top)
+		var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
+		if (navTop == 0) {
+			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
+			document.querySelector('.logo-wrapper').style.height = '4.5vw'
+		}
 	});
 	
 	$( "#hypercard" ).on( "click", function() {
