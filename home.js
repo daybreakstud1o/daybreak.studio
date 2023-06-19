@@ -30,7 +30,7 @@ daybreak.router.useScript(()=>{
 		document.getElementById('project-6').style.top = 'auto'
 		
 		setTimeout(function() {
-			document.querySelector('#real-nav1').classList.remove('nav-small')
+			document.querySelector('#real-nav1').style.height = '7.5vw'
 			document.querySelector('.nav-test').style.height = 'auto'
 		}, 600);
 		setTimeout(function() {
