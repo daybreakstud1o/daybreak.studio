@@ -105,6 +105,7 @@ daybreak.router.useScript(()=>{
 				})
 				//document.querySelector('.animate-test').style.top = '0!important'
 				document.querySelector('.nav-container').classList.remove("nav-home")
+				document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized");
 
 //				document.querySelector('#real-nav').style.top = '0px'
 
