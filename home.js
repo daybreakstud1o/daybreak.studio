@@ -39,6 +39,17 @@ daybreak.router.useScript(()=>{
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.transition = "0.6s ease-in-out"
 		}, 2000);
+
+		$(window).on("load scroll",function(e){
+			var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
+			if (navTop == 0) {
+				document.querySelector('.nav-test').classList.add("short")
+				document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
+			} else if (navTop > 0) {
+				document.querySelector('.nav-test').classList.remove("short")
+				document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
+			}
+		});
 		
 //		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
 		
