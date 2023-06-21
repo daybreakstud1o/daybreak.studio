@@ -145,12 +145,12 @@ daybreak.router.useScript(()=>{
 		}
 	});
 	
-	$( "#hypercard" ).on( "click", function() {
-		document.querySelector('.thumbnail-row').style.justifyContent = "flex-start"
-	} );
-	$( "#pager" ).on( "click", function() {
-		document.querySelector('.thumbnail-row').style.justifyContent = "flex-end"
-	} );
+	// $( "#hypercard" ).on( "click", function() {
+	// 	document.querySelector('.thumbnail-row').style.justifyContent = "flex-start"
+	// } );
+	// $( "#pager" ).on( "click", function() {
+	// 	document.querySelector('.thumbnail-row').style.justifyContent = "flex-end"
+	// } );
 	
 	
 	
