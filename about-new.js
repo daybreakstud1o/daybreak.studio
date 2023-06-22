@@ -24,12 +24,10 @@
 //		document.querySelector('.animate-test').style.top = '0!important'
 
 daybreak.router.useScript(()=>{
-	console.log("enter about: " + Date.now());
 //	document.body.scrollTop = 0;
 //  	document.documentElement.scrollTop = 0;
 // 		document.querySelector('.animate-test').style.top = '0!important'
 	function animateInHero() {
-		console.log("enter animate hero: " + Date.now());
 		document.querySelector('html').style.scrollBehavior = 'auto'
 // 		var body = document.body,
 // 		    html = document.documentElement;
@@ -71,9 +69,6 @@ daybreak.router.useScript(()=>{
 		});
 		
 		
-		console.log("enter interval: " + Date.now());
-		
-		
 		
 		var interval = 6000
 		var one, two, three, four, five, six;
@@ -102,8 +97,6 @@ daybreak.router.useScript(()=>{
 			    move('3','software')
 		          }, interval * 3);
 		}
-		
-		console.log("enter interval: " + Date.now())
 		
 		function move(i,type) {
 			var elm = document.querySelectorAll('#'+type+'-selector .about-selector--item')[i]
@@ -139,8 +132,6 @@ daybreak.router.useScript(()=>{
 			  })
 			  document.querySelector('#'+type+ '-' + i).style.zIndex = '2'
 		}
-		
-		console.log('enter list: ' + Date.now());
 		
 		var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
 		var Arr = Array.prototype.slice.call(list).sort((a, b) => 0.5 - Math.random());
@@ -181,8 +172,7 @@ daybreak.router.useScript(()=>{
 		var interval1 = 300
 		sdhjdsdfhj()
 		var myInterval1 = setInterval(sdhjdsdfhj, interval1 * 10);
-		
-		console.log('enter logo: ' + Date.now());
+	
 
 		function sdhjdsdfhj() {
 		  var items = changeLogo()
@@ -210,7 +200,6 @@ daybreak.router.useScript(()=>{
 		    invisibleList[node].setAttribute('area', eval('fml' + node))
 		  }
 		}
-		console.log('finished load in: ' + Date.now());
 		
 		
 		
@@ -247,7 +236,6 @@ daybreak.router.useScript(()=>{
 
 		}
 	}
-	console.log('other code: ' + Date.now());
 	const resetHero = animateInHero();
 // 	setTimeout(function() {
 // 		document.querySelector('.content').classList.remove("hide")
