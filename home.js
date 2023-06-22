@@ -17,19 +17,19 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.remove("close","dark","casestudy","short")
 		document.querySelector('html').classList.remove('open')
 		
-		document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2')
-		document.getElementById('hypercard').classList.remove('full')
-		document.getElementById('hypercard').style.top = 'auto'
-		document.getElementById('pager').classList.remove('full')
-		document.getElementById('pager').style.top = 'auto'
-		document.getElementById('capital').classList.remove('full')
-		document.getElementById('capital').style.top = 'auto'
-		document.getElementById('project-4').classList.remove('full')
-		document.getElementById('project-4').style.top = 'auto'
-		document.getElementById('project-5').classList.remove('full')
-		document.getElementById('project-5').style.top = 'auto'
-		document.getElementById('project-6').classList.remove('full')
-		document.getElementById('project-6').style.top = 'auto'
+		// document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2')
+		// document.getElementById('hypercard').classList.remove('full')
+		// document.getElementById('hypercard').style.top = 'auto'
+		// document.getElementById('pager').classList.remove('full')
+		// document.getElementById('pager').style.top = 'auto'
+		// document.getElementById('capital').classList.remove('full')
+		// document.getElementById('capital').style.top = 'auto'
+		// document.getElementById('project-4').classList.remove('full')
+		// document.getElementById('project-4').style.top = 'auto'
+		// document.getElementById('project-5').classList.remove('full')
+		// document.getElementById('project-5').style.top = 'auto'
+		// document.getElementById('project-6').classList.remove('full')
+		// document.getElementById('project-6').style.top = 'auto'
 		
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.height = '7.5vw'
@@ -42,29 +42,29 @@ daybreak.router.useScript(()=>{
 		
 //		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
 		
-    		let full = document.querySelector('#full').offsetWidth + 'px'
-		let small = document.querySelector('#small').offsetWidth + 'px'
-    		let big = document.querySelector('#big').offsetWidth + 'px'
-    		let half = document.querySelector('#half').offsetWidth + 'px'
+  //   		let full = document.querySelector('#full').offsetWidth + 'px'
+		// let small = document.querySelector('#small').offsetWidth + 'px'
+  //   		let big = document.querySelector('#big').offsetWidth + 'px'
+  //   		let half = document.querySelector('#half').offsetWidth + 'px'
 
-		document.querySelectorAll('.thumbnail-row .small').forEach((element) => {
-		  element.style.minWidth = small
-		  element.style.opacity = '1'
-		  element.style.pointerEvents = 'all'
-		  element.classList.remove('casestudy-thumbnail-height')
-		});
-		document.querySelectorAll('.thumbnail-row .big').forEach((element) => {
-		  element.style.minWidth = big
-		  element.style.opacity = '1'
-		  element.style.pointerEvents = 'all'
-		  element.classList.remove('casestudy-thumbnail-height')
-		});
-		document.querySelectorAll('.thumbnail-row .half').forEach((element) => {
-		  element.style.minWidth = half
-		  element.style.opacity = '1'
-		  element.style.pointerEvents = 'all'
-		  element.classList.remove('casestudy-thumbnail-height')
-		});
+		// document.querySelectorAll('.thumbnail-row .small').forEach((element) => {
+		//   element.style.minWidth = small
+		//   element.style.opacity = '1'
+		//   element.style.pointerEvents = 'all'
+		//   element.classList.remove('casestudy-thumbnail-height')
+		// });
+		// document.querySelectorAll('.thumbnail-row .big').forEach((element) => {
+		//   element.style.minWidth = big
+		//   element.style.opacity = '1'
+		//   element.style.pointerEvents = 'all'
+		//   element.classList.remove('casestudy-thumbnail-height')
+		// });
+		// document.querySelectorAll('.thumbnail-row .half').forEach((element) => {
+		//   element.style.minWidth = half
+		//   element.style.opacity = '1'
+		//   element.style.pointerEvents = 'all'
+		//   element.classList.remove('casestudy-thumbnail-height')
+		// });
 		
 //		document.querySelector('.content').style.transform = 'translateY(40vh)'
 // 		document.querySelector('.animate-test').classList.remove('fuck')
