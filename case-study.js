@@ -117,7 +117,7 @@ daybreak.router.useScript(()=>{
 		  element.style.opacity = '0'
 		  element.style.pointerEvents = 'none'
 		});
-		document.getElementById(project).style.opacity = '1'
+		document.getElementsByClassName(project)[0].style.opacity = '1'
 		
 		
 		
