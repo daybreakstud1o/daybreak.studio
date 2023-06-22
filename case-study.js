@@ -224,6 +224,19 @@ daybreak.router.useScript(()=>{
 			}
 		} );
 	})
+
+	document.querySelector("#intro-button").onmouseout = function() {
+		document.querySelector(".casestudy-nav-description").classList.remove("problem","solution")
+		document.querySelector(".casestudy-nav-description").classList.add("intro")
+	};
+	document.querySelector("#problem-button").onmouseout = function() {
+		document.querySelector(".casestudy-nav-description").classList.remove("intro","solution")
+		document.querySelector(".casestudy-nav-description").classList.add("problem")
+	};
+	document.querySelector("#solution-button").onmouseout = function() {
+		document.querySelector(".casestudy-nav-description").classList.remove("problem","intro")
+		document.querySelector(".casestudy-nav-description").classList.add("solution")
+	};
 	
 
 	
