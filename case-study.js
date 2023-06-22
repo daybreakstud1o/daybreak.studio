@@ -61,8 +61,8 @@ daybreak.router.useScript(()=>{
 		var slug = currentUrl.split("/");
 		var project = slug[slug.length - 1]
 		let full = document.querySelector('#full').offsetWidth + 'px'
-		document.getElementById(project).style.minWidth = full
-		document.getElementById(project).classList.add('casestudy-thumbnail-height')
+		document.getElementsByClassName(project)[0].style.minWidth = full
+		document.getElementsByClassName(project)[0].classList.add('casestudy-thumbnail-height')
 		document.querySelector('.content').style.zIndex = '-1'
 		
 		for (let i = 0; i < document.querySelectorAll('.thumbnail-row').length; i++) {
@@ -71,24 +71,32 @@ daybreak.router.useScript(()=>{
 		
 		if (project == 'hypercard') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-start')
-		} else if (project == 'pager') {
+		} else if (project == 'wombo-dream') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-end')
-		} else if (project == 'capital') {
+		} else if (project == 'inspired') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
 			document.querySelector('#real-nav1').classList.add("flesh-top-1")
 			document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-start')
-		} else if (project == 'project-4') {
+		} else if (project == 'prologue') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
 			document.querySelector('#real-nav1').classList.add("flesh-top-1")
 			document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-end')
-		} else if (project == 'project-5') {
+		} else if (project == 'curated') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-2')
 			document.querySelector('#real-nav1').classList.add("flesh-top-2")
 			document.querySelectorAll('.thumbnail-row')[2].classList.add('flex-start')
-		} else if (project == 'project-6') {
+		} else if (project == 'workweek') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-2')
 			document.querySelector('#real-nav1').classList.add("flesh-top-2")
 			document.querySelectorAll('.thumbnail-row')[2].classList.add('flex-end')
+		} else if (project == 'party-round') {
+			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
+			document.querySelector('#real-nav1').classList.add("flesh-top-3")
+			document.querySelectorAll('.thumbnail-row')[3].classList.add('flex-end')
+		} else if (project == 'notes-about-people') {
+			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
+			document.querySelector('#real-nav1').classList.add("flesh-top-3")
+			document.querySelectorAll('.thumbnail-row')[3].classList.add('flex-end')
 		} 
 
 		
