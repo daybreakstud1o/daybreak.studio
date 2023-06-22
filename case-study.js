@@ -130,6 +130,7 @@ daybreak.router.useScript(()=>{
 				window.requestAnimationFrame(()=>{
 				})
 				document.querySelector('.nav-test').classList.remove("casestudy")
+				document.querySelector('.nav-container').classList.remove("casestudy-bg")
 				document.querySelector('.content').style.zIndex = 'auto'
 				
 // 				document.querySelector('.background').classList.remove("dark")
