@@ -149,27 +149,27 @@ daybreak.router.useScript(()=>{
 				document.getElementById('project-6').style.top = 'auto'
 
 			
-		let small = document.querySelector('#small').offsetWidth + 'px'
-    		let big = document.querySelector('#big').offsetWidth + 'px'
-    		let half = document.querySelector('#half').offsetWidth + 'px'
-		document.querySelectorAll('.thumbnail-row .small').forEach((element) => {
-		  element.style.minWidth = small
-		  element.style.opacity = '1'
-		  element.style.pointerEvents = 'all'
-		  element.classList.remove('casestudy-thumbnail-height')
-		});
-		document.querySelectorAll('.thumbnail-row .big').forEach((element) => {
-		  element.style.minWidth = big
-		  element.style.opacity = '1'
-		  element.style.pointerEvents = 'all'
-		  element.classList.remove('casestudy-thumbnail-height')
-		});
-		document.querySelectorAll('.thumbnail-row .half').forEach((element) => {
-		  element.style.minWidth = half
-		  element.style.opacity = '1'
-		  element.style.pointerEvents = 'all'
-		  element.classList.remove('casestudy-thumbnail-height')
-		});
+				let small = document.querySelector('#small').offsetWidth + 'px'
+		    		let big = document.querySelector('#big').offsetWidth + 'px'
+		    		let half = document.querySelector('#half').offsetWidth + 'px'
+				document.querySelectorAll('.thumbnail-row .small').forEach((element) => {
+				  element.style.minWidth = small
+				  element.style.opacity = '1'
+				  element.style.pointerEvents = 'all'
+				  element.classList.remove('casestudy-thumbnail-height')
+				});
+				document.querySelectorAll('.thumbnail-row .big').forEach((element) => {
+				  element.style.minWidth = big
+				  element.style.opacity = '1'
+				  element.style.pointerEvents = 'all'
+				  element.classList.remove('casestudy-thumbnail-height')
+				});
+				document.querySelectorAll('.thumbnail-row .half').forEach((element) => {
+				  element.style.minWidth = half
+				  element.style.opacity = '1'
+				  element.style.pointerEvents = 'all'
+				  element.classList.remove('casestudy-thumbnail-height')
+				});
 				
 // 				document.querySelector('.background').classList.remove("dark")
 // 				document.querySelector('.nav-container').classList.remove("dark","transform")
