@@ -42,31 +42,29 @@ daybreak.router.useScript(()=>{
 		
 //		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
 		
-    		let full = document.querySelector('#full').offsetWidth + 'px'
-		let small = document.querySelector('#small').offsetWidth + 'px'
-    		let big = document.querySelector('#big').offsetWidth + 'px'
-    		let half = document.querySelector('#half').offsetWidth + 'px'
-// 		document.querySelectorAll('.about-carousel > *').forEach((element) => {
-// 		  element.setAttribute("sizes", "")
-// 		});
-		document.querySelectorAll('.thumbnail-row .small').forEach((element) => {
-		  element.style.minWidth = small
-		  element.style.opacity = '1'
-		  element.style.pointerEvents = 'all'
-		  element.classList.remove('casestudy-thumbnail-height')
-		});
-		document.querySelectorAll('.thumbnail-row .big').forEach((element) => {
-		  element.style.minWidth = big
-		  element.style.opacity = '1'
-		  element.style.pointerEvents = 'all'
-		  element.classList.remove('casestudy-thumbnail-height')
-		});
-		document.querySelectorAll('.thumbnail-row .half').forEach((element) => {
-		  element.style.minWidth = half
-		  element.style.opacity = '1'
-		  element.style.pointerEvents = 'all'
-		  element.classList.remove('casestudy-thumbnail-height')
-		});
+  //   		let full = document.querySelector('#full').offsetWidth + 'px'
+		// let small = document.querySelector('#small').offsetWidth + 'px'
+  //   		let big = document.querySelector('#big').offsetWidth + 'px'
+  //   		let half = document.querySelector('#half').offsetWidth + 'px'
+
+		// document.querySelectorAll('.thumbnail-row .small').forEach((element) => {
+		//   element.style.minWidth = small
+		//   element.style.opacity = '1'
+		//   element.style.pointerEvents = 'all'
+		//   element.classList.remove('casestudy-thumbnail-height')
+		// });
+		// document.querySelectorAll('.thumbnail-row .big').forEach((element) => {
+		//   element.style.minWidth = big
+		//   element.style.opacity = '1'
+		//   element.style.pointerEvents = 'all'
+		//   element.classList.remove('casestudy-thumbnail-height')
+		// });
+		// document.querySelectorAll('.thumbnail-row .half').forEach((element) => {
+		//   element.style.minWidth = half
+		//   element.style.opacity = '1'
+		//   element.style.pointerEvents = 'all'
+		//   element.classList.remove('casestudy-thumbnail-height')
+		// });
 		
 //		document.querySelector('.content').style.transform = 'translateY(40vh)'
 // 		document.querySelector('.animate-test').classList.remove('fuck')
