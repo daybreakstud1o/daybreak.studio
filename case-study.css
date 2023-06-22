@@ -327,8 +327,18 @@
 	opacity: 1!important;
 }
 
+.casestudy-nav-description-paragraphs div {
+	display: none;
+}
+.casestudy-nav-description-selector div {
+	opacity: 0.7;
+}
+
 .casestudy-nav-description.intro #intro-text, .casestudy-nav-description.problem #problem-text, .casestudy-nav-description.solution #solution-text {
-	display: block;
+	display: block!important;
+}
+.casestudy-nav-description.intro #intro-button, .casestudy-nav-description.problem #problem-button, .casestudy-nav-description.solution #solution-button {
+	opacity: 1!important;
 }
 
 
