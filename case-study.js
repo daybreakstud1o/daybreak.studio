@@ -129,6 +129,7 @@ daybreak.router.useScript(()=>{
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 				})
+				document.querySelector('.nav-test').classList.remove("casestudy")
 				document.querySelector('.content').style.zIndex = 'auto'
 				
 // 				document.querySelector('.background').classList.remove("dark")
