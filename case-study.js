@@ -132,7 +132,7 @@ daybreak.router.useScript(()=>{
 				})
 				document.querySelector('.nav-test').classList.remove("casestudy","short")
 				document.querySelector('.nav-container').classList.remove("casestudy-bg")
-				document.querySelector('#real-nav1').classList.remove("flesh-top")
+				document.querySelector('#real-nav1').classList.remove("flesh-top-1","flesh-top-2")
 				document.querySelector('.content').style.zIndex = 'auto'
 			
 				document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2')
