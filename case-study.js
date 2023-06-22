@@ -143,19 +143,23 @@ daybreak.router.useScript(()=>{
 				document.querySelector('#real-nav1').classList.remove("flesh-top-1","flesh-top-2")
 				document.querySelector('.content').style.zIndex = 'auto'
 			
-				document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2')
-				document.getElementById('hypercard').classList.remove('full')
-				document.getElementById('hypercard').style.top = 'auto'
-				document.getElementById('pager').classList.remove('full')
-				document.getElementById('pager').style.top = 'auto'
-				document.getElementById('capital').classList.remove('full')
-				document.getElementById('capital').style.top = 'auto'
-				document.getElementById('project-4').classList.remove('full')
-				document.getElementById('project-4').style.top = 'auto'
-				document.getElementById('project-5').classList.remove('full')
-				document.getElementById('project-5').style.top = 'auto'
-				document.getElementById('project-6').classList.remove('full')
-				document.getElementById('project-6').style.top = 'auto'
+				document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
+				document.getElementsByClassName('hypercard')[0].classList.remove('full')
+				document.getElementsByClassName('hypercard')[0].style.top = 'auto'
+				document.getElementsByClassName('wombo-dream')[0].classList.remove('full')
+				document.getElementsByClassName('wombo-dream')[0].style.top = 'auto'
+				document.getElementsByClassName('inspired')[0].classList.remove('full')
+				document.getElementsByClassName('inspired')[0].style.top = 'auto'
+				document.getElementsByClassName('prologue')[0].classList.remove('full')
+				document.getElementsByClassName('prologue')[0].style.top = 'auto'
+				document.getElementsByClassName('curated')[0].classList.remove('full')
+				document.getElementsByClassName('curated')[0].style.top = 'auto'
+				document.getElementsByClassName('workweek')[0].classList.remove('full')
+				document.getElementsByClassName('workweek')[0].style.top = 'auto'
+				document.getElementsByClassName('party-round')[0].classList.remove('full')
+				document.getElementsByClassName('party-round')[0].style.top = 'auto'
+				document.getElementsByClassName('notes-about-people')[0].classList.remove('full')
+				document.getElementsByClassName('notes-about-people')[0].style.top = 'auto'
 
 			
 				let small = document.querySelector('#small').offsetWidth + 'px'
