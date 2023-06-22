@@ -327,6 +327,10 @@
 	opacity: 1!important;
 }
 
+.casestudy-nav-description.intro #intro-text, .casestudy-nav-description.problem #problem-text, .casestudy-nav-description.solution #solution-text {
+	display: block;
+}
+
 
 /*.case-study .heading-1 {
   visibility: hidden;
