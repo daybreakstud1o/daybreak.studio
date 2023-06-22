@@ -92,7 +92,7 @@ daybreak.router.useScript(()=>{
 		} else if (project == 'party-round') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
 			document.querySelector('#real-nav1').classList.add("flesh-top-3")
-			document.querySelectorAll('.thumbnail-row')[3].classList.add('flex-end')
+			document.querySelectorAll('.thumbnail-row')[3].classList.add('flex-start')
 		} else if (project == 'notes-about-people') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
 			document.querySelector('#real-nav1').classList.add("flesh-top-3")
