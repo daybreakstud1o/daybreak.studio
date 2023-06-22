@@ -17,7 +17,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.remove("close","dark","casestudy","short")
 		document.querySelector('html').classList.remove('open')
 		
-		// document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2')
+		document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
 		// document.getElementById('hypercard').classList.remove('full')
 		// document.getElementById('hypercard').style.top = 'auto'
 		// document.getElementById('pager').classList.remove('full')
