@@ -50,7 +50,7 @@ daybreak.router.useScript(()=>{
 			document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized");
 		}, 450);
 		document.querySelector('.nav-container').classList.remove("nav-home")
-		document.querySelector('.nav-test').classList.add("close", "casestudy")    
+		document.querySelector('.nav-test').classList.add("casestudy")    
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)';document.querySelector('.content').style.opacity = '1'}, 600)
 		
 		setTimeout(function() {
