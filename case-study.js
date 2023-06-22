@@ -43,7 +43,7 @@ daybreak.router.useScript(()=>{
 		
 		document.querySelector('.background').classList.remove("dark")
 		document.querySelector('.nav-container').classList.remove("dark")
-		document.querySelector('.nav-test').classList.remove("dark")
+		document.querySelector('.nav-test').classList.remove("dark","close")
 		
 		document.querySelector('.nav-container').classList.add("casestudy-bg")
 		setTimeout(function() {
