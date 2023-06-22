@@ -39,6 +39,9 @@ daybreak.router.useScript(()=>{
 // 		    document.querySelector('.animate-test').style.top = '0!important'
 // 		});
 	   	document.documentElement.scrollTop = 0;
+		setTimeout(function() {
+			document.documentElement.scrollTop = 0;
+		}, 100);
 		document.querySelector('html').classList.remove('open')
 		
 		document.querySelector('.background').classList.remove("dark")
