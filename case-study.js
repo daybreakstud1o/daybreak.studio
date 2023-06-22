@@ -225,6 +225,8 @@ daybreak.router.useScript(()=>{
 		} );
 	})
 
+	
+	document.querySelector(".casestudy-nav-description").classList.add("intro")
 	document.querySelector("#intro-button").onmouseout = function() {
 		document.querySelector(".casestudy-nav-description").classList.remove("problem","solution")
 		document.querySelector(".casestudy-nav-description").classList.add("intro")
