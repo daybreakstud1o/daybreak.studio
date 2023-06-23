@@ -1,3 +1,81 @@
+::selection {
+  background: #EDC9BA;
+}
+#real-nav1 {
+	height: 60vh;
+}
+@media screen and (min-width: 1920px) {
+  #real-nav1 {
+    height: 58vh;
+  }
+}
+/*.nav-test {
+	padding-top: 0vh;
+  animation: 0.75s loadUp1 forwards ease-out;
+  animation-delay: 0.6s;
+}
+.real-nav {
+	min-height: 100vh;
+  animation: 0.75s loadUp forwards ease-out;
+  animation-delay: 0.6s;
+}
+@keyframes loadUp {
+	0% { min-height: 100vh; }
+  100% { min-height: 8.2vh; }
+}
+@keyframes loadUp1 {
+	0% { padding-top: 0vh; }
+  100% { padding-top: 40vh; }
+}*/
+
+
+
+
+/* overriding nav column on mobile */
+@media only screen and (max-width:479px) {
+	.daybreak-info {
+    display:block !important;
+  }
+
+  /*.nav-right {
+  	justify-content: flex-start !important;
+    grid-column-start: 2 !important;
+    grid-column-end: 4 !important;
+    grid-row-end: 2 !important;
+    grid-row-start: 2 !important;
+  }*/
+}
+
+
+@media only screen and (min-width: 480px) {
+	.daybreak-logo-small {
+  	opacity:0;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  /*.daybreak-logo-small,
+  .daybreak-logo-big {
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
+    transition-duration: .3s;
+  }
+  
+	.daybreak-logo-big {
+    transform: translateX(-20px);
+    opacity: 0;
+  }*/
+  .daybreak-logo-small--scrolled {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  .daybreak-logo-big--scrolled {
+    transform: translateX(0px) !important;
+    opacity: 1 !important;
+  }
+}
+
+
 @media only screen and (max-width: 767px) {
   .thumbnail-row.flex-end a:not(.casestudy-thumbnail-height) {
     height: 75vw;
