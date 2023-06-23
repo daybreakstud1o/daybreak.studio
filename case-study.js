@@ -74,6 +74,10 @@ daybreak.router.useScript(()=>{
 		
 		if (project == 'hypercard') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-start')
+			document.getElementById('casestudy-name').innerHTML = 'Hypercard'
+			document.getElementById('casestudy-categories').innerHTML = 'Brand | Product | Web'
+			document.getElementById('casestudy-previous').innerHTML = 'Notes About People'
+			document.getElementById('casestudy-next').innerHTML = 'Wombo Dream'
 		} else if (project == 'wombo-dream') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-end')
 		} else if (project == 'inspired') {
