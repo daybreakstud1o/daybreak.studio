@@ -1,14 +1,7 @@
 ::selection {
   background: #EDC9BA;
 }
-#real-nav1 {
-	height: 60vh;
-}
-@media screen and (min-width: 1920px) {
-  #real-nav1 {
-    height: 58vh;
-  }
-}
+
 /*.nav-test {
 	padding-top: 0vh;
   animation: 0.75s loadUp1 forwards ease-out;
