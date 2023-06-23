@@ -210,7 +210,6 @@ daybreak.router.useScript(()=>{
 		document.querySelector('html').classList.remove('open')
 	} );
 
-	const 
 	
 	document.querySelector(".casestudy-nav-indicator").innerHTML = ''
 	document.querySelectorAll('.casestudy-container').forEach(function(currentElement, index) {
