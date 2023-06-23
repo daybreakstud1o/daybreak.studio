@@ -228,7 +228,7 @@ daybreak.router.useScript(()=>{
 				}
 				console.log(document.querySelectorAll(".casestudy-nav-indicator-item")[index])
 				console.log(index)
-				document.querySelectorAll(".casestudy-nav-indicator-item")[index].style.opacity = '1'
+				document.querySelectorAll(".casestudy-nav-indicator-item")[index - 1].style.opacity = '1'
 			}
 		} );
 	})
