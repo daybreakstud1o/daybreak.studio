@@ -168,6 +168,7 @@ daybreak.router.useScript(()=>{
 				document.getElementsByClassName('party-round')[0].style.top = 'auto'
 				document.getElementsByClassName('notes-about-people')[0].classList.remove('full')
 				document.getElementsByClassName('notes-about-people')[0].style.top = 'auto'
+				document.querySelector(".casestudy-nav-indicator").innerHTML = ''
 
 			
 				let small = document.querySelector('#small').offsetWidth + 'px'
@@ -208,6 +209,8 @@ daybreak.router.useScript(()=>{
 	$( "#casestudy-menu-close" ).on( "click", function() {
 		document.querySelector('html').classList.remove('open')
 	} );
+
+	const 
 	
 	document.querySelector(".casestudy-nav-indicator").innerHTML = ''
 	document.querySelectorAll('.casestudy-container').forEach(function(currentElement, index) {
