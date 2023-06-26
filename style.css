@@ -15,7 +15,12 @@
     pointer-events: none;
     z-index: -1;
   }
-  
+
+  #casestudy-previous, #casestudy-next {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+  }
 
   
   .full-height {
