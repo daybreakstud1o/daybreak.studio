@@ -80,30 +80,58 @@ daybreak.router.useScript(()=>{
 			document.getElementById('casestudy-next').innerHTML = 'Wombo Dream'
 		} else if (project == 'wombo-dream') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-end')
+			document.getElementById('casestudy-name').innerHTML = 'Wombo Dream'
+			document.getElementById('casestudy-categories').innerHTML = 'Product'
+			document.getElementById('casestudy-previous').innerHTML = 'Hypercard'
+			document.getElementById('casestudy-next').innerHTML = 'Inspired'
 		} else if (project == 'inspired') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
 			document.querySelector('#real-nav1').classList.add("flesh-top-1")
 			document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-start')
+			document.getElementById('casestudy-name').innerHTML = 'Inspired'
+			document.getElementById('casestudy-categories').innerHTML = 'Brand | Strategy | Web'
+			document.getElementById('casestudy-previous').innerHTML = 'Wombo Dream'
+			document.getElementById('casestudy-next').innerHTML = 'Prologue'
 		} else if (project == 'prologue') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
 			document.querySelector('#real-nav1').classList.add("flesh-top-1")
 			document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-end')
+			document.getElementById('casestudy-name').innerHTML = 'Prologue'
+			document.getElementById('casestudy-categories').innerHTML = 'Brand | Strategy | Product'
+			document.getElementById('casestudy-previous').innerHTML = 'Inspired'
+			document.getElementById('casestudy-next').innerHTML = 'Curated'
 		} else if (project == 'curated') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-2')
 			document.querySelector('#real-nav1').classList.add("flesh-top-2")
 			document.querySelectorAll('.thumbnail-row')[2].classList.add('flex-start')
+			document.getElementById('casestudy-name').innerHTML = 'Curated'
+			document.getElementById('casestudy-categories').innerHTML = 'Brand | Strategy | Copywriting'
+			document.getElementById('casestudy-previous').innerHTML = 'Prologue'
+			document.getElementById('casestudy-next').innerHTML = 'Workweek'
 		} else if (project == 'workweek') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-2')
 			document.querySelector('#real-nav1').classList.add("flesh-top-2")
 			document.querySelectorAll('.thumbnail-row')[2].classList.add('flex-end')
+			document.getElementById('casestudy-name').innerHTML = 'Workweek'
+			document.getElementById('casestudy-categories').innerHTML = 'Brand | Web'
+			document.getElementById('casestudy-previous').innerHTML = 'Curated'
+			document.getElementById('casestudy-next').innerHTML = 'Party Round'
 		} else if (project == 'party-round') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
 			document.querySelector('#real-nav1').classList.add("flesh-top-3")
 			document.querySelectorAll('.thumbnail-row')[3].classList.add('flex-start')
+			document.getElementById('casestudy-name').innerHTML = 'Party Round'
+			document.getElementById('casestudy-categories').innerHTML = 'Brand'
+			document.getElementById('casestudy-previous').innerHTML = 'Workweek'
+			document.getElementById('casestudy-next').innerHTML = 'Notes About People'
 		} else if (project == 'notes-about-people') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
 			document.querySelector('#real-nav1').classList.add("flesh-top-3")
 			document.querySelectorAll('.thumbnail-row')[3].classList.add('flex-end')
+			document.getElementById('casestudy-name').innerHTML = 'Notes About People'
+			document.getElementById('casestudy-categories').innerHTML = 'Product | Visual identity'
+			document.getElementById('casestudy-previous').innerHTML = 'Party Round'
+			document.getElementById('casestudy-next').innerHTML = 'Hypercard'
 		} 
 
 		
