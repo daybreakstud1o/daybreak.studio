@@ -82,13 +82,17 @@ daybreak.router.useScript(()=>{
 			caseStudyName.innerHTML = 'Hypercard'
 			caseStudyCategories.innerHTML = 'Brand | Product | Web'
 			caseStudyPrevious.innerHTML = 'Notes About People'
+			caseStudyPrevious.href = '/notes-about-people'
 			caseStudyNext.innerHTML = 'Wombo Dream'
+			caseStudyNext.href = '/wombo-dream'
 		} else if (project == 'wombo-dream') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-end')
 			caseStudyName.innerHTML = 'Wombo Dream'
 			caseStudyCategories.innerHTML = 'Product'
 			caseStudyPrevious.innerHTML = 'Hypercard'
+			caseStudyPrevious.href = '/hypercard'
 			caseStudyNext.innerHTML = 'Inspired'
+			caseStudyNext.href = '/inspired'
 		} else if (project == 'inspired') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
 			document.querySelector('#real-nav1').classList.add("flesh-top-1")
@@ -96,7 +100,9 @@ daybreak.router.useScript(()=>{
 			caseStudyName.innerHTML = 'Inspired'
 			caseStudyCategories.innerHTML = 'Brand | Strategy | Web'
 			caseStudyPrevious.innerHTML = 'Wombo Dream'
+			caseStudyPrevious.href = '/wombo-dream'
 			caseStudyNext.innerHTML = 'Prologue'
+			caseStudyNext.href = '/prologue'
 		} else if (project == 'prologue') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
 			document.querySelector('#real-nav1').classList.add("flesh-top-1")
@@ -104,7 +110,9 @@ daybreak.router.useScript(()=>{
 			caseStudyName.innerHTML = 'Prologue'
 			caseStudyCategories.innerHTML = 'Brand | Strategy | Product'
 			caseStudyPrevious.innerHTML = 'Inspired'
+			caseStudyPrevious.href = '/inspired'
 			caseStudyNext.innerHTML = 'Curated'
+			caseStudyNext.href = '/curated'
 		} else if (project == 'curated') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-2')
 			document.querySelector('#real-nav1').classList.add("flesh-top-2")
@@ -112,7 +120,9 @@ daybreak.router.useScript(()=>{
 			caseStudyName.innerHTML = 'Curated'
 			caseStudyCategories.innerHTML = 'Brand | Strategy | Copywriting'
 			caseStudyPrevious.innerHTML = 'Prologue'
+			caseStudyPrevious.href = '/prologue'
 			caseStudyNext.innerHTML = 'Workweek'
+			caseStudyNext.href = '/workweek'
 		} else if (project == 'workweek') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-2')
 			document.querySelector('#real-nav1').classList.add("flesh-top-2")
@@ -120,7 +130,9 @@ daybreak.router.useScript(()=>{
 			caseStudyName.innerHTML = 'Workweek'
 			caseStudyCategories.innerHTML = 'Brand | Web'
 			caseStudyPrevious.innerHTML = 'Curated'
+			caseStudyPrevious.href = '/curated'
 			caseStudyNext.innerHTML = 'Party Round'
+			caseStudyNext.href = '/party-round'
 		} else if (project == 'party-round') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
 			document.querySelector('#real-nav1').classList.add("flesh-top-3")
@@ -128,7 +140,9 @@ daybreak.router.useScript(()=>{
 			caseStudyName.innerHTML = 'Party Round'
 			caseStudyCategories.innerHTML = 'Brand'
 			caseStudyPrevious.innerHTML = 'Workweek'
+			caseStudyPrevious.href = '/workweek'
 			caseStudyNext.innerHTML = 'Notes About People'
+			caseStudyNext.href = '/notes-about-people'
 		} else if (project == 'notes-about-people') {
 			document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
 			document.querySelector('#real-nav1').classList.add("flesh-top-3")
@@ -136,7 +150,9 @@ daybreak.router.useScript(()=>{
 			caseStudyName.innerHTML = 'Notes About People'
 			caseStudyCategories.innerHTML = 'Product | Visual identity'
 			caseStudyPrevious.innerHTML = 'Party Round'
+			caseStudyPrevious.href = '/party-round'
 			caseStudyNext.innerHTML = 'Hypercard'
+			caseStudyNext.href = '/hypercard'
 		} 
 
 		
