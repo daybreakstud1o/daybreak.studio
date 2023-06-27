@@ -82,7 +82,7 @@ daybreak.router.useScript(()=>{
 			caseStudyName.innerHTML = 'Hypercard'
 			caseStudyCategories.innerHTML = 'Brand | Product | Web'
 			caseStudyPrevious.innerHTML = 'Notes About People'
-			caseStudyNext..innerHTML = 'Wombo Dream'
+			caseStudyNext.innerHTML = 'Wombo Dream'
 		} else if (project == 'wombo-dream') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-end')
 			caseStudyName.innerHTML = 'Wombo Dream'
