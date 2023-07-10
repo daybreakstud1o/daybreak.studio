@@ -24,6 +24,7 @@
 
 daybreak.router.useScript(()=>{
 	console.log("enter contact");
+	console.log("sup it's ben")
 	function animateInHero() {
 		document.querySelector('html').style.scrollBehavior = 'auto'
 // 		var body = document.body,
