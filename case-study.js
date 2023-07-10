@@ -423,6 +423,7 @@ daybreak.router.useScript(()=>{
 	}
 	
 	
+	
 	return ()=>{
 		console.log("leaving about");
 		cleanupLogoMinimizeOnScroll();
