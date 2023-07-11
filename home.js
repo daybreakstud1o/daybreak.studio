@@ -9,7 +9,7 @@ daybreak.router.useScript(()=>{
 	function animateInHero() {
 		document.documentElement.scrollTop = 0;
 		document.querySelector('html').style.scrollBehavior = 'smooth'
-		document.querySelector('.background').classList.remove("dark")
+		//document.querySelector('.background').classList.remove("dark")
 		document.querySelector('.nav-container').classList.remove("dark","transform","casestudy-bg")
 		document.querySelector('#real-nav1').classList.remove("flesh-top-1","flesh-top-2")
 		document.querySelector('.nav-container').classList.add("nav-home")
