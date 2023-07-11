@@ -116,7 +116,6 @@ daybreak.router.useScript(()=>{
 	const resetHero = animateInHero();
 
 	$(window).on("load resize",function(e){
-		console.log('hi')
     		let full = document.querySelector('#full').offsetWidth + 'px'
 		let small = document.querySelector('#small').offsetWidth + 'px'
     		let big = document.querySelector('#big').offsetWidth + 'px'
