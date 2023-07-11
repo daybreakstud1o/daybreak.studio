@@ -70,68 +70,68 @@ daybreak.router.useScript(()=>{
 		
 		
 		
-		var interval = 6000
-		var one, two, three, four, five, six;
-		shift()
-		var myInterval = setInterval(shift, interval * 4);
-		function shift() {
-			  move('0','brands')
-			  one = setTimeout(function(){ 
-			    move('1','brands')
-		          }, interval);
-		   	  two = setTimeout(function(){ 
-			    move('2','brands')
-		          }, interval * 2);
-			  three = setTimeout(function(){ 
-			    move('3','brands')
-		          }, interval * 3);
+		// var interval = 6000
+		// var one, two, three, four, five, six;
+		// shift()
+		// var myInterval = setInterval(shift, interval * 4);
+		// function shift() {
+		// 	  move('0','brands')
+		// 	  one = setTimeout(function(){ 
+		// 	    move('1','brands')
+		//           }, interval);
+		//    	  two = setTimeout(function(){ 
+		// 	    move('2','brands')
+		//           }, interval * 2);
+		// 	  three = setTimeout(function(){ 
+		// 	    move('3','brands')
+		//           }, interval * 3);
 			
-			  move('0','software')
-			  four = setTimeout(function(){ 
-			    move('1','software')
-		          }, interval);
-		   	  five = setTimeout(function(){ 
-			    move('2','software')
-		          }, interval * 2);
-			  six = setTimeout(function(){ 
-			    move('3','software')
-		          }, interval * 3);
-		}
+		// 	  move('0','software')
+		// 	  four = setTimeout(function(){ 
+		// 	    move('1','software')
+		//           }, interval);
+		//    	  five = setTimeout(function(){ 
+		// 	    move('2','software')
+		//           }, interval * 2);
+		// 	  six = setTimeout(function(){ 
+		// 	    move('3','software')
+		//           }, interval * 3);
+		// }
 		
-		function move(i,type) {
-			var elm = document.querySelectorAll('#'+type+'-selector .about-selector--item')[i]
-			var bar = document.querySelector('#'+type+'-selector .progress-bar')
-			var push = elm.offsetTop
-			var height = document.querySelectorAll('#'+type+'-selector .item-height')[i].offsetHeight + "px"
+		// function move(i,type) {
+		// 	var elm = document.querySelectorAll('#'+type+'-selector .about-selector--item')[i]
+		// 	var bar = document.querySelector('#'+type+'-selector .progress-bar')
+		// 	var push = elm.offsetTop
+		// 	var height = document.querySelectorAll('#'+type+'-selector .item-height')[i].offsetHeight + "px"
 
-			  if (i == '0') {
-			    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = push + "px"
-			  } else {
-			  var descHeight = document.querySelectorAll('#'+type+'-selector .about-selector--item .desc')[i-1].offsetHeight
-			    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = (push - descHeight) + "px"
-			  }
-			  for (let x = 0; x < document.querySelectorAll('#'+type+'-selector .about-selector--item').length; x++) {
-				document.querySelectorAll('#'+type+'-selector .about-selector--item')[x].style.height = document.querySelectorAll('#'+type+'-selector .body-founders._100')[x].offsetHeight + "px"
-			  }
+		// 	  if (i == '0') {
+		// 	    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = push + "px"
+		// 	  } else {
+		// 	  var descHeight = document.querySelectorAll('#'+type+'-selector .about-selector--item .desc')[i-1].offsetHeight
+		// 	    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = (push - descHeight) + "px"
+		// 	  }
+		// 	  for (let x = 0; x < document.querySelectorAll('#'+type+'-selector .about-selector--item').length; x++) {
+		// 		document.querySelectorAll('#'+type+'-selector .about-selector--item')[x].style.height = document.querySelectorAll('#'+type+'-selector .body-founders._100')[x].offsetHeight + "px"
+		// 	  }
 
-			  elm.style.height = height
-			  bar.animate(
-			    [
-			      { transform: "translateY(-100%)" },
-			      { transform: "translateY(0%)" },
-			    ],
-			    {
-			      duration: interval,
-			      iterations: 1,
-			    }
-			  );
+		// 	  elm.style.height = height
+		// 	  bar.animate(
+		// 	    [
+		// 	      { transform: "translateY(-100%)" },
+		// 	      { transform: "translateY(0%)" },
+		// 	    ],
+		// 	    {
+		// 	      duration: interval,
+		// 	      iterations: 1,
+		// 	    }
+		// 	  );
 
-			  document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.height = height
-			  document.querySelectorAll('.'+type+ '-img img').forEach((item, index) => {
-			    item.style.zIndex = '-1'
-			  })
-			  document.querySelector('#'+type+ '-' + i).style.zIndex = '2'
-		}
+		// 	  document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.height = height
+		// 	  document.querySelectorAll('.'+type+ '-img img').forEach((item, index) => {
+		// 	    item.style.zIndex = '-1'
+		// 	  })
+		// 	  document.querySelector('#'+type+ '-' + i).style.zIndex = '2'
+		// }
 		
 		var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
 		var Arr = Array.prototype.slice.call(list).sort((a, b) => 0.5 - Math.random());
@@ -226,13 +226,13 @@ daybreak.router.useScript(()=>{
 // 				document.querySelector('.content').style.transform = 'translateY(40vh)'
 // 				document.querySelector('.animate-test').classList.remove('fuck')
 				document.querySelector('.footer').classList.remove("dark")
-				clearInterval(myInterval);
-				clearTimeout(one);
-				clearTimeout(two);
-				clearTimeout(three);
-				clearTimeout(four);
-				clearTimeout(five);
-				clearTimeout(six);
+				// clearInterval(myInterval);
+				// clearTimeout(one);
+				// clearTimeout(two);
+				// clearTimeout(three);
+				// clearTimeout(four);
+				// clearTimeout(five);
+				// clearTimeout(six);
 
 		}
 	}
