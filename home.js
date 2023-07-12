@@ -1,11 +1,9 @@
 
 //@ts-ignore
-		document.documentElement.scrollTop = 0;
 daybreak.router.useScript(()=>{
-		document.documentElement.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
 	console.log("enter home");
-//	document.body.scrollTop = 0;
-//   	document.documentElement.scrollTop = 0;
+
 	function animateInHero() {
 		document.documentElement.scrollTop = 0;
 		document.querySelector('html').style.scrollBehavior = 'smooth'
@@ -19,18 +17,6 @@ daybreak.router.useScript(()=>{
 		
 		document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
 		document.querySelector('#real-nav1').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
-		// document.getElementById('hypercard').classList.remove('full')
-		// document.getElementById('hypercard').style.top = 'auto'
-		// document.getElementById('pager').classList.remove('full')
-		// document.getElementById('pager').style.top = 'auto'
-		// document.getElementById('capital').classList.remove('full')
-		// document.getElementById('capital').style.top = 'auto'
-		// document.getElementById('project-4').classList.remove('full')
-		// document.getElementById('project-4').style.top = 'auto'
-		// document.getElementById('project-5').classList.remove('full')
-		// document.getElementById('project-5').style.top = 'auto'
-		// document.getElementById('project-6').classList.remove('full')
-		// document.getElementById('project-6').style.top = 'auto'
 		
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.height = '7.5vw'
