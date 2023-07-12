@@ -1,7 +1,6 @@
 
 
 daybreak.router.useScript(()=>{
-=
 	function animateInHero() {
 		document.querySelector('html').style.scrollBehavior = 'auto'
 
