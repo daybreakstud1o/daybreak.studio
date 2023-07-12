@@ -4,7 +4,7 @@ daybreak.router.useScript(()=>{
 	function animateInHero() {
 		document.querySelector('html').style.scrollBehavior = 'auto'
 
-		// document.querySelector('.background').classList.add("dark")
+		document.querySelector('.background').classList.add("dark")
 		// document.querySelector('.footer').classList.add("dark")
 		// document.querySelector('.nav-container').classList.add("dark","transform")
 		document.querySelector('.nav-container').classList.add("transform")
