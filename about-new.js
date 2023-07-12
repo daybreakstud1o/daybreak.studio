@@ -4,17 +4,16 @@ daybreak.router.useScript(()=>{
 	function animateInHero() {
 		document.querySelector('html').style.scrollBehavior = 'auto'
 
-		// document.querySelector('.background').classList.add("dark")
-		// document.querySelector('.footer').classList.add("dark")
-		// document.querySelector('.nav-container').classList.add("dark","transform")
-		document.querySelector('.nav-container').classList.add("transform")
+		document.querySelector('.background').classList.add("dark")
+		document.querySelector('.footer').classList.add("dark")
+		document.querySelector('.nav-container').classList.add("dark","transform")
 		document.querySelector('html').classList.remove('open')
 		
 		setTimeout(function() {
 			document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized");
 		}, 450);
 		document.querySelector('.nav-container').classList.remove("nav-home")
-		// document.querySelector('.nav-test').classList.add("close","dark")
+		document.querySelector('.nav-test').classList.add("close","dark")
 		document.querySelector('.nav-test').classList.add("close")
 
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)';document.querySelector('.content').style.opacity = '1'}, 600)
@@ -23,86 +22,86 @@ daybreak.router.useScript(()=>{
 	    		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
 		}, 600);
 		
-		// let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
-    	// let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
+		let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
+    	let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
 
-		// document.querySelectorAll('.about-carousel .wide').forEach((element) => {
-		//   element.style.minWidth = wide
-		// })
-		// document.querySelectorAll('.about-carousel .narrow').forEach((element) => {
-		//   element.style.minWidth = narrow
-		// })
+		document.querySelectorAll('.about-carousel .wide').forEach((element) => {
+		  element.style.minWidth = wide
+		})
+		document.querySelectorAll('.about-carousel .narrow').forEach((element) => {
+		  element.style.minWidth = narrow
+		})
 		
 
 
 
-		// var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
-		// var Arr = Array.prototype.slice.call(list).sort((a, b) => 0.5 - Math.random());
-		// var visible = Arr.splice(0,9)
-		// var invisible = Arr.slice(-5)
+		var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
+		var Arr = Array.prototype.slice.call(list).sort((a, b) => 0.5 - Math.random());
+		var visible = Arr.splice(0,9)
+		var invisible = Arr.slice(-5)
 
-		// visible.forEach((item, index) => {
-		//     var n = index + 1
-		//     item.style.gridArea = 'Area-' + n
-		//     item.setAttribute('area', 'Area-' + n)
-		// })
-		// invisible.forEach((item, index) => {
-		//     item.style.opacity = '0'
-		//     item.setAttribute('area', '')
-		// })
+		visible.forEach((item, index) => {
+		    var n = index + 1
+		    item.style.gridArea = 'Area-' + n
+		    item.setAttribute('area', 'Area-' + n)
+		})
+		invisible.forEach((item, index) => {
+		    item.style.opacity = '0'
+		    item.setAttribute('area', '')
+		})
 
-		// function changeLogo() {
-		// 	var random = visible.sort(() => .5 - Math.random()).slice(0,3)
-		// 	var random1 = invisible.sort(() => .5 - Math.random()).slice(0,3)
+		function changeLogo() {
+			var random = visible.sort(() => .5 - Math.random()).slice(0,3)
+			var random1 = invisible.sort(() => .5 - Math.random()).slice(0,3)
 
-		// 	random.forEach((item) => {
-		// 	const index = visible.indexOf(item)
-		//     if (index > -1) { 
-		//       visible.splice(index, 1) 
-		//     }
-		//     invisible.push(item)
-		// 	})
-		//   random1.forEach((item) => {
-		// 	const index = invisible.indexOf(item)
-		//     if (index > -1) { 
-		//       invisible.splice(index, 1) 
-		//     }
-		//     visible.push(item)
-		// 	})
+			random.forEach((item) => {
+			const index = visible.indexOf(item)
+		    if (index > -1) { 
+		      visible.splice(index, 1) 
+		    }
+		    invisible.push(item)
+			})
+		  random1.forEach((item) => {
+			const index = invisible.indexOf(item)
+		    if (index > -1) { 
+		      invisible.splice(index, 1) 
+		    }
+		    visible.push(item)
+			})
 
-		//   return [random,random1]
-		// }
-		// var interval1 = 300
-		// sdhjdsdfhj()
-		// var myInterval1 = setInterval(sdhjdsdfhj, interval1 * 10);
+		  return [random,random1]
+		}
+		var interval1 = 300
+		sdhjdsdfhj()
+		var myInterval1 = setInterval(sdhjdsdfhj, interval1 * 10);
 	
 
-		// function sdhjdsdfhj() {
-		//   var items = changeLogo()
-		//   var visibleList = items[0]
-		//   var invisibleList = items[1]
-		//   var fml0 = visibleList[0].getAttribute('area')
-		//   var fml1 = visibleList[1].getAttribute('area')
-		//   var fml2 = visibleList[2].getAttribute('area')
+		function sdhjdsdfhj() {
+		  var items = changeLogo()
+		  var visibleList = items[0]
+		  var invisibleList = items[1]
+		  var fml0 = visibleList[0].getAttribute('area')
+		  var fml1 = visibleList[1].getAttribute('area')
+		  var fml2 = visibleList[2].getAttribute('area')
 
-		//   setTimeout(function () { appear('0') }, interval1 * 1)
-		//   setTimeout(function () { appear('1') }, interval1 * 2)
-		//   setTimeout(function () { appear('2') }, interval1 * 3)
-		//   setTimeout(function () { disappear('0') }, interval1 * 4)
-		//   setTimeout(function () { disappear('1') }, interval1 * 5)
-		//   setTimeout(function () { disappear('2') }, interval1 * 6)
+		  setTimeout(function () { appear('0') }, interval1 * 1)
+		  setTimeout(function () { appear('1') }, interval1 * 2)
+		  setTimeout(function () { appear('2') }, interval1 * 3)
+		  setTimeout(function () { disappear('0') }, interval1 * 4)
+		  setTimeout(function () { disappear('1') }, interval1 * 5)
+		  setTimeout(function () { disappear('2') }, interval1 * 6)
 
-		//   function appear(node) {
-		// 	visibleList[node].style.opacity = '0'
-		//     visibleList[node].style.gridArea = ''
-		//     visibleList[node].setAttribute('area', '')
-		//   }
-		//   function disappear(node) {
-		// 	invisibleList[node].style.opacity = '1'
-		// 	invisibleList[node].style.gridArea = eval('fml' + node)
-		//     invisibleList[node].setAttribute('area', eval('fml' + node))
-		//   }
-		// }
+		  function appear(node) {
+			visibleList[node].style.opacity = '0'
+		    visibleList[node].style.gridArea = ''
+		    visibleList[node].setAttribute('area', '')
+		  }
+		  function disappear(node) {
+			invisibleList[node].style.opacity = '1'
+			invisibleList[node].style.gridArea = eval('fml' + node)
+		    invisibleList[node].setAttribute('area', eval('fml' + node))
+		  }
+		}
 		
 		
 
@@ -110,7 +109,7 @@ daybreak.router.useScript(()=>{
 				
 				window.requestAnimationFrame(()=>{
 				})
-				//document.querySelector('.footer').classList.remove("dark")
+				document.querySelector('.footer').classList.remove("dark")
 
 		}
 	}
@@ -118,68 +117,68 @@ daybreak.router.useScript(()=>{
 	
 	
 	// UNCOMMENT
-	// document.querySelectorAll('.about-carousel').forEach((element, i) => {
+	document.querySelectorAll('.about-carousel').forEach((element, i) => {
 	  
-	//   let isDown = false;
-	//   let startX;
-	//   let scrollLeft;
+	  let isDown = false;
+	  let startX;
+	  let scrollLeft;
 
-	//   element.addEventListener('mousedown', (e) => {
-	//     isDown = true;
-	//     //slider.classList.add('active');
-	//     startX = e.pageX - element.offsetLeft;
-	//     scrollLeft = element.scrollLeft;
-	//     cancelMomentumTracking();
-	//   });
-
-
-	//   element.addEventListener('mouseleave', () => {
-	//     isDown = false;
-	//     //slider.classList.remove('active');
-	//   });
+	  element.addEventListener('mousedown', (e) => {
+	    isDown = true;
+	    //slider.classList.add('active');
+	    startX = e.pageX - element.offsetLeft;
+	    scrollLeft = element.scrollLeft;
+	    cancelMomentumTracking();
+	  });
 
 
-	//   element.addEventListener('mouseup', () => {
-	//     isDown = false;
-	//     //slider.classList.remove('active');
-	//     beginMomentumTracking();
-	//   });
+	  element.addEventListener('mouseleave', () => {
+	    isDown = false;
+	    //slider.classList.remove('active');
+	  });
 
 
-	//   element.addEventListener('mousemove', (e) => {
-	//     if(!isDown) return;
-	//     e.preventDefault();
-	//     const x = e.pageX - element.offsetLeft;
-	//     const walk = (x - startX) * 1; //scroll-fast
-	//     var prevScrollLeft = element.scrollLeft;
-	//     element.scrollLeft = scrollLeft - walk;
-	//     velX = element.scrollLeft - prevScrollLeft;
-	//   });
+	  element.addEventListener('mouseup', () => {
+	    isDown = false;
+	    //slider.classList.remove('active');
+	    beginMomentumTracking();
+	  });
 
-	//   // Momentum 
 
-	//   var velX = 0;
-	//   var momentumID;
+	  element.addEventListener('mousemove', (e) => {
+	    if(!isDown) return;
+	    e.preventDefault();
+	    const x = e.pageX - element.offsetLeft;
+	    const walk = (x - startX) * 1; //scroll-fast
+	    var prevScrollLeft = element.scrollLeft;
+	    element.scrollLeft = scrollLeft - walk;
+	    velX = element.scrollLeft - prevScrollLeft;
+	  });
 
-	//   element.addEventListener('wheel', (e) => {
-	//     cancelMomentumTracking();
-	//   });  
+	  // Momentum 
 
-	//   function beginMomentumTracking(){
-	//     cancelMomentumTracking();
-	//     momentumID = requestAnimationFrame(momentumLoop);
-	//   }
-	//   function cancelMomentumTracking(){
-	//     cancelAnimationFrame(momentumID);
-	//   }
-	//   function momentumLoop(){
-	//     element.scrollLeft += velX;
-	//     velX *= 0.97; 
-	//     if (Math.abs(velX) > 0.5){
-	//       momentumID = requestAnimationFrame(momentumLoop);
-	//     }
-	//   }
-	// });
+	  var velX = 0;
+	  var momentumID;
+
+	  element.addEventListener('wheel', (e) => {
+	    cancelMomentumTracking();
+	  });  
+
+	  function beginMomentumTracking(){
+	    cancelMomentumTracking();
+	    momentumID = requestAnimationFrame(momentumLoop);
+	  }
+	  function cancelMomentumTracking(){
+	    cancelAnimationFrame(momentumID);
+	  }
+	  function momentumLoop(){
+	    element.scrollLeft += velX;
+	    velX *= 0.97; 
+	    if (Math.abs(velX) > 0.5){
+	      momentumID = requestAnimationFrame(momentumLoop);
+	    }
+	  }
+	});
 	// UNCOMMENT
 	  
 
