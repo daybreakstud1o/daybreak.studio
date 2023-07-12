@@ -7,6 +7,7 @@ daybreak.router.useScript(()=>{
 		//document.querySelector('.background').classList.add("dark")
 		//document.querySelector('.footer').classList.add("dark")
 		//document.querySelector('.nav-container').classList.add("dark","transform")
+		document.querySelector('.daybreak-logo-big').style.filter = 'invert(1)'
 		document.querySelector('.nav-container').classList.add("transform")
 		document.querySelector('html').classList.remove('open')
 		
