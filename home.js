@@ -14,6 +14,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
 		document.querySelector('.nav-test').classList.remove("close","dark","casestudy","short")
 		document.querySelector('html').classList.remove('open')
+		document.querySelector('.daybreak-logo-big').style.filter = 'invert(0)'
 		
 		document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
 		document.querySelector('#real-nav1').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
