@@ -1,61 +1,28 @@
-// function breakIntoSpan(baseElm) {
-// 	const content = baseElm.innerHTML;
-// 	const words = content.split(" ");
-// 	const wordSpans = words.map((word)=>{
-// 		const spanElm = document.createElement("span");
-// 		span.innerHTML = word;
-// 		return spanElm;
-// 	})
-// 	return wordSpans;
-// }
 
-// function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.display = "block"}}) {
-// 	for (let i = 0; i<wordElms.length; i++) {
-// 		const elm = wordElms[i];
-// 		setTimeout(()=> {
-// 			styler(elm.style);
-// 		}, i * delay);
-// 	}
-// }
-
-// function test() {
-
-// }
-//		document.querySelector('.animate-test').style.top = '0!important'
 
 daybreak.router.useScript(()=>{
-//	document.body.scrollTop = 0;
-//  	document.documentElement.scrollTop = 0;
-// 		document.querySelector('.animate-test').style.top = '0!important'
+=
 	function animateInHero() {
 		document.querySelector('html').style.scrollBehavior = 'auto'
-// 		var body = document.body,
-// 		    html = document.documentElement;
 
-// 		var windowHeight = Math.max( body.scrollHeight, body.offsetHeight, 
-// 		    			html.clientHeight, html.scrollHeight, html.offsetHeight );
-// 		document.querySelector('.nav-test').style.height = windowHeight + 'px'
-//		document.querySelector('.animate-test').style.top = '0!important'
-//		document.querySelector('.animate-test').classList.add('fuck')
-// 		$(window).scroll(function (event) {
-// 		    document.querySelector('.animate-test').style.top = '0!important'
-// 		});
-		document.querySelector('.background').classList.add("dark")
-		document.querySelector('.footer').classList.add("dark")
-		document.querySelector('.nav-container').classList.add("dark","transform")
+		// document.querySelector('.background').classList.add("dark")
+		// document.querySelector('.footer').classList.add("dark")
+		// document.querySelector('.nav-container').classList.add("dark","transform")
+		document.querySelector('.nav-container').classList.add("transform")
 		document.querySelector('html').classList.remove('open')
 		
 		setTimeout(function() {
 			document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized");
 		}, 450);
 		document.querySelector('.nav-container').classList.remove("nav-home")
-		document.querySelector('.nav-test').classList.add("close","dark")
+		// document.querySelector('.nav-test').classList.add("close","dark")
+		document.querySelector('.nav-test').classList.add("close")
+
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)';document.querySelector('.content').style.opacity = '1'}, 600)
 		
-		// UNCOMMENT
-		// setTimeout(function() {
-	    // 		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
-		// }, 600);
+		setTimeout(function() {
+	    		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
+		}, 600);
 		
 		// let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
     	// let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
@@ -66,77 +33,10 @@ daybreak.router.useScript(()=>{
 		// document.querySelectorAll('.about-carousel .narrow').forEach((element) => {
 		//   element.style.minWidth = narrow
 		// })
-		// UNCOMMENT
-		
-		
-		
-		// var interval = 6000
-		// var one, two, three, four, five, six;
-		// shift()
-		// var myInterval = setInterval(shift, interval * 4);
-		// function shift() {
-		// 	  move('0','brands')
-		// 	  one = setTimeout(function(){ 
-		// 	    move('1','brands')
-		//           }, interval);
-		//    	  two = setTimeout(function(){ 
-		// 	    move('2','brands')
-		//           }, interval * 2);
-		// 	  three = setTimeout(function(){ 
-		// 	    move('3','brands')
-		//           }, interval * 3);
-			
-		// 	  move('0','software')
-		// 	  four = setTimeout(function(){ 
-		// 	    move('1','software')
-		//           }, interval);
-		//    	  five = setTimeout(function(){ 
-		// 	    move('2','software')
-		//           }, interval * 2);
-		// 	  six = setTimeout(function(){ 
-		// 	    move('3','software')
-		//           }, interval * 3);
-		// }
-		
-		// function move(i,type) {
-		// 	var elm = document.querySelectorAll('#'+type+'-selector .about-selector--item')[i]
-		// 	var bar = document.querySelector('#'+type+'-selector .progress-bar')
-		// 	var push = elm.offsetTop
-		// 	var height = document.querySelectorAll('#'+type+'-selector .item-height')[i].offsetHeight + "px"
-
-		// 	  if (i == '0') {
-		// 	    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = push + "px"
-		// 	  } else {
-		// 	  var descHeight = document.querySelectorAll('#'+type+'-selector .about-selector--item .desc')[i-1].offsetHeight
-		// 	    document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.top = (push - descHeight) + "px"
-		// 	  }
-		// 	  for (let x = 0; x < document.querySelectorAll('#'+type+'-selector .about-selector--item').length; x++) {
-		// 		document.querySelectorAll('#'+type+'-selector .about-selector--item')[x].style.height = document.querySelectorAll('#'+type+'-selector .body-founders._100')[x].offsetHeight + "px"
-		// 	  }
-
-		// 	  elm.style.height = height
-		// 	  bar.animate(
-		// 	    [
-		// 	      { transform: "translateY(-100%)" },
-		// 	      { transform: "translateY(0%)" },
-		// 	    ],
-		// 	    {
-		// 	      duration: interval,
-		// 	      iterations: 1,
-		// 	    }
-		// 	  );
-
-		// 	  document.querySelector('#'+type+'-selector .progress-bar-wrapper').style.height = height
-		// 	  document.querySelectorAll('.'+type+ '-img img').forEach((item, index) => {
-		// 	    item.style.zIndex = '-1'
-		// 	  })
-		// 	  document.querySelector('#'+type+ '-' + i).style.zIndex = '2'
-		// }
 		
 
 
 
-		// UNCOMMENT
 		// var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
 		// var Arr = Array.prototype.slice.call(list).sort((a, b) => 0.5 - Math.random());
 		// var visible = Arr.splice(0,9)
@@ -204,47 +104,18 @@ daybreak.router.useScript(()=>{
 		//     invisibleList[node].setAttribute('area', eval('fml' + node))
 		//   }
 		// }
-		//UNCOMMENT
 		
 		
-		
-// 		setTimeout(function() {
-// 			var elementDelay = 250;
-// 			for (let i = 0; i < document.querySelectorAll('.about-hero-split-item').length; i++) {
-// 				document.querySelectorAll('.about-hero-split-item').forEach((element, i) => {
-// 					setTimeout(function () {
-// 						element.style.opacity = "1";
-// 					}, i * elementDelay);
-// 				});
-// 			}
-// 		}, 200);
 
 		return ()=>{
 				
-				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 				})
-// 				document.querySelector('.background').classList.remove("dark")
-// 				document.querySelector('.nav-container').classList.remove("dark","transform")
-// 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
-// 				document.querySelector('.nav-test').classList.remove("close","dark")
-// 				document.querySelector('.content').style.transform = 'translateY(40vh)'
-// 				document.querySelector('.animate-test').classList.remove('fuck')
-				document.querySelector('.footer').classList.remove("dark")
-				// clearInterval(myInterval);
-				// clearTimeout(one);
-				// clearTimeout(two);
-				// clearTimeout(three);
-				// clearTimeout(four);
-				// clearTimeout(five);
-				// clearTimeout(six);
+				//document.querySelector('.footer').classList.remove("dark")
 
 		}
 	}
 	const resetHero = animateInHero();
-// 	setTimeout(function() {
-// 		document.querySelector('.content').classList.remove("hide")
-// 	}, 100);
 	
 	
 	// UNCOMMENT
