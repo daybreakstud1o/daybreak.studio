@@ -116,7 +116,7 @@ daybreak.router.useScript(()=>{
 	const resetHero = animateInHero();
 	
 	
-	// UNCOMMENT
+	
 	document.querySelectorAll('.about-carousel').forEach((element, i) => {
 	  
 	  let isDown = false;
@@ -179,7 +179,17 @@ daybreak.router.useScript(()=>{
 	    }
 	  }
 	});
-	// UNCOMMENT
+
+	$(window).on("load scroll",function(e){
+		var bsNavTop = document.querySelector('.brands-software-nav').getBoundingClientRect().top
+		if (bsNavTop == 200) {
+			document.querySelector('.brands-software-nav').style.transform = "translateX(0)"
+		} 
+		// else if (bsNavTop > 0) {
+		// 	document.querySelector('.nav-test').classList.remove("short")
+		// 	document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
+		// }
+	});
 	  
 
 	// function setupLogoMinimizeOnScroll() {
