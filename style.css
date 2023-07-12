@@ -51,7 +51,7 @@
   .dark .body-founders, .dark .nav-link, .dark h1, .dark .link {
     color: #fff;
   }
-  .daybreak-logo-big path, .nav-bg, .background, .nav-container .body-founders, .nav-container h1 {
+  .daybreak-logo-big path, .nav-bg, .background, .nav-container .body-founders, .nav-container h1, .daybreak-logo-big {
     transition: 0.6s ease-in
   }
   #real-nav1 {
