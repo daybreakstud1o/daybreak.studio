@@ -186,10 +186,10 @@
     left: 0;
     z-index: -1;
   }
-  .brands-software-nav {
+  /* .brands-software-nav {
     transform: translateX(-100%);
     transition: .6s ease-out;
-  }
+  } */
   
   /*team*/
   
