@@ -40,9 +40,6 @@
     animation: none !important;
     transition: none !important;
   }
-  .fill-video {
-    width: 100%;
-  }
   
   /*between pages*/
   .background {
