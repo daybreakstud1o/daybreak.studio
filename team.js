@@ -228,13 +228,13 @@ daybreak.router.useScript(()=>{
 	// }
 	
 	
-	return ()=>{
-		console.log("leaving about");
+	// return ()=>{
+// 		console.log("leaving about");
 		// cleanupLogoMinimizeOnScroll();
-		resetHero();
+		// resetHero();
 		// cleanupIntersectionObserver();
 		// cleanupDocumentSticky();
-	}
+	// }
 })
 
 function enableStickyPosition(element) {
