@@ -1,5 +1,3 @@
-
-
 daybreak.router.useScript(()=>{
 	function animateInHero() {
 		document.querySelector('html').style.scrollBehavior = 'auto'
@@ -15,6 +13,8 @@ daybreak.router.useScript(()=>{
 		document.querySelector('#real-nav1').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("transform")
 		document.querySelector('html').classList.remove('open')
+		document.querySelector('.nav-test').classList.remove("casestudy")
+		document.querySelector('.nav-container').classList.remove("casestudy-bg")
 		
 		setTimeout(function() {
 			document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized");

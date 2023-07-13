@@ -1,6 +1,4 @@
-
 daybreak.router.useScript(()=>{
-	console.log("enter contact");
 	function animateInHero() {
 		document.querySelector('html').style.scrollBehavior = 'auto'
 		
@@ -10,7 +8,10 @@ daybreak.router.useScript(()=>{
 		}
 		document.querySelector('.nav-container').style.filter = 'invert(0)'
 		document.querySelector('#real-nav1').classList.remove("dark")
+		document.querySelector('.nav-container').classList.add("transform")
 		document.querySelector('html').classList.remove('open')
+		document.querySelector('.nav-test').classList.remove("casestudy")
+		document.querySelector('.nav-container').classList.remove("casestudy-bg")
 		
 		document.querySelector('.nav-container').classList.add("transform")
 		setTimeout(function() {
