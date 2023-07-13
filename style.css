@@ -50,7 +50,6 @@
     transition: .6s ease-in;
   }
   #real-nav1.dark .nav-bg {
-    filter: invert(0.9);
     transition: .6s ease-in;
   }
   /* .dark svg path {
