@@ -20,6 +20,7 @@ daybreak.router.useScript(()=>{
 		}
 		document.querySelector('.nav-container').style.filter = 'invert(0)'
 		document.querySelector('#real-nav1').classList.remove("dark")
+		document.querySelector('.thumbnail-content #footer').style.opacity = '1'
 		
 		document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
 		document.querySelector('#real-nav1').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
