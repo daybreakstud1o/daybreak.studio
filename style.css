@@ -278,17 +278,18 @@
   .casestudy .thumbnail-info {
     opacity: 0!important;
   }
+
+  @media screen and (max-width: 1439px) {
+    .close #real-nav1, .short #real-nav1 {
+        height: 48px!important;
+    }
+  }
   
   @media screen and (min-width: 992px) {
     .casestudy-nav--content-bottom {
       opacity: 0;
       display: grid;
       grid-template-rows: 0fr;
-    }
-  }
-  @media screen and (max-width: 991px) {
-    .close #real-nav1, .short #real-nav1 {
-        height: 48px!important;
     }
   }
   @media only screen and (min-width: 768px) {
