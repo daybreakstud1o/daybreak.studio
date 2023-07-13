@@ -12,8 +12,8 @@ daybreak.router.useScript(()=>{
 		document.querySelector('html').classList.remove('open')
 		document.querySelector('.nav-test').classList.remove("casestudy")
 		document.querySelector('.nav-container').classList.remove("casestudy-bg")
+		document.querySelector('#real-nav1').classList.remove("flesh-top-1","flesh-top-2","flesh-top-3")
 		
-		document.querySelector('.nav-container').classList.add("transform")
 		setTimeout(function() {
 			document.querySelector('.daybreak-logo-big').classList.add("nav-logo--minimized");
 		}, 450);
