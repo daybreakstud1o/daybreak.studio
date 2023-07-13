@@ -143,6 +143,7 @@ daybreak.router.useScript(()=>{
 		  element.style.opacity = '0'
 		  element.style.pointerEvents = 'none'
 		});
+		document.querySelector('.thumbnail-content #footer').style.opacity = '0'
 		document.getElementsByClassName(project)[0].style.opacity = '1'
 		
 		
