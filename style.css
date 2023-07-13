@@ -286,6 +286,11 @@
       grid-template-rows: 0fr;
     }
   }
+  @media screen and (max-width: 991px) {
+    .close #real-nav1, .short #real-nav1 {
+        height: 48px!important;
+    }
+  }
   @media only screen and (min-width: 768px) {
     .close .daybreak-logo-big, .nav-logo--minimized {
       width: 33%!important;
@@ -313,9 +318,6 @@
     }
     .flesh-top-3 {
       transform: translateY(calc(-32px - 450vw))
-    }
-    .close #real-nav1, .short #real-nav1 {
-        height: 48px!important;
     }
     .casestudy-name {
         position: absolute;
