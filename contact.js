@@ -1,45 +1,13 @@
-// function breakIntoSpan(baseElm) {
-// 	const content = baseElm.innerHTML;
-// 	const words = content.split(" ");
-// 	const wordSpans = words.map((word)=>{
-// 		const spanElm = document.createElement("span");
-// 		span.innerHTML = word;
-// 		return spanElm;
-// 	})
-// 	return wordSpans;
-// }
-
-// function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.display = "block"}}) {
-// 	for (let i = 0; i<wordElms.length; i++) {
-// 		const elm = wordElms[i];
-// 		setTimeout(()=> {
-// 			styler(elm.style);
-// 		}, i * delay);
-// 	}
-// }
-
-// function test() {
-
-// }
 
 daybreak.router.useScript(()=>{
 	console.log("enter contact");
 	function animateInHero() {
 		document.querySelector('html').style.scrollBehavior = 'auto'
-// 		var body = document.body,
-// 		    html = document.documentElement;
 		
-// 		var windowHeight = Math.max( body.scrollHeight, body.offsetHeight, 
-// 		    			html.clientHeight, html.scrollHeight, html.offsetHeight );
-// 		document.querySelector('.nav-test').style.height = windowHeight + 'px'
-//		document.querySelector('.animate-test').classList.add('fuck')
-// 		$(window).scroll(function (event) {
-// 		    document.querySelector('.animate-test').style.top = '0!important'
-// 		});
-		
-		document.querySelector('.background').classList.remove("dark")
-		document.querySelector('.nav-container').classList.remove("dark")
-		document.querySelector('.nav-test').classList.remove("dark")
+		document.querySelector('.background').style.filter = 'invert(0)'
+		document.querySelector('.footer').style.filter = 'invert(0)'
+		document.querySelector('.nav-container').style.filter = 'invert(0)'
+		document.querySelector('#real-nav1').classList.remove("dark")
 		document.querySelector('html').classList.remove('open')
 		
 		document.querySelector('.nav-container').classList.add("transform")
@@ -55,43 +23,12 @@ daybreak.router.useScript(()=>{
 		setTimeout(function() {
 	    		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
 		}, 600);
-		
-		// let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
-  //   		let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
-// 		document.querySelectorAll('.about-carousel > *').forEach((element) => {
-// 		  element.setAttribute("sizes", "")
-// 		});
-		// document.querySelectorAll('.about-carousel .wide').forEach((element) => {
-		//   element.style.minWidth = wide
-		// });
-		// document.querySelectorAll('.about-carousel .narrow').forEach((element) => {
-		//   element.style.minWidth = narrow
-		// });
-		
-		
-// 		setTimeout(function() {
-// 			var elementDelay = 250;
-// 			for (let i = 0; i < document.querySelectorAll('.about-hero-split-item').length; i++) {
-// 				document.querySelectorAll('.about-hero-split-item').forEach((element, i) => {
-// 					setTimeout(function () {
-// 						element.style.opacity = "1";
-// 					}, i * elementDelay);
-// 				});
-// 			}
-// 		}, 200);
 
 		return ()=>{
 				
 				// delay one frame so that transition delay is in effect
 				window.requestAnimationFrame(()=>{
 				})
-				//clearInterval(interval);
-// 				document.querySelector('.background').classList.remove("dark")
-// 				document.querySelector('.nav-container').classList.remove("dark","transform")
-// 				document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
-// 				document.querySelector('.nav-test').classList.remove("close","dark")
-// 				document.querySelector('.content').style.transform = 'translateY(40vh)'
-// 				document.querySelector('.animate-test').classList.remove('fuck')
 		}
 	}
 	const resetHero = animateInHero();

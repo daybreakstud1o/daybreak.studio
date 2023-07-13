@@ -7,14 +7,15 @@ daybreak.router.useScript(()=>{
 	function animateInHero() {
 		document.documentElement.scrollTop = 0;
 		document.querySelector('html').style.scrollBehavior = 'smooth'
-		document.querySelector('.background').classList.remove("dark")
-		document.querySelector('.nav-container').classList.remove("dark","transform","casestudy-bg")
+		document.querySelector('.nav-container').classList.remove("transform","casestudy-bg")
 		document.querySelector('#real-nav1').classList.remove("flesh-top-1","flesh-top-2")
 		document.querySelector('.nav-container').classList.add("nav-home")
 		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
-		document.querySelector('.nav-test').classList.remove("close","dark","casestudy","short")
+		document.querySelector('.nav-test').classList.remove("close","casestudy","short")
 		document.querySelector('html').classList.remove('open')
 		document.querySelector('.background').style.filter = 'invert(0)'
+		document.querySelector('.footer').style.filter = 'invert(0)'
+		document.querySelector('.nav-container').style.filter = 'invert(0)'
 		document.querySelector('#real-nav1').classList.remove("dark")
 		
 		document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
@@ -24,10 +25,10 @@ daybreak.router.useScript(()=>{
 			document.querySelector('#real-nav1').style.height = '7.5vw'
 			//document.querySelector('#real-nav1').style.maxHeight = '164px'
 			document.querySelector('.nav-test').style.height = 'auto'
-		}, 600);
+		}, 600)
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.transition = "0.6s ease-in-out"
-		}, 2000);
+		}, 2000)
 		
 //		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
 		
