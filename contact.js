@@ -79,7 +79,7 @@ daybreak.router.useScript(()=>{
 	});*/
 
 
- // 	const {cleanupIntersectionObserver, onIntersectionChange} = createIntersectionObserver();
+ 	const {cleanupIntersectionObserver, onIntersectionChange} = createIntersectionObserver();
 
  // 	const mobileBreakpoint = 767;
 
@@ -97,10 +97,10 @@ daybreak.router.useScript(()=>{
 	
 	return ()=>{
 		console.log("leaving about");
-		cleanupLogoMinimizeOnScroll();
+		// cleanupLogoMinimizeOnScroll();
 		resetHero();
 		cleanupIntersectionObserver();
-		cleanupDocumentSticky();
+		// cleanupDocumentSticky();
 	}
 })
 
