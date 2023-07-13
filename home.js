@@ -14,7 +14,7 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.remove("close","casestudy","short")
 		document.querySelector('html').classList.remove('open')
 		document.querySelector('.background').style.filter = 'invert(0)'
-		document.querySelector('.footer').style.filter = 'invert(0)'
+		document.querySelector('#footer').style.filter = 'invert(0)'
 		document.querySelector('.nav-container').style.filter = 'invert(0)'
 		document.querySelector('#real-nav1').classList.remove("dark")
 		
