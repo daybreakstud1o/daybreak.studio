@@ -46,7 +46,7 @@
     background-color: #fff;
   }
   #real-nav1.dark > div:not(.nav-bg) {
-    filter: invert(1);
+    filter: invert(1) hue-rotate(180deg);
     transition: .6s ease-in;
   }
   #real-nav1.dark .nav-bg {
