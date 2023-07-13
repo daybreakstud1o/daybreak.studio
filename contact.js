@@ -95,13 +95,13 @@ daybreak.router.useScript(()=>{
 	// }
 	
 	
-	// return ()=>{
-	// 	console.log("leaving about");
-	// 	cleanupLogoMinimizeOnScroll();
-	// 	resetHero();
-	// 	cleanupIntersectionObserver();
-	// 	cleanupDocumentSticky();
-	// }
+	return ()=>{
+		console.log("leaving about");
+		cleanupLogoMinimizeOnScroll();
+		resetHero();
+		cleanupIntersectionObserver();
+		cleanupDocumentSticky();
+	}
 })
 
 function enableStickyPosition(element) {
