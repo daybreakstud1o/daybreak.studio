@@ -52,9 +52,9 @@
   #real-nav1.dark .nav-bg {
     transition: .6s ease-in;
   }
-  /* .dark svg path {
+  .dark svg path {
     fill: #fff;
-  } */
+  }
   .dark .nav-bg {
     background-color: #181818;
   }
