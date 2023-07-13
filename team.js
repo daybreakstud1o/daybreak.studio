@@ -6,7 +6,9 @@ daybreak.router.useScript(()=>{
 	
 		document.querySelector('html').classList.remove('open')
 		document.querySelector('.background').style.filter = 'invert(0)'
-		document.querySelector('.footer').style.filter = 'invert(0)'
+		for (let i = 0; i < document.querySelectorAll('.footer').length; i++) {
+			document.querySelectorAll('.footer')[i].style.filter = 'invert(0)'
+		}
 		document.querySelector('.nav-container').style.filter = 'invert(0)'
 		document.querySelector('#real-nav1').classList.remove("dark")
 		
