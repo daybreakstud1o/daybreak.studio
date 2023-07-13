@@ -1,11 +1,12 @@
 
 //@ts-ignore
 daybreak.router.useScript(()=>{
-	document.documentElement.scrollTop = 0;
+	setTimeout(function() {
+		document.documentElement.scrollTop = 0;
+	}, 100);
 	console.log("enter home");
 
 	function animateInHero() {
-		document.documentElement.scrollTop = 0;
 		document.querySelector('html').style.scrollBehavior = 'smooth'
 		document.querySelector('.nav-container').classList.remove("transform","casestudy-bg")
 		document.querySelector('#real-nav1').classList.remove("flesh-top-1","flesh-top-2")

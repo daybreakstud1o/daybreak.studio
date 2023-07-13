@@ -1,43 +1,13 @@
-// function breakIntoSpan(baseElm) {
-// 	const content = baseElm.innerHTML;
-// 	const words = content.split(" ");
-// 	const wordSpans = words.map((word)=>{
-// 		const spanElm = document.createElement("span");
-// 		span.innerHTML = word;
-// 		return spanElm;
-// 	})
-// 	return wordSpans;
-// }
-
-// function triggerStaggerAnim(wordElms, {delay=250, styler= (style)=>{ style.display = "block"}}) {
-// 	for (let i = 0; i<wordElms.length; i++) {
-// 		const elm = wordElms[i];
-// 		setTimeout(()=> {
-// 			styler(elm.style);
-// 		}, i * delay);
-// 	}
-// }
-
-// function test() {
-
-// }
-
 daybreak.router.useScript(()=>{
+	setTimeout(function() {
+		document.documentElement.scrollTop = 0;
+	}, 100);
 	console.log("enter case study");
 	function animateInHero() {
 		setTimeout(function() {
 			document.querySelector('html').style.scrollBehavior = 'auto'
 		}, 1000);
-// 		var body = document.body,
-// 		    html = document.documentElement;
-		
-// 		var windowHeight = Math.max( body.scrollHeight, body.offsetHeight, 
-// 		    			html.clientHeight, html.scrollHeight, html.offsetHeight );
-// 		document.querySelector('.nav-test').style.height = windowHeight + 'px'
-//		document.querySelector('.animate-test').classList.add('fuck')
-// 		$(window).scroll(function (event) {
-// 		    document.querySelector('.animate-test').style.top = '0!important'
-// 		});
+
 	   	document.documentElement.scrollTop = 0;
 		setTimeout(function() {
 			document.documentElement.scrollTop = 0;
