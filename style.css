@@ -309,7 +309,10 @@
       transform: translateY(calc(-16px - 150vw))
     }
     .flesh-top-2 {
-      transform: translateY(calc(-32px - 300vw))
+      transform: translateY(calc(-16px - 300vw))
+    }
+    .flesh-top-3 {
+      transform: translateY(calc(-16px - 450vw))
     }
     .close #real-nav1, .short #real-nav1 {
         height: 48px!important;
