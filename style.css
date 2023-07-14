@@ -341,15 +341,15 @@
   }
   
   @media screen and (min-width: 1920px) {
-    .close #real-nav1, .short #real-nav1 {
+    /* .close #real-nav1, .short #real-nav1 {
       height: 86px!important
-    }
+    } */
     .casestudy #real-nav1 {
       height: 64px!important;
     }
-    .close .daybreak-logo-big, .nav-logo--minimized {
+    /* .close .daybreak-logo-big, .nav-logo--minimized {
       width: 352px!important;
-    }
+    } */
   }
   
   /*.short .nav-bg {
