@@ -251,8 +251,8 @@ daybreak.router.useScript(()=>{
 				for (let i = 0; i < document.querySelectorAll(".casestudy-nav-indicator-item").length; i++) {
 					document.querySelectorAll(".casestudy-nav-indicator-item")[i].style.opacity = '0.2'
 				}
-				console.log(document.querySelectorAll(".casestudy-nav-indicator-item")[index])
-				console.log(index)
+				// console.log(document.querySelectorAll(".casestudy-nav-indicator-item")[index])
+				// console.log(index)
 				document.querySelectorAll(".casestudy-nav-indicator-item")[index].style.opacity = '1'
 			}
 		} );
