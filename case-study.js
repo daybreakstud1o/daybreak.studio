@@ -33,7 +33,7 @@ daybreak.router.useScript(()=>{
 		
 		setTimeout(function() {
 	    		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
-		}, 1500);
+		}, 2500);
 		
 		const currentUrl = window.location.href;
 		var slug = currentUrl.split("/");
