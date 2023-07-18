@@ -276,96 +276,96 @@ daybreak.router.useScript(()=>{
 	
 
 	
-	document.querySelectorAll('.about-carousel').forEach((element, i) => {
+	// document.querySelectorAll('.about-carousel').forEach((element, i) => {
 	  
-	  let isDown = false;
-	  let startX;
-	  let scrollLeft;
+	//   let isDown = false;
+	//   let startX;
+	//   let scrollLeft;
 
-	  element.addEventListener('mousedown', (e) => {
-	    isDown = true;
-	    //slider.classList.add('active');
-	    startX = e.pageX - element.offsetLeft;
-	    scrollLeft = element.scrollLeft;
-	    cancelMomentumTracking();
-	  });
-
-
-	  element.addEventListener('mouseleave', () => {
-	    isDown = false;
-	    //slider.classList.remove('active');
-	  });
+	//   element.addEventListener('mousedown', (e) => {
+	//     isDown = true;
+	//     //slider.classList.add('active');
+	//     startX = e.pageX - element.offsetLeft;
+	//     scrollLeft = element.scrollLeft;
+	//     cancelMomentumTracking();
+	//   });
 
 
-	  element.addEventListener('mouseup', () => {
-	    isDown = false;
-	    //slider.classList.remove('active');
-	    beginMomentumTracking();
-	  });
+	//   element.addEventListener('mouseleave', () => {
+	//     isDown = false;
+	//     //slider.classList.remove('active');
+	//   });
 
 
-	  element.addEventListener('mousemove', (e) => {
-	    if(!isDown) return;
-	    e.preventDefault();
-	    const x = e.pageX - element.offsetLeft;
-	    const walk = (x - startX) * 1; //scroll-fast
-	    var prevScrollLeft = element.scrollLeft;
-	    element.scrollLeft = scrollLeft - walk;
-	    velX = element.scrollLeft - prevScrollLeft;
-	  });
+	//   element.addEventListener('mouseup', () => {
+	//     isDown = false;
+	//     //slider.classList.remove('active');
+	//     beginMomentumTracking();
+	//   });
 
-	  // Momentum 
 
-	  var velX = 0;
-	  var momentumID;
+	//   element.addEventListener('mousemove', (e) => {
+	//     if(!isDown) return;
+	//     e.preventDefault();
+	//     const x = e.pageX - element.offsetLeft;
+	//     const walk = (x - startX) * 1; //scroll-fast
+	//     var prevScrollLeft = element.scrollLeft;
+	//     element.scrollLeft = scrollLeft - walk;
+	//     velX = element.scrollLeft - prevScrollLeft;
+	//   });
 
-	  element.addEventListener('wheel', (e) => {
-	    cancelMomentumTracking();
-	  });  
+	//   // Momentum 
 
-	  function beginMomentumTracking(){
-	    cancelMomentumTracking();
-	    momentumID = requestAnimationFrame(momentumLoop);
-	  }
-	  function cancelMomentumTracking(){
-	    cancelAnimationFrame(momentumID);
-	  }
-	  function momentumLoop(){
-	    element.scrollLeft += velX;
-	    velX *= 0.97; 
-	    if (Math.abs(velX) > 0.5){
-	      momentumID = requestAnimationFrame(momentumLoop);
-	    }
-	  }
-	});
+	//   var velX = 0;
+	//   var momentumID;
+
+	//   element.addEventListener('wheel', (e) => {
+	//     cancelMomentumTracking();
+	//   });  
+
+	//   function beginMomentumTracking(){
+	//     cancelMomentumTracking();
+	//     momentumID = requestAnimationFrame(momentumLoop);
+	//   }
+	//   function cancelMomentumTracking(){
+	//     cancelAnimationFrame(momentumID);
+	//   }
+	//   function momentumLoop(){
+	//     element.scrollLeft += velX;
+	//     velX *= 0.97; 
+	//     if (Math.abs(velX) > 0.5){
+	//       momentumID = requestAnimationFrame(momentumLoop);
+	//     }
+	//   }
+	// });
 	  
 
-	function setupLogoMinimizeOnScroll() {
-		function minimizeLogo() {
-			//document.querySelector('.nav-logo').classList.remove("nav-logo--expanded")
-		}
-		function maximizeLogo() {
-			//document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
-		}
+	// function setupLogoMinimizeOnScroll() {
+	// 	function minimizeLogo() {
+	// 		//document.querySelector('.nav-logo').classList.remove("nav-logo--expanded")
+	// 	}
+	// 	function maximizeLogo() {
+	// 		//document.querySelector('.nav-logo').classList.add("nav-logo--expanded")
+	// 	}
 
-		const handleScroll =(scroll)=>{
-			// const scroll = window.scrollY;
-			if (scroll >= 100) {
-					minimizeLogo()
-			} else if (scroll < 100) {
-					maximizeLogo()
-			}
-		}
-		// window.addEventListener("scroll", handleScroll);
-		daybreak.scroll.observeScroll(handleScroll)
+	// 	const handleScroll =(scroll)=>{
+	// 		// const scroll = window.scrollY;
+	// 		if (scroll >= 100) {
+	// 				minimizeLogo()
+	// 		} else if (scroll < 100) {
+	// 				maximizeLogo()
+	// 		}
+	// 	}
+	// 	// window.addEventListener("scroll", handleScroll);
+	// 	daybreak.scroll.observeScroll(handleScroll)
 
-		return ()=>{
-			minimizeLogo();
-			//daybreak.scroll.unobserveScroll(handleScroll)
-			// window.removeEventListener("scroll", handleScroll);
-		}
-	}
-	const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
+	// 	return ()=>{
+	// 		minimizeLogo();
+	// 		//daybreak.scroll.unobserveScroll(handleScroll)
+	// 		// window.removeEventListener("scroll", handleScroll);
+	// 	}
+	// }
+	// const cleanupLogoMinimizeOnScroll = setupLogoMinimizeOnScroll();
 		
 	// TODO: create transition
 	/* 
@@ -383,20 +383,20 @@ daybreak.router.useScript(()=>{
 	});*/
 
 
- 	const {cleanupIntersectionObserver, onIntersectionChange} = createIntersectionObserver();
+ 	// const {cleanupIntersectionObserver, onIntersectionChange} = createIntersectionObserver();
 
- 	const mobileBreakpoint = 767;
+ 	// const mobileBreakpoint = 767;
 
-	const cleanupDocumentSticky = enableAllStickyPosition();	
-	function enableAllStickyPosition() {
-		const stickyElm = document.querySelectorAll(".sticky");
+	// const cleanupDocumentSticky = enableAllStickyPosition();	
+	// function enableAllStickyPosition() {
+	// 	const stickyElm = document.querySelectorAll(".sticky");
 
-		const cleanups = Array.from(stickyElm).map((elm)=>{
-			return enableStickyPosition(elm);
-		})
+	// 	const cleanups = Array.from(stickyElm).map((elm)=>{
+	// 		return enableStickyPosition(elm);
+	// 	})
 		
-		return ()=> cleanups.forEach((cleanup)=>cleanup());
-	}
+	// 	return ()=> cleanups.forEach((cleanup)=>cleanup());
+	// }
 	
 	
 	
