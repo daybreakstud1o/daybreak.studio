@@ -361,7 +361,7 @@ daybreak.router.useScript(()=>{
 
 		return ()=>{
 			minimizeLogo();
-			daybreak.scroll.unobserveScroll(handleScroll)
+			//daybreak.scroll.unobserveScroll(handleScroll)
 			// window.removeEventListener("scroll", handleScroll);
 		}
 	}
@@ -401,11 +401,11 @@ daybreak.router.useScript(()=>{
 	
 	
 	return ()=>{
-		console.log("leaving about");
-		cleanupLogoMinimizeOnScroll();
+		// console.log("leaving about");
+		// cleanupLogoMinimizeOnScroll();
 		resetHero();
-		cleanupIntersectionObserver();
-		cleanupDocumentSticky();
+		// cleanupIntersectionObserver();
+		// cleanupDocumentSticky();
 	}
 })
 
