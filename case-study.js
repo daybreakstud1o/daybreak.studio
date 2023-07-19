@@ -241,9 +241,6 @@ daybreak.router.useScript(()=>{
 		const navItem = document.createElement("div")
 		navItem.classList.add('casestudy-nav-indicator-item', 'hover-target-big')
 		document.querySelector(".casestudy-nav-indicator").appendChild(navItem)
-// 		for (let i = 0; i < document.querySelectorAll(".casestudy-nav-indicator-item").length; i++) {
-// 			document.querySelectorAll(".casestudy-nav-indicator-item")[i].style.opacity = '0.2'
-// 		}
 		
 		// $( window ).on( "scroll", function() {
 		//   	var topPos = currentElement.getBoundingClientRect().top
@@ -256,6 +253,18 @@ daybreak.router.useScript(()=>{
 		// 		document.querySelectorAll(".casestudy-nav-indicator-item")[index].style.opacity = '1'
 		// 	}
 		// } );
+	})
+
+	$( window ).on( "scroll", function() {
+		document.querySelectorAll('.casestudy-container').forEach(function(currentElement, index) {
+			var topPos = currentElement.getBoundingClientRect().top
+			if (topPos <= 0) {
+				for (let i = 0; i < document.querySelectorAll(".casestudy-nav-indicator-item").length; i++) {
+					document.querySelectorAll(".casestudy-nav-indicator-item")[i].style.opacity = '0.2'
+				}
+				document.querySelectorAll(".casestudy-nav-indicator-item")[index].style.opacity = '1'
+			}
+		})
 	})
 
 	
