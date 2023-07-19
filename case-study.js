@@ -51,61 +51,11 @@ daybreak.router.useScript(()=>{
 		const caseStudyCategories = document.getElementById('casestudy-categories')
 		const caseStudyPrevious = document.getElementById('casestudy-previous')
 		const caseStudyNext = document.getElementById('casestudy-next')
-		const casestudyNavCreditsContent = document.getElementById('casestudy-nav-credits-content')
 		
 		if (project == 'hypercard') {
 			document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-start')
 			caseStudyName.innerHTML = 'Hypercard'
 			caseStudyCategories.innerHTML = 'Brand | Product | Web'
-			casestudyNavCreditsContent = `
-			<div>
-				<div class="body-founders white _100">
-					Creative direction:
-				<div>
-				<div class="body-founders white _50">
-					Taha Hossain
-				<div>
-			</div>
-			<div>
-				<div class="body-founders white _100">
-					Design:
-				<div>
-				<div class="body-founders white _50">
-					Aliasger Rasheed, Benya Sutyanyong, Zilin Deng, PJ Musselman
-				<div>
-			</div>
-			<div>
-				<div class="body-founders white _100">
-					Tone & Voice:
-				<div>
-				<div class="body-founders white _50">
-					Lovish Saini
-				<div>
-			</div>
-			<div>
-				<div class="body-founders white _100">
-					Product:
-				<div>
-				<div class="body-founders white _50">
-					Vanessa Bahk
-				<div>
-			</div>
-			<div>
-				<div class="body-founders white _100">
-					3D:
-				<div>
-				<div class="body-founders white _50">
-					Mario Domingas, Javier Pardina
-				<div>
-			</div>
-			<div>
-				<div class="body-founders white _100">
-					Motion:
-				<div>
-				<div class="body-founders white _50">
-					Ross Chan
-				<div>
-			</div>`
 			caseStudyPrevious.innerHTML = 'Notes About People'
 			caseStudyPrevious.href = '/notes-about-people'
 			caseStudyNext.innerHTML = 'Wombo Dream'
