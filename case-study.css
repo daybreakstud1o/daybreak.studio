@@ -334,10 +334,10 @@
 	opacity: 0.7;
 }
 
-.casestudy-nav-description.intro #intro-text, .casestudy-nav-description.problem #problem-text, .casestudy-nav-description.solution #solution-text {
+.casestudy-nav--info.intro #intro-text, .casestudy-nav--info.problem #problem-text, .casestudy-nav--info.solution #solution-text, .casestudy-nav--info.credits .casestudy-nav-credits {
 	display: block!important;
 }
-.casestudy-nav-description.intro #intro-button, .casestudy-nav-description.problem #problem-button, .casestudy-nav-description.solution #solution-button {
+.casestudy-nav--info.intro #intro-button, .casestudy-nav--info.problem #problem-button, .casestudy-nav--info.solution #solution-button, .casestudy-nav--info.credits #credits-button {
 	opacity: 1!important;
 	border-bottom: 1.5px solid white;
 }
@@ -422,15 +422,18 @@
 }
 
 @media only screen and (max-width: 767px) {
-    .close #real-nav1 {
-        height: 64px!important;
-    }
-  .thumbnail-row.flex-end a:not(.casestudy-thumbnail-height) {
-    height: 0;
-  }
-  .thumbnail-row.flex-end .casestudy-thumbnail-height {
-    top: -8px!important;
-  }
+	.close #real-nav1 {
+		height: 64px!important;
+	}
+	.thumbnail-row.flex-end a:not(.casestudy-thumbnail-height) {
+		height: 0;
+	}
+	.thumbnail-row.flex-end .casestudy-thumbnail-height {
+		top: -8px!important;
+	}
+	.casestudy-nav-credits {
+		display: none;
+	}
 }
 
 /* .heading-1 span {

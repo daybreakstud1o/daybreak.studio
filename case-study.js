@@ -268,19 +268,19 @@ daybreak.router.useScript(()=>{
 	})
 
 	
-	document.querySelector(".casestudy-nav-description").classList.add("intro")
-	document.querySelector(".casestudy-nav-description").classList.remove("problem","solution")
+	document.querySelector(".casestudy-nav--info").classList.add("intro")
+	document.querySelector(".casestudy-nav--info").classList.remove("problem","solution")
 	document.querySelector("#intro-button").onclick = function() {
-		document.querySelector(".casestudy-nav-description").classList.remove("problem","solution")
-		document.querySelector(".casestudy-nav-description").classList.add("intro")
+		document.querySelector(".casestudy-nav--info").classList.remove("problem","solution")
+		document.querySelector(".casestudy-nav--info").classList.add("intro")
 	};
 	document.querySelector("#problem-button").onclick = function() {
-		document.querySelector(".casestudy-nav-description").classList.remove("intro","solution")
-		document.querySelector(".casestudy-nav-description").classList.add("problem")
+		document.querySelector(".casestudy-nav--info").classList.remove("intro","solution")
+		document.querySelector(".casestudy-nav--info").classList.add("problem")
 	};
 	document.querySelector("#solution-button").onclick = function() {
-		document.querySelector(".casestudy-nav-description").classList.remove("problem","intro")
-		document.querySelector(".casestudy-nav-description").classList.add("solution")
+		document.querySelector(".casestudy-nav--info").classList.remove("problem","intro")
+		document.querySelector(".casestudy-nav--info").classList.add("solution")
 	};
 	
 
