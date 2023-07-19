@@ -269,18 +269,22 @@ daybreak.router.useScript(()=>{
 
 	
 	document.querySelector(".casestudy-nav--info").classList.add("intro")
-	document.querySelector(".casestudy-nav--info").classList.remove("problem","solution")
+	document.querySelector(".casestudy-nav--info").classList.remove("problem","solution","credits")
 	document.querySelector("#intro-button").onclick = function() {
-		document.querySelector(".casestudy-nav--info").classList.remove("problem","solution")
+		document.querySelector(".casestudy-nav--info").classList.remove("problem","solution","credits")
 		document.querySelector(".casestudy-nav--info").classList.add("intro")
 	};
 	document.querySelector("#problem-button").onclick = function() {
-		document.querySelector(".casestudy-nav--info").classList.remove("intro","solution")
+		document.querySelector(".casestudy-nav--info").classList.remove("intro","solution","credits")
 		document.querySelector(".casestudy-nav--info").classList.add("problem")
 	};
 	document.querySelector("#solution-button").onclick = function() {
-		document.querySelector(".casestudy-nav--info").classList.remove("problem","intro")
+		document.querySelector(".casestudy-nav--info").classList.remove("intro","problem","credits")
 		document.querySelector(".casestudy-nav--info").classList.add("solution")
+	};
+	document.querySelector("#credits-button").onclick = function() {
+		document.querySelector(".casestudy-nav--info").classList.remove("intro","problem","solution")
+		document.querySelector(".casestudy-nav--info").classList.add("credits")
 	};
 	
 
