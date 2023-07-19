@@ -323,8 +323,8 @@
     .casestudy-name {
         position: absolute;
         opacity: 0;
-        top: 72px;
-        left: 8px;
+        top: 60px;
+        left: 12px;
         transition: 1s ease;
     }
     html.open .casestudy-name {
