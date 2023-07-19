@@ -339,6 +339,7 @@
 }
 .casestudy-nav-description.intro #intro-button, .casestudy-nav-description.problem #problem-button, .casestudy-nav-description.solution #solution-button {
 	opacity: 1!important;
+	border-bottom: 1.5px solid white;
 }
 
 
