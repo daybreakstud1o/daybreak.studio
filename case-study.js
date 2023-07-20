@@ -307,7 +307,7 @@ daybreak.router.useScript(()=>{
 	$( window ).on( "scroll", function() {
 		document.querySelectorAll('.casestudy-container').forEach(function(currentElement, index) {
 			var topPos = currentElement.getBoundingClientRect().top
-			if (topPos <= 0) {
+			if (topPos <= 300) {
 				for (let i = 0; i < document.querySelectorAll(".casestudy-nav-indicator-item").length; i++) {
 					document.querySelectorAll(".casestudy-nav-indicator-item")[i].style.opacity = '0.2'
 				}
