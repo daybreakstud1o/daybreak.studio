@@ -129,7 +129,7 @@ daybreak.router.useScript(()=>{
 		// eastern time
 		const eastCoastTimeStr = date.toLocaleString("en-US", {
 			timeZone: "America/Los_Angeles",
-			hour12: true
+			hour12: false
 		})
 		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
 	}
@@ -140,7 +140,7 @@ daybreak.router.useScript(()=>{
 		// eastern time
 		const eastCoastTimeStr = date.toLocaleString("en-US", {
 			timeZone: "America/New_York",
-			hour12: true
+			hour12: false
 		})
 		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
 	}
@@ -151,7 +151,7 @@ daybreak.router.useScript(()=>{
 		// eastern time
 		const eastCoastTimeStr = date.toLocaleString("en-US", {
 			timeZone: "Europe/London",
-			hour12: true
+			hour12: false
 		})
 		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
 	}
@@ -162,13 +162,37 @@ daybreak.router.useScript(()=>{
 		const allTorontoTimeElm = document.querySelectorAll('.est');
 		const allLondonTimeElm = document.querySelectorAll('.gmt');
 
-		const vancouverTime = getVancouverTime();
-		const torontoTime = getTorontoTime();
-		const londonTime = getLondonTime();
+		var vancouverTime = getVancouverTime();
+		var torontoTime = getTorontoTime();
+		var londonTime = getLondonTime();
 
-		allVancouverTimeElm.forEach((elm) => elm.innerHTML = vancouverTime);
-		allTorontoTimeElm.forEach((elm) => elm.innerHTML = torontoTime);
-		allLondonTimeElm.forEach((elm) => elm.innerHTML = londonTime);
+		allVancouverTimeElm.forEach((elm) => elm.innerHTML = ampm(vancouverTime));
+		allTorontoTimeElm.forEach((elm) => elm.innerHTML = ampm(torontoTime));
+		allLondonTimeElm.forEach((elm) => elm.innerHTML = ampm(londonTime));
+	}
+  
+	function ampm(time) {
+		time = time.split(':'); // convert to array
+
+		// fetch
+		var hours = Number(time[0]);
+		var minutes = Number(time[1]);
+
+		// calculate
+		var timeValue;
+
+		if (hours > 0 && hours <= 12) {
+		timeValue= "" + hours;
+		} else if (hours > 12) {
+		timeValue= "" + (hours - 12);
+		} else if (hours == 0) {
+		timeValue= "12";
+		}
+
+		timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes;  // get minutes
+		timeValue += (hours >= 12) ? " PM" : " AM";  // get AM/PM
+		
+		return timeValue
 	}
 
 	const interval = setInterval(updateTime,1000);
