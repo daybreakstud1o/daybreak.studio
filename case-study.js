@@ -61,50 +61,50 @@ daybreak.router.useScript(()=>{
 			<div>
 				<div class="body-founders white _100">
 					Creative direction:
-				<div>
+				</div>
 				<div class="body-founders white _50">
 					Taha Hossain
-				<div>
+				</div>
 			</div>
 			<div>
 				<div class="body-founders white _100">
 					Design:
-				<div>
+				</div>
 				<div class="body-founders white _50">
 					Aliasger Rasheed, Benya Sutyanyong, Zilin Deng, PJ Musselman
-				<div>
+				</div>
 			</div>
 			<div>
 				<div class="body-founders white _100">
-					Tone and Voice:
-				<div>
+					Tone &amp; Voice:
+				</div>
 				<div class="body-founders white _50">
 					Lovish Saini
-				<div>
+				</div>
 			</div>
 			<div>
 				<div class="body-founders white _100">
 					Product:
-				<div>
+				</div>
 				<div class="body-founders white _50">
 					Vanessa Bahk
-				<div>
+				</div>
 			</div>
 			<div>
 				<div class="body-founders white _100">
 					3D:
-				<div>
+				</div>
 				<div class="body-founders white _50">
 					Mario Domingas, Javier Pardina
-				<div>
+				</div>
 			</div>
 			<div>
 				<div class="body-founders white _100">
 					Motion:
-				<div>
+				</div>
 				<div class="body-founders white _50">
 					Ross Chan
-				<div>
+				</div>
 			</div>`
 			caseStudyPrevious.innerHTML = 'Notes About People'
 			caseStudyPrevious.href = '/notes-about-people'
