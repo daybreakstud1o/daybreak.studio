@@ -1,4 +1,44 @@
 daybreak.router.useScript(() => {
+	var copyInquiries = document.querySelector('.copy-inquiries');
+	copyInquiries.onmouseover = function() {
+		document.querySelector('.copy-inquiries .copied-icon').style.marginRight = "0";
+	document.querySelector('.copy-inquiries .copied-icon').style.opacity = "1";
+	};
+	copyInquiries.onmouseout = function() {
+		document.querySelector('.copy-inquiries .copied-icon').style.marginRight = "-16px";
+	document.querySelector('.copy-inquiries .copied-icon').style.opacity = "0";
+	};
+	copyInquiries.onclick = function() {
+				document.querySelector('.copy-inquiries .link-copied').style.display = "block";
+			document.querySelector('.copy-inquiries .copied-icon').style.display = "none";
+		setTimeout(function () {
+					document.querySelector('.copy-inquiries .link-copied').style.display = "none";
+				document.querySelector('.copy-inquiries .copied-icon').style.display = "block";
+		}, 2000);
+		navigator.clipboard.writeText('hello@daybreak.studio');
+		return false
+	};
+
+	var copyCareersAll = document.querySelectorAll('.copy-careers');
+	copyCareersAll.forEach((elm) => elm.href = '');
+	copyCareersAll.forEach((elm,i) => elm.onmouseover = function() {
+		document.querySelectorAll('.copy-careers .copied-icon')[i].style.marginRight = "0";
+		document.querySelectorAll('.copy-careers .copied-icon')[i].style.opacity = "1";
+	});
+	copyCareersAll.forEach((elm) => elm.onmouseout = function() {
+		document.querySelectorAll('.copy-careers .copied-icon')[i].style.marginRight = "-16px";
+		document.querySelectorAll('.copy-careers .copied-icon')[i].style.opacity = "0";
+	});
+	copyCareersAll.forEach((elm) => elm.onclick = function() {
+		document.querySelector('.copy-careers .link-copied').style.display = "block";
+		document.querySelector('.copy-careers .copied-icon').style.display = "none";
+		setTimeout(function () {
+			document.querySelector('.copy-careers .link-copied').style.display = "none";
+			document.querySelector('.copy-careers .copied-icon').style.display = "block";
+		}, 2000);
+		navigator.clipboard.writeText('careers@daybreak.studio');
+		return false
+	});
 	// javascript some how has 24 in their hour
 // 	function fix24HrString(str) {
 // 		const strSplitted = str.split(":");
