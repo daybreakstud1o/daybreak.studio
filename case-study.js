@@ -2,7 +2,6 @@ daybreak.router.useScript(()=>{
 	setTimeout(function() {
 		document.documentElement.scrollTop = 0;
 	}, 100);
-	console.log("enter case study");
 	function animateInHero() {
 		setTimeout(function() {
 			document.querySelector('html').style.scrollBehavior = 'auto'

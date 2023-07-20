@@ -25,16 +25,16 @@ daybreak.router.useScript(() => {
 		document.querySelectorAll('.copy-careers .copied-icon')[i].style.marginRight = "0";
 		document.querySelectorAll('.copy-careers .copied-icon')[i].style.opacity = "1";
 	});
-	copyCareersAll.forEach((elm) => elm.onmouseout = function() {
+	copyCareersAll.forEach((elm,i) => elm.onmouseout = function() {
 		document.querySelectorAll('.copy-careers .copied-icon')[i].style.marginRight = "-16px";
 		document.querySelectorAll('.copy-careers .copied-icon')[i].style.opacity = "0";
 	});
-	copyCareersAll.forEach((elm) => elm.onclick = function() {
-		document.querySelector('.copy-careers .link-copied').style.display = "block";
-		document.querySelector('.copy-careers .copied-icon').style.display = "none";
+	copyCareersAll.forEach((elm,i) => elm.onclick = function() {
+		document.querySelectorAll('.copy-careers .link-copied')[i].style.display = "block";
+		document.querySelectorAll('.copy-careers .copied-icon')[i].style.display = "none";
 		setTimeout(function () {
-			document.querySelector('.copy-careers .link-copied').style.display = "none";
-			document.querySelector('.copy-careers .copied-icon').style.display = "block";
+			document.querySelectorAll('.copy-careers .link-copied')[i].style.display = "none";
+			document.querySelectorAll('.copy-careers .copied-icon')[i].style.display = "block";
 		}, 2000);
 		navigator.clipboard.writeText('careers@daybreak.studio');
 		return false
