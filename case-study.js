@@ -76,7 +76,7 @@ daybreak.router.useScript(()=>{
 			</div>
 			<div>
 				<div class="body-founders white _100">
-					Tone &amp; Voice:
+					Tone and Voice:
 				<div>
 				<div class="body-founders white _50">
 					Lovish Saini
