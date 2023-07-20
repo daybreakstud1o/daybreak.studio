@@ -83,6 +83,9 @@
     /*margin-top: 0;*/
     transform: translateY(0%)
   }
+  .logo-wrapper a {
+    width: 100%;
+  }
   .nav-home .nav-wrapper {
     top: 8px;
   }
