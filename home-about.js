@@ -1,23 +1,26 @@
 daybreak.router.useScript(() => {
-	var copyInquiries = document.querySelector('.copy-inquiries');
-	copyInquiries.onmouseover = function() {
-		document.querySelector('.copy-inquiries .copied-icon').style.marginRight = "0";
-	document.querySelector('.copy-inquiries .copied-icon').style.opacity = "1";
-	};
-	copyInquiries.onmouseout = function() {
-		document.querySelector('.copy-inquiries .copied-icon').style.marginRight = "-16px";
-	document.querySelector('.copy-inquiries .copied-icon').style.opacity = "0";
-	};
-	copyInquiries.onclick = function() {
-				document.querySelector('.copy-inquiries .link-copied').style.display = "block";
-			document.querySelector('.copy-inquiries .copied-icon').style.display = "none";
+
+	var copyInquiriesAll = document.querySelectorAll('.copy-inquiries');
+	copyInquiriesAll.forEach((elm) => elm.href = '');
+	copyInquiriesAll.forEach((elm,i) => elm.onmouseover = function() {
+		document.querySelectorAll('.copy-inquiries .copied-icon')[i].style.marginRight = "0";
+		document.querySelectorAll('.copy-inquiries .copied-icon')[i].style.opacity = "1";
+	});
+	copyInquiriesAll.forEach((elm,i) => elm.onmouseout = function() {
+		document.querySelectorAll('.copy-inquiries .copied-icon')[i].style.marginRight = "-16px";
+		document.querySelectorAll('.copy-inquiries .copied-icon')[i].style.opacity = "0";
+	});
+	copyInquiriesAll.forEach((elm,i) => elm.onclick = function() {
+		document.querySelectorAll('.copy-inquiries .link-copied')[i].style.display = "block";
+		document.querySelectorAll('.copy-inquiries .copied-icon')[i].style.display = "none";
 		setTimeout(function () {
-					document.querySelector('.copy-inquiries .link-copied').style.display = "none";
-				document.querySelector('.copy-inquiries .copied-icon').style.display = "block";
+			document.querySelectorAll('.copy-inquiries .link-copied')[i].style.display = "none";
+			document.querySelectorAll('.copy-inquiries .copied-icon')[i].style.display = "block";
 		}, 2000);
 		navigator.clipboard.writeText('hello@daybreak.studio');
 		return false
-	};
+	});
+
 
 	var copyCareersAll = document.querySelectorAll('.copy-careers');
 	copyCareersAll.forEach((elm) => elm.href = '');
