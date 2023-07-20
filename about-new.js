@@ -130,6 +130,7 @@ daybreak.router.useScript(()=>{
 	var slug = currentUrl.split("/");
 	var project = slug[slug.length - 1]
 
+	console.log(project)
 	if (project = 'about') {
 		$(window).on("load resize",function(e){
 			let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
