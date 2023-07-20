@@ -30,9 +30,9 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.nav-test').classList.add("casestudy")    
 		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)';document.querySelector('.content').style.opacity = '1'}, 600)
 		
-		setTimeout(function() {
-	    		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
-		}, 2500);
+		// setTimeout(function() {
+	    // 		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
+		// }, 2500);
 		
 		const currentUrl = window.location.href;
 		var slug = currentUrl.split("/");
@@ -283,6 +283,10 @@ daybreak.router.useScript(()=>{
 	$( "#casestudy-menu-close" ).on( "click", function() {
 		document.querySelector('html').classList.remove('open')
 	} );
+
+	$(window).on("load scroll",function(e){
+		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
+	});
 
 	
 	document.querySelector(".casestudy-nav-indicator").innerHTML = ''
