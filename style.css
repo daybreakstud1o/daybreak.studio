@@ -64,7 +64,8 @@
     fill: #fff;
   }
   .dark .nav-bg {
-    background-color: #181818;
+    /* background-color: #181818; */
+    filter: invert(0.9)
   }
   .dark .body-founders, .dark .nav-link, .dark h1, .dark .link {
     color: #fff;
