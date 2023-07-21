@@ -145,6 +145,7 @@ daybreak.router.useScript(()=>{
 			document.querySelectorAll('.thumbnail-info')[i].children[0].innerHTML = data[i].Name
 			document.querySelectorAll('.thumbnail-info')[i].children[1].innerHTML = data[i].Brief
 			document.querySelectorAll('.thumbnail-info')[i].children[2].innerHTML = data[i].Categories
+			document.querySelectorAll('.thumbnail')[i].href = data[i].Name.replace(/\s+/g, '-').toLowerCase()
 		}
 	}
 	
