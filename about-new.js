@@ -43,35 +43,6 @@ daybreak.router.useScript(()=>{
 		  element.style.minWidth = narrow
 		})
 		
-		// $(window).on("load resize",function(e){
-		// 	let wide = document.querySelector('#image-size-1').offsetWidth + 'px'
-		// 	let narrow = document.querySelector('#image-size-2').offsetWidth + 'px'
-		// 	document.querySelectorAll('.about-carousel .wide').forEach((element) => {
-		// 	element.style.minWidth = wide
-		// 	});
-		// 	document.querySelectorAll('.about-carousel .narrow').forEach((element) => {
-		// 	element.style.minWidth = narrow
-		// 	});
-			
-		// 	document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
-		// })
-
-		// $(window).on("load scroll",function(e){
-		// 	var brandTop = document.querySelector('#brand-identity').getBoundingClientRect().top
-		// 	var productTop = document.querySelector('#product-design').getBoundingClientRect().top
-		// 	if (brandTop > 400) {
-		// 		document.querySelector('#brand-identity-selector').style.opacity = '0.5'
-		// 		document.querySelector('#product-design-selector').style.opacity = '0.5'
-		// 	} 
-		// 	if (brandTop <= 400) {
-		// 		document.querySelector('#brand-identity-selector').style.opacity = '1'
-		// 		document.querySelector('#product-design-selector').style.opacity = '0.5'
-		// 	} 
-		// 	if (productTop <= 400) {
-		// 		document.querySelector('#brand-identity-selector').style.opacity = '0.5'
-		// 		document.querySelector('#product-design-selector').style.opacity = '1'
-		// 	} 
-		// })
 
 
 		var list = document.querySelectorAll('.wordmarks-wrapper .wordmark-wrapper')
@@ -158,10 +129,25 @@ daybreak.router.useScript(()=>{
 	var slug = currentUrl.split("/");
 	var project = slug[slug.length - 1]
 
-	if (project = 'about') {
-
-	}
 	
+	$(window).on("load scroll",function(e){
+		if (project = 'about') {
+			var brandTop = document.querySelector('#brand-identity').getBoundingClientRect().top
+			var productTop = document.querySelector('#product-design').getBoundingClientRect().top
+			if (brandTop > 400) {
+				document.querySelector('#brand-identity-selector').style.opacity = '0.5'
+				document.querySelector('#product-design-selector').style.opacity = '0.5'
+			} 
+			if (brandTop <= 400) {
+				document.querySelector('#brand-identity-selector').style.opacity = '1'
+				document.querySelector('#product-design-selector').style.opacity = '0.5'
+			} 
+			if (productTop <= 400) {
+				document.querySelector('#brand-identity-selector').style.opacity = '0.5'
+				document.querySelector('#product-design-selector').style.opacity = '1'
+			} 
+		}
+	})
 	
 	
 	
