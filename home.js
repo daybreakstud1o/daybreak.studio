@@ -142,7 +142,7 @@ daybreak.router.useScript(()=>{
 		const data = await response.json();
 
 		for (let i = 0; i < document.querySelectorAll('.thumbnail').length; i++) {
-			document.querySelectorAll('.thumbnail-info')[i].children[0].innerHTML = data[i].name
+			document.querySelectorAll('.thumbnail-info')[i].children[0].innerHTML = data[i].Name
 		}
 	}
 	
