@@ -10,7 +10,7 @@ daybreak.router.useScript(()=>{
 		//document.querySelector('.nav-container').classList.add("dark","transform")
 		document.querySelector('.background').style.filter = 'invert(0.9)'
 		for (let i = 0; i < document.querySelectorAll('.footer').length; i++) {
-			document.querySelectorAll('.footer')[i].style.filter = 'invert(1)'
+			document.querySelectorAll('.footer')[i].style.filter = 'invert(1) hue-rotate(180deg)'
 		}
 		document.querySelector('.nav-container').style.filter = 'invert(1)'
 		document.querySelector('#real-nav1').classList.add("dark")
