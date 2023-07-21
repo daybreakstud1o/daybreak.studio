@@ -134,6 +134,17 @@ daybreak.router.useScript(()=>{
 			document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
 		}
 	});
+
+	thumbnailInfo()
+	async function thumbnailInfo() {
+		const api_url = 'https://opensheet.elk.sh/1fQox2YyJHiSsoc0IHxrgeEF0Vqyl04kPSI8QU-ms60Q/copy';
+		const response = await fetch(api_url);
+		const data = await response.json();
+
+		for (let i = 0; i < document.querySelectorAll('.thumbnail').length; i++) {
+			document.querySelectorAll('.thumbnail-info')[i].children[0].innerHTML = data[i].name
+		}
+	}
 	
 	// $( "#hypercard" ).on( "click", function() {
 	// 	document.querySelector('.thumbnail-row').style.justifyContent = "flex-start"
