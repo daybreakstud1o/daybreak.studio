@@ -130,22 +130,22 @@ daybreak.router.useScript(()=>{
 	var project = slug[slug.length - 1]
 
 	
-	addEventListener("scroll", (event) => {
-		var brandTop = document.querySelector('#brand-identity').getBoundingClientRect().top
-		var productTop = document.querySelector('#product-design').getBoundingClientRect().top
-		if (brandTop > 400) {
-		  document.querySelector('#brand-identity-selector').style.opacity = '0.5'
-		  document.querySelector('#product-design-selector').style.opacity = '0.5'
-		} 
-		if (brandTop <= 400) {
-		  document.querySelector('#brand-identity-selector').style.opacity = '1'
-		  document.querySelector('#product-design-selector').style.opacity = '0.5'
-		} 
-		if (productTop <= 400) {
-		  document.querySelector('#brand-identity-selector').style.opacity = '0.5'
-		  document.querySelector('#product-design-selector').style.opacity = '1'
-		} 
-	});
+	// addEventListener("scroll", (event) => {
+	// 	var brandTop = document.querySelector('#brand-identity').getBoundingClientRect().top
+	// 	var productTop = document.querySelector('#product-design').getBoundingClientRect().top
+	// 	if (brandTop > 400) {
+	// 	  document.querySelector('#brand-identity-selector').style.opacity = '0.5'
+	// 	  document.querySelector('#product-design-selector').style.opacity = '0.5'
+	// 	} 
+	// 	if (brandTop <= 400) {
+	// 	  document.querySelector('#brand-identity-selector').style.opacity = '1'
+	// 	  document.querySelector('#product-design-selector').style.opacity = '0.5'
+	// 	} 
+	// 	if (productTop <= 400) {
+	// 	  document.querySelector('#brand-identity-selector').style.opacity = '0.5'
+	// 	  document.querySelector('#product-design-selector').style.opacity = '1'
+	// 	} 
+	// });
 	
 	
 	
