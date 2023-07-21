@@ -54,7 +54,7 @@
     -moz-transform: translate3d(-50%, 0, 0);
   }
   #real-nav1.dark > div:not(.nav-bg) {
-    /* filter: invert(1) hue-rotate(180deg); */
+    filter: invert(1) hue-rotate(180deg);
     transition: .6s ease-in;
   }
   #real-nav1.dark .nav-bg {
@@ -65,7 +65,6 @@
   }
   .dark .nav-bg {
     /* background-color: #181818; */
-    filter: invert(0.9)
   }
   .dark .body-founders, .dark .nav-link, .dark h1, .dark .link {
     color: #fff;
