@@ -57,15 +57,18 @@
     /* filter: invert(1) hue-rotate(180deg); */
     transition: .6s ease-in;
   }
-  .nav-bg {
+  /* .nav-bg {
     transition: .6s ease-in;
-  }
+  } */
   .dark svg path {
     fill: #fff;
   }
+  .nav-bg {
+    filter: invert(0) blur(4px)
+  }
   .dark .nav-bg {
     /* background-color: #181818; */
-    filter: invert(0.9)
+    filter: invert(0.9) blur(4px)
   }
   .dark .body-founders, .dark .nav-link, .dark h1, .dark .link {
     color: #fff;
