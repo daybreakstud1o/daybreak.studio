@@ -231,7 +231,7 @@ daybreak.router.useScript(()=>{
 					document.querySelectorAll('.daybreak-brief-grid-item-1')[j].style.gridTemplateRows = '20px 0fr'
 					document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[j].innerHTML = document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[j].innerHTML.slice(0,-4)
 					document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[j].innerHTML += ' (+)'
-					document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].style.pointerEvents = 'all'
+					document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[j].style.pointerEvents = 'all'
 				}
 			}
 		})
