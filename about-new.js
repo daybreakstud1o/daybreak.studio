@@ -219,11 +219,11 @@ daybreak.router.useScript(()=>{
 		element.style.gridTemplateRows = '20px 0fr'
 		var clicked = false
 		document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].addEventListener("click", (event) => {
-			if (clicked == false) {
+			// if (clicked == false) {
 				closeDrawer()
 				element.style.gridTemplateRows = '20px 1fr'
 				clicked = true
-			}
+			// }
 			else if (clicked == true) {
 				closeDrawer()
 				element.style.gridTemplateRows = '20px 0fr'
