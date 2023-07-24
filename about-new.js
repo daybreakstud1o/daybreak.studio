@@ -212,21 +212,26 @@ daybreak.router.useScript(()=>{
 	  }
 	});
 
-	document.querySelectorAll('.daybreak-brief-grid-item-1').forEach((element, i) => {
-		element.style.display = 'grid'
-		element.style.gridTemplateRows = '20px 0fr'
-		document.querySelectorAll('.daybreak-brief-grid-item-1 > ._50')[i].style.overflow = "hidden"
-		element.style.gridTemplateRows = '20px 0fr'
-		document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].addEventListener("click", (event) => {
-			closeDrawer()
-			element.style.gridTemplateRows = '20px 1fr'
-		})
-		function closeDrawer() {
-			for (let i = 0; i < document.querySelectorAll('.daybreak-brief-grid-item-1').length; i++) {
-				document.querySelectorAll('.daybreak-brief-grid-item-1')[i].style.gridTemplateRows = '20px 0fr'
+	if ($(window).width() <= 767) {
+		document.querySelectorAll('.daybreak-brief-grid-item-1').forEach((element, i) => {
+			element.style.display = 'grid'
+			element.style.gridTemplateRows = '20px 0fr'
+			document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].innerHTML += ' (+)'
+			document.querySelectorAll('.daybreak-brief-grid-item-1 > ._50')[i].style.overflow = "hidden"
+			element.style.gridTemplateRows = '20px 0fr'
+			document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].addEventListener("click", (event) => {
+				closeDrawer()
+				element.style.gridTemplateRows = '20px 1fr'
+				element.innerHTML += ' (-)'
+			})
+			function closeDrawer() {
+				for (let j = 0; j < document.querySelectorAll('.daybreak-brief-grid-item-1').length; j++) {
+					document.querySelectorAll('.daybreak-brief-grid-item-1')[j].style.gridTemplateRows = '20px 0fr'
+					document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[j].innerHTML += ' (+)'
+				}
 			}
-		}
-	});
+		})
+	}
 	  
 
 	// function setupLogoMinimizeOnScroll() {
