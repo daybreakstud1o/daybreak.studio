@@ -83,12 +83,15 @@ daybreak.router.useScript(()=>{
 						document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
 						document.querySelector('#real-nav1').classList.add("flesh-top-3")
 					}
+					var mapObj = {"\n\n":'</div><br><div class="body-founders white _100">',":":':</div><div class="body-founders white _50">'};
+					var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+					var creditsStylized = '<div class="body-founders white _100">'+data[i].Credits.replace(re, function(matched){return mapObj[matched]})+'</div>'
 					document.getElementById('casestudy-name').innerHTML = data[i].Name
 					document.getElementById('casestudy-categories').innerHTML = data[i].Categories
 					document.getElementById('intro-text').innerHTML = data[i].Intro
 					document.getElementById('problem-text').innerHTML = data[i].Problem
 					document.getElementById('solution-text').innerHTML = data[i].Solution
-					document.getElementById('casestudy-nav-credits-content').innerHTML = data[i].Credits
+					document.getElementById('casestudy-nav-credits-content').innerHTML = creditsStylized
 					if (i == '0') {
 						document.getElementById('casestudy-previous').innerHTML = data[projects.length - 1].Name
 						document.getElementById('casestudy-previous').href = '/' + data[projects.length - 1].Name.replace(/\s+/g, '-').toLowerCase()
