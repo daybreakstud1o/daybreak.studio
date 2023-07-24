@@ -214,6 +214,8 @@ daybreak.router.useScript(()=>{
 
 	document.querySelectorAll('.daybreak-brief-grid-item-1').forEach((element, i) => {
 		element.style.display = 'grid'
+		element.style.style.gridTemplateRows = '20px 0fr'
+		document.querySelectorAll('.daybreak-brief-grid-item-1 > ._50')[i].style.overflow = "hidden"
 		element.style.gridTemplateRows = '20px 0fr'
 		var clicked = false
 		document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].addEventListener("click", (event) => {
