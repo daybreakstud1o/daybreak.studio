@@ -264,8 +264,8 @@ daybreak.router.useScript(()=>{
 				document.querySelector('#real-nav1').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
 				document.getElementsByClassName('hypercard')[0].classList.remove('full')
 				document.getElementsByClassName('hypercard')[0].style.top = 'auto'
-				document.getElementsByClassName('wombo-dream')[0].classList.remove('full')
-				document.getElementsByClassName('wombo-dream')[0].style.top = 'auto'
+				document.getElementsByClassName('pager')[0].classList.remove('full')
+				document.getElementsByClassName('pager')[0].style.top = 'auto'
 				document.getElementsByClassName('inspired')[0].classList.remove('full')
 				document.getElementsByClassName('inspired')[0].style.top = 'auto'
 				document.getElementsByClassName('prologue')[0].classList.remove('full')
