@@ -224,6 +224,7 @@ daybreak.router.useScript(()=>{
 				closeDrawer()
 				element.style.gridTemplateRows = '20px 1fr'
 				document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].innerHTML = document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].innerHTML.slice(0,-4)
+				document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].innerHTML += ' (-)'
 				document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].style.pointerEvents = 'none'
 			})
 			function closeDrawer() {
