@@ -83,8 +83,27 @@ daybreak.router.useScript(()=>{
 						document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
 						document.querySelector('#real-nav1').classList.add("flesh-top-3")
 					}
-					caseStudyName.innerHTML = data[i].Name
-					caseStudyCategories.innerHTML = data[i].Categories
+					document.getElementById('casestudy-name').innerHTML = data[i].Name
+					document.getElementById('casestudy-categories').innerHTML = data[i].Categories
+					document.getElementById('intro-text').innerHTML = data[i].Intro
+					document.getElementById('problem-text').innerHTML = data[i].Problem
+					document.getElementById('solution-text').innerHTML = data[i].Solution
+					document.getElementById('casestudy-nav-credits-content').innerHTML = data[i].Credits
+					if (i == '0') {
+						document.getElementById('casestudy-previous').innerHTML = data[projects.length - 1].Name
+						document.getElementById('casestudy-previous').href = '/' + data[projects.length - 1].Name.replace(/\s+/g, '-').toLowerCase()
+					} else {
+						document.getElementById('casestudy-previous').innerHTML = data[i-1].Name
+						document.getElementById('casestudy-previous').href = '/' + data[i-1].Name.replace(/\s+/g, '-').toLowerCase()
+					}
+					if (i == [projects.length - 1]) {
+						document.getElementById('casestudy-next').innerHTML = data[0].Name
+						document.getElementById('casestudy-next').href = '/' + data[0].Name.replace(/\s+/g, '-').toLowerCase()
+					} else {
+						document.getElementById('casestudy-next').innerHTML = data[i+1].Name
+						document.getElementById('casestudy-next').href = '/' + data[i+1].Name.replace(/\s+/g, '-').toLowerCase()
+					}
+					
 				}
 			})
 		}
