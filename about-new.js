@@ -224,7 +224,7 @@ daybreak.router.useScript(()=>{
 				element.style.gridTemplateRows = '20px 1fr'
 				clicked = true
 			// }
-			else if (clicked == true) {
+			if (clicked == true) {
 				closeDrawer()
 				element.style.gridTemplateRows = '20px 0fr'
 				clicked = false
