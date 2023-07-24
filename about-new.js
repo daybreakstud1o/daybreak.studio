@@ -215,7 +215,7 @@ daybreak.router.useScript(()=>{
 	document.querySelectorAll('.daybreak-brief-grid-item-1').forEach((element, i) => {
 		element.style.display = 'grid'
 		element.style.gridTemplateRows = '20px 0fr'
-		var clicked = false
+		const clicked = false
 		document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].addEventListener("click", (event) => {
 			if (checked == false) {
 				closeDrawer()
