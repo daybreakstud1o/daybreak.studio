@@ -211,6 +211,29 @@ daybreak.router.useScript(()=>{
 	    }
 	  }
 	});
+
+	document.querySelectorAll('.daybreak-brief-grid-item-1').forEach((element, i) => {
+		element.style.display = 'grid'
+		element.style.gridTemplateRows = '20px 0fr'
+		var clicked = false
+		document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].addEventListener("click", (event) => {
+			if (checked == false) {
+				closeDrawer()
+				element.style.gridTemplateRows = '20px 1fr'
+				clicked = true
+			}
+			else if (checked == true) {
+				closeDrawer()
+				element.style.gridTemplateRows = '20px 0fr'
+				clicked = false
+			}
+		})
+		function closeDrawer() {
+			for (let i = 0; i < document.querySelectorAll('.daybreak-brief-grid-item-1').length; i++) {
+				document.querySelectorAll('.daybreak-brief-grid-item-1')[i].style.gridTemplateRows = '20px 0fr'
+			}
+		}
+	});
 	  
 
 	// function setupLogoMinimizeOnScroll() {
