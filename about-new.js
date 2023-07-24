@@ -223,11 +223,13 @@ daybreak.router.useScript(()=>{
 			document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].addEventListener("click", (event) => {
 				closeDrawer()
 				element.style.gridTemplateRows = '20px 1fr'
+				document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].innerHTML = document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].innerHTML.slice(0,-4)
 				document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[i].innerHTML += ' (-)'
 			})
 			function closeDrawer() {
 				for (let j = 0; j < document.querySelectorAll('.daybreak-brief-grid-item-1').length; j++) {
 					document.querySelectorAll('.daybreak-brief-grid-item-1')[j].style.gridTemplateRows = '20px 0fr'
+					document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[j].innerHTML = document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[j].innerHTML.slice(0,-4)
 					document.querySelectorAll('.daybreak-brief-grid-item-1 > ._100')[j].innerHTML += ' (+)'
 				}
 			}
