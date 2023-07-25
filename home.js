@@ -4,6 +4,7 @@ daybreak.router.useScript(()=>{
 	setTimeout(function() {
 		document.documentElement.scrollTop = 0;
 	}, 100);
+	
 
 	function animateInHero() {
 		document.querySelector('html').style.scrollBehavior = 'smooth'
