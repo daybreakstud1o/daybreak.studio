@@ -142,6 +142,7 @@
   .nav-test.casestudy {
     transform: translateY(-84px);
     padding-top: 0!important;
+    z-index: 1;
   }
   .daybreak-logo-big {
     width: 75%;
