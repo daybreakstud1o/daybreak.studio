@@ -7,6 +7,62 @@ daybreak.router.useScript(()=>{
 	
 
 	function animateInHero() {
+
+		thumbnails()
+		async function thumbnails() {
+			const api_url = 'https://opensheet.elk.sh/1fQox2YyJHiSsoc0IHxrgeEF0Vqyl04kPSI8QU-ms60Q/copy';
+			const response = await fetch(api_url);
+			const data = await response.json();
+			const thumbnailRowContainer = document.querySelector(".thumbnail-row-container")
+
+			var projects = []
+			for (let i = 0; i < data.length; i++) {
+				projects.push(data[i].Name.replace(/\s+/g, '-').toLowerCase())
+			}
+
+			if ((thumbnailRowContainer.innerHTML.trim() == "") || (thumbnailRowContainer.innerHTML == "")) {
+				for (let i = 0; i <= 3; i++) {
+					const thumbnailRow = document.createElement("div")
+					thumbnailRow.classList.add('thumbnail-row')
+					document.querySelector(".thumbnail-row-container").appendChild(thumbnailRow)
+				}
+
+				projects.forEach((item, i) => {
+					const thumbnail = document.createElement("a")
+					thumbnail.classList.add('thumbnail','hover-target-big','w-inline-block',data[i].ThumbnailSize,item)
+					thumbnail.href = '/' + item
+					document.querySelectorAll(".thumbnail-row")[Math.floor(i / 2)].appendChild(thumbnail)
+
+					const thumbnailInfo = document.createElement("div")
+					thumbnail.appendChild(thumbnailInfo)
+
+					const thumbnailInfo1 = document.createElement("div")
+					thumbnailInfo1.classList.add('body-fractul','white','_100')
+					thumbnailInfo1.innerHTML = data[i].Name
+					thumbnailInfo.appendChild(thumbnailInfo1)
+
+					const thumbnailInfo2 = document.createElement("div")
+					thumbnailInfo2.classList.add('body-fractul','white','_50')
+					thumbnailInfo2.innerHTML = data[i].Brief
+					thumbnailInfo.appendChild(thumbnailInfo2)
+
+					const thumbnailInfo3 = document.createElement("div")
+					thumbnailInfo3.classList.add('body-fractul','white','_50')
+					thumbnailInfo3.innerHTML = data[i].Categories
+					thumbnailInfo.appendChild(thumbnailInfo3)
+				})
+			}
+			
+
+			for (let i = 0; i < document.querySelectorAll('.thumbnail').length; i++) {
+				document.querySelectorAll('.thumbnail-info')[i].children[0].innerHTML = data[i].Name
+				document.querySelectorAll('.thumbnail-info')[i].children[1].innerHTML = data[i].Brief
+				document.querySelectorAll('.thumbnail-info')[i].children[2].innerHTML = data[i].Categories
+				document.querySelectorAll('.thumbnail')[i].href = data[i].Name.replace(/\s+/g, '-').toLowerCase()
+			}
+		}
+		
+
 		document.querySelector('html').style.scrollBehavior = 'smooth'
 		document.querySelector('.nav-container').classList.remove("transform","casestudy-bg")
 		document.querySelector('#real-nav1').classList.remove("flesh-top-1","flesh-top-2")
@@ -136,19 +192,7 @@ daybreak.router.useScript(()=>{
 		}
 	});
 
-	thumbnailInfo()
-	async function thumbnailInfo() {
-		const api_url = 'https://opensheet.elk.sh/1fQox2YyJHiSsoc0IHxrgeEF0Vqyl04kPSI8QU-ms60Q/copy';
-		const response = await fetch(api_url);
-		const data = await response.json();
-
-		for (let i = 0; i < document.querySelectorAll('.thumbnail').length; i++) {
-			document.querySelectorAll('.thumbnail-info')[i].children[0].innerHTML = data[i].Name
-			document.querySelectorAll('.thumbnail-info')[i].children[1].innerHTML = data[i].Brief
-			document.querySelectorAll('.thumbnail-info')[i].children[2].innerHTML = data[i].Categories
-			document.querySelectorAll('.thumbnail')[i].href = data[i].Name.replace(/\s+/g, '-').toLowerCase()
-		}
-	}
+	
 	
 	// $( "#hypercard" ).on( "click", function() {
 	// 	document.querySelector('.thumbnail-row').style.justifyContent = "flex-start"
