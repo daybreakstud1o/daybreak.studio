@@ -40,7 +40,7 @@ daybreak.router.useScript(()=>{
 		let full = document.querySelector('#full').offsetWidth + 'px'
 		document.getElementsByClassName(project)[0].style.minWidth = full
 		document.getElementsByClassName(project)[0].classList.add('casestudy-thumbnail-height')
-		document.querySelector('.content').style.zIndex = '-1'
+		// document.querySelector('.content').style.zIndex = '-1'
 		
 		for (let i = 0; i < document.querySelectorAll('.thumbnail-row').length; i++) {
 		  document.querySelectorAll('.thumbnail-row')[i].classList.remove('flex-start','flex-end')
@@ -280,7 +280,7 @@ daybreak.router.useScript(()=>{
 				document.querySelector('.nav-test').classList.remove("casestudy","short")
 				document.querySelector('.nav-container').classList.remove("casestudy-bg")
 				document.querySelector('#real-nav1').classList.remove("flesh-top-1","flesh-top-2")
-				document.querySelector('.content').style.zIndex = 'auto'
+				// document.querySelector('.content').style.zIndex = 'auto'
 			
 				document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
 				document.querySelector('#real-nav1').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
