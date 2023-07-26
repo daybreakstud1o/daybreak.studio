@@ -92,10 +92,10 @@ daybreak.router.useScript(()=>{
 		
 //		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
 		
-    		let full = document.querySelector('#full').offsetWidth + 'px'
+		let full = document.querySelector('#full').offsetWidth + 'px'
 		let small = document.querySelector('#small').offsetWidth + 'px'
-    		let big = document.querySelector('#big').offsetWidth + 'px'
-    		let half = document.querySelector('#half').offsetWidth + 'px'
+		let big = document.querySelector('#big').offsetWidth + 'px'
+		let half = document.querySelector('#half').offsetWidth + 'px'
 
 		document.querySelectorAll('.thumbnail-row .small').forEach((element) => {
 		  element.style.minWidth = small
@@ -183,6 +183,7 @@ daybreak.router.useScript(()=>{
 	
 	$(window).on("load scroll",function(e){
 		var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
+		console.log(document.querySelector('#nav').getBoundingClientRect().bottom)
 		if (navTop == 0) {
 			document.querySelector('.nav-test').classList.add("short")
 			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
