@@ -180,6 +180,8 @@ daybreak.router.useScript(()=>{
 		});
 	});
 
+	//function that includes a range of values at/around the point of transformation
+
 	var navHeight = document.querySelector('.nav-container').getBoundingClientRect().height
 	$(window).on("load scroll",function(e){
 		// var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
@@ -187,11 +189,15 @@ daybreak.router.useScript(()=>{
 		
 		console.log(window.scrollY, navHeight)
 		if (window.scrollY > navHeight) {
-			document.querySelector('.nav-test').classList.add("short")
 			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
+			setTimeout(function() {
+				document.querySelector('.nav-test').classList.add("short")
+			}, 600);
 		} else if (window.scrollY <= navHeight) {
-			document.querySelector('.nav-test').classList.remove("short")
 			document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
+			setTimeout(function() {
+				document.querySelector('.nav-test').classList.remove("short")
+			}, 600);
 		}
 	});
 
