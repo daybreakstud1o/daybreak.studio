@@ -185,17 +185,19 @@ daybreak.router.useScript(()=>{
 	var navHeight = document.querySelector('.nav-container').getBoundingClientRect().height
 	$(window).on("load scroll",function(e){
 		// var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
-		var navTop = document.querySelector('.nav-container').getBoundingClientRect().bottom
+		// var navTop = document.querySelector('.nav-container').getBoundingClientRect().bottom
 		
 		console.log(window.scrollY, navHeight)
 		if ((window.scrollY > [navHeight - 10]) && (window.scrollY < [navHeight + 10])) {
-			document.querySelector('.nav-test').classList.add("short")
-			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
+			if (document.querySelector('.nav-test').classList.contains("short")) {
+				document.querySelector('.nav-test').classList.remove("short")
+				document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
+			} else {
+				document.querySelector('.nav-test').classList.add("short")
+				document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
+			}
+			
 		}
-		// else if (window.scrollY <= navHeight) {
-		// 	document.querySelector('.nav-test').classList.remove("short")
-		// 	document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
-		// }
 	});
 
 	
