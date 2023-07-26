@@ -180,11 +180,12 @@ daybreak.router.useScript(()=>{
 		});
 	});
 
-	
+	var navHeight = document.querySelector('.nav-container').getBoundingClientRect().height
 	$(window).on("load scroll",function(e){
 		// var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
 		var navTop = document.querySelector('.nav-container').getBoundingClientRect().bottom
-		var navHeight = document.querySelector('.nav-container').getBoundingClientRect().height
+		
+		console.log(document.body.scrollTop, navHeight)
 		if (document.body.scrollTop > navHeight) {
 			document.querySelector('.nav-test').classList.add("short")
 			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
