@@ -185,7 +185,7 @@ daybreak.router.useScript(()=>{
 		// var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
 		var navTop = document.querySelector('.nav-container').getBoundingClientRect().bottom
 		
-		console.log(document.body.scrollTop, navHeight)
+		console.log(window.scrollY, navHeight)
 		if (document.body.scrollTop > navHeight) {
 			document.querySelector('.nav-test').classList.add("short")
 			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
