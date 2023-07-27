@@ -294,10 +294,24 @@
   .casestudy .thumbnail-info {
     opacity: 0!important;
   }
+  
+  @media screen and (min-width: 1920px) {
+    .close #real-nav1, .short #real-nav1 {
+      height: 67px!important;
+    }
+    .close .daybreak-logo-big, .nav-logo--minimized {
+      width: 232px!important;
+    }
+  }
+  @media screen and (max-width: 1919px) {
+    .close .daybreak-logo-big, .nav-logo--minimized {
+      width: 33%!important;
+    }
+  }
 
   @media screen and (max-width: 1439px) {
     .close #real-nav1, .short #real-nav1 {
-        height: 48px!important;
+      height: 48px!important;
     }
   }
   
@@ -306,9 +320,6 @@
       opacity: 0;
       display: grid;
       grid-template-rows: 0fr;
-    }
-    .close .daybreak-logo-big, .nav-logo--minimized {
-      width: 33%!important;
     }
   }
   @media screen and (max-width: 991px) {
