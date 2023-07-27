@@ -327,6 +327,9 @@
     }
   }
   @media only screen and (max-width: 767px) {
+    .close .daybreak-logo-big, .nav-logo--minimized {
+      width: 50%!important;
+    }
     .thumbnail {
       height: 75vw;
     }
