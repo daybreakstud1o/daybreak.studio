@@ -313,7 +313,7 @@
   }
   @media screen and (max-width: 991px) {
     .close .daybreak-logo-big, .nav-logo--minimized {
-      width: 50%!important;
+      width: 67%!important;
     }
   }
   @media only screen and (min-width: 768px) {
