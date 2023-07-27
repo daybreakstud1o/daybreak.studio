@@ -330,6 +330,9 @@
     .close .daybreak-logo-big, .nav-logo--minimized {
       width: 50%!important;
     }
+    .nav-bg {
+      bottom: -4.2vw;
+    }
     .thumbnail {
       height: 75vw;
     }
