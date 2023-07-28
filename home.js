@@ -188,16 +188,18 @@ daybreak.router.useScript(()=>{
 		// var navTop = document.querySelector('.nav-container').getBoundingClientRect().bottom
 		
 		console.log(window.scrollY, navHeight)
-		// if ((window.scrollY > [navHeight - 10]) && (window.scrollY < [navHeight + 10])) {
-		// 	if (document.querySelector('.nav-test').classList.contains("short") == false) {
-		// 		document.querySelector('.nav-test').classList.add("short")
-		// 		document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
-		// 	} else if (document.querySelector('.nav-test').classList.contains("short") == true) {
-		// 		document.querySelector('.nav-test').classList.remove("short")
-		// 		document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
-		// 	}
-			
-		// }
+		if ((window.scrollY > [navHeight - 10]) && (window.scrollY < [navHeight + 10])) {
+			console.log('crossing')
+			if (document.querySelector('.nav-test').classList.contains("short") == false) {
+				console.log('down')
+				// document.querySelector('.nav-test').classList.add("short")
+				// document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
+			} else if (document.querySelector('.nav-test').classList.contains("short") == true) {
+				console.log('up')
+				// document.querySelector('.nav-test').classList.remove("short")
+				// document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
+			}
+		}
 		if (window.scrollY > navHeight) {
 			document.querySelector('.nav-test').classList.add("short")
 			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
