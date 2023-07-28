@@ -190,13 +190,20 @@ daybreak.router.useScript(()=>{
 		
 		if (window.scrollY > [navHeight + 20]) {
 			sdcjkn = true
-			console.log(sdcjkn)
+			testing()
 		} else if (window.scrollY <= [navHeight - 20]) {
 			sdcjkn = false
-			console.log(sdcjkn)
+			testing()
 		}
-		if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20])) {
+		function testing() {
+			if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20]) && (sdcjkn == true)) {
+				console.log("it's true")
+			}
+			if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20]) && (sdcjkn == false)) {
+				console.log("it's false")
+			}
 		}
+		
 		if (window.scrollY > navHeight) {
 			document.querySelector('.nav-test').classList.add("short")
 			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
