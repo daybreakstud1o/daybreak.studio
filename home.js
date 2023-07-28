@@ -204,10 +204,10 @@ daybreak.router.useScript(()=>{
 		// 	}
 		// }
 		
-		if (window.scrollY > [navHeight - 30]) {
+		if ((window.scrollY > [navHeight - 20]) && (window.scrollY < navHeight)) {
 			document.querySelector('.nav-test').classList.add("short")
 			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
-		} else if (window.scrollY <= [navHeight - 30]) {
+		} else if (window.scrollY <= navHeight) {
 			document.querySelector('.nav-test').classList.remove("short")
 			document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
 		}
