@@ -188,21 +188,21 @@ daybreak.router.useScript(()=>{
 		// var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
 		// var navTop = document.querySelector('.nav-container').getBoundingClientRect().bottom
 		
-		if (window.scrollY > [navHeight + 20]) {
-			sdcjkn = true
-		} else if (window.scrollY <= [navHeight - 20]) {
-			sdcjkn = false
-		}
+		// if (window.scrollY > [navHeight + 20]) {
+		// 	sdcjkn = true
+		// } else if (window.scrollY <= [navHeight - 20]) {
+		// 	sdcjkn = false
+		// }
 		// console.log(sdcjkn)
-		function testing(value) {
-			console.log(value)
-			if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20]) && (value == 'true')) {
-				console.log("it's true")
-			}
-			if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20]) && (value == 'false')) {
-				console.log("it's false")
-			}
-		}
+		// function testing(value) {
+		// 	console.log(value)
+		// 	if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20]) && (value == 'true')) {
+		// 		console.log("it's true")
+		// 	}
+		// 	if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20]) && (value == 'false')) {
+		// 		console.log("it's false")
+		// 	}
+		// }
 		
 		if (window.scrollY > [navHeight - 20]) {
 			document.querySelector('.nav-test').classList.add("short")
