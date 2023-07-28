@@ -193,7 +193,7 @@ daybreak.router.useScript(()=>{
 		} else if (window.scrollY <= [navHeight - 20]) {
 			sdcjkn = false
 		}
-		console.log(sdcjkn)
+		// console.log(sdcjkn)
 		function testing(value) {
 			console.log(value)
 			if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20]) && (value == 'true')) {
@@ -204,10 +204,10 @@ daybreak.router.useScript(()=>{
 			}
 		}
 		
-		if (window.scrollY > navHeight) {
+		if (window.scrollY > [navHeight - 20]) {
 			document.querySelector('.nav-test').classList.add("short")
 			document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
-		} else if (window.scrollY <= navHeight) {
+		} else if (window.scrollY <= [navHeight - 20]) {
 			document.querySelector('.nav-test').classList.remove("short")
 			document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
 		}
