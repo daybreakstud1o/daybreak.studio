@@ -189,10 +189,10 @@ daybreak.router.useScript(()=>{
 		// var navTop = document.querySelector('.nav-container').getBoundingClientRect().bottom
 		
 		if (window.scrollY > [navHeight + 20]) {
-			sdcjkn == true
+			sdcjkn = true
 			console.log(sdcjkn)
 		} else if (window.scrollY <= [navHeight - 20]) {
-			sdcjkn == false
+			sdcjkn = false
 			console.log(sdcjkn)
 		}
 		if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20])) {
