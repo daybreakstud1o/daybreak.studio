@@ -183,21 +183,19 @@ daybreak.router.useScript(()=>{
 	//function that includes a range of values at/around the point of transformation
 
 	var navHeight = document.querySelector('.nav-container').getBoundingClientRect().height
+	var sdcjkn = false
 	$(window).on("load scroll",function(e){
 		// var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
 		// var navTop = document.querySelector('.nav-container').getBoundingClientRect().bottom
 		
-		// console.log(window.scrollY, navHeight)
+		if (window.scrollY > [navHeight - 20]) {
+			sdcjkn == true
+			console.log(sdcjkn)
+		} else if (window.scrollY <= [navHeight + 20]) {
+			sdcjkn == false
+			console.log(sdcjkn)
+		}
 		if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20])) {
-			var i = 0
-			console.log('crossing ' + i++)
-			if (document.querySelector('.nav-test').classList.contains("short") == false) {
-				// document.querySelector('.nav-test').classList.add("short")
-				// document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
-			} else if (document.querySelector('.nav-test').classList.contains("short") == true) {
-				// document.querySelector('.nav-test').classList.remove("short")
-				// document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
-			}
 		}
 		if (window.scrollY > navHeight) {
 			document.querySelector('.nav-test').classList.add("short")
