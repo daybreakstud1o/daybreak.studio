@@ -196,12 +196,12 @@ daybreak.router.useScript(()=>{
 		testing(sdcjkn)
 		function testing(value) {
 			if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20]) && (value == true)) {
-				document.querySelector('.nav-test').classList.add("short")
-				document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
-			}
-			if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20]) && (value == false)) {
 				document.querySelector('.nav-test').classList.remove("short")
 				document.querySelector('.daybreak-logo-big').classList.remove('nav-logo--minimized')
+			}
+			if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20]) && (value == false)) {
+				document.querySelector('.nav-test').classList.add("short")
+				document.querySelector('.daybreak-logo-big').classList.add('nav-logo--minimized')
 			}
 		}
 		
