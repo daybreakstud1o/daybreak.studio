@@ -195,7 +195,6 @@ daybreak.router.useScript(()=>{
 		}
 		testing(sdcjkn)
 		function testing(value) {
-			console.log(value)
 			if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20]) && (value == true)) {
 				console.log("it's true")
 			}
