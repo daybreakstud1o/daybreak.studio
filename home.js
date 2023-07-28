@@ -188,7 +188,7 @@ daybreak.router.useScript(()=>{
 		// var navTop = document.querySelector('.nav-container').getBoundingClientRect().bottom
 		
 		// console.log(window.scrollY, navHeight)
-		if ((window.scrollY > [navHeight - 10]) && (window.scrollY < [navHeight + 10])) {
+		if ((window.scrollY > [navHeight - 20]) && (window.scrollY < [navHeight + 20])) {
 			var i = 0
 			console.log('crossing ' + i++)
 			if (document.querySelector('.nav-test').classList.contains("short") == false) {
