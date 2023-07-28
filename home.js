@@ -184,7 +184,7 @@ daybreak.router.useScript(()=>{
 
 	var navHeight = document.querySelector('.nav-container').getBoundingClientRect().height
 	var sdcjkn = false
-	$(window).on("load scroll",function(e){
+	$(window).on("resize scroll",function(e){
 		// var navTop = document.querySelector('#real-nav1').getBoundingClientRect().top
 		// var navTop = document.querySelector('.nav-container').getBoundingClientRect().bottom
 		
