@@ -68,7 +68,7 @@ body {
 }
 .dark .nav-bg {
   /* background-color: #181818; */
-  filter: invert(0.9) blur(4px)
+  filter: invert(1) blur(4px)
 }
 .dark .body-founders, .dark .nav-link, .dark h1, .dark .link {
   color: #fff;
