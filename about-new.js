@@ -8,7 +8,7 @@ daybreak.router.useScript(()=>{
 		//document.querySelector('.background').classList.add("dark")
 		//document.querySelector('.footer').classList.add("dark")
 		//document.querySelector('.nav-container').classList.add("dark","transform")
-		document.querySelector('.background').style.filter = 'invert(0.9)'
+		document.querySelector('.background').style.filter = 'invert(1)'
 		for (let i = 0; i < document.querySelectorAll('.footer').length; i++) {
 			document.querySelectorAll('.footer')[i].style.filter = 'invert(1) hue-rotate(180deg)'
 		}
