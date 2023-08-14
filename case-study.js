@@ -94,6 +94,7 @@ daybreak.router.useScript(()=>{
 					document.getElementById('problem-text').innerHTML = data[i].Problem.replace(re1, function(matched){return mapObj1[matched]})
 					document.getElementById('solution-text').innerHTML = data[i].Solution.replace(re1, function(matched){return mapObj1[matched]})
 					document.getElementById('casestudy-nav-credits-content').innerHTML = creditsStylized
+					document.getElementById('casestudy-nav-fonts').innerHTML = data[i].Fonts
 					if (i == '0') {
 						document.getElementById('casestudy-previous').innerHTML = data[projects.length - 1].Name
 						document.getElementById('casestudy-previous').href = '/' + data[projects.length - 1].Name.replace(/\s+/g, '-').toLowerCase()
