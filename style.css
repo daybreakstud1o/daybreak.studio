@@ -8,7 +8,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar {
   display: none;
 }
 body {
-  background-color: #E8E8E8 !important;
+  background-color: #fff !important;
 }
 
 .grid-samples {
@@ -43,7 +43,7 @@ body {
 
 /*between pages*/
 .background {
-  background-color: #E8E8E8;
+  background-color: #fff;
 }
 .nav-bg {
   backface-visibility: hidden;
@@ -68,7 +68,7 @@ body {
 }
 .dark .nav-bg {
   /* background-color: #181818; */
-  filter: invert(1) blur(4px)
+  filter: invert(0.9) blur(4px)
 }
 .dark .body-founders, .dark .nav-link, .dark h1, .dark .link {
   color: #fff;
