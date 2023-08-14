@@ -8,7 +8,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar {
   display: none;
 }
 body {
-  background-color: #fff !important;
+  background-color: #E8E8E8 !important;
 }
 
 .grid-samples {
@@ -43,7 +43,7 @@ body {
 
 /*between pages*/
 .background {
-  background-color: #fff;
+  background-color: #E8E8E8;
 }
 .nav-bg {
   backface-visibility: hidden;
