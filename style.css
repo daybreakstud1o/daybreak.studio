@@ -360,10 +360,10 @@ opacity: 1;
     opacity: 1;
   }
   .flesh-top-1 {
-    transform: translateY(calc(8px - 150vw))
+    transform: translateY(calc(-8px - 150vw))
   }
   .flesh-top-2 {
-    transform: translateY(calc(-8px - 300vw))
+    transform: translateY(calc(-16px - 300vw))
   }
   .flesh-top-3 {
     transform: translateY(calc(-24px - 450vw))
