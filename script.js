@@ -41,16 +41,16 @@ var copyInquiriesAll = document.querySelectorAll('.copy-inquiries');
 		return false
 	});
 
-	document.addEventListener('DOMContentLoaded', function() {
-		console.log("hi!")
-		const videos = document.querySelectorAll('video');
-		videos.forEach(video => {
-			video.load();
-		});
-	});
+	// document.addEventListener('DOMContentLoaded', function() {
+	// 	console.log("hi!")
+	// 	const videos = document.querySelectorAll('video');
+	// 	videos.forEach(video => {
+	// 		video.load();
+	// 	});
+	// });
 
-		console.log("hi!")
-		const videos = document.querySelectorAll("video");
-		videos.forEach(video => {
-			video.load();
-		});
+	// 	console.log("hi!")
+	// 	const videos = document.querySelectorAll("video");
+	// 	videos.forEach(video => {
+	// 		video.load();
+	// 	});
