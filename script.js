@@ -49,6 +49,7 @@ var copyInquiriesAll = document.querySelectorAll('.copy-inquiries');
 	// });
 
 	window.onload = function() {
+		console.log("hi!")
 		const videos = document.querySelectorAll(‘video’);
 		videos.forEach(video => {
 			video.load();
