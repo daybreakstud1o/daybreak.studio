@@ -50,7 +50,7 @@ var copyInquiriesAll = document.querySelectorAll('.copy-inquiries');
 	});
 
 		console.log("hi!")
-		const videos = document.querySelectorAll(‘video’);
+		const videos = document.querySelectorAll("video");
 		videos.forEach(video => {
 			video.load();
 		});
