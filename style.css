@@ -363,10 +363,10 @@ opacity: 1;
     transform: translateY(calc(8px - 150vw))
   }
   .flesh-top-2 {
-    transform: translateY(calc(0px - 300vw))
+    transform: translateY(calc(-8px - 300vw))
   }
   .flesh-top-3 {
-    transform: translateY(calc(-8px - 450vw))
+    transform: translateY(calc(-24px - 450vw))
   }
   .casestudy-name {
       position: absolute;
