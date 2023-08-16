@@ -40,3 +40,10 @@ var copyInquiriesAll = document.querySelectorAll('.copy-inquiries');
 		navigator.clipboard.writeText('careers@daybreak.studio');
 		return false
 	});
+
+	document.addEventListener('DOMContentLoaded', function() {
+		const videos = document.querySelectorAll('video');
+		videos.forEach(video => {
+			video.load();
+		});
+	});
