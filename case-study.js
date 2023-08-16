@@ -7,6 +7,11 @@ daybreak.router.useScript(()=>{
 			document.querySelector('html').style.scrollBehavior = 'auto'
 		}, 1000);
 
+		const videos = document.querySelectorAll("video");
+		videos.forEach(video => {
+			video.load();
+		});
+
 	   	document.documentElement.scrollTop = 0;
 		setTimeout(function() {
 			document.documentElement.scrollTop = 0;
