@@ -299,10 +299,10 @@ daybreak.router.useScript(()=>{
 				document.getElementsByClassName('curated')[0].style.top = 'auto'
 				document.getElementsByClassName('workweek')[0].classList.remove('full')
 				document.getElementsByClassName('workweek')[0].style.top = 'auto'
-				document.getElementsByClassName('party-round')[0].classList.remove('full')
-				document.getElementsByClassName('party-round')[0].style.top = 'auto'
-				document.getElementsByClassName('notes-about-people')[0].classList.remove('full')
-				document.getElementsByClassName('notes-about-people')[0].style.top = 'auto'
+				// document.getElementsByClassName('party-round')[0].classList.remove('full')
+				// document.getElementsByClassName('party-round')[0].style.top = 'auto'
+				// document.getElementsByClassName('notes-about-people')[0].classList.remove('full')
+				// document.getElementsByClassName('notes-about-people')[0].style.top = 'auto'
 				document.querySelector(".casestudy-nav-indicator").innerHTML = ''
 
 			
