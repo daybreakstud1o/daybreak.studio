@@ -41,9 +41,16 @@ var copyInquiriesAll = document.querySelectorAll('.copy-inquiries');
 		return false
 	});
 
-	document.addEventListener('DOMContentLoaded', function() {
-		const videos = document.querySelectorAll('video');
+	// document.addEventListener('DOMContentLoaded', function() {
+	// 	const videos = document.querySelectorAll('video');
+	// 	videos.forEach(video => {
+	// 		video.load();
+	// 	});
+	// });
+
+	window.onload = function() {
+		const videos = document.querySelectorAll(‘video’);
 		videos.forEach(video => {
 			video.load();
 		});
-	});
+	};
