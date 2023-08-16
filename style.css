@@ -4,6 +4,9 @@
 * {
   cursor: none !important;
 }	
+html, body {
+  height: 100%;
+}
 html::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar {
   display: none;
 }
