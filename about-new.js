@@ -128,6 +128,7 @@ daybreak.router.useScript(()=>{
 	const currentUrl = window.location.href;
 	var slug = currentUrl.split("/");
 	var project = slug[slug.length - 1]
+	
 
 	
 	// addEventListener("scroll", (event) => {
