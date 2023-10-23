@@ -8,12 +8,12 @@ daybreak.router.useScript(()=>{
 		//document.querySelector('.background').classList.add("dark")
 		//document.querySelector('.footer').classList.add("dark")
 		//document.querySelector('.nav-container').classList.add("dark","transform")
-		document.querySelector('.background').style.filter = 'invert(0.9)'
-		for (let i = 0; i < document.querySelectorAll('.footer').length; i++) {
-			document.querySelectorAll('.footer')[i].style.filter = 'invert(1) hue-rotate(180deg)'
-		}
-		document.querySelector('.nav-container').style.filter = 'invert(1)'
-		document.querySelector('#real-nav1').classList.add("dark")
+		//document.querySelector('.background').style.filter = 'invert(0.9)'
+		//for (let i = 0; i < document.querySelectorAll('.footer').length; i++) {
+		//	document.querySelectorAll('.footer')[i].style.filter = 'invert(1) hue-rotate(180deg)'
+		//}
+		//document.querySelector('.nav-container').style.filter = 'invert(1)'
+		document.querySelector('body').classList.add("dark")
 		document.querySelector('.nav-container').classList.add("transform")
 		document.querySelector('html').classList.remove('open')
 		document.querySelector('.nav-test').classList.remove("casestudy")
