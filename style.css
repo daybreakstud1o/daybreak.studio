@@ -69,7 +69,7 @@ body.dark .background {
 }
 
 body.dark .footer {
-	filter: invert(0.9) hue-rotate(180deg);
+	/*filter: invert(0.9) hue-rotate(180deg);*/
 }
 
 body.dark .nav-container {
