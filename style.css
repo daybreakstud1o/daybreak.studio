@@ -56,24 +56,37 @@ body {
   -webkit-transform: translate3d(-50%, 0, 0);
   -moz-transform: translate3d(-50%, 0, 0);
 }
-#real-nav1.dark > div:not(.nav-bg) {
+body.dark #real-nav1 > div:not(.nav-bg) {
   /* filter: invert(1) hue-rotate(180deg); */
   transition: .6s ease-in;
 }
 /* .nav-bg {
   transition: .6s ease-in;
 } */
-.dark svg path {
+
+body.dark .background {
+	filter: invert(0.9);
+}
+
+body.dark .footer {
+	filter: invert(0.9) hue-rotate(180deg);
+}
+
+body.dark .nav-container {
+	filter: invert(0.9);
+}
+
+body.dark svg path {
   fill: #fff;
 }
 .nav-bg {
-  filter: invert(0) blur(4px)
+  filter: invert(0) blur(4px);
 }
-.dark .nav-bg {
+body.dark #real-nav1 .nav-bg {
   /* background-color: #181818; */
-  filter: invert(0.9) blur(4px)
+  filter: invert(0.9) blur(4px);
 }
-.dark .body-founders, .dark .nav-link, .dark h1, .dark .link {
+body.dark * {
   color: #fff;
 }
 .daybreak-logo-big path, .nav-bg, .background, .nav-container .body-founders, .nav-container h1, .daybreak-logo-big, .footer {
