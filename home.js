@@ -82,6 +82,8 @@ daybreak.router.useScript(()=>{
 			document.querySelector('#real-nav1').style.height = '7.5vw'
 			//document.querySelector('#real-nav1').style.maxHeight = '164px'
 			document.querySelector('.nav-test').style.height = 'auto'
+			document.querySelector('.thumbnail-content #footer').style.opacity = '1'
+			document.querySelector('.thumbnail-content .main-wrapper').style.opacity = '1'
 		}, 600)
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.transition = "0.6s ease-in-out"
