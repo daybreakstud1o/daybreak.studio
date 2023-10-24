@@ -106,7 +106,7 @@ body.grey .background, body.grey {
 body.grey #real-nav1 .nav-bg {
   background-color: #D0D2DA;
 }
-body.grey .logo-wrapper svg path, body.grey .footer-logo--wrapper svg path {
+body.grey .logo-wrapper svg path:not(.mobile-nav .logo-wrapper svg path), body.grey .footer-logo--wrapper svg path {
   fill: #191A3E;
 }
 body.grey *:not(.mobile-nav *) {
