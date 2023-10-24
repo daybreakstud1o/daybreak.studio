@@ -17,9 +17,9 @@ daybreak.router.useScript(()=>{
 		//document.querySelector('.nav-test').classList.add("close","dark")
 		document.querySelector('.nav-test').classList.add("close")
 
-		setTimeout(function(){document.querySelector('.content').style.transform = 'translateY(0)';document.querySelector('.content').style.opacity = '1'}, 600)
-		
-		setTimeout(function() {
+		setTimeout(function(){
+			document.querySelector('.content').style.transform = 'translateY(0)';
+			document.querySelector('.content').style.opacity = '1'
 	    		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
 		}, 600);
 		
