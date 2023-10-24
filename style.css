@@ -65,6 +65,7 @@ body.dark #real-nav1 > div:not(.nav-bg) {
 } */
 
 body.dark .background {
+	background-color: #eae9e1;
 	filter: invert(0.9);
 }
 
@@ -83,7 +84,7 @@ body.dark svg path {
   filter: invert(0) blur(4px);
 }
 body.dark #real-nav1 .nav-bg {
-  /* background-color: #181818; */
+  background-color: #eae9e1;
   filter: invert(0.9) blur(4px);
 }
 body.dark * {
