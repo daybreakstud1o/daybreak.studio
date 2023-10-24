@@ -73,7 +73,7 @@ daybreak.router.useScript(()=>{
 		
 		document.querySelector('body').classList.remove("dark")
 		document.querySelector('body').classList.remove("grey")
-		document.querySelector('.thumbnail-content #footer').style.opacity = '1'
+		//document.querySelector('.thumbnail-content #footer').style.opacity = '1'
 		
 		document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
 		document.querySelector('#real-nav1').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
