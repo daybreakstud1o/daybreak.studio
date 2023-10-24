@@ -80,10 +80,11 @@ daybreak.router.useScript(()=>{
 		
 		setTimeout(function() {
 			document.querySelector('.content').style.opacity = '1'
+			document.querySelector('.nav-test').style.height = 'auto'
+	    		document.querySelector('.height-170').style.height = document.querySelector(".nav-test").offsetHeight + 'px'
 	    		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
 			document.querySelector('#real-nav1').style.height = '7.5vw'
 			//document.querySelector('#real-nav1').style.maxHeight = '164px'
-			//document.querySelector('.nav-test').style.height = 'auto'
 		}, 600)
 		setTimeout(function() {
 			document.querySelector('#real-nav1').style.transition = "0.6s ease-in-out"
