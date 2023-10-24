@@ -70,12 +70,9 @@ daybreak.router.useScript(()=>{
 		document.querySelector('.daybreak-logo-big').classList.remove("nav-logo--minimized");
 		document.querySelector('.nav-test').classList.remove("close","casestudy","short")
 		document.querySelector('html').classList.remove('open')
-		//document.querySelector('.background').style.filter = 'invert(0)'
-		//for (let i = 0; i < document.querySelectorAll('.footer').length; i++) {
-		//	document.querySelectorAll('.footer')[i].style.filter = 'invert(0) hue-rotate(0deg)'
-		//}
-		//document.querySelector('.nav-container').style.filter = 'invert(0)'
+		
 		document.querySelector('body').classList.remove("dark")
+		document.querySelector('body').classList.remove("grey")
 		document.querySelector('.thumbnail-content #footer').style.opacity = '1'
 		
 		document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
