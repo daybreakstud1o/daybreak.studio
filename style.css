@@ -71,7 +71,7 @@ body.dark #real-nav1 > div:not(.nav-bg), body.grey #real-nav1 > div:not(.nav-bg)
 } */
 
 /* dark mode */
-body.dark .background, body.dark {
+body.dark .background {
   background-color: #ecebe2;
   filter: invert(1);
 }
