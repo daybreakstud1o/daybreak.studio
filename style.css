@@ -70,7 +70,14 @@ body.dark #real-nav1 > div:not(.nav-bg), body.grey #real-nav1 > div:not(.nav-bg)
   transition: .6s ease-in;
 } */
 
+body {
+  background-color: #fff;
+}
+
 /* dark mode */
+body.dark {
+  background-color: #14151C;
+}
 body.dark .background {
   background-color: #ecebe2;
   filter: invert(1);
