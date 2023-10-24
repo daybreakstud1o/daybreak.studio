@@ -77,7 +77,7 @@ body.dark .nav-container {
 	filter: invert(1);
 }
 
-body.dark svg path {
+body.dark .logo-wrapper svg path {
   fill: #ABABC1;
 }
 .nav-bg {
@@ -87,7 +87,7 @@ body.dark #real-nav1 .nav-bg {
   background-color: #eae9e1;
   filter: invert(1) blur(4px);
 }
-body.dark * {
+body.dark *:not(.black) {
   color: #ABABC1!important;
 }
 .daybreak-logo-big path, .nav-bg, .background, .nav-container .body-founders, .nav-container h1, .daybreak-logo-big, .footer {
