@@ -18,8 +18,6 @@ daybreak.router.useScript(()=>{
 		setTimeout(function(){
 			document.querySelector('.content').style.transform = 'translateY(0)'
 			document.querySelector('.content').style.opacity = '1'
-		}, 600)
-		setTimeout(function() {
 	    		document.querySelector('.nav-test').style.height = document.querySelector(".content").offsetHeight + 'px'
 		}, 600);
 		
