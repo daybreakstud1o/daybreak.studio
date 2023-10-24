@@ -3,7 +3,13 @@
 }*/
 * {
   cursor: none !important;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }	
+*::-webkit-scrollbar {
+  display: none;
+}
+
 html, body {
   height: 100%;
 }
