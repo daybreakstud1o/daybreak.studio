@@ -171,10 +171,14 @@ daybreak.router.useScript(()=>{
 	const resetHero = animateInHero();
 
 	$(window).on("load resize",function(e){
+    		let wide = document.querySelector('#full').offsetWidth + 'px'
     		let full = document.querySelector('#full').offsetWidth + 'px'
 		let small = document.querySelector('#small').offsetWidth + 'px'
     		let big = document.querySelector('#big').offsetWidth + 'px'
     		let half = document.querySelector('#half').offsetWidth + 'px'
+		document.querySelectorAll('.thumbnail-row .wide').forEach((element) => {
+		  element.style.minWidth = wide
+		});
 		document.querySelectorAll('.thumbnail-row .small').forEach((element) => {
 		  element.style.minWidth = small
 		});
