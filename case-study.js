@@ -149,8 +149,8 @@ daybreak.router.useScript(()=>{
 			
 				document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
 				document.querySelector('#real-nav1').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
-				document.getElementsByClassName('superpower-brand')[0].classList.remove('full')
-				document.getElementsByClassName('superpower-brand')[0].style.top = 'auto'
+				document.getElementsByClassName('superpower')[0].classList.remove('full')
+				document.getElementsByClassName('superpower')[0].style.top = 'auto'
 				document.getElementsByClassName('hypercard')[0].classList.remove('full')
 				document.getElementsByClassName('hypercard')[0].style.top = 'auto'
 				document.getElementsByClassName('pager')[0].classList.remove('full')
