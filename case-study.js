@@ -72,10 +72,6 @@ daybreak.router.useScript(()=>{
 					if ((i == '2') || (i == '4') || (i == '6')) {
 						document.querySelectorAll('.thumbnail-row')[Math.floor(i / 2)].classList.add('flex-end')
 					}
-					if (i == '0') {
-						document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
-						document.querySelector('#real-nav1').classList.add("flesh-top-1")
-					}
 					if ((i == '1') || (i == '2')) {
 						document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
 						document.querySelector('#real-nav1').classList.add("flesh-top-1")
