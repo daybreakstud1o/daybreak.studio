@@ -66,21 +66,25 @@ daybreak.router.useScript(()=>{
 
 			projects.forEach((item, i) => {
 				if (project == item) {
-					if ((i == '0') || (i == '2') || (i == '4') || (i == '6')) {
+					if ((i == '0') || (i == '1') || (i == '3') || (i == '5')) {
 						document.querySelectorAll('.thumbnail-row')[Math.floor(i / 2)].classList.add('flex-start')
 					}
-					if ((i == '1') || (i == '3') || (i == '5') || (i == '7')) {
+					if ((i == '2') || (i == '4') || (i == '6')) {
 						document.querySelectorAll('.thumbnail-row')[Math.floor(i / 2)].classList.add('flex-end')
 					}
-					if ((i == '2') || (i == '3')) {
+					if (i == '0') {
 						document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
 						document.querySelector('#real-nav1').classList.add("flesh-top-1")
 					}
-					if ((i == '4') || (i == '5')) {
+					if ((i == '1') || (i == '2')) {
+						document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
+						document.querySelector('#real-nav1').classList.add("flesh-top-1")
+					}
+					if ((i == '3') || (i == '4')) {
 						document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-2')
 						document.querySelector('#real-nav1').classList.add("flesh-top-2")
 					}
-					if ((i == '6') || (i == '7')) {
+					if ((i == '5') || (i == '6')) {
 						document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
 						document.querySelector('#real-nav1').classList.add("flesh-top-3")
 					}
@@ -114,146 +118,6 @@ daybreak.router.useScript(()=>{
 				}
 			})
 		}
-		// if (project == 'hypercard') {
-		// 	document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-start')
-		// 	caseStudyName.innerHTML = 'Hypercard'
-		// 	caseStudyCategories.innerHTML = 'Brand | Product | Web'
-		// 	casestudyNavCreditsContent.innerHTML = `
-		// 	<div>
-		// 		<div class="body-founders white _100">
-		// 			Creative direction:
-		// 		</div>
-		// 		<div class="body-founders white _50">
-		// 			Taha Hossain
-		// 		</div>
-		// 	</div>
-		// 	<div>
-		// 		<div class="body-founders white _100">
-		// 			Design:
-		// 		</div>
-		// 		<div class="body-founders white _50">
-		// 			Aliasger Rasheed, Benya Sutyanyong, Zilin Deng, PJ Musselman
-		// 		</div>
-		// 	</div>
-		// 	<div>
-		// 		<div class="body-founders white _100">
-		// 			Tone &amp; Voice:
-		// 		</div>
-		// 		<div class="body-founders white _50">
-		// 			Lovish Saini
-		// 		</div>
-		// 	</div>
-		// 	<div>
-		// 		<div class="body-founders white _100">
-		// 			Product:
-		// 		</div>
-		// 		<div class="body-founders white _50">
-		// 			Vanessa Bahk
-		// 		</div>
-		// 	</div>
-		// 	<div>
-		// 		<div class="body-founders white _100">
-		// 			3D:
-		// 		</div>
-		// 		<div class="body-founders white _50">
-		// 			Mario Domingas, Javier Pardina
-		// 		</div>
-		// 	</div>
-		// 	<div>
-		// 		<div class="body-founders white _100">
-		// 			Motion:
-		// 		</div>
-		// 		<div class="body-founders white _50">
-		// 			Ross Chan
-		// 		</div>
-		// 	</div>`
-		// 	caseStudyPrevious.innerHTML = 'Notes About People'
-		// 	caseStudyPrevious.href = '/notes-about-people'
-		// 	caseStudyNext.innerHTML = 'Wombo Dream'
-		// 	caseStudyNext.href = '/wombo-dream'
-		// } else if (project == 'wombo-dream') {
-		// 	document.querySelectorAll('.thumbnail-row')[0].classList.add('flex-end')
-		// 	caseStudyName.innerHTML = 'Wombo Dream'
-		// 	caseStudyCategories.innerHTML = 'Product'
-		// 	caseStudyPrevious.innerHTML = 'Hypercard'
-		// 	caseStudyPrevious.href = '/hypercard'
-		// 	caseStudyNext.innerHTML = 'Inspired'
-		// 	caseStudyNext.href = '/inspired'
-		// } else if (project == 'inspired') {
-		// 	document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
-		// 	document.querySelector('#real-nav1').classList.add("flesh-top-1")
-		// 	document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-start')
-		// 	caseStudyName.innerHTML = 'Inspired'
-		// 	caseStudyCategories.innerHTML = 'Brand | Strategy | Web'
-		// 	caseStudyPrevious.innerHTML = 'Wombo Dream'
-		// 	caseStudyPrevious.href = '/wombo-dream'
-		// 	caseStudyNext.innerHTML = 'Prologue'
-		// 	caseStudyNext.href = '/prologue'
-		// } else if (project == 'prologue') {
-		// 	document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
-		// 	document.querySelector('#real-nav1').classList.add("flesh-top-1")
-		// 	document.querySelectorAll('.thumbnail-row')[1].classList.add('flex-end')
-		// 	caseStudyName.innerHTML = 'Prologue'
-		// 	caseStudyCategories.innerHTML = 'Brand | Strategy | Product'
-		// 	caseStudyPrevious.innerHTML = 'Inspired'
-		// 	caseStudyPrevious.href = '/inspired'
-		// 	caseStudyNext.innerHTML = 'Curated'
-		// 	caseStudyNext.href = '/curated'
-		// } else if (project == 'curated') {
-		// 	document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-2')
-		// 	document.querySelector('#real-nav1').classList.add("flesh-top-2")
-		// 	document.querySelectorAll('.thumbnail-row')[2].classList.add('flex-start')
-		// 	caseStudyName.innerHTML = 'Curated'
-		// 	caseStudyCategories.innerHTML = 'Brand | Strategy | Copywriting'
-		// 	caseStudyPrevious.innerHTML = 'Prologue'
-		// 	caseStudyPrevious.href = '/prologue'
-		// 	caseStudyNext.innerHTML = 'Workweek'
-		// 	caseStudyNext.href = '/workweek'
-		// } else if (project == 'workweek') {
-		// 	document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-2')
-		// 	document.querySelector('#real-nav1').classList.add("flesh-top-2")
-		// 	document.querySelectorAll('.thumbnail-row')[2].classList.add('flex-end')
-		// 	caseStudyName.innerHTML = 'Workweek'
-		// 	caseStudyCategories.innerHTML = 'Brand | Web'
-		// 	caseStudyPrevious.innerHTML = 'Curated'
-		// 	caseStudyPrevious.href = '/curated'
-		// 	caseStudyNext.innerHTML = 'Party Round'
-		// 	caseStudyNext.href = '/party-round'
-		// } else if (project == 'party-round') {
-		// 	document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
-		// 	document.querySelector('#real-nav1').classList.add("flesh-top-3")
-		// 	document.querySelectorAll('.thumbnail-row')[3].classList.add('flex-start')
-		// 	caseStudyName.innerHTML = 'Party Round'
-		// 	caseStudyCategories.innerHTML = 'Brand'
-		// 	caseStudyPrevious.innerHTML = 'Workweek'
-		// 	caseStudyPrevious.href = '/workweek'
-		// 	caseStudyNext.innerHTML = 'Notes About People'
-		// 	caseStudyNext.href = '/notes-about-people'
-		// } else if (project == 'notes-about-people') {
-		// 	document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
-		// 	document.querySelector('#real-nav1').classList.add("flesh-top-3")
-		// 	document.querySelectorAll('.thumbnail-row')[3].classList.add('flex-end')
-		// 	caseStudyName.innerHTML = 'Notes About People'
-		// 	caseStudyCategories.innerHTML = 'Product | Visual identity'
-		// 	caseStudyPrevious.innerHTML = 'Party Round'
-		// 	caseStudyPrevious.href = '/party-round'
-		// 	caseStudyNext.innerHTML = 'Hypercard'
-		// 	caseStudyNext.href = '/hypercard'
-		// } 
-
-		
-// 		setTimeout(function() {
-// 			var outroTop = window.pageYOffset + document.querySelector('.outro-placeholder').getBoundingClientRect().top
-// 			if (project == 'hypercard') {
-// 				next('pager')
-// 			} else if (project == 'pager') {	
-// 				next('capital')
-// 			} 
-// 			function next(project) {
-// 				document.getElementById(project).classList.add('full')
-// 				document.getElementById(project).style.top = outroTop + 'px'	
-// 			}
-// 		}, 1000);
 		
 		document.querySelectorAll('.thumbnail').forEach((element) => {
 		  element.style.opacity = '0'
@@ -289,6 +153,8 @@ daybreak.router.useScript(()=>{
 			
 				document.querySelector('.thumbnails-wrapper').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
 				document.querySelector('#real-nav1').classList.remove('flesh-top-1','flesh-top-2','flesh-top-3')
+				// document.getElementsByClassName('superpower-brand')[0].classList.remove('full')
+				document.getElementsByClassName('superpower-brand')[0].style.top = 'auto'
 				document.getElementsByClassName('hypercard')[0].classList.remove('full')
 				document.getElementsByClassName('hypercard')[0].style.top = 'auto'
 				document.getElementsByClassName('pager')[0].classList.remove('full')
@@ -311,6 +177,12 @@ daybreak.router.useScript(()=>{
 				let small = document.querySelector('#small').offsetWidth + 'px'
 		    		let big = document.querySelector('#big').offsetWidth + 'px'
 		    		let half = document.querySelector('#half').offsetWidth + 'px'
+				document.querySelectorAll('.thumbnail-row .full').forEach((element) => {
+				  element.style.minWidth = full
+				  element.style.opacity = '1'
+				  element.style.pointerEvents = 'all'
+				  element.classList.remove('casestudy-thumbnail-height')
+				});
 				document.querySelectorAll('.thumbnail-row .small').forEach((element) => {
 				  element.style.minWidth = small
 				  element.style.opacity = '1'
