@@ -173,12 +173,12 @@ daybreak.router.useScript(()=>{
 				// document.getElementsByClassName('notes-about-people')[0].style.top = 'auto'
 				document.querySelector(".casestudy-nav-indicator").innerHTML = ''
 
-			
+				let wide = document.querySelector('#full').offsetWidth + 'px'
 				let small = document.querySelector('#small').offsetWidth + 'px'
 		    		let big = document.querySelector('#big').offsetWidth + 'px'
 		    		let half = document.querySelector('#half').offsetWidth + 'px'
 				document.querySelectorAll('.thumbnail-row .full').forEach((element) => {
-				  element.style.minWidth = full
+				  element.style.minWidth = wide
 				  element.style.opacity = '1'
 				  element.style.pointerEvents = 'all'
 				  element.classList.remove('casestudy-thumbnail-height')
