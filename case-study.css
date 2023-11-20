@@ -50,13 +50,17 @@
 	    transform:translateX(-15%)
 	}
 	html.open .casestudy-nav .casestudy-nav--content-bottom {
+	    pointer-events: auto;
 	    max-height: 100vh;
 	}
 	html.open, html.open body {
-		margin: 0;
+		/*margin: 0;
 		height: 100%;
 		overflow: hidden;
-		position: relative;
+		position: relative;*/
+	}
+	html.open body {
+		pointer-events: none;
 	}
 	html.open .nav-container {
 	    margin-top: -118px;
