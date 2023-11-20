@@ -45,14 +45,6 @@
 }
 
 @media screen and (max-width: 991px) {
-	html.open .casestudy-nav .casestudy-nav-back .body-founders{
-	    opacity:1;
-	    transform:translateX(-15%)
-	}
-	html.open .casestudy-nav .casestudy-nav--content-bottom {
-	    pointer-events: auto;
-	    max-height: 100vh;
-	}
 	html.open, html.open body {
 		/*margin: 0;
 		height: 100%;
@@ -61,6 +53,17 @@
 	}
 	html.open body {
 		pointer-events: none;
+	}
+	html.open .content {
+		overflow: hidden;
+	}
+	html.open .casestudy-nav .casestudy-nav-back .body-founders{
+	    opacity:1;
+	    transform:translateX(-15%)
+	}
+	html.open .casestudy-nav .casestudy-nav--content-bottom {
+	    pointer-events: auto;
+	    max-height: 100vh;
 	}
 	html.open .nav-container {
 	    margin-top: -118px;
