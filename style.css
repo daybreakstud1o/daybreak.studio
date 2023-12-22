@@ -384,6 +384,9 @@ opacity: 1;
   }
 }
 @media only screen and (max-width: 767px) {
+  .main-wrapper.home div {
+    grid-gap: 4px;
+  }
   .close .daybreak-logo-big, .nav-logo--minimized {
     width: 50%!important;
   }
