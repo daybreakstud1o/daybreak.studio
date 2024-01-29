@@ -151,15 +151,15 @@ daybreak.router.useScript(()=>{
 		// periodically update the time elements
 		const allVancouverTimeElm = document.querySelectorAll('.pst');
 		const allTorontoTimeElm = document.querySelectorAll('.est');
-		const allLondonTimeElm = document.querySelectorAll('.gmt');
+		const allJakartaTimeElm = document.querySelectorAll('.wit');
 
 		var vancouverTime = getVancouverTime();
 		var torontoTime = getTorontoTime();
-		var londonTime = getLondonTime();
+		var jakartaTime = getJakartaTime();
 
 		allVancouverTimeElm.forEach((elm) => elm.innerHTML = ampm(vancouverTime));
 		allTorontoTimeElm.forEach((elm) => elm.innerHTML = ampm(torontoTime));
-		allLondonTimeElm.forEach((elm) => elm.innerHTML = ampm(londonTime));
+		getJakartaTime.forEach((elm) => elm.innerHTML = ampm(jakartaTime));
 	}
   
 	function ampm(time) {
