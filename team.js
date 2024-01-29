@@ -159,7 +159,7 @@ daybreak.router.useScript(()=>{
 
 		allVancouverTimeElm.forEach((elm) => elm.innerHTML = ampm(vancouverTime));
 		allTorontoTimeElm.forEach((elm) => elm.innerHTML = ampm(torontoTime));
-		allJakartaTime.forEach((elm) => elm.innerHTML = ampm(jakartaTime));
+		allJakartaTimeElm.forEach((elm) => elm.innerHTML = ampm(jakartaTime));
 	}
   
 	function ampm(time) {
