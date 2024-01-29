@@ -117,7 +117,7 @@ daybreak.router.useScript(()=>{
 	function getVancouverTime() {
 		const date = new Date();
 
-		// eastern time
+		// western time
 		const eastCoastTimeStr = date.toLocaleString("en-US", {
 			timeZone: "America/Los_Angeles",
 			hour12: false
@@ -136,12 +136,12 @@ daybreak.router.useScript(()=>{
 		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
 	}
 	
-	function getLondonTime() {
+	function getJakartaTime() {
 		const date = new Date();
 
-		// eastern time
+		// jakarta time
 		const eastCoastTimeStr = date.toLocaleString("en-US", {
-			timeZone: "Europe/London",
+			timeZone: "Asia/Jakarta",
 			hour12: false
 		})
 		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
