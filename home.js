@@ -1,5 +1,6 @@
 
 //@ts-ignore
+//test
 daybreak.router.useScript(()=>{
 	setTimeout(function() {
 		document.documentElement.scrollTop = 0;
