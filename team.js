@@ -146,20 +146,34 @@ daybreak.router.useScript(()=>{
 		})
 		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
 	}
+	
+	function getChicagoTime() {
+		const date = new Date();
+
+		// chicago time
+		const eastCoastTimeStr = date.toLocaleString("en-US", {
+			timeZone: "America/Chicago",
+			hour12: false
+		})
+		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
+	}
 
 	const updateTime = () => {
 		// periodically update the time elements
 		const allVancouverTimeElm = document.querySelectorAll('.pst');
 		const allTorontoTimeElm = document.querySelectorAll('.est');
 		const allJakartaTimeElm = document.querySelectorAll('.wit');
+		const allChicagoTimeElm = document.querySelectorAll('.cdt');
 
 		var vancouverTime = getVancouverTime();
 		var torontoTime = getTorontoTime();
 		var jakartaTime = getJakartaTime();
+		var chicagoTime = getChicagoTime();
 
 		allVancouverTimeElm.forEach((elm) => elm.innerHTML = ampm(vancouverTime));
 		allTorontoTimeElm.forEach((elm) => elm.innerHTML = ampm(torontoTime));
 		allJakartaTimeElm.forEach((elm) => elm.innerHTML = ampm(jakartaTime));
+		allChicagoTimeElm.forEach((elm) => elm.innerHTML = ampm(chicagoTime));
 	}
   
 	function ampm(time) {
