@@ -157,6 +157,17 @@ daybreak.router.useScript(()=>{
 		})
 		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
 	}
+	
+	function getLisbonTime() {
+		const date = new Date();
+
+		// lisbon time
+		const eastCoastTimeStr = date.toLocaleString("en-US", {
+			timeZone: "Europe/Lisbon",
+			hour12: false
+		})
+		return fix24HrString(eastCoastTimeStr.split(" ")[1]);
+	}
 
 	const updateTime = () => {
 		// periodically update the time elements
@@ -164,16 +175,19 @@ daybreak.router.useScript(()=>{
 		const allTorontoTimeElm = document.querySelectorAll('.est');
 		const allJakartaTimeElm = document.querySelectorAll('.wit');
 		const allChicagoTimeElm = document.querySelectorAll('.cdt');
+		const allLisbonTimeElm = document.querySelectorAll('.gmt');
 
 		var vancouverTime = getVancouverTime();
 		var torontoTime = getTorontoTime();
 		var jakartaTime = getJakartaTime();
 		var chicagoTime = getChicagoTime();
+		var lisbonTime = getLisbonTime();
 
 		allVancouverTimeElm.forEach((elm) => elm.innerHTML = ampm(vancouverTime));
 		allTorontoTimeElm.forEach((elm) => elm.innerHTML = ampm(torontoTime));
 		allJakartaTimeElm.forEach((elm) => elm.innerHTML = ampm(jakartaTime));
 		allChicagoTimeElm.forEach((elm) => elm.innerHTML = ampm(chicagoTime));
+		allLisbonTimeElm.forEach((elm) => elm.innerHTML = ampm(lisbonTime));
 	}
   
 	function ampm(time) {
