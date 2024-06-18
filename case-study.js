@@ -66,24 +66,24 @@ daybreak.router.useScript(()=>{
 
 			projects.forEach((item, i) => {
 				if (project == item) {
-					if ((i == '0') || (i == '1') || (i == '3') || (i == '5')) {
+					if ((i == '0') || (i == '2') || (i == '4')) {
 						document.querySelectorAll('.thumbnail-row')[Math.floor(i / 2)].classList.add('flex-start')
 					}
-					if ((i == '2') || (i == '4') || (i == '6')) {
+					if ((i == '1') || (i == '3') || (i == '5')) {
 						document.querySelectorAll('.thumbnail-row')[Math.floor(i / 2)].classList.add('flex-end')
 					}
-					if ((i == '1') || (i == '2')) {
+					if ((i == '2') || (i == '3')) {
 						document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-1')
 						document.querySelector('#real-nav1').classList.add("flesh-top-1")
 					}
-					if ((i == '3') || (i == '4')) {
+					if ((i == '4') || (i == '5')) {
 						document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-2')
 						document.querySelector('#real-nav1').classList.add("flesh-top-2")
 					}
-					if ((i == '5') || (i == '6')) {
-						document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
-						document.querySelector('#real-nav1').classList.add("flesh-top-3")
-					}
+					// if ((i == '5') || (i == '6')) {
+					// 	document.querySelector('.thumbnails-wrapper').classList.add('flesh-top-3')
+					// 	document.querySelector('#real-nav1').classList.add("flesh-top-3")
+					// }
 					var mapObj = {"\n\n":'</div><br><div class="body-founders white _100">',":":':</div><div class="body-founders white _50">'};
 					var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
 					var creditsStylized = '<div class="body-founders white _100">'+data[i].Credits.replace(re, function(matched){return mapObj[matched]})+'</div>'
@@ -159,8 +159,6 @@ daybreak.router.useScript(()=>{
 				document.getElementsByClassName('hypercard')[0].style.top = 'auto'
 				document.getElementsByClassName('pager')[0].classList.remove('full')
 				document.getElementsByClassName('pager')[0].style.top = 'auto'
-				document.getElementsByClassName('inspired')[0].classList.remove('full')
-				document.getElementsByClassName('inspired')[0].style.top = 'auto'
 				document.getElementsByClassName('prologue')[0].classList.remove('full')
 				document.getElementsByClassName('prologue')[0].style.top = 'auto'
 				// document.getElementsByClassName('curated')[0].classList.remove('full')
